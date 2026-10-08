@@ -1,0 +1,16 @@
+[
+  {
+    "id": "demo-001",
+    "name": "Prodotto demo da sostituire",
+    "category": "Casa",
+    "price": 49.90,
+    "commission_rate": 0.04,
+    "merchant": "INSERISCI NETWORK",
+    "affiliate_url": "https://example.com/",
+    "rating": 4.5,
+    "description": "Scheda dimostrativa: sostituisci questo prodotto con un'offerta reale approvata dal tuo programma di affiliazione.",
+    "pros": ["Esempio di vantaggio", "Facile da confrontare"],
+    "cons": ["Scheda dimostrativa"],
+    "keywords": ["casa", "guida acquisto"]
+  }
+]
