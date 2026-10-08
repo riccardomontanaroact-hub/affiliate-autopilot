@@ -9,9 +9,17 @@
     "affiliate_url": "https://example.com/",
     "rating": 4.5,
     "description": "Scheda dimostrativa: sostituisci questo prodotto con un'offerta reale approvata dal tuo programma di affiliazione.",
-    "pros": ["Esempio di vantaggio", "Facile da confrontare"],
-    "cons": ["Scheda dimostrativa"],
-    "keywords": ["casa", "guida acquisto"],
+    "pros": [
+      "Esempio di vantaggio",
+      "Facile da confrontare"
+    ],
+    "cons": [
+      "Scheda dimostrativa"
+    ],
+    "keywords": [
+      "casa",
+      "guida acquisto"
+    ],
     "score": 141.0
   }
 ]
