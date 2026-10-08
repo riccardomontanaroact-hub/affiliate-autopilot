@@ -1,0 +1,24 @@
+name: Build affiliate site
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * *'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python agent/build.py
+      - name: Commit generated site
+        run: |
+          git config user.name 'affiliate-autopilot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add site data/ranked_products.json
+          git diff --cached --quiet || git commit -m 'Automated catalog rebuild'
+          git push
