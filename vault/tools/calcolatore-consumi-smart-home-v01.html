@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Calcolatore consumi smart home | VORLI Lab — bozza</title>
+<meta name="description" content="Stima i kWh e il costo annuale dei dispositivi smart usando watt, ore al giorno, giorni e tariffa personale. Calcolo locale, senza registrazione.">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#091627;color:#f2f7ff}
+*{box-sizing:border-box}body{margin:0;line-height:1.55}main{max-width:1020px;margin:auto;padding:clamp(16px,4vw,48px)}
+a{color:#7cddff}h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.12;margin:.4rem 0}
+.eyebrow{color:#7cddff;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.card{background:#10253b;border:1px solid #34516b;border-radius:18px;padding:clamp(14px,3vw,26px);margin:24px 0}
+.muted{color:#c7d7e8}.badge{display:inline-block;border:1px solid #7cddff;color:#7cddff;border-radius:100px;padding:4px 12px;font-size:.86rem}
+label{display:block;font-weight:650;margin-bottom:7px}input{width:100%;border:2px solid #7592aa;border-radius:9px;background:#061322;color:white;font:inherit;padding:10px;min-width:0}
+input:focus-visible,button:focus-visible{outline:3px solid #7cddff;outline-offset:3px}
+button{font:inherit;font-weight:650;cursor:pointer;border-radius:10px;padding:10px 16px;border:1px solid #7cddff;background:#7cddff;color:#05131e}
+button.secondary{background:transparent;color:#e8f6ff}button:hover{filter:brightness(1.08)}
+.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:680px}th,td{padding:11px 8px;border-bottom:1px solid #34516b;text-align:left;vertical-align:middle}th{color:#d4e7f5;font-size:.9rem}
+td input{min-width:85px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.output{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:18px}
+.metric{border-radius:12px;background:#061b30;padding:16px;border:1px solid #355a75}.metric strong{display:block;font-size:1.6rem}
+#status{min-height:1.5em;color:#f5d8a5}small{color:#c7d7e8}ul{padding-left:22px}
+@media print{body{background:#fff;color:#000}.card,.metric{background:#fff;color:#000;border-color:#555}input{color:#000;background:#fff;border-color:#555}button{display:none}a{color:#000}#status{color:#000}.muted,small{color:#333}}
+</style>
+</head>
+<body><main>
+<p class="eyebrow">VORLI / Lab energetico</p>
+<span class="badge">Prototipo informativo · non in vendita</span>
+<h1>Quanto consumano i dispositivi smart di casa?</h1>
+<p class="muted">Calcola una <strong>stima</strong> di energia e spesa annuale per router, accessori, elettronica e dispositivi sempre accesi. Inserisci misure o valori documentati: non usiamo valori predefiniti come se fossero consumi reali.</p>
+<section class="card" aria-labelledby="impostazioni"><h2 id="impostazioni">1. Inserisci il tuo costo dell'energia</h2>
+<label for="tariffa">Costo variabile stimato dell'energia (€/kWh)</label>
+<input id="tariffa" type="number" inputmode="decimal" min="0" max="100" step="any" placeholder="Es. 0,28 (valore illustrativo)" required>
+<p><small>Consulta la tua bolletta. Il risultato non rappresenta necessariamente la bolletta totale: quote fisse, imposte e fasce orarie possono incidere.</small></p></section>
+<section class="card" aria-labelledby="dispositivi"><h2 id="dispositivi">2. Inserisci i dispositivi</h2>
+<p class="muted">Per ogni riga: potenza <strong>misurata o dichiarata</strong> in W, ore medie al giorno e giorni all'anno in quello stato operativo. Per uno stesso dispositivo, usa righe distinte per uso attivo e standby, evitando ore sovrapposte.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Dispositivo / stato</th><th scope="col">Potenza (W)</th><th scope="col">Ore/giorno</th><th scope="col">Giorni/anno</th><th scope="col">Azione</th></tr></thead><tbody id="righe"></tbody></table></div>
+<div class="actions"><button type="button" id="aggiungi">+ Aggiungi dispositivo</button><button type="button" class="secondary" id="stampa">Stampa / salva PDF</button></div>
+<p id="status" role="status" aria-live="polite"></p>
+<div class="output" aria-label="Risultati stimati"><div class="metric"><span>Energia stimata</span><strong id="kwh">—</strong><small>kWh/anno</small></div><div class="metric"><span>Spesa variabile stimata</span><strong id="costo">—</strong><small>€/anno</small></div></div></section>
+<section class="card"><h2>3. Come leggere la stima</h2>
+<p><strong>Formula per ogni riga:</strong> kWh/anno = (W × ore/giorno × giorni/anno) ÷ 1.000. Costo = kWh × €/kWh. I risultati sono arrotondati per visualizzazione, non durante la somma.</p>
+<p><strong>Esempio puramente illustrativo:</strong> 2 W × 24 ore × 365 giorni ÷ 1.000 = 17,52 kWh/anno. A 0,28 €/kWh corrispondono a circa 4,91 €/anno. Non è una misura di un prodotto specifico.</p>
+<ul><li>Un router acceso e operativo non è necessariamente in «standby»: distingui le modalità.</li><li>Non scollegare dispositivi di sicurezza, assistenza o rete indispensabili per risparmiare senza valutarne l'impatto.</li><li>Il consumo può variare nel tempo. Se possibile, misura con un misuratore adeguato e segui le istruzioni del produttore; non intervenire su cablaggi.</li><li>Non promettiamo risparmi: questa è una stima, non un audit elettrico.</li></ul>
+<p><small>Fonti: <a href="https://www.efficienzaenergetica.enea.it/glossario-efficienza-energetica/lettera-k/kwh-chilowattora.html">ENEA: definizione kWh</a>; <a href="https://energy-efficient-products.ec.europa.eu/product-list/standby-networked-standby-and-mode_en">Commissione europea: standby e networked standby</a>; <a href="https://eur-lex.europa.eu/eli/reg/2023/826/oj">Regolamento UE 2023/826</a>. Verifica fonti: 9 ottobre 2026.</small></p>
+</section><footer><small>VORLI Lab · versione 0.1 · 09/10/2026 · bozza su branch di sviluppo. Nessun link affiliato, prezzo, checkout, cookie o tracciamento. I dati inseriti rimangono in questa pagina e non sono trasmessi.</small></footer>
+</main>
+<script>
+"use strict";
+const righe=document.getElementById("righe");
+const tariffa=document.getElementById("tariffa");
+const status=document.getElementById("status");
+const kwhOut=document.getElementById("kwh");
+const costoOut=document.getElementById("costo");
+const nf=new Intl.NumberFormat("it-IT",{maximumFractionDigits:2,minimumFractionDigits:2});
+let contatore=0;
+function aggiungiRiga(){
+  contatore++;
+  const n=contatore;
+  const tr=document.createElement("tr");
+  tr.innerHTML='<td><input class="nome" type="text" maxlength="70" placeholder="Es. router attivo" aria-label="Dispositivo o stato, riga '+n+'"></td>'+
+    '<td><input class="watt" type="number" min="0" max="100000" step="any" inputmode="decimal" aria-label="Watt, riga '+n+'" required></td>'+
+    '<td><input class="ore" type="number" min="0" max="24" step="any" inputmode="decimal" aria-label="Ore al giorno, riga '+n+'" required></td>'+
+    '<td><input class="giorni" type="number" min="0" max="366" step="any" inputmode="decimal" aria-label="Giorni all’anno, riga '+n+'" required></td>'+
+    '<td><button type="button" class="secondary elimina" aria-label="Elimina riga '+n+'">Elimina</button></td>';
+  righe.appendChild(tr);
+  aggiorna();
+}
+function leggi(input,min,max){
+  if(input.value.trim()==="")return null;
+  const n=Number(input.value);
+  return Number.isFinite(n)&&n>=min&&n<=max?n:null;
+}
+function aggiorna(){
+  const prezzo=leggi(tariffa,0,100);
+  const trs=[...righe.querySelectorAll("tr")];
+  if(prezzo===null||trs.length===0){
+    kwhOut.textContent="—";costoOut.textContent="—";
+    status.textContent=trs.length?"Inserisci un costo dell'energia valido (0–100 €/kWh).":"Aggiungi almeno un dispositivo.";
+    return;
+  }
+  let totale=0;
+  for(const tr of trs){
+    const w=leggi(tr.querySelector(".watt"),0,100000);
+    const h=leggi(tr.querySelector(".ore"),0,24);
+    const d=leggi(tr.querySelector(".giorni"),0,366);
+    if(w===null||h===null||d===null){
+      kwhOut.textContent="—";costoOut.textContent="—";
+      status.textContent="Completa tutti i valori numerici delle righe; nessuna riga incompleta viene conteggiata.";
+      return;
+    }
+    totale+=w*h*d/1000;
+  }
+  kwhOut.textContent=nf.format(totale);
+  costoOut.textContent=nf.format(totale*prezzo)+" €";
+  status.textContent="Stima calcolata per "+trs.length+" righe. Controlla eventuali sovrapposizioni di ore.";
+}
+document.getElementById("aggiungi").addEventListener("click",aggiungiRiga);
+document.getElementById("stampa").addEventListener("click",()=>window.print());
+righe.addEventListener("click",e=>{if(e.target.classList.contains("elimina")){e.target.closest("tr").remove();aggiorna();}});
+righe.addEventListener("input",aggiorna);
+tariffa.addEventListener("input",aggiorna);
+aggiungiRiga();
+</script>
+</body></html>
