@@ -2,7 +2,7 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
 a{color:#075d9d;text-underline-offset:3px}a:focus-visible{outline:3px solid #008bcf;outline-offset:3px}
 .wrap{max-width:1120px;margin:auto;padding:0 1rem}.top,.foot{background:var(--navy);color:white;padding:1rem 0}.top a,.foot a{color:white}
-.nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}.links{display:flex;gap:1rem;flex-wrap:wrap}.brand{font-weight:900;letter-spacing:.14em;text-decoration:none;font-size:1.4rem}
+.nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}.links{display:flex;gap:1rem;flex-wrap:wrap}.brand{display:inline-flex;align-items:center;gap:.55rem;font-weight:900;letter-spacing:.14em;text-decoration:none;font-size:1.4rem}.brand-mark{width:2.15rem;height:2.15rem;overflow:visible;filter:drop-shadow(0 0 7px #36c8ff35)}.brand-orbit{transform-origin:32px 31px;animation:vorli-orbit 12s ease-in-out infinite}@keyframes vorli-orbit{0%,100%{transform:rotate(-28deg)}50%{transform:rotate(12deg)}}@media(prefers-reduced-motion:reduce){.brand-orbit{animation:none}}
 .hero{background:radial-gradient(circle at 90% 15%,#146095,transparent 40%),linear-gradient(125deg,#07162d,#145184);color:white;padding:3.5rem 0}.hero p{color:#e1f5ff;max-width:60ch}
 h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.12}h2{line-height:1.2}.section{padding:3rem 0}.grid{display:grid;gap:1rem}
 .card{background:white;border:1px solid var(--line);border-radius:18px;padding:1.25rem;box-shadow:0 8px 25px #07162d0a}.card p{color:var(--muted)}
