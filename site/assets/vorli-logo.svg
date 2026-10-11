@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 185" role="img" aria-labelledby="title">
+<title id="title">VORLI — Smart E-commerce. For a better tomorrow.</title>
+<defs>
+<linearGradient id="left" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#43e2ff"/><stop offset=".55" stop-color="#398bff"/><stop offset="1" stop-color="#344fcb"/></linearGradient>
+<linearGradient id="right" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c9dff"/><stop offset=".48" stop-color="#6f6aff"/><stop offset="1" stop-color="#c06aff"/></linearGradient>
+<linearGradient id="orbit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36d8ff"/><stop offset=".52" stop-color="#9bcaff"/><stop offset="1" stop-color="#b36bff"/></linearGradient>
+<linearGradient id="tagline" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#36d8ff"/><stop offset=".55" stop-color="#6f9bff"/><stop offset="1" stop-color="#bd6aff"/></linearGradient>
+</defs>
+<ellipse cx="88" cy="92" rx="73" ry="29" transform="rotate(-28 88 92)" fill="none" stroke="url(#orbit)" stroke-width="5" opacity=".85"/>
+<ellipse cx="88" cy="92" rx="64" ry="23" transform="rotate(28 88 92)" fill="none" stroke="#73dfff" stroke-width="1.4" opacity=".45"/>
+<path d="M35 31 68 119 86 119 54 31Z" fill="#172d70" opacity=".9"/>
+<path d="M35 31 68 119 82 145 89 119 54 31Z" fill="url(#left)"/>
+<path d="M68 119 86 119 136 31 113 31Z" fill="#302d85" opacity=".9"/>
+<path d="M68 119 82 145 86 119 136 31 113 31Z" fill="url(#right)"/>
+<path d="M68 119 82 145 86 119Z" fill="#76caff" opacity=".8"/>
+<path d="M47 39 69 98 76 98 56 39Z" fill="#c4f6ff" opacity=".28"/>
+<circle cx="150" cy="45" r="7" fill="#c47aff" stroke="#f0d8ff" stroke-width="1"/>
+<text x="210" y="83" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="800" letter-spacing="8">VORLI</text>
+<text x="215" y="118" fill="#b9eaff" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4.4">SMART E-COMMERCE</text>
+<text x="215" y="153" fill="url(#tagline)" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2.1">FOR A BETTER TOMORROW</text>
+</svg>
