@@ -145,17 +145,17 @@ def render_ai_markdown(report):
     return "\n".join(lines)
 
 
-def write_reports(report):
-    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    REPORT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    previous = MARKDOWN_PATH.read_text(encoding="utf-8") if MARKDOWN_PATH.exists() else "# Rapporto agenti VORLI\n"
+def write_reports(report, report_path=REPORT_PATH, markdown_path=MARKDOWN_PATH):
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    markdown_path.parent.mkdir(parents=True, exist_ok=True)
+    previous = markdown_path.read_text(encoding="utf-8") if markdown_path.exists() else "# Rapporto agenti VORLI\\n"
     start = previous.find("<!-- AI_AGENT_REVIEWS_START -->")
     end_marker = "<!-- AI_AGENT_REVIEWS_END -->"
     end = previous.find(end_marker, start) if start >= 0 else -1
     if start >= 0 and end >= 0:
-        previous = previous[:start].rstrip() + "\n"
-    MARKDOWN_PATH.write_text(previous.rstrip() + "\n" + render_ai_markdown(report), encoding="utf-8")
-
+        previous = previous[:start].rstrip() + "\\n"
+    markdown_path.write_text(previous.rstrip() + "\\n" + render_ai_markdown(report), encoding="utf-8")
 
 def run_reviews(api_key, model, report_path=REPORT_PATH, opener=urlopen):
     report = json.loads(report_path.read_text(encoding="utf-8"))
@@ -177,7 +177,8 @@ def run_reviews(api_key, model, report_path=REPORT_PATH, opener=urlopen):
     report["note"] = ("Controlli automatici e revisioni AI. Le revisioni sono suggerimenti, non azioni: "
                       "non pubblicano prodotti, non spendono denaro e non contattano partner.")
     report["llm_failures"] = failures
-    write_reports(report)
+    markdown_path = report_path.with_suffix('.md') if report_path != REPORT_PATH else MARKDOWN_PATH
+    write_reports(report, report_path=report_path, markdown_path=markdown_path)
     return report
 
 
