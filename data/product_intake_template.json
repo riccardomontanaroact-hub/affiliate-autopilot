@@ -1,0 +1,28 @@
+[
+  {
+    "id": "REPLACE_WITH_UNIQUE_ID",
+    "name": "REPLACE_WITH_VERIFIED_PRODUCT_NAME",
+    "category": "technology | home | accessories | sports",
+    "price": null,
+    "commission_rate": null,
+    "merchant": "REPLACE_WITH_APPROVED_ADVERTISER",
+    "affiliate_url": "",
+    "rating": null,
+    "description": "Write a factual description based on the source; do not invent claims.",
+    "pros": [],
+    "cons": [],
+    "keywords": [],
+    "verification": {
+      "program": "REPLACE_WITH_NETWORK_NAME",
+      "approval_status": "pending",
+      "source_url": "",
+      "price_checked_at": null,
+      "commission_source_url": "",
+      "commission_checked_at": null,
+      "rating_source_url": "",
+      "rating_checked_at": null,
+      "checked_by": "",
+      "notes": ""
+    }
+  }
+]
