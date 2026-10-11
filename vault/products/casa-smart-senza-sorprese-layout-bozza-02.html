@@ -61,7 +61,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
 <body>
 <div class="toolbar" aria-label="Strumenti documento">
 <button class="primary" onclick="window.print()">Stampa / salva in PDF</button>
-<button class="secondary" type="button">Mostra/nascondi nota bozza</button>
+<button class="secondary" type="button" aria-expanded="true">Mostra/nascondi note di bozza</button>
 </div>
 <main class="document">
 <section class="cover">
@@ -165,7 +165,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
 </main>
 <script>
 const toggle=document.querySelector('button.secondary');
-toggle.addEventListener('click',()=>{const note=document.querySelector('.draft-note');note.hidden=!note.hidden;});
+toggle.addEventListener('click',()=>{const hidden=toggle.getAttribute('aria-expanded')==='true';document.querySelectorAll('.draft-note, .meta').forEach(note=>{note.hidden=hidden;});toggle.setAttribute('aria-expanded',String(!hidden));toggle.textContent=hidden?'Mostra note di bozza':'Nascondi note di bozza';});
 </script>
 </body>
 </html>
