@@ -1,0 +1,44 @@
+# QA manuale — Casa Smart senza sorprese (bozza HTML)
+
+**Stato:** checklist di verifica; non equivale a un test eseguito.  
+**File da verificare:** `vault/products/casa-smart-senza-sorprese-layout-bozza-02.html`  
+**Rilascio:** bloccato finché i controlli richiesti e l'approvazione del proprietario non sono completati.
+
+## Controlli statici
+- [ ] HTML valido e struttura semantica corretta.
+- [ ] Ogni collegamento dell'indice punta a un ID esistente.
+- [ ] Tutti i pulsanti hanno un'etichetta comprensibile e stato accessibile.
+- [ ] La funzione mostra/nascondi aggiorna testo e `aria-expanded` in modo coerente.
+- [ ] Nessun dato personale, password, token o segreto incluso.
+- [ ] I link esterni sono quelli delle fonti istituzionali dichiarate e vengono ricontrollati prima del rilascio.
+
+## Prova su telefono
+- [ ] Aprire il file HTML su uno schermo stretto (circa 360 px).
+- [ ] Verificare che non compaia scorrimento orizzontale della pagina.
+- [ ] Controllare leggibilità, spazi, campi da compilare e tabella.
+- [ ] Attivare entrambi i pulsanti e verificare che funzionino.
+- [ ] Navigare l'indice e tornare alla sezione precedente.
+- [ ] Verificare focus visibile usando tastiera o strumenti di accessibilità disponibili.
+
+## Prova stampa/PDF
+- [ ] Aprire la funzione Stampa / salva in PDF.
+- [ ] Controllare formato A4, margini, copertina e interruzioni pagina.
+- [ ] Verificare che la barra degli strumenti non venga stampata.
+- [ ] Controllare che tabelle e campi non siano tagliati o sovrapposti.
+- [ ] Controllare leggibilità in scala di grigi e contrasto.
+- [ ] Aprire il PDF prodotto su telefono e desktop.
+
+## Revisione contenuti e fonti
+- [ ] Ricontrollare le fonti istituzionali e la data di aggiornamento.
+- [ ] Verificare la pertinenza per il pubblico italiano/UE; non presentare la guida come consulenza tecnica o legale.
+- [ ] Revisione editoriale italiana e controllo refusi.
+- [ ] Verificare diritti di testi, immagini e font (la bozza non deve includere materiali non autorizzati).
+
+## Gate di rilascio
+- [ ] Tutti i controlli sopra completati e documentati.
+- [ ] Eventuali problemi corretti e testati di nuovo.
+- [ ] Revisione umana finale e approvazione esplicita.
+- [ ] Prezzo, termini, privacy, fiscalità, pagamento e consegna valutati separatamente.
+- [ ] Nessuna pubblicazione nel catalogo acquistabile finché i gate non sono soddisfatti.
+
+**Nota:** non dichiarare un controllo superato senza averlo eseguito realmente. Nessun prezzo, pagamento o vendita è autorizzato da questa checklist.
