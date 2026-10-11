@@ -94,11 +94,11 @@ Il punteggio non è una certificazione: se una voce importante resta sconosciuta
 
 ## Fonti da consultare
 
-Queste risorse erano indicate nella bozza di ricerca iniziale; prima della pubblicazione commerciale è necessario riaprire i link, verificare che siano ancora validi e controllare la data e la pertinenza delle informazioni:
+Collegamenti controllati l'11 ottobre 2026. Le fonti offrono indicazioni generali; prima di un rilascio commerciale bisogna ricontrollare aggiornamenti, pertinenza e accuratezza dei singoli passaggi, senza presentare questo elenco come una revisione tecnica o legale completa:
 
 - Federal Trade Commission — Securing your internet-connected devices at home: https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home
-- UK National Cyber Security Centre — Smart devices: https://www.ncsc.gov.uk/blog-post/smart-devices-law
-- Commissione europea — Cyber Resilience Act e prodotti digitali: https://commission.europa.eu/news-and-media/news/safer-and-more-secure-digital-products-2026-09-11_en
+- UK National Cyber Security Centre — Smart devices: using them safely in your home: https://www.ncsc.gov.uk/guidance/smart-devices-in-the-home
+- Commissione europea — Legge sulla ciberresilienza (Cyber Resilience Act): https://digital-strategy.ec.europa.eu/it/policies/cyber-resilience-act
 
 ## Nota editoriale e commerciale
 
