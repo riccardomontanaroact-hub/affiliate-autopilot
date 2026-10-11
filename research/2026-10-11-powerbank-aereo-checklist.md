@@ -70,7 +70,7 @@ Prima di scegliere un power bank, verificare: energia in Wh chiaramente marcata;
 1. Irish Aviation Authority, Dangerous Goods Passenger Information — aggiornamento ICAO dal 27 marzo 2026 e massimo due power bank: https://www.iaa.ie/safety/dangerous-goods/dangerous-goods--passenger-information
 2. Ryanair, Quali articoli sono consentiti a bordo? — limite due power bank e massimo 100 Wh ciascuno: https://help.ryanair.com/hc/it/articles/12890774807569-Quali-articoli-sono-consentiti-a-bordo
 3. ITA Airways, Electronic devices and batteries — condizioni power bank e restrizioni di uso: https://www.ita-airways.com/br/en/book-and-prepare/travel-information/baggage/electronic-devices-and-batteries
-4. FAA, Airline Passengers and Batteries — soglie Wh e trasporto in cabina, pagina aggiornata il 2 ottobre 2026: https://www.faa.gov/hazmat/packsafe/airline-passengers-and-batteries
+4. FAA, Airline Passengers and Batteries — soglie Wh e trasporto in cabina: https://www.faa.gov/hazmat/packsafe/airline-passengers-and-batteries
 5. IATA, Dangerous Goods Guidance for Passengers — riferimento generale e batterie di scorta non in stiva: https://www.iata.org/en/programs/cargo/dangerous-goods/dgr-guidance-passengers
 
 ## 8. Requisiti di monetizzazione ancora aperti
