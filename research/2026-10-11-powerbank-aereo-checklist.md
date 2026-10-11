@@ -37,7 +37,7 @@ Sono esempi matematici, non classificazioni di modelli commerciali. La capacità
 
 ## 3. Regole e differenze tra vettori
 
-- L'autorità aeronautica irlandese (IAA) segnala che dal **27 marzo 2026** le istruzioni ICAO limitano a **due power bank per passeggero**; avverte che una vecchia tabella IATA potrebbe non riflettere ancora l'aggiornamento.
+- Dal **27 marzo 2026**, l'ICAO limita a **due power bank per passeggero** e vieta di ricaricare il power bank durante il volo; raccomanda inoltre di non usarlo per ricaricare altri dispositivi. L'IAA avverte che la tabella IATA pubblica potrebbe non riflettere ancora il limite di due power bank. La compagnia aerea può imporre regole più restrittive sull'uso a bordo.
 - La FAA descrive le soglie di riferimento per batterie al litio: fino a **100 Wh** generalmente consentite in cabina; **101–160 Wh** richiedono approvazione del vettore, fino a due batterie di scorta; oltre **160 Wh** non ammesse come normali batterie di scorta. La FAA è autorità USA: per i voli in Europa controllare anche le disposizioni locali e del vettore.
 - **Ryanair** pubblica un limite più restrittivo per power bank: **massimo due**, ciascuno **non oltre 100 Wh**; devono restare addosso o sotto il sedile, non in cappelliera. Vieta la ricarica del power bank in volo. La pagina consente invece di utilizzare il power bank per caricare dispositivi personali, a differenza di altri vettori.
 - **ITA Airways** indica massimo due power bank, vieta sia l'uso sia la ricarica durante il volo (salvo eccezione medica specifica), e prevede autorizzazione preventiva per capacità superiori a 100 Wh e fino a 160 Wh. Consultare sempre la versione aggiornata della pagina ufficiale per la propria tratta.
