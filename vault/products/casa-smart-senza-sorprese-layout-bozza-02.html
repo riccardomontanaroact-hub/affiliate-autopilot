@@ -45,7 +45,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
 .pagebreak{break-before:page}
 @media(max-width:600px){.document{margin:0;padding:1.2rem}.cover{min-height:65vh}table{font-size:.78rem}th,td{padding:.35rem}}
 @media print{
- @page{size:A4;margin:17mm}
+ @page{size:A4;margin:15mm}
  html{background:#fff;font-size:10.5pt}
  .toolbar{display:none}
  .document{max-width:none;margin:0;padding:0;box-shadow:none}
@@ -55,6 +55,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
  p,li{orphans:3;widows:3}
  table,.note,.field{break-inside:avoid}
  .table-wrap{overflow:visible}
+ .field{margin:.35rem 0}
+ .form-lines{min-height:1.35rem}
+ .checklist li{margin:.22rem 0}
  a{color:inherit;text-decoration:none}
  .pagebreak{break-before:page}
 }
