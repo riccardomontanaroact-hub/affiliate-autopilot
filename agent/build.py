@@ -64,7 +64,7 @@ for product in products:
             'rel="sponsored nofollow noopener" target="_blank">Vedi offerta</a>'
         )
     price = product.get("price")
-    price_html = f'<p class="price">€ {float(price):.2f}</p>' if price is not None else ""
+    price_html = f'<p class="price">€ {float(price):.2f}</p>' if price is not None and not demo else ""
     cards.append(
         '<article class="card">'
         f'<span class="tag demo">{ "Demo" if demo else "Prodotto" }</span>'
