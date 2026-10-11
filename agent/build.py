@@ -37,6 +37,11 @@ products.sort(key=lambda item: item["score"], reverse=True)
 # Publish the reviewed mobile-first VORLI design, rather than the old generated shell.
 index_source = (PREVIEW / "index.html").read_text(encoding="utf-8")
 style_source = (PREVIEW / "style.css").read_text(encoding="utf-8")
+
+# Guard against publishing an outdated homepage without the approved VORLI logo.
+if 'class="brand-mark"' not in index_source or 'vorli-gradient' not in index_source:
+    raise SystemExit("Build bloccata: il logo VORLI approvato manca dalla sorgente preview/index.html.")
+
 (SITE / "index.html").write_text(index_source, encoding="utf-8")
 (SITE / "style.css").write_text(style_source, encoding="utf-8")
 # Publish the supporting pages linked by the new navigation as well.
@@ -79,7 +84,7 @@ catalog = f"""<!doctype html>
 </head>
 <body>
 <header class="top"><div class="wrap nav">
-<a class="brand" href="index.html">◆ VORLI</a>
+<a class="brand" href="index.html" aria-label="VORLI — homepage"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vorli-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36c8ff"/><stop offset=".52" stop-color="#668cff"/><stop offset="1" stop-color="#b66bff"/></linearGradient></defs><path d="M13 12 27 50 51 12" fill="none" stroke="url(#vorli-gradient)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><ellipse class="brand-orbit" cx="32" cy="31" rx="27" ry="10" fill="none" stroke="#8fe1ff" stroke-width="2.5" transform="rotate(-28 32 31)"/><circle cx="53" cy="18" r="4" fill="#b66bff"/></svg><span>VORLI</span></a>
 <nav class="links" aria-label="Navigazione principale">
 <a href="index.html">Home</a><a href="catalogo.html" aria-current="page">Catalogo</a>
 <a href="risorse.html">Risorse</a><a href="guida.html">Metodo</a>
