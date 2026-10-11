@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Bozza editoriale VORLI con schede pratiche per scegliere e gestire dispositivi smart home.">
+<title>VORLI — Casa Smart senza sorprese</title>
+<style>
+:root{--ink:#172033;--muted:#566176;--accent:#2463eb;--pale:#edf3ff;--line:#d7deea;--paper:#fff}
+*{box-sizing:border-box}
+html{background:#eef1f6;color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+body{margin:0}
+.toolbar{position:sticky;top:0;display:flex;justify-content:center;gap:.75rem;padding:.8rem;background:#172033;color:white;z-index:2}
+button{font:inherit;font-weight:650;padding:.6rem 1rem;border:0;border-radius:.55rem;cursor:pointer}
+button.primary{background:#fff;color:#172033}
+button.secondary{background:#34415a;color:#fff}
+.document{max-width:850px;margin:2rem auto;padding:clamp(1.25rem,5vw,3.5rem);background:var(--paper);box-shadow:0 8px 32px #18223a18}
+.kicker{color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.cover{min-height:70vh;display:flex;flex-direction:column;justify-content:center;border-bottom:5px solid var(--accent);padding-bottom:3rem}
+.brand{font-size:1.15rem;font-weight:900;letter-spacing:.22em}
+h1{font-size:clamp(2.4rem,7vw,4.7rem);line-height:1.02;letter-spacing:-.045em;margin:2rem 0 1rem;max-width:12ch}
+.subtitle{font-size:1.25rem;color:var(--muted);max-width:34rem}
+.meta{margin-top:3rem;padding:1rem;border-left:3px solid var(--accent);background:var(--pale);font-size:.9rem}
+h2{font-size:1.65rem;line-height:1.2;margin:2.3rem 0 .75rem;letter-spacing:-.02em}
+h3{font-size:1.1rem;margin:1.4rem 0 .4rem}
+p,li{max-width:70ch}
+ul,ol{padding-left:1.35rem}
+li{margin:.3rem 0}
+.checklist{list-style:none;padding:0}
+.checklist li{margin:.5rem 0;padding-left:1.8rem;position:relative}
+.checklist li:before{content:"□";position:absolute;left:0;top:0;font-size:1.15rem}
+.note{padding:1rem 1.1rem;border-left:3px solid var(--accent);background:var(--pale);margin:1rem 0}
+.form-lines{border-bottom:1px solid var(--line);min-height:2rem;margin:.15rem 0 .8rem}
+.field{margin:.7rem 0}
+.field strong{display:block;font-size:.92rem}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+th,td{border:1px solid var(--line);padding:.6rem;text-align:left;vertical-align:top}
+th{background:var(--pale)}
+.small{font-size:.88rem;color:var(--muted)}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
+a{color:#164ec4;overflow-wrap:anywhere}
+.pagebreak{break-before:page}
+@media(max-width:600px){.document{margin:0;padding:1.2rem}.cover{min-height:65vh}table{font-size:.78rem}th,td{padding:.35rem}}
+@media print{
+ @page{size:A4;margin:17mm}
+ html{background:#fff;font-size:10.5pt}
+ .toolbar{display:none}
+ .document{max-width:none;margin:0;padding:0;box-shadow:none}
+ .cover{min-height:250mm;break-after:page}
+ h2{break-after:avoid}
+ table,.note,.field{break-inside:avoid}
+ a{color:inherit;text-decoration:none}
+ .pagebreak{break-before:page}
+}
+</style>
+</head>
+<body>
+<div class="toolbar" aria-label="Strumenti documento">
+<button class="primary" onclick="window.print()">Stampa / salva in PDF</button>
+<button class="secondary" onclick="document.documentElement.classList.toggle('show-notes')">Mostra/nascondi nota bozza</button>
+</div>
+<main class="document">
+<section class="cover">
+<div class="brand">VORLI</div>
+<p class="kicker">Guida pratica · Checklist</p>
+<h1>Casa Smart senza sorprese</h1>
+<p class="subtitle">Una guida semplice per scegliere, configurare e controllare i dispositivi connessi di casa con maggiore consapevolezza.</p>
+<div class="meta"><strong>Bozza editoriale 0.2 · Non in vendita</strong><br>Formato di lavoro per revisione e prova di stampa. Non certifica la sicurezza di alcun prodotto e non sostituisce le istruzioni del produttore.</div>
+</section>
+<section>
+<h2>Prima di iniziare</h2>
+<p>Una casa connessa può essere comoda, ma ogni dispositivo porta con sé decisioni su compatibilità, aggiornamenti, account, autorizzazioni, rete e dati personali. Questa guida ti aiuta a raccogliere le informazioni prima dell'acquisto e a ricordare i controlli periodici.</p>
+<div class="note"><strong>Principio guida:</strong> se un'informazione importante non è chiara, segnala il dubbio e consulta la documentazione ufficiale prima di procedere.</div>
+<h2>1. Prima di acquistare</h2>
+<p>Compila una scheda per ogni dispositivo che stai valutando.</p>
+<div class="field"><strong>Dispositivo e modello esatto</strong><div class="form-lines"></div></div>
+<div class="field"><strong>Produttore e pagina ufficiale</strong><div class="form-lines"></div></div>
+<div class="field"><strong>Quale problema pratico deve risolvere?</strong><div class="form-lines"></div></div>
+<div class="field"><strong>Compatibilità con il mio ecosistema</strong> □ Sì　□ No　□ Da verificare</div>
+<div class="field"><strong>Serve un hub, bridge o app specifica?</strong><div class="form-lines"></div></div>
+<div class="field"><strong>Funziona senza Internet?</strong> □ Sì　□ No　□ Da verificare</div>
+<div class="field"><strong>Richiede un account o abbonamento?</strong><div class="form-lines"></div></div>
+<div class="field"><strong>Durata e modalità degli aggiornamenti dichiarate</strong><div class="form-lines"></div></div>
+<div class="field"><strong>Garanzia, assistenza e condizioni di reso</strong><div class="form-lines"></div></div>
+<div class="field"><strong>Data del controllo e fonte consultata</strong><div class="form-lines"></div></div>
+<div class="note"><strong>Attenzione:</strong> non basarti solo sul nome commerciale o sulla forma del connettore. Controlla il modello esatto e la documentazione ufficiale.</div>
+<h2>2. Durante la configurazione</h2>
+<ul class="checklist">
+<li>Cambia le credenziali predefinite, se presenti, usando una password unica e robusta.</li>
+<li>Attiva l'autenticazione a più fattori, se disponibile.</li>
+<li>Installa gli aggiornamenti ufficiali disponibili.</li>
+<li>Controlla i permessi dell'app e concedi solo quelli necessari alla funzione scelta.</li>
+<li>Verifica quali membri della famiglia possono controllare il dispositivo.</li>
+<li>Rivedi microfono, videocamera e notifiche, se presenti.</li>
+<li>Controlla le impostazioni di sicurezza del router e la password Wi-Fi.</li>
+<li>Conserva il manuale e la procedura ufficiale di ripristino.</li>
+<li>Leggi l'informativa privacy per capire quali dati vengono raccolti e come gestire l'account.</li>
+</ul>
+<p class="small">Non seguire istruzioni di pagine non ufficiali se chiedono di disattivare protezioni o condividere credenziali.</p>
+</section>
+<section class="pagebreak">
+<h2>3. Controllo periodico</h2>
+<p>Usa la tabella, per esempio una volta al mese o quando l'app segnala un aggiornamento. Annota le azioni necessarie senza registrare password o altri dati sensibili.</p>
+<table>
+<thead><tr><th>Data</th><th>Dispositivo</th><th>Aggiornamenti controllati</th><th>Account/permessi rivisti</th><th>Azione necessaria</th></tr></thead>
+<tbody><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr></tbody>
+</table>
+<h2>4. Se cambi casa, rete o proprietario</h2>
+<ol>
+<li>Consulta le istruzioni ufficiali per rimuovere il dispositivo dall'account.</li>
+<li>Revoca l'accesso agli utenti che non devono più controllarlo.</li>
+<li>Elimina dati personali e registrazioni usando le opzioni documentate dal produttore.</li>
+<li>Esegui il ripristino di fabbrica se previsto dal manuale.</li>
+<li>Verifica nell'app che il dispositivo non sia più associato al tuo account.</li>
+<li>Smaltisci il dispositivo e le batterie secondo le regole locali applicabili.</li>
+</ol>
+<h2>5. Compro o aspetto?</h2>
+<p>Spunta le voci per cui hai trovato una risposta sufficientemente chiara.</p>
+<ul class="checklist">
+<li>So quale problema pratico risolve.</li>
+<li>Ho verificato modello e compatibilità su una fonte ufficiale.</li>
+<li>Conosco eventuali costi ricorrenti.</li>
+<li>Ho trovato informazioni su aggiornamenti e assistenza.</li>
+<li>Ho capito quali dati e permessi richiede.</li>
+<li>Ho controllato garanzia, reso e identità del venditore.</li>
+</ul>
+<div class="field"><strong>La mia decisione</strong> □ Acquistare　□ Cercare alternative　□ Rimandare</div>
+<div class="field"><strong>Informazione ancora da verificare</strong><div class="form-lines"></div><div class="form-lines"></div></div>
+<div class="note">Questa checklist non è una certificazione e non assegna un punteggio di sicurezza. Se una voce importante resta sconosciuta, verifica prima di decidere.</div>
+<h2>6. Mini glossario</h2>
+<ul>
+<li><strong>Autenticazione a più fattori:</strong> passaggio aggiuntivo per verificare l'identità oltre alla password.</li>
+<li><strong>Hub/bridge:</strong> dispositivo che collega o coordina altri dispositivi smart.</li>
+<li><strong>Firmware:</strong> software interno del dispositivo, aggiornabile in alcuni casi dal produttore.</li>
+<li><strong>Permesso dell'app:</strong> autorizzazione ad accedere a funzioni o dati del telefono.</li>
+<li><strong>Ripristino di fabbrica:</strong> procedura che riporta il dispositivo alle impostazioni iniziali; gli effetti dipendono dal produttore.</li>
+</ul>
+<h2>Fonti da controllare prima della pubblicazione</h2>
+<ul>
+<li>Federal Trade Commission, <a href="https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home">Securing your internet-connected devices at home</a>.</li>
+<li>UK National Cyber Security Centre, risorsa sui dispositivi smart: il collegamento presente nella bozza sorgente va verificato e aggiornato.</li>
+<li>Commissione europea, informazioni sul Cyber Resilience Act: usare una pagina istituzionale corrente e verificare date e pertinenza prima della pubblicazione.</li>
+</ul>
+<p class="small">Le fonti e i collegamenti non sono ancora stati verificati per questa versione. Non presentare i riferimenti come revisione tecnica già completata.</p>
+<footer><strong>VORLI · Casa Smart senza sorprese</strong><br>Bozza educativa originale. Non è un audit tecnico, consulenza professionale o garanzia che un dispositivo sia sicuro. Le funzioni cambiano da modello a modello: consulta manuale e supporto ufficiale del produttore.<br><br><span class="draft-note">STATO: BOZZA DI LAVORO · NON PUBBLICARE NÉ VENDERE PRIMA DI REVISIONE, CONTROLLO DELLE FONTI, TEST DEL PDF E APPROVAZIONE.</span></footer>
+</section>
+</main>
+<script>
+const toggle=document.querySelector('button.secondary');
+toggle.addEventListener('click',()=>{const note=document.querySelector('.draft-note');note.hidden=!note.hidden;});
+</script>
+</body>
+</html>
