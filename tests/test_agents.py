@@ -52,7 +52,7 @@ class AgentRunnerTests(unittest.TestCase):
         report = run_agents(self.root)
         markdown = render_markdown(report)
         self.assertIn("# Rapporto agenti VORLI", markdown)
-        self.assertIn("non è un modello LLM autonomo", markdown)
+        self.assertIn("Non sono ancora agenti LLM autonomi", markdown)
         self.assertEqual(markdown.count("## "), 5)
 
 
