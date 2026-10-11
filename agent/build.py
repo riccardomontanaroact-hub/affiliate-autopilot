@@ -70,7 +70,7 @@ for product in products:
         f'<span class="tag demo">{ "Demo" if demo else "Prodotto" }</span>'
         f'<h2>{esc(product.get("name", "Prodotto"))}</h2>'
         f'<p class="muted">{esc(product.get("category", ""))}'
-        f' · {("⭐ " + esc(product.get("rating"))) if product.get("rating") else ""}</p>'
+        f' · {("⭐ " + esc(product.get("rating"))) if product.get("rating") and not demo else ""}</p>'
         f'<p>{esc(product.get("description", ""))}</p>'
         f'{price_html}{action}</article>'
     )
