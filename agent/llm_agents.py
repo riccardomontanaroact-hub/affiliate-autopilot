@@ -147,15 +147,15 @@ def render_ai_markdown(report):
 
 def write_reports(report, report_path=REPORT_PATH, markdown_path=MARKDOWN_PATH):
     report_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     markdown_path.parent.mkdir(parents=True, exist_ok=True)
-    previous = markdown_path.read_text(encoding="utf-8") if markdown_path.exists() else "# Rapporto agenti VORLI\\n"
+    previous = markdown_path.read_text(encoding="utf-8") if markdown_path.exists() else "# Rapporto agenti VORLI\n"
     start = previous.find("<!-- AI_AGENT_REVIEWS_START -->")
     end_marker = "<!-- AI_AGENT_REVIEWS_END -->"
     end = previous.find(end_marker, start) if start >= 0 else -1
     if start >= 0 and end >= 0:
-        previous = previous[:start].rstrip() + "\\n"
-    markdown_path.write_text(previous.rstrip() + "\\n" + render_ai_markdown(report), encoding="utf-8")
+        previous = previous[:start].rstrip() + "\n"
+    markdown_path.write_text(previous.rstrip() + "\n" + render_ai_markdown(report), encoding="utf-8")
 
 def run_reviews(api_key, model, report_path=REPORT_PATH, opener=urlopen):
     report = json.loads(report_path.read_text(encoding="utf-8"))
