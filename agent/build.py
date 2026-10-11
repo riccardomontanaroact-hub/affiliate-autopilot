@@ -105,7 +105,8 @@ catalog = f"""<!doctype html>
 
 rows = "".join(
     f"<tr><td>{esc(p.get('name', ''))}</td><td>{esc(p.get('merchant', ''))}</td>"
-    f"<td>{float(p.get('commission_rate', 0)) * 100:.2f}%</td><td>{p['score']}</td></tr>"
+    f"<td>{'—' if (p.get('affiliate_url', '').startswith('https://example.com') or p.get('merchant', '').strip().upper() in {'INSERISCI NETWORK', 'DEMO'}) else f'{float(p.get("commission_rate", 0)) * 100:.2f}%'}</td>"
+    f"<td>{'Non disponibile (demo)' if (p.get('affiliate_url', '').startswith('https://example.com') or p.get('merchant', '').strip().upper() in {'INSERISCI NETWORK', 'DEMO'}) else p['score']}</td></tr>"
     for p in products
 )
 dashboard = f"""<!doctype html><html lang="it"><head><meta charset="utf-8">
