@@ -17,6 +17,8 @@ jobs:
           python-version: '3.x'
       - name: Compile Python modules
         run: python -m compileall -q agent
+      - name: Test five-agent runner
+        run: python -m unittest discover -s tests -v
       - name: Build site and catalogue
         run: python agent/build.py
       - name: Check patch whitespace
