@@ -39,6 +39,8 @@ th{background:var(--pale)}
 .small{font-size:.88rem;color:var(--muted)}
 footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
 a{color:#164ec4;overflow-wrap:anywhere}
+a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+.contents ol{line-height:1.9}
 .pagebreak{break-before:page}
 @media(max-width:600px){.document{margin:0;padding:1.2rem}.cover{min-height:65vh}table{font-size:.78rem}th,td{padding:.35rem}}
 @media print{
@@ -67,11 +69,25 @@ a{color:#164ec4;overflow-wrap:anywhere}
 <p class="subtitle">Una guida semplice per scegliere, configurare e controllare i dispositivi connessi di casa con maggiore consapevolezza.</p>
 <div class="meta"><strong>Bozza editoriale 0.2 · Non in vendita</strong><br>Formato di lavoro per revisione e prova di stampa. Non certifica la sicurezza di alcun prodotto e non sostituisce le istruzioni del produttore.</div>
 </section>
+<section class="contents pagebreak" aria-label="Indice della guida">
+<h2>Indice</h2>
+<ol>
+<li><a href="#prima-di-iniziare">Prima di iniziare</a></li>
+<li><a href="#prima-di-acquistare">Prima di acquistare</a></li>
+<li><a href="#configurazione">Durante la configurazione</a></li>
+<li><a href="#controllo-periodico">Controllo periodico</a></li>
+<li><a href="#cambio-casa">Se cambi casa, rete o proprietario</a></li>
+<li><a href="#compro-o-aspetto">Compro o aspetto?</a></li>
+<li><a href="#glossario">Mini glossario</a></li>
+<li><a href="#fonti">Fonti da controllare prima della pubblicazione</a></li>
+</ol>
+<p class="small">L'indice è cliccabile nella versione HTML; nella stampa rimane come elenco di riferimento.</p>
+</section>
 <section>
-<h2>Prima di iniziare</h2>
+<h2 id="prima-di-iniziare">Prima di iniziare</h2>
 <p>Una casa connessa può essere comoda, ma ogni dispositivo porta con sé decisioni su compatibilità, aggiornamenti, account, autorizzazioni, rete e dati personali. Questa guida ti aiuta a raccogliere le informazioni prima dell'acquisto e a ricordare i controlli periodici.</p>
 <div class="note"><strong>Principio guida:</strong> se un'informazione importante non è chiara, segnala il dubbio e consulta la documentazione ufficiale prima di procedere.</div>
-<h2>1. Prima di acquistare</h2>
+<h2 id="prima-di-acquistare">1. Prima di acquistare</h2>
 <p>Compila una scheda per ogni dispositivo che stai valutando.</p>
 <div class="field"><strong>Dispositivo e modello esatto</strong><div class="form-lines"></div></div>
 <div class="field"><strong>Produttore e pagina ufficiale</strong><div class="form-lines"></div></div>
@@ -84,7 +100,7 @@ a{color:#164ec4;overflow-wrap:anywhere}
 <div class="field"><strong>Garanzia, assistenza e condizioni di reso</strong><div class="form-lines"></div></div>
 <div class="field"><strong>Data del controllo e fonte consultata</strong><div class="form-lines"></div></div>
 <div class="note"><strong>Attenzione:</strong> non basarti solo sul nome commerciale o sulla forma del connettore. Controlla il modello esatto e la documentazione ufficiale.</div>
-<h2>2. Durante la configurazione</h2>
+<h2 id="configurazione">2. Durante la configurazione</h2>
 <ul class="checklist">
 <li>Cambia le credenziali predefinite, se presenti, usando una password unica e robusta.</li>
 <li>Attiva l'autenticazione a più fattori, se disponibile.</li>
@@ -99,13 +115,13 @@ a{color:#164ec4;overflow-wrap:anywhere}
 <p class="small">Non seguire istruzioni di pagine non ufficiali se chiedono di disattivare protezioni o condividere credenziali.</p>
 </section>
 <section class="pagebreak">
-<h2>3. Controllo periodico</h2>
+<h2 id="controllo-periodico">3. Controllo periodico</h2>
 <p>Usa la tabella, per esempio una volta al mese o quando l'app segnala un aggiornamento. Annota le azioni necessarie senza registrare password o altri dati sensibili.</p>
 <table>
 <thead><tr><th>Data</th><th>Dispositivo</th><th>Aggiornamenti controllati</th><th>Account/permessi rivisti</th><th>Azione necessaria</th></tr></thead>
 <tbody><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr></tbody>
 </table>
-<h2>4. Se cambi casa, rete o proprietario</h2>
+<h2 id="cambio-casa">4. Se cambi casa, rete o proprietario</h2>
 <ol>
 <li>Consulta le istruzioni ufficiali per rimuovere il dispositivo dall'account.</li>
 <li>Revoca l'accesso agli utenti che non devono più controllarlo.</li>
@@ -114,7 +130,7 @@ a{color:#164ec4;overflow-wrap:anywhere}
 <li>Verifica nell'app che il dispositivo non sia più associato al tuo account.</li>
 <li>Smaltisci il dispositivo e le batterie secondo le regole locali applicabili.</li>
 </ol>
-<h2>5. Compro o aspetto?</h2>
+<h2 id="compro-o-aspetto">5. Compro o aspetto?</h2>
 <p>Spunta le voci per cui hai trovato una risposta sufficientemente chiara.</p>
 <ul class="checklist">
 <li>So quale problema pratico risolve.</li>
@@ -127,7 +143,7 @@ a{color:#164ec4;overflow-wrap:anywhere}
 <div class="field"><strong>La mia decisione</strong> □ Acquistare　□ Cercare alternative　□ Rimandare</div>
 <div class="field"><strong>Informazione ancora da verificare</strong><div class="form-lines"></div><div class="form-lines"></div></div>
 <div class="note">Questa checklist non è una certificazione e non assegna un punteggio di sicurezza. Se una voce importante resta sconosciuta, verifica prima di decidere.</div>
-<h2>6. Mini glossario</h2>
+<h2 id="glossario">6. Mini glossario</h2>
 <ul>
 <li><strong>Autenticazione a più fattori:</strong> passaggio aggiuntivo per verificare l'identità oltre alla password.</li>
 <li><strong>Hub/bridge:</strong> dispositivo che collega o coordina altri dispositivi smart.</li>
@@ -135,7 +151,7 @@ a{color:#164ec4;overflow-wrap:anywhere}
 <li><strong>Permesso dell'app:</strong> autorizzazione ad accedere a funzioni o dati del telefono.</li>
 <li><strong>Ripristino di fabbrica:</strong> procedura che riporta il dispositivo alle impostazioni iniziali; gli effetti dipendono dal produttore.</li>
 </ul>
-<h2>Fonti da controllare prima della pubblicazione</h2>
+<h2 id="fonti">Fonti da controllare prima della pubblicazione</h2>
 <ul>
 <li>Federal Trade Commission, <a href="https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home">Securing your internet-connected devices at home</a>.</li>
 <li>UK National Cyber Security Centre, <a href="https://www.ncsc.gov.uk/guidance/smart-devices-in-the-home">Smart devices: using them safely in your home</a>.</li>
