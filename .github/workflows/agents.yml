@@ -40,7 +40,7 @@ jobs:
         uses: actions/github-script@v7
         env:
           REPORT_PATH: reports/agent-status.md
-          PROGRESS_ISSUE: 'ISSUE_NUMBER_TO_SET'
+          PROGRESS_ISSUE: '25'
         with:
           script: |
             const fs = require('fs');
