@@ -29,7 +29,14 @@ jobs:
           python-version: '3.x'
       - name: Run five specialist agents
         run: python agent/agents.py
+      - name: Optional AI reasoning (opt-in; may incur API costs)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          VORLI_LLM_ENABLED: ${{ vars.VORLI_LLM_ENABLED }}
+        run: python agent/llm_agents.py
       - name: Upload auditable report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: vorli-agent-report-${{ github.run_number }}
