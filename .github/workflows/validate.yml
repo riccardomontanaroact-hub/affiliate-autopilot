@@ -83,14 +83,19 @@ jobs:
           grep -Eq '^Pages:[[:space:]]+[1-9][0-9]*' preview-output/pdf-info.txt
           pages=$(awk '/^Pages:/ {print $2}' preview-output/pdf-info.txt)
           section_page=""
+          final_page=""
           for page_number in $(seq 1 "$pages"); do
             page_text=$(pdftotext -f "$page_number" -l "$page_number" -layout preview-output/guide-a4.pdf -)
             if printf '%s' "$page_text" | grep -Fq '5. Compro o aspetto?' && printf '%s' "$page_text" | grep -Fq 'La mia decisione'; then
               section_page="$page_number"
             fi
+            if printf '%s' "$page_text" | grep -Fq 'Fonti da controllare prima della pubblicazione' && printf '%s' "$page_text" | grep -Fq 'VORLI · Casa Smart senza sorprese'; then
+              final_page="$page_number"
+            fi
           done
           test -n "$section_page" || (echo "La sezione 'Compro o aspetto?' e la decisione sono state separate nel PDF" && exit 1)
-          echo "Sezione decisionale verificata sulla pagina $section_page di $pages."
+          test -n "$final_page" || (echo "Il piè di pagina è rimasto isolato su una pagina separata" && exit 1)
+          echo "Sezione decisionale verificata a pagina $section_page; fonti e piè di pagina insieme a pagina $final_page."
       - name: Upload temporary screenshots and PDF
         if: always()
         uses: actions/upload-artifact@v4
