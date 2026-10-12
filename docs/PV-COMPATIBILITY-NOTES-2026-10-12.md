@@ -21,3 +21,4 @@ Articolo informativo: «Come leggere Voc e Vmp prima di scegliere un pannello so
 ## Fonti pubbliche (consultate 12 ottobre 2026)
 - https://ui.awin.com/merchant-profile/107466
 - https://ui.awin.com/merchant-profile/19988
+- https://faq.jackery.com/hc/en-us/articles/52357045576731-Can-third-party-solar-panels-be-used-with-Jackery-Power-Stations
