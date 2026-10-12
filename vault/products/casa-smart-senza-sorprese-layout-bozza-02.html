@@ -69,7 +69,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
 <body>
 <div class="toolbar" aria-label="Strumenti documento">
 <button class="primary" type="button" onclick="window.print()">Stampa / salva in PDF</button>
-<button class="secondary" type="button" aria-expanded="true">Mostra/nascondi note di bozza</button>
+
 </div>
 <main class="document">
 <section class="cover">
@@ -175,9 +175,6 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
 <footer><strong>VORLI · Casa Smart senza sorprese</strong><br>Bozza educativa originale. Non è un audit tecnico, consulenza professionale o garanzia che un dispositivo sia sicuro. Le funzioni cambiano da modello a modello: consulta manuale e supporto ufficiale del produttore.<br><br><span class="draft-note">STATO: BOZZA DI LAVORO · NON PUBBLICARE NÉ VENDERE PRIMA DI REVISIONE, CONTROLLO DELLE FONTI, TEST DEL PDF E APPROVAZIONE.</span></footer>
 </section>
 </main>
-<script>
-const toggle=document.querySelector('button.secondary');
-toggle.addEventListener('click',()=>{const hidden=toggle.getAttribute('aria-expanded')==='true';document.querySelectorAll('.draft-note, .meta').forEach(note=>{note.hidden=hidden;});toggle.setAttribute('aria-expanded',String(!hidden));toggle.textContent=hidden?'Mostra note di bozza':'Nascondi note di bozza';});
-</script>
+
 </body>
 </html>
