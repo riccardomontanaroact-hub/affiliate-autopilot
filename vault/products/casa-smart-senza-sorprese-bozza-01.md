@@ -41,6 +41,7 @@ Prima di collegare il dispositivo all'uso quotidiano:
 - ☐ Verifica quali membri della famiglia possono controllare il dispositivo.
 - ☐ Esamina le impostazioni relative a microfono, videocamera e notifiche, se presenti.
 - ☐ Controlla le impostazioni di sicurezza del router e la password della rete Wi-Fi.
+- ☐ Disattiva l'accesso remoto al dispositivo, se non ti serve e se l'opzione è disponibile.
 - ☐ Conserva il manuale e annota la procedura ufficiale per ripristinare il dispositivo.
 - ☐ Leggi l'informativa privacy per capire quali dati vengono raccolti e come gestire l'account.
 
@@ -94,7 +95,7 @@ Il punteggio non è una certificazione: se una voce importante resta sconosciuta
 
 ## Fonti da consultare
 
-Collegamenti controllati l'11 ottobre 2026. Le fonti offrono indicazioni generali; prima di un rilascio commerciale bisogna ricontrollare aggiornamenti, pertinenza e accuratezza dei singoli passaggi, senza presentare questo elenco come una revisione tecnica o legale completa:
+Collegamenti ricontrollati il 12 ottobre 2026. La pagina della Commissione europea indica che gli obblighi di segnalazione della CRA si applicano dall'11 settembre 2026 e che la maggior parte degli obblighi si applicherà dall'11 dicembre 2027. Queste date riguardano gli obblighi previsti per gli operatori interessati, non azioni normative che il consumatore deve eseguire. Le fonti offrono indicazioni generali; prima di un rilascio commerciale bisogna ricontrollare aggiornamenti, pertinenza e accuratezza dei singoli passaggi, senza presentare questo elenco come una revisione tecnica o legale completa:
 
 - Federal Trade Commission — Securing your internet-connected devices at home: https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home
 - UK National Cyber Security Centre — Smart devices: using them safely in your home: https://www.ncsc.gov.uk/guidance/smart-devices-in-the-home
