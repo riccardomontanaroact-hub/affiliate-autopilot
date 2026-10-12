@@ -172,9 +172,21 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
 <li>Commissione europea, <a href="https://digital-strategy.ec.europa.eu/it/policies/cyber-resilience-act">Legge sulla ciberresilienza (Cyber Resilience Act)</a>: consultare per il contesto normativo, senza interpretarlo come consulenza legale.</li>
 </ul>
 <p class="small">Collegamenti inseriti per la revisione editoriale; la loro disponibilità e l’aggiornamento dei contenuti devono essere ricontrollati prima del rilascio. Le fonti supportano indicazioni generali, ma non costituiscono una revisione tecnica o legale completa del prodotto. Verificare anche l’applicabilità in Italia/UE e l’accuratezza editoriale.</p>
-<footer><strong>VORLI · Casa Smart senza sorprese</strong><br>Bozza educativa originale. Non è un audit tecnico, consulenza professionale o garanzia che un dispositivo sia sicuro. Le funzioni cambiano da modello a modello: consulta manuale e supporto ufficiale del produttore.<br><br><span class="draft-note">STATO: BOZZA DI LAVORO · NON PUBBLICARE NÉ VENDERE PRIMA DI REVISIONE, CONTROLLO DELLE FONTI, TEST DEL PDF E APPROVAZIONE.</span></footer>
+<footer><strong>VORLI · Casa Smart senza sorprese</strong><br>Bozza educativa originale. Non è un audit tecnico, consulenza professionale o garanzia che un dispositivo sia sicuro. Le funzioni cambiano da modello a modello: consulta manuale e supporto ufficiale del produttore.<br><br><span class="draft-note" id="draft-notes">STATO: BOZZA DI LAVORO · NON PUBBLICARE NÉ VENDERE PRIMA DI REVISIONE, CONTROLLO DELLE FONTI, TEST DEL PDF E APPROVAZIONE.</span></footer>
 </section>
 </main>
-
+<script>
+(() => {
+  const toggle = document.querySelector('button.secondary[aria-controls="draft-notes"]');
+  const notes = document.getElementById('draft-notes');
+  if (!toggle || !notes) return;
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    notes.hidden = expanded;
+    toggle.textContent = expanded ? 'Mostra note di bozza' : 'Nascondi note di bozza';
+  });
+})();
+</script>
 </body>
 </html>
