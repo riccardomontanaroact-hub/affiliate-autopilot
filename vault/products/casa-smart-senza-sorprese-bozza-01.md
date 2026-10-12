@@ -1,7 +1,7 @@
 # VORLI — Casa Smart senza sorprese
 ## Guida pratica e checklist per scegliere e gestire dispositivi connessi
 
-**Versione:** bozza editoriale 0.1  
+**Versione:** bozza editoriale 0.2  
 **Stato:** prodotto digitale in preparazione; non pubblicato e non in vendita  
 **Formato previsto:** PDF A4 stampabile + versione digitale compilabile  
 **Pubblico:** persone che vogliono scegliere e gestire dispositivi smart home con più consapevolezza
