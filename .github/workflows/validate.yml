@@ -55,13 +55,22 @@ jobs:
               const ids = await page.locator('[id]').evaluateAll(nodes => nodes.map(n => n.id));
               const missing = anchors.filter(id => !ids.includes(id));
               if (missing.length) throw new Error('Ancore interne senza destinazione: ' + missing.join(', '));
-              const toggle = page.locator('button.secondary');
+              const toggle = page.locator('button.secondary[aria-controls="draft-notes"]');
+              if (!(await toggle.getAttribute('aria-label')) && !(await toggle.innerText()).trim()) throw new Error('Pulsante note senza etichetta accessibile');
               await toggle.click();
               if (await toggle.getAttribute('aria-expanded') !== 'false') throw new Error('Il pulsante note non aggiorna aria-expanded');
-              if (await page.locator('.draft-note').isVisible()) throw new Error('La nota di bozza dovrebbe essere nascosta dopo il click');
+              if (await toggle.innerText() !== 'Mostra note di bozza') throw new Error('Il testo del pulsante non descrive lo stato chiuso');
+              if (await page.locator('#draft-notes').isVisible()) throw new Error('La nota di bozza dovrebbe essere nascosta dopo il click');
               await toggle.click();
               if (await toggle.getAttribute('aria-expanded') !== 'true') throw new Error('Il pulsante note non ripristina aria-expanded');
-              if (await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)) throw new Error('Overflow orizzontale su viewport mobile');
+              if (await toggle.innerText() !== 'Nascondi note di bozza') throw new Error('Il testo del pulsante non descrive lo stato aperto');
+              const external = await page.locator('a[href^="https://"]').evaluateAll(links => links.map(a => new URL(a.href).hostname));
+              const allowed = ['consumer.ftc.gov', 'www.ncsc.gov.uk', 'digital-strategy.ec.europa.eu'];
+              if (external.length !== 3 || external.some(host => !allowed.includes(host)) || allowed.some(host => !external.includes(host))) throw new Error('Le fonti esterne non corrispondono alla lista istituzionale prevista');
+              await page.setViewportSize({ width: 360, height: 800 });
+              if (await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)) throw new Error('Overflow orizzontale a 360 px');
+              await page.setViewportSize({ width: 390, height: 844 });
+              if (await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)) throw new Error('Overflow orizzontale a 390 px');
               await page.screenshot({ path: 'preview-output/mobile.png', fullPage: true });
               await page.setViewportSize({ width: 1440, height: 1000 });
               await page.screenshot({ path: 'preview-output/desktop.png', fullPage: true });
@@ -72,6 +81,16 @@ jobs:
           NODE
           pdfinfo preview-output/guide-a4.pdf | tee preview-output/pdf-info.txt
           grep -Eq '^Pages:[[:space:]]+[1-9][0-9]*' preview-output/pdf-info.txt
+          pages=$(awk '/^Pages:/ {print $2}' preview-output/pdf-info.txt)
+          section_page=""
+          for page_number in $(seq 1 "$pages"); do
+            page_text=$(pdftotext -f "$page_number" -l "$page_number" -layout preview-output/guide-a4.pdf -)
+            if printf '%s' "$page_text" | grep -Fq '5. Compro o aspetto?' && printf '%s' "$page_text" | grep -Fq 'La mia decisione'; then
+              section_page="$page_number"
+            fi
+          done
+          test -n "$section_page" || (echo "La sezione 'Compro o aspetto?' e la decisione sono state separate nel PDF" && exit 1)
+          echo "Sezione decisionale verificata sulla pagina $section_page di $pages."
       - name: Upload temporary screenshots and PDF
         if: always()
         uses: actions/upload-artifact@v4
