@@ -1,6 +1,7 @@
 # QA manuale — Casa Smart senza sorprese (bozza HTML)
 
-**Stato:** checklist di verifica; non equivale a un test eseguito.  
+**Stato:** checklist di verifica; non equivale a un test eseguito.
+**Ultimo controllo automatico:** GitHub Actions run 29 (11 ottobre 2026), esito positivo. Il PDF generato è A4, 7 pagine; la sezione «Compro o aspetto?» e il campo «La mia decisione» risultano nella stessa pagina. Il test automatico non sostituisce le prove manuali, la verifica di accessibilità del PDF o l'approvazione finale.  
 **File da verificare:** `vault/products/casa-smart-senza-sorprese-layout-bozza-02.html`  
 **Rilascio:** bloccato finché i controlli richiesti e l'approvazione del proprietario non sono completati.
 
@@ -8,7 +9,7 @@
 - [ ] HTML valido e struttura semantica corretta.
 - [ ] Ogni collegamento dell'indice punta a un ID esistente.
 - [ ] Tutti i pulsanti hanno un'etichetta comprensibile e stato accessibile.
-- [ ] La funzione mostra/nascondi aggiorna testo e `aria-expanded` in modo coerente.
+- [ ] La funzione mostra/nascondi aggiorna testo, visibilità e `aria-expanded` in modo coerente.
 - [ ] Nessun dato personale, password, token o segreto incluso.
 - [ ] I link esterni sono quelli delle fonti istituzionali dichiarate e vengono ricontrollati prima del rilascio.
 
@@ -36,6 +37,7 @@
 
 ## Gate di rilascio
 - [ ] Tutti i controlli sopra completati e documentati.
+- [ ] Verificare separatamente l'accessibilità del PDF esportato (il PDF automatico corrente non è contrassegnato/tagged).
 - [ ] Eventuali problemi corretti e testati di nuovo.
 - [ ] Revisione umana finale e approvazione esplicita.
 - [ ] Prezzo, termini, privacy, fiscalità, pagamento e consegna valutati separatamente.
