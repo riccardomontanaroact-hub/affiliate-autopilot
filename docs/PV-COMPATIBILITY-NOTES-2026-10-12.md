@@ -17,3 +17,7 @@ ALLPOWERS IT (Awin 107466): commissione pubblicizzata 5%, cookie 30 giorni. eWek
 
 ## SEO
 Articolo informativo: «Come leggere Voc e Vmp prima di scegliere un pannello solare». Revisione tecnica, fiscale e legale prima del rilascio.
+
+## Fonti pubbliche (consultate 12 ottobre 2026)
+- https://ui.awin.com/merchant-profile/107466
+- https://ui.awin.com/merchant-profile/19988
