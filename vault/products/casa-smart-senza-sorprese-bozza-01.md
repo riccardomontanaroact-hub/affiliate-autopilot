@@ -70,7 +70,7 @@ Prima di cedere o dismettere un dispositivo:
 
 ## 5. Scheda rapida: comprare o aspettare?
 
-Segna un punto per ogni risposta positiva.
+Spunta le voci per cui hai trovato una risposta sufficientemente chiara.
 
 - ☐ So quale problema pratico risolve.
 - ☐ Ho verificato il modello e la compatibilità sulla fonte ufficiale.
