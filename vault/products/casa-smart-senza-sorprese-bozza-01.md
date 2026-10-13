@@ -96,7 +96,7 @@ Il punteggio non è una certificazione: se una voce importante resta sconosciuta
 
 ## Fonti da consultare
 
-Collegamenti ricontrollati il 12 ottobre 2026. La pagina della Commissione europea indica che gli obblighi di segnalazione della CRA si applicano dall'11 settembre 2026 e che la maggior parte degli obblighi si applicherà dall'11 dicembre 2027. Queste date riguardano gli obblighi previsti per gli operatori interessati, non azioni normative che il consumatore deve eseguire. Le fonti offrono indicazioni generali; prima di un rilascio commerciale bisogna ricontrollare aggiornamenti, pertinenza e accuratezza dei singoli passaggi, senza presentare questo elenco come una revisione tecnica o legale completa:
+Collegamenti ricontrollati il 13 ottobre 2026. La pagina della Commissione europea indica che gli obblighi di segnalazione della CRA si applicano dall'11 settembre 2026 e che la maggior parte degli obblighi si applicherà dall'11 dicembre 2027. Queste date riguardano gli obblighi previsti per gli operatori interessati, non azioni normative che il consumatore deve eseguire. Le fonti offrono indicazioni generali; prima di un rilascio commerciale bisogna ricontrollare aggiornamenti, pertinenza e accuratezza dei singoli passaggi, senza presentare questo elenco come una revisione tecnica o legale completa:
 
 - Federal Trade Commission — Securing your internet-connected devices at home: https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home
 - UK National Cyber Security Centre — Smart devices: using them safely in your home: https://www.ncsc.gov.uk/guidance/smart-devices-in-the-home
