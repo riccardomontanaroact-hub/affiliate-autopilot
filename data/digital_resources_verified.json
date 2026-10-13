@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-13",
+  "note": "Existing source files verified through GitHub; draft status does not imply publication rights or readiness.",
+  "resources": [
+    {
+      "id": "usb-c",
+      "title": "Kit compatibilità USB-C",
+      "category": "computer",
+      "source_ref": "vorli/research-usbc-20261009",
+      "source_path": "vault/products/kit-compatibilita-usbc-2026.md",
+      "source_verified_at": "2026-10-13",
+      "status": "editorial_draft",
+      "sale_enabled": false,
+      "download_format": "markdown",
+      "approval_for_publication": false
+    },
+    {
+      "id": "casa-smart",
+      "title": "Casa Smart Sicura",
+      "category": "accessori-casa",
+      "source_ref": "vorli/monetization-smart-home-20261009",
+      "source_path": "vault/products/checklist-casa-smart-20261009.md",
+      "source_verified_at": "2026-10-13",
+      "status": "editorial_draft",
+      "sale_enabled": false,
+      "download_format": "markdown",
+      "approval_for_publication": false
+    },
+    {
+      "id": "power-station",
+      "title": "Confronta Power Station",
+      "category": "energia-portatile",
+      "source_ref": "vorli/powerstation-buyer-checklist-20261009-0707",
+      "source_path": "vault/products/scheda-confronto-power-station-20261009.md",
+      "source_verified_at": "2026-10-13",
+      "status": "editorial_draft",
+      "sale_enabled": false,
+      "download_format": "markdown",
+      "approval_for_publication": false
+    },
+    {
+      "id": "elettrodomestici",
+      "title": "Confronta Elettrodomestici",
+      "category": "elettrodomestici-smart",
+      "source_ref": "vorli/monetization-eprel-20261009",
+      "source_path": "vault/products/confronta-elettrodomestici-eprel-workbook-20261009.md",
+      "source_verified_at": "2026-10-13",
+      "status": "editorial_draft",
+      "sale_enabled": false,
+      "download_format": "markdown",
+      "approval_for_publication": false
+    },
+    {
+      "id": "casa-smart-interattiva",
+      "title": "Casa Smart — scheda compilabile",
+      "category": "accessori-casa",
+      "source_ref": "vorli/product-casa-smart-checklist-20261013-0510",
+      "source_path": "drafts/casa-smart-checklist-interattiva-2026-10-13.html",
+      "source_verified_at": "2026-10-13",
+      "status": "editorial_draft",
+      "sale_enabled": false,
+      "download_format": "html",
+      "approval_for_publication": false
+    }
+  ]
+}
