@@ -35,6 +35,8 @@ fieldset,.note,.warning,footer{break-inside:avoid}h2{break-after:avoid}textarea{
 <label>Accessori iniziali (€) · facoltativo<input type="number" name="accessories" min="0" step=".01" inputmode="decimal" placeholder="0,00"></label>
 <label>Abbonamento mensile (€) · facoltativo<input type="number" name="monthly" min="0" step=".01" inputmode="decimal" placeholder="0,00"></label>
 <label>Abbonamento annuo (€) · facoltativo<input type="number" name="annual" min="0" step=".01" inputmode="decimal" placeholder="0,00"></label>
+<label>Consumo stimato (kWh/anno) · facoltativo<input type="number" name="kwhYear" min="0" step=".01" inputmode="decimal" placeholder="Es. 120"></label>
+<label>Prezzo energia (€/kWh) · facoltativo<input type="number" name="eurKwh" min="0" step=".0001" inputmode="decimal" placeholder="Es. 0,25"></label>
 </div>
 <label>Quale problema risolve? <textarea name="purpose"></textarea></label>
 <h2>2. Verifiche prima dell'acquisto</h2>
@@ -49,7 +51,8 @@ fieldset,.note,.warning,footer{break-inside:avoid}h2{break-after:avoid}textarea{
 <p class="note">Una casella vuota significa «da verificare», non «prodotto non sicuro». Controlla sempre il modello esatto e le condizioni vigenti.</p>
 <label>Dubbi e informazioni mancanti<textarea name="questions"></textarea></label>
 <h2>3. Costo indicativo su tre anni</h2>
-<p>Stima su 36 mesi = prezzo iniziale + accessori iniziali + 36 × canone mensile + 3 × canone annuo. I campi facoltativi vuoti valgono zero. <strong>Non inserire lo stesso abbonamento sia come mensile sia come annuale.</strong> La stima esclude consumi energetici, aumenti futuri, riparazioni, imposte e altre spese non inserite.</p>
+<p>Stima su 36 mesi = prezzo iniziale + accessori + 36 × canone mensile + 3 × canone annuo + 3 × consumo annuo (kWh) × prezzo energia (€/kWh). I campi facoltativi vuoti valgono zero, ma <strong>per includere l'energia devi compilare entrambi i campi energetici</strong>. Non inserire lo stesso abbonamento sia come mensile sia come annuale.</p>
+<p class="note">I consumi in W non sono kWh/anno. Alcune etichette riportano kWh per 100 cicli: per ricavare kWh/anno servono i cicli annuali stimati. Inserisci dati e ipotesi verificabili; la tariffa in €/kWh può non rappresentare l'intera bolletta. Sono esclusi variazioni di prezzo, riparazioni e costi non indicati.</p>
 <output id="total" aria-live="polite">Inserisci il prezzo iniziale per calcolare.</output>
 <h2>4. Decisione provvisoria</h2>
 <fieldset><legend>Come procedere?</legend>
@@ -59,7 +62,7 @@ fieldset,.note,.warning,footer{break-inside:avoid}h2{break-after:avoid}textarea{
 </fieldset>
 <label>Motivo della decisione e prossimo passo<textarea name="next"></textarea></label>
 </form>
-<footer><strong>VORLI · Bozza 0.3 · 13 ottobre 2026</strong><br>
+<footer><strong>VORLI · Bozza 0.4.2 · 13 ottobre 2026</strong><br>
 La scheda funziona localmente, senza servizi esterni o salvataggio automatico. La stampa PDF può conservare i dati inseriti; verifica l'anteprima prima di salvarla. Nessun prodotto è sponsorizzato o raccomandato da questa scheda.</footer>
 </main>
 <script>
@@ -68,15 +71,19 @@ const f=document.getElementById("form"),total=document.getElementById("total");
 function cost(){
  const p=f.elements.price.value;
  if(p===""){total.textContent="Inserisci il prezzo iniziale per calcolare.";return}
- const keys=["price","accessories","monthly","annual"];
+ const a=f.elements.kwhYear.value, b=f.elements.eurKwh.value;
+ if((a==="")!==(b==="")){total.textContent="Compila entrambi i campi energia oppure lasciali entrambi vuoti.";return}
+ const keys=["price","accessories","monthly","annual","kwhYear","eurKwh"];
  const values=keys.map(k=>f.elements[k].value===""?0:Number(f.elements[k].value));
  if(values.some(v=>!Number.isFinite(v)||v<0)){total.textContent="Valori non validi: usa importi non negativi.";return}
- const [price,accessories,monthly,annual]=values;
- const estimate=price+accessories+36*monthly+3*annual;
+ const [price,accessories,monthly,annual,kwhYear,eurKwh]=values;
+ const energy=3*kwhYear*eurKwh;
+ const estimate=price+accessories+36*monthly+3*annual+energy;
  if(!Number.isFinite(estimate)){total.textContent="Importi troppo elevati.";return}
- total.textContent="Costo indicativo in 36 mesi: "+estimate.toLocaleString("it-IT",{style:"currency",currency:"EUR"});
+ const euro=v=>v.toLocaleString("it-IT",{style:"currency",currency:"EUR"});
+ total.textContent="Costo indicativo in 36 mesi: "+euro(estimate)+(a===""?" (energia esclusa)":" · energia stimata: "+euro(energy));
 }
-["price","accessories","monthly","annual"].forEach(k=>f.elements[k].addEventListener("input",cost));
+["price","accessories","monthly","annual","kwhYear","eurKwh"].forEach(k=>f.elements[k].addEventListener("input",cost));
 document.getElementById("print").addEventListener("click",()=>window.print());
 document.getElementById("reset").addEventListener("click",()=>{
  if(confirm("Cancellare tutte le risposte?")){f.reset();cost();}
