@@ -36,7 +36,7 @@ Prima di collegare il dispositivo all'uso quotidiano:
 
 - ☐ Cambia le credenziali predefinite, se presenti, con una password unica e robusta.
 - ☐ Attiva l'autenticazione a più fattori, se disponibile.
-- ☐ Installa gli aggiornamenti ufficiali disponibili.
+- ☐ Installa gli aggiornamenti ufficiali disponibili e attiva l'aggiornamento automatico, se previsto e adatto al dispositivo.
 - ☐ Controlla i permessi richiesti dall'app e concedi solo quelli necessari alla funzione scelta.
 - ☐ Verifica quali membri della famiglia possono controllare il dispositivo.
 - ☐ Esamina le impostazioni relative a microfono, videocamera e notifiche, se presenti.
