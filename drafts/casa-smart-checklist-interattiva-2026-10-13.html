@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>VORLI | Casa Smart - Checklist interattiva (bozza)</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#1b273b;background:#eef3fa}
+*{box-sizing:border-box}body{margin:0}.toolbar{background:#1b273b;padding:12px;text-align:center}
+button{padding:10px 16px;border:0;border-radius:6px;font:inherit;font-weight:700;cursor:pointer;margin:3px}
+main{max-width:820px;margin:22px auto;background:white;padding:clamp(18px,4vw,42px);box-shadow:0 8px 24px #12213b20}
+header small{color:#225ac1;font-weight:900;letter-spacing:.2em}h1{font-size:clamp(27px,5vw,42px);line-height:1.12;margin:12px 0}
+h2{border-bottom:2px solid #c8d7eb;padding-bottom:7px;margin-top:30px;font-size:20px}
+.warning{border:2px solid #a45b00;background:#fff7e5;padding:12px;font-weight:700}
+.note{background:#edf4ff;padding:12px;border-left:4px solid #225ac1}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;margin:9px 0}
+input[type=text],input[type=number],textarea{width:100%;padding:9px;font:inherit;border:1px solid #7b8ca7;border-radius:4px}
+textarea{min-height:70px}input[type=checkbox],input[type=radio]{accent-color:#225ac1;width:17px;height:17px;vertical-align:middle}
+fieldset{border:1px solid #bdcbe0;margin:16px 0;padding:12px}legend{font-weight:750}
+output{display:block;font-size:1.15em;font-weight:800;padding:10px;background:#edf4ff}
+footer{margin-top:25px;padding-top:12px;border-top:1px solid #bdcbe0;font-size:.85em}
+:focus-visible{outline:3px solid #cf8400;outline-offset:2px}
+@media(max-width:620px){.grid{grid-template-columns:1fr}main{margin:0;box-shadow:none}}
+@media print{@page{size:A4;margin:14mm}:root{background:white;font-size:10pt}.toolbar{display:none!important}
+main{margin:0;box-shadow:none;padding:0;max-width:none}.warning{display:block!important;visibility:visible!important}
+fieldset,.note,.warning,footer{break-inside:avoid}h2{break-after:avoid}textarea{resize:none}}
+</style></head><body>
+<div class="toolbar"><button id="print" type="button">Stampa / salva PDF</button><button id="reset" type="button">Azzera risposte</button></div>
+<main><header><small>VORLI · KIT ORIGINALI</small><h1>Casa Smart senza sorprese</h1>
+<p>Una scheda offline per confrontare un dispositivo connesso prima di acquistarlo. Non inserire password, dati sanitari o informazioni personali.</p></header>
+<p class="warning">BOZZA EDITORIALE · NON PUBBLICARE NÉ VENDERE. Questa scheda non certifica la sicurezza, la conformità o la compatibilità di alcun prodotto.</p>
+<form id="form" autocomplete="off">
+<h2>1. Identifica ciò che stai valutando</h2>
+<div class="grid">
+<label>Prodotto e modello esatto<input type="text" name="model" placeholder="Es. presa smart, modello ..."></label>
+<label>Manuale o fonte del produttore<input type="text" name="manual" placeholder="Titolo / URL ufficiale"></label>
+<label>Prezzo iniziale (€)<input type="number" name="price" min="0" step=".01" inputmode="decimal" placeholder="0,00"></label>
+<label>Abbonamento annuo (€)<input type="number" name="annual" min="0" step=".01" inputmode="decimal" placeholder="0,00"></label>
+</div>
+<label>Quale problema risolve? <textarea name="purpose"></textarea></label>
+<h2>2. Verifiche prima dell'acquisto</h2>
+<fieldset><legend>Segna solo ciò che hai realmente verificato</legend>
+<label><input type="checkbox" name="checks"> Compatibilità con rete Wi-Fi, telefono e sistema operativo</label>
+<label><input type="checkbox" name="checks"> Eventuale necessità di hub, account o abbonamento</label>
+<label><input type="checkbox" name="checks"> Funzioni disponibili senza Internet</label>
+<label><input type="checkbox" name="checks"> Aggiornamenti di sicurezza e periodo di supporto dichiarato</label>
+<label><input type="checkbox" name="checks"> Privacy, permessi e possibilità di eliminare i dati</label>
+<label><input type="checkbox" name="checks"> Garanzia, resi, assistenza e ricambi</label>
+</fieldset>
+<p class="note">Una casella vuota significa «da verificare», non «prodotto non sicuro». Controlla sempre il modello esatto e le condizioni vigenti.</p>
+<label>Dubbi e informazioni mancanti<textarea name="questions"></textarea></label>
+<h2>3. Costo indicativo su tre anni</h2>
+<p>Il calcolo include soltanto prezzo iniziale e tre quote annuali. Esclude energia, accessori, sostituzioni, tasse o altre spese.</p>
+<output id="total" aria-live="polite">Inserisci prezzo e abbonamento per calcolare.</output>
+<h2>4. Decisione provvisoria</h2>
+<fieldset><legend>Come procedere?</legend>
+<label><input type="radio" name="decision" value="check"> Verificare altre informazioni</label>
+<label><input type="radio" name="decision" value="compare"> Confrontare alternative</label>
+<label><input type="radio" name="decision" value="consider"> Valutare l'acquisto dopo le verifiche</label>
+</fieldset>
+<label>Motivo della decisione e prossimo passo<textarea name="next"></textarea></label>
+</form>
+<footer><strong>VORLI · Bozza 0.2 · 13 ottobre 2026</strong><br>
+La scheda funziona localmente, senza servizi esterni o salvataggio automatico. La stampa PDF può conservare i dati inseriti; verifica l'anteprima prima di salvarla. Nessun prodotto è sponsorizzato o raccomandato da questa scheda.</footer>
+</main>
+<script>
+"use strict";
+const f=document.getElementById("form"),total=document.getElementById("total");
+function cost(){
+ const p=f.elements.price.value,a=f.elements.annual.value;
+ if(p===""||a===""){total.textContent="Inserisci prezzo e abbonamento per calcolare.";return}
+ const price=Number(p),annual=Number(a);
+ if(!Number.isFinite(price)||!Number.isFinite(annual)||price<0||annual<0){total.textContent="Valori non validi.";return}
+ total.textContent="Costo indicativo in 3 anni: "+(price+3*annual).toLocaleString("it-IT",{style:"currency",currency:"EUR"});
+}
+f.elements.price.addEventListener("input",cost);f.elements.annual.addEventListener("input",cost);
+document.getElementById("print").addEventListener("click",()=>window.print());
+document.getElementById("reset").addEventListener("click",()=>{
+ if(confirm("Cancellare tutte le risposte?")){f.reset();cost();}
+});
+</script></body></html>
