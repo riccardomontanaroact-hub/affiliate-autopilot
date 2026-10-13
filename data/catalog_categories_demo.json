@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-13",
+  "purpose": "editorial_demo_only",
+  "production_ready": false,
+  "checkout_enabled": false,
+  "advertiser_approval_verified": false,
+  "categories": [
+    {
+      "slug": "computer",
+      "title": "Computer",
+      "description": "Notebook, desktop, monitor e periferiche",
+      "status": "demo",
+      "offers": [],
+      "affiliate_links": []
+    },
+    {
+      "slug": "software",
+      "title": "Software",
+      "description": "Produttività, creatività e sicurezza digitale",
+      "status": "demo",
+      "offers": [],
+      "affiliate_links": []
+    },
+    {
+      "slug": "elettronica",
+      "title": "Elettronica",
+      "description": "Audio, accessori, ricarica e connettività",
+      "status": "demo",
+      "offers": [],
+      "affiliate_links": []
+    },
+    {
+      "slug": "elettrodomestici-smart",
+      "title": "Elettrodomestici smart",
+      "description": "Consumi, funzionalità e automazioni",
+      "status": "demo",
+      "offers": [],
+      "affiliate_links": []
+    },
+    {
+      "slug": "accessori-casa",
+      "title": "Accessori casa",
+      "description": "Wi-Fi, sicurezza e comfort",
+      "status": "demo",
+      "offers": [],
+      "affiliate_links": []
+    },
+    {
+      "slug": "sport-tech",
+      "title": "Sport tech",
+      "description": "Wearable e strumenti per allenarsi",
+      "status": "demo",
+      "offers": [],
+      "affiliate_links": []
+    },
+    {
+      "slug": "benessere-tech",
+      "title": "Benessere tecnologico",
+      "description": "Comfort, monitoraggio e abitudini",
+      "status": "demo",
+      "offers": [],
+      "affiliate_links": []
+    },
+    {
+      "slug": "energia-portatile",
+      "title": "Energia portatile",
+      "description": "Power station, USB-C e autonomia",
+      "status": "demo",
+      "offers": [],
+      "affiliate_links": []
+    }
+  ]
+}
