@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>VORLI | Autonomia power station - bozza</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#17283c;background:#edf3f9}
+*{box-sizing:border-box}body{margin:0}.toolbar{padding:12px;text-align:center;background:#16283c;color:#fff}
+button{font:inherit;font-weight:700;padding:10px 15px;border:0;border-radius:7px;margin:3px;cursor:pointer}
+main{max-width:800px;margin:24px auto;background:#fff;padding:clamp(18px,4vw,42px);box-shadow:0 8px 30px #13233920}
+h1{font-size:clamp(27px,5vw,40px);line-height:1.15}h2{font-size:21px;margin-top:28px}
+.badge{font-size:.82em;font-weight:900;letter-spacing:.15em;color:#1c62b0}
+.warning{background:#fff4df;border:2px solid #9a5b00;padding:12px;font-weight:650}
+.note{background:#edf4ff;border-left:4px solid #1c62b0;padding:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;margin:10px 0;font-weight:650}label span{display:block;font-weight:400;font-size:.9em}
+input[type=number],input[type=text],textarea{width:100%;padding:11px;border:1px solid #71849b;border-radius:5px;font:inherit}
+textarea{min-height:70px}output{display:block;background:#e6f2fc;padding:15px;border-radius:6px;font-weight:700;white-space:pre-line}
+footer{border-top:1px solid #bdc9d7;margin-top:25px;padding-top:12px;font-size:.86em}
+:focus-visible{outline:3px solid #d28b00;outline-offset:2px}
+@media(max-width:620px){.grid{grid-template-columns:1fr}main{margin:0;box-shadow:none}}
+@media print{@page{size:A4;margin:14mm}:root{background:#fff;font-size:10pt}.toolbar{display:none}main{margin:0;padding:0;box-shadow:none}.warning{display:block!important}h2{break-after:avoid}.warning,.note,output,footer{break-inside:avoid}}
+</style></head><body>
+<div class="toolbar"><button type="button" id="print">Stampa / salva PDF</button><button type="button" id="reset">Azzera</button></div>
+<main><div class="badge">VORLI · STRUMENTI ORIGINALI</div><h1>Power station: quante ore può durare?</h1>
+<p>Calcolatore offline per stimare l'autonomia con un carico elettrico <strong>costante</strong>. Verifica i dati sul manuale del modello esatto.</p>
+<p class="warning">BOZZA · NON PUBBLICARE NÉ VENDERE. La stima non certifica sicurezza, compatibilità, durata garantita o idoneità per apparecchi medicali o critici.</p>
+<form id="form" autocomplete="off">
+<h2>1. Inserisci dati verificati</h2><div class="grid">
+<label>Modello power station (facoltativo)<input type="text" name="model" placeholder="Modello esatto"></label>
+<label>Fonte dati / manuale (facoltativo)<input type="text" name="source" placeholder="Titolo o URL ufficiale"></label>
+<label>Capacità nominale batteria (Wh) *<input type="number" name="capacity" min="0.01" step="any" inputmode="decimal" required placeholder="Es. 1000"></label>
+<label>Potenza totale assorbita dai dispositivi (W) *<input type="number" name="watts" min="0.01" step="any" inputmode="decimal" required placeholder="Es. 100"></label>
+<label>Fattore di energia utilizzabile (%) · facoltativo
+<span>Da documentazione o ipotesi esplicita: include perdite e riserva. Non sommare più volte le stesse perdite.</span>
+<input type="number" name="usable" min="0.01" max="100" step="any" inputmode="decimal" placeholder="Es. 80"></label>
+<label>Potenza continua massima dell'uscita usata (W) · facoltativo<input type="number" name="maxoutput" min="0.01" step="any" inputmode="decimal" placeholder="Es. 500"></label>
+</div>
+<label><input type="checkbox" name="variable"> Il carico varia nel tempo (es. frigorifero, compressore, utensili)</label>
+<h2>2. Stima e limiti</h2>
+<output id="result" aria-live="polite">Inserisci capacità (Wh) e carico (W).</output>
+<p class="note"><strong>Formula:</strong> ore teoriche = Wh / W. Se inserisci il fattore utilizzabile, ore corrette = Wh × fattore/100 ÷ W. Il fattore è una tua ipotesi, non un'efficienza verificata automaticamente. Il risultato è indicativo e non rappresenta una garanzia.</p>
+<p>Controlla separatamente potenza di picco all'avvio, limiti di uscita AC/DC/USB, compatibilità di tensione e connettori, temperatura, stato di carica, invecchiamento, autospegnimento e consumi propri dell'inverter. <strong>Non collegare carichi oltre le specifiche del produttore.</strong></p>
+<h2>3. Decisione documentata</h2>
+<label>Informazioni mancanti e verifica da fare<textarea name="notes" placeholder="Manuale, picchi di avvio, prove pratiche..."></textarea></label>
+</form>
+<footer>VORLI · Bozza 0.1 · 13 ottobre 2026. Nessun tracciamento, nessuna richiesta di rete, nessun salvataggio automatico. La stampa PDF può includere i dati inseriti. Nessun prodotto sponsorizzato o consigliato.</footer>
+</main>
+<script>
+"use strict";
+const f=document.getElementById("form"),out=document.getElementById("result");
+function recalc(){
+ const capRaw=f.elements.capacity.value, wattsRaw=f.elements.watts.value;
+ if(capRaw===""||wattsRaw===""){out.textContent="Inserisci capacità (Wh) e carico (W).";return}
+ const cap=Number(capRaw),watts=Number(wattsRaw);
+ if(!Number.isFinite(cap)||!Number.isFinite(watts)||cap<=0||watts<=0){out.textContent="Capacità e potenza devono essere numeri positivi.";return}
+ const uRaw=f.elements.usable.value, maxRaw=f.elements.maxoutput.value;
+ const u=uRaw===""?null:Number(uRaw),max=maxRaw===""?null:Number(maxRaw);
+ if((u!==null&&(!Number.isFinite(u)||u<=0||u>100))||(max!==null&&(!Number.isFinite(max)||max<=0))){out.textContent="Controlla fattore utilizzabile (0–100%) e potenza massima (W).";return}
+ const theoretical=cap/watts,adjusted=u===null?null:theoretical*u/100;
+ if(!Number.isFinite(theoretical)||!Number.isFinite(adjusted===null?0:adjusted)){out.textContent="Valori troppo elevati.";return}
+ const fmt=n=>n.toLocaleString("it-IT",{maximumFractionDigits:2});
+ let lines=["Autonomia teorica: "+fmt(theoretical)+" ore (senza perdite)."];
+ lines.push(adjusted===null?"Autonomia corretta: non calcolata; fattore utilizzabile non inserito.":"Autonomia corretta con fattore inserito: "+fmt(adjusted)+" ore.");
+ if(max===null)lines.push("Limite di potenza continua: non verificato.");
+ else if(watts>max)lines.push("ATTENZIONE: carico superiore al limite continuo dichiarato. Non utilizzare questa combinazione.");
+ else lines.push("Carico sotto il limite continuo inserito; picchi di avvio e compatibilità ancora da verificare.");
+ if(f.elements.variable.checked)lines.push("ATTENZIONE: carico variabile; la stima con W costanti può essere inaffidabile.");
+ out.textContent=lines.join("\n");
+}
+["capacity","watts","usable","maxoutput"].forEach(k=>f.elements[k].addEventListener("input",recalc));
+f.elements.variable.addEventListener("change",recalc);
+document.getElementById("print").addEventListener("click",()=>window.print());
+document.getElementById("reset").addEventListener("click",()=>{if(confirm("Cancellare tutte le risposte?")){f.reset();recalc()}});
+</script></body></html>
