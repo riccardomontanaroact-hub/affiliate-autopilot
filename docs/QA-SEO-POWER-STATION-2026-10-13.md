@@ -21,3 +21,6 @@ Preparare un articolo originale con esempio numerico, limitazioni su inverter e 
 
 ## Prima di qualsiasi vendita
 Verificare regole fiscali italiane, informazioni precontrattuali, recesso sui contenuti digitali e IVA. Non attivare pagamenti, non pubblicare in produzione.
+
+## Due diligence reputazionale eWeki (13 ottobre 2026)
+La pagina Trustpilot mostra 1,9/5 su 164 recensioni, con numerose segnalazioni di clienti su consegne e assistenza: https://it.trustpilot.com/review/eweki.it . Si tratta di testimonianze di utenti, non di accertamenti indipendenti di ciascun caso. Prima di promuovere l'advertiser occorre verificare assistenza, resi, tempi di consegna e affidabilita' attuale; non basta l'esistenza del programma Awin. Stato VORLI: nessuna promozione o approvazione verificata.
