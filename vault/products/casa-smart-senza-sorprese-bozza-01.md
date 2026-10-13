@@ -24,7 +24,7 @@ Compila una scheda per ogni prodotto che stai valutando.
 - **Funziona senza connessione Internet?** ☐ Sì ☐ No ☐ Da verificare
 - **Richiede un account?** ☐ Sì ☐ No ☐ Da verificare
 - **Richiede un abbonamento o acquisti aggiuntivi?** ___________________
-- **Durata e modalità degli aggiornamenti dichiarate:** ________________
+- **Periodo di supporto e data di fine aggiornamenti dichiarati:** _______
 - **Garanzia, assistenza e condizioni di reso:** _______________________
 - **Data del controllo e fonte consultata:** ___________________________
 
@@ -40,7 +40,8 @@ Prima di collegare il dispositivo all'uso quotidiano:
 - ☐ Controlla i permessi richiesti dall'app e concedi solo quelli necessari alla funzione scelta.
 - ☐ Verifica quali membri della famiglia possono controllare il dispositivo.
 - ☐ Esamina le impostazioni relative a microfono, videocamera e notifiche, se presenti.
-- ☐ Controlla le impostazioni di sicurezza del router e la password della rete Wi-Fi.
+- ☐ Controlla le impostazioni di sicurezza del router, cambia le credenziali amministrative predefinite e usa la cifratura Wi-Fi più aggiornata supportata.
+- ☐ Se non ti serve controllare il dispositivo da fuori casa, disattiva l'accesso remoto quando l'opzione è disponibile.
 - ☐ Disattiva l'accesso remoto al dispositivo, se non ti serve e se l'opzione è disponibile.
 - ☐ Conserva il manuale e annota la procedura ufficiale per ripristinare il dispositivo.
 - ☐ Leggi l'informativa privacy per capire quali dati vengono raccolti e come gestire l'account.
