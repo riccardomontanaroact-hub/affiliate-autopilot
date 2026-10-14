@@ -1,9 +1,15 @@
-# VORLI Lab — PC energy estimator QA (14 October 2026)
+# VORLI Lab — PC energy calculator QA (14 October 2026)
 
-**Draft only. No merge, deploy, payments, sales, affiliate links or user data.**
+**Draft only. No merge, deploy, payments, sales or affiliate links.**
 
-Source editorial document on branch `vorli/research-pc-energy-eweki-20261014-2014`: `docs/VORLI-LAB-COSTO-PC-EWEKI-RICERCA-2026-10-14.md`.
+The calculator source and tests are **not in this branch**. They were tested locally but their upload was blocked. This branch contains only this release note.
 
-Offline Python calculator and tests in `tools/pc_energy_estimator.py` and `tests/test_pc_energy_estimator.py`. Input: average watts measured at wall, hours active and standby per day (non-overlapping), days per year, electricity EUR/kWh, purchase cost and maintenance over 3 years. Annual kWh = watts × hours × days / 1000, summed for active and standby. Three-year cost = purchase + 3 × annual electricity cost + maintenance. Assumes constant electricity price and usage; not a guarantee of savings. Excludes peripherals not included in measured watts, usage on excluded days, future changes.
+Local Python regression result: **9/9 passed** on 14/10/2026.
+Local mobile HTML JavaScript regression result: **10/10 passed** on 14/10/2026.
+The prototype is offline, responsive, and untested manually on physical devices.
 
-Run tests: `python3 -m unittest discover -s tests -p 'test_pc_energy_estimator.py' -v`. Local result 14/10/2026: **9/9 passed**. Smartphone interface and accessibility review still pending. Do not merge or publish without review.
+Source editorial workbook remains on branch `vorli/research-pc-energy-eweki-20261014-2014`, file `docs/VORLI-LAB-COSTO-PC-EWEKI-RICERCA-2026-10-14.md`.
+
+Method: use average measured power at the wall, not PSU rated power. Annual kWh = active watts × active hours × days / 1000 + standby watts × standby hours × days / 1000. Hours cannot overlap. Three-year estimated cost = purchase + 3 × annual kWh × EUR/kWh + three-year maintenance. Assumes constant usage and tariff; excludes other unmeasured costs.
+
+Next: upload source after connector permission is restored, review accessibility and mobile layout, review legal/tax/advertiser status, and request approval before any merge or public release.
