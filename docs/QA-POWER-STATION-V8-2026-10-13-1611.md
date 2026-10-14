@@ -24,3 +24,7 @@ JavaScript originale estratto dall'HTML ed eseguito in un isolato **V8 con DOM s
 - AGCM, trasparenza pubblicitaria: https://agcm.it/media/comunicati-stampa/2025/6/PS12814-PS12815-PS12816-PS12817-PS12818-PS12826
 
 Nessun deploy, pagamento, account o comunicazione effettuati.
+
+## Aggiornamento QA — 14 ottobre 2026, ore 02:13 (Europe/Rome)
+
+Corretto nel branch il formatter delle autonomie positive inferiori a 0,01 ore: ora mostra «meno di 0,01 ore» anziché «0 ore». Le formule e gli avvisi restano invariati. Il JavaScript aggiornato, recuperato dal repository, ha superato **8/8** verifiche in un isolato V8 con DOM simulato: durata teorica breve, durata corretta breve, caso normale, soglia esatta, limite di potenza, capacità negativa, fattore non valido e input mancante. **Non verificati** browser reale, smartphone, stampa PDF e apparecchi fisici. Non pubblicare o vendere prima della revisione completa.
