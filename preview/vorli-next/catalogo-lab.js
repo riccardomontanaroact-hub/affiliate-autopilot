@@ -74,7 +74,7 @@
         else drafts++;
       }
     });
-    results.textContent = demo + " categorie demo · " + drafts + " risorse in bozza visibili";
+    results.textContent = demo + (demo === 1 ? " categoria demo · " : " categorie demo · ") + drafts + (drafts === 1 ? " risorsa in bozza visibile" : " risorse in bozza visibili");
     empty.hidden = (demo + drafts !== 0);
   }
   function reset() {

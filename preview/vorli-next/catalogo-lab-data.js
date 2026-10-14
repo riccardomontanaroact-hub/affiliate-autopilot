@@ -38,7 +38,7 @@ window.VORLI_CATALOG_LAB = {
       "name": "Accessori casa",
       "description": "Wi-Fi, domotica, sicurezza e comfort domestico.",
       "icon": "⌂",
-      "keywords": "router rete smart home"
+      "keywords": "router rete smart home wifi wi-fi"
     },
     {
       "id": "sport-tech",
