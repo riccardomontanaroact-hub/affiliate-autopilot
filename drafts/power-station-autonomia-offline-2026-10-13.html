@@ -66,6 +66,7 @@ function recalc(){
  if(f.elements.variable.checked)lines.push("ATTENZIONE: carico variabile; la stima con W costanti può essere inaffidabile.");
  out.textContent=lines.join("\n");
 }
+f.addEventListener("submit",e=>{e.preventDefault();recalc()});
 ["capacity","watts","usable","maxoutput"].forEach(k=>f.elements[k].addEventListener("input",recalc));
 f.elements.variable.addEventListener("change",recalc);
 document.getElementById("print").addEventListener("click",()=>window.print());
