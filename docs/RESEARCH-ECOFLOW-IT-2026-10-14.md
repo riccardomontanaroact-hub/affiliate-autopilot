@@ -32,3 +32,11 @@ Disclosure futura, solo in caso di approvazione: identificare chiaramente i link
 3. Completare test reali desktop/mobile e revisione tecnica del calcolatore.
 4. Riesaminare trasparenza pubblicitaria, diritti dei consumatori e regime fiscale con un professionista competente.
 5. Nessun merge/deploy, candidatura, link affiliato, pagamento o pubblicazione senza consenso esplicito.
+
+## Nota comparativa eWeki / conformità — 14 ottobre 2026, ore 12:15 CEST
+- **eWeki IT (Awin 19988)**: elettronica di consumo; cookie pubblicizzato 30 giorni. Fonte primaria: https://ui.awin.com/merchant-profile/19988 (consultata 14/10/2026). Commissione VORLI e ammissione contrattuale NON verificate.
+- **Awin publisher**: la FAQ indica che le richieste advertiser sono valutate separatamente dall'accesso alla rete; la posta promozionale non equivale a una conferma di adesione. La stessa FAQ contiene formulazioni non univoche sul costo d'iscrizione (gratuità in un punto, deposito di verifica in un altro). Non aprire nuovi account né effettuare pagamenti. Fonte: https://www.awin.com/it/faq (consultata 14/10/2026).
+- **Trasparenza**: ogni futuro contenuto con link affiliati deve rendere evidente la natura commerciale. Fonte AGCM, 11/06/2025: https://www.agcm.it/media/comunicati-stampa/2025/6/PS12814-PS12815-PS12816-PS12817-PS12818-PS12826 .
+- **Download digitali**: non assumere che il diritto di recesso sia automaticamente escluso; le eccezioni richiedono condizioni specifiche. Fonte UE: https://europa.eu/youreurope/citizens/consumers/shopping/returns/index_en.htm (consultata 14/10/2026).
+- **Venditore individuale italiano**: l'inquadramento fiscale dipende dalla natura e abitualità dell'attività; non qualificare automaticamente un e-commerce continuativo come occasionale. Fonte di orientamento: https://infoprecompilata.agenziaentrate.gov.it/portale/web/guest/semplificata-mod-redditi-di-capitale (consultata 14/10/2026). Serve verifica professionale prima di incassi.
+- **Prossimo passo senza costi**: completare QA del calcolatore e controllare lo stato effettivo degli advertiser nella dashboard, senza candidarsi né pubblicare link o prezzi non verificati.
