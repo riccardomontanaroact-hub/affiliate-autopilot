@@ -57,7 +57,7 @@ function recalc(){
  if((u!==null&&(!Number.isFinite(u)||u<=0||u>100))||(max!==null&&(!Number.isFinite(max)||max<=0))){out.textContent="Controlla fattore utilizzabile (0–100%) e potenza massima (W).";return}
  const theoretical=cap/watts,adjusted=u===null?null:theoretical*u/100;
  if(!Number.isFinite(theoretical)||!Number.isFinite(adjusted===null?0:adjusted)){out.textContent="Valori troppo elevati.";return}
- const fmt=n=>n.toLocaleString("it-IT",{maximumFractionDigits:2});
+ const fmt=n=>n>0&&n<0.01?"meno di 0,01":n.toLocaleString("it-IT",{maximumFractionDigits:2});
  let lines=["Autonomia teorica: "+fmt(theoretical)+" ore (senza perdite)."];
  lines.push(adjusted===null?"Autonomia corretta: non calcolata; fattore utilizzabile non inserito.":"Autonomia corretta con fattore inserito: "+fmt(adjusted)+" ore.");
  if(max===null)lines.push("Limite di potenza continua: non verificato.");
