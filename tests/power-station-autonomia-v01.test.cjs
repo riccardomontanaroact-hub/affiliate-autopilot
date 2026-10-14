@@ -60,6 +60,8 @@ check("usable above 100", { capacity: "1000", watts: "100", usable: "101" }, ["C
 check("usable below zero", { capacity: "1000", watts: "100", usable: "-2" }, ["Controlla fattore"]);
 check("negative output limit", { capacity: "1000", watts: "100", maxoutput: "-2" }, ["Controlla fattore"]);
 check("short positive autonomy regression", { capacity: "1", watts: "1000", usable: "50" }, ["Autonomia teorica: meno di 0,01 ore", "Autonomia corretta con fattore inserito: meno di 0,01 ore"]);
+check("theoretical underflow must not say zero hours", { capacity: "1e-300", watts: "1e300" }, ["Autonomia teorica: meno di 0,01 ore"]);
+check("adjusted underflow must not say zero hours", { capacity: "1e-300", watts: "1e300", usable: "1" }, ["Autonomia corretta con fattore inserito: meno di 0,01 ore"]);
 check("exact 0.01 hour boundary", { capacity: "10", watts: "1000" }, ["Autonomia teorica: 0,01 ore"]);
 check("decimal hours", { capacity: "750", watts: "60", usable: "90" }, ["12,5 ore", "11,25 ore"]);
 check("numeric overflow", { capacity: "1e308", watts: "1e-308" }, ["Valori troppo elevati"]);
