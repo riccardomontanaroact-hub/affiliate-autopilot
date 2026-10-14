@@ -20,8 +20,10 @@ for (const name of ["capacity", "watts", "usable", "maxoutput", "variable", "mod
   fields[name] = { value: "", checked: false, addEventListener() {} };
 }
 const output = { textContent: "" };
+const formHandlers = {};
 const form = {
   elements: fields,
+  addEventListener(type, callback) { formHandlers[type] = callback; },
   reset() { for (const f of Object.values(fields)) { f.value = ""; f.checked = false; } }
 };
 const buttons = { print: { addEventListener() {} }, reset: { addEventListener() {} } };
@@ -32,6 +34,7 @@ const sandbox = {
 };
 vm.runInNewContext(script + "\n;globalThis.__recalc = recalc;", sandbox, { timeout: 1000 });
 assert.equal(typeof sandbox.__recalc, "function");
+assert.equal(typeof formHandlers.submit, "function", "Form submit listener missing");
 let count = 0;
 function check(name, data, phrases) {
   form.reset();
@@ -61,6 +64,15 @@ check("exact 0.01 hour boundary", { capacity: "10", watts: "1000" }, ["Autonomia
 check("decimal hours", { capacity: "750", watts: "60", usable: "90" }, ["12,5 ore", "11,25 ore"]);
 check("numeric overflow", { capacity: "1e308", watts: "1e-308" }, ["Valori troppo elevati"]);
 check("recalculation", { capacity: "1000", watts: "100" }, ["10 ore"]);
+form.reset();
+fields.capacity.value = "120";
+fields.watts.value = "60";
+output.textContent = "";
+let submitPrevented = false;
+formHandlers.submit({ preventDefault() { submitPrevented = true; } });
+assert.equal(submitPrevented, true, "Form submit must prevent navigation");
+assert.ok(output.textContent.includes("2 ore"), "Form submit must recalculate");
+console.log("PASS form submit prevention and calculation"); count++;
 form.reset();
 sandbox.__recalc();
 assert.ok(output.textContent.includes("Inserisci capacità"), "Reset should clear result");
