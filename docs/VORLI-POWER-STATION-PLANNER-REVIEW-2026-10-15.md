@@ -4,13 +4,13 @@ Stato: prototipo locale **non pubblicato**, non in vendita. Questa scheda non è
 
 ## Artefatto locale e test
 
-Archivio locale: `VORLI_Power_Station_Planner_2026-10-15.zip`. Contiene `tools/power_station_planner.html`, `tests/test_power_station_planner.cjs`, README e piano SEO. Verifica ripetuta il 15 ottobre 2026 con `node --test`: 16 test superati su 16, nessuna verifica su smartphone fisici.
+Archivio locale aggiornato: `VORLI_Power_Station_Planner_QA_2026-10-15_0914.zip`. Contiene `tools/power_station_planner.html`, `tests/test_power_station_planner.cjs`, README e piano SEO. Verifica ripetuta il 15 ottobre 2026 con `node --test`: 19 test superati su 19, nessuna verifica su smartphone fisici.
 
 ## Modello e limiti
 
 Energia AC stimata (Wh) = capacità nominale × percentuale utilizzabile × efficienza AC. Consumo giornaliero (Wh) = somma di W medi × ore/giorno. Giorni teorici = energia AC / consumo giornaliero. Non garantisce l'autonomia reale, che dipende da temperatura, carico, degrado e consumi propri dell'inverter.
 
-La somma dei W medi è uno scenario conservativo di uso simultaneo, non la misura dei picchi reali. Se un picco di avvio non è noto, la compatibilità resta **non verificata**. Non utilizzare per apparecchiature mediche o decisioni sul trasporto aereo.
+La somma dei W medi dei dispositivi con ore/giorno maggiori di zero è uno scenario conservativo di uso simultaneo, non la misura dei picchi reali. Se un picco di avvio non è noto, la compatibilità resta **non verificata**. Non utilizzare per apparecchiature mediche o decisioni sul trasporto aereo.
 
 ## Verifiche prima di qualunque PR e pubblicazione
 
@@ -27,3 +27,7 @@ La somma dei W medi è uno scenario conservativo di uso simultaneo, non la misur
 - Your Europe, resi e contenuti digitali: https://europa.eu/youreurope/citizens/consumers/shopping/returns/index_it.htm
 
 Nota: i collegamenti sono riferimenti normativi/editoriali, non conferme di approvazione affiliata. Nessun dato personale o link di tracking incluso.
+
+## Correzione QA del 15/10/2026, ore 09:14
+
+Tre nuovi test di regressione: i dispositivi impostati a zero ore/giorno non contribuiscono più al carico simultaneo né al controllo di picco; il calcolo rifiuta l'overflow numerico. **19/19 test Node.js superati localmente**. Il codice aggiornato resta nel pacchetto locale; il commit di questa scheda non costituisce trasferimento del codice HTML o dei test. Nessuna pubblicazione o modifica al branch principale.
