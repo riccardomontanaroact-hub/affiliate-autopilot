@@ -30,3 +30,27 @@ test('three-year half-cent rounding agrees with Decimal',()=>{
  assert.equal(r.energy_eur_per_year,1.01);
  assert.equal(r.total_eur_3_years,3.02);
 });
+
+
+// 2026-10-15: permanent regression coverage for intermediate numeric overflow.
+test('rejects annual active energy overflow',()=>{
+ assert.throws(()=>calc({...base,active_watts:1e308,active_hours_per_day:24,days_per_year:366}),/Risultato troppo grande/);
+});
+test('rejects annual standby energy overflow',()=>{
+ assert.throws(()=>calc({...base,active_hours_per_day:0,standby_watts:1e308,standby_hours_per_day:24,days_per_year:366}),/Risultato troppo grande/);
+});
+test('rejects total energy overflow when both subtotals are finite',()=>{
+ assert.throws(()=>calc({...base,active_watts:3e307,standby_watts:3e307,active_hours_per_day:12,standby_hours_per_day:12,days_per_year:366}),/Risultato troppo grande/);
+});
+test('rejects annual electricity expense overflow',()=>{
+ assert.throws(()=>calc({...base,electricity_eur_per_kwh:1e308}),/Risultato troppo grande/);
+});
+test('rejects three-year energy expense overflow',()=>{
+ assert.throws(()=>calc({...base,electricity_eur_per_kwh:1e306}),/Risultato troppo grande/);
+});
+test('rejects total cost overflow from purchase and maintenance',()=>{
+ assert.throws(()=>calc({...base,purchase_eur:1e308,maintenance_3y_eur:1e308}),/Risultato troppo grande/);
+});
+test('rejects cents scaling overflow for otherwise finite cost',()=>{
+ assert.throws(()=>calc({...base,purchase_eur:1e307}),/Risultato troppo grande/);
+});
