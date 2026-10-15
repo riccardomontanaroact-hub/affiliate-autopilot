@@ -39,7 +39,7 @@ test('rejects annual active energy overflow',()=>{
 test('rejects annual standby energy overflow',()=>{
  assert.throws(()=>calc({...base,active_hours_per_day:0,standby_watts:1e308,standby_hours_per_day:24,days_per_year:366}),/Risultato troppo grande/);
 });
-test('rejects total energy overflow when both subtotals are finite',()=>{
+test('rejects intermediate multiplication overflow for extreme dual loads',()=>{
  assert.throws(()=>calc({...base,active_watts:3e307,standby_watts:3e307,active_hours_per_day:12,standby_hours_per_day:12,days_per_year:366}),/Risultato troppo grande/);
 });
 test('rejects annual electricity expense overflow',()=>{
