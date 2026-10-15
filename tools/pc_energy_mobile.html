@@ -46,11 +46,18 @@ function estimatePcCost(p){
  for(const name of names){if(typeof p[name]!=='number'||!Number.isFinite(p[name])||p[name]<0)throw Error('Valore non valido: '+name);}
  if(!Number.isInteger(p.days_per_year)||p.days_per_year>366)throw Error('I giorni devono essere interi tra 0 e 366.');
  if(p.active_hours_per_day+p.standby_hours_per_day>24)throw Error('Uso e standby non possono superare 24 ore complessive.');
- const active=p.active_watts*p.active_hours_per_day*p.days_per_year/1000;
- const standby=p.standby_watts*p.standby_hours_per_day*p.days_per_year/1000;
- const kwh=active+standby;
- const cents=n=>Math.round((n+Number.EPSILON*Math.max(1,Math.abs(n)))*100)/100;
- return {active_kwh_per_year:active,standby_kwh_per_year:standby,total_kwh_per_year:kwh,energy_eur_per_year:cents(kwh*p.electricity_eur_per_kwh),total_eur_3_years:cents(p.purchase_eur+3*kwh*p.electricity_eur_per_kwh+p.maintenance_3y_eur)};
+ const finiteResult=(n,label)=>{if(!Number.isFinite(n))throw Error('Risultato troppo grande ('+label+'). Riduci i valori inseriti.');return n;};
+ const active=finiteResult(p.active_watts*p.active_hours_per_day*p.days_per_year/1000,'consumo in uso');
+ const standby=finiteResult(p.standby_watts*p.standby_hours_per_day*p.days_per_year/1000,'consumo in standby');
+ const kwh=finiteResult(active+standby,'consumo totale');
+ const energy=finiteResult(kwh*p.electricity_eur_per_kwh,'spesa energetica');
+ const total=finiteResult(p.purchase_eur+3*energy+p.maintenance_3y_eur,'costo triennale');
+ const cents=n=>{
+  const adjusted=finiteResult(n+Number.EPSILON*Math.max(1,Math.abs(n)),'arrotondamento');
+  const scaled=finiteResult(adjusted*100,'arrotondamento in centesimi');
+  return Math.round(scaled)/100;
+ };
+ return {active_kwh_per_year:active,standby_kwh_per_year:standby,total_kwh_per_year:kwh,energy_eur_per_year:cents(energy),total_eur_3_years:cents(total)};
 }
 const form=document.getElementById('form');
 form.addEventListener('submit',event=>{
