@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Calcolatore autonomia power station | VORLI — bozza</title>
+  <meta name="description" content="Stima indicativa e modificabile dell'autonomia di una power station: capacità in Wh, carico in W, efficienza e riserva.">
+  <style>
+    :root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; background: #f4f7fb; color: #152235; }
+    body { margin: 0; }
+    main { max-width: 760px; margin: 2rem auto; padding: 0 1rem 3rem; }
+    h1 { line-height: 1.2; }
+    .card { background: #fff; padding: 1.3rem; border: 1px solid #d9e1ec; border-radius: 14px; margin: 1.2rem 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1rem; }
+    label { display: block; font-weight: 650; }
+    input { box-sizing: border-box; width: 100%; margin-top: .35rem; padding: .75rem; font: inherit; border: 1px solid #687991; border-radius: 7px; }
+    small { display: block; color: #3d4d61; font-weight: 400; }
+    button { margin-top: 1.2rem; background: #1c427d; color: white; border: 0; border-radius: 7px; padding: .85rem 1.3rem; font: inherit; cursor: pointer; }
+    button:focus-visible, input:focus-visible { outline: 3px solid #f2b90d; outline-offset: 2px; }
+    .result { border-left: 5px solid #1c427d; }
+    .error { color: #9a1a1a; font-weight: 650; }
+    .notice { background: #fff6da; padding: .8rem; border-radius: 7px; }
+    a { color: #194b91; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p><strong>VORLI · Strumento sperimentale non pubblicato</strong></p>
+    <h1>Quanto dura una power station?</h1>
+    <p>Calcola una <strong>stima orientativa</strong> dell'autonomia con un carico medio costante. Non è una promessa sulle prestazioni di alcun prodotto.</p>
+  </header>
+  <form id="calculator" class="card" novalidate>
+    <div class="grid">
+      <label for="capacity">Capacità nominale (Wh)
+        <input id="capacity" name="capacity" type="number" inputmode="decimal" min="1" max="100000" step="any" value="1024" required>
+        <small>Energia dichiarata della batteria, non potenza in W.</small>
+      </label>
+      <label for="load">Consumo medio del dispositivo (W)
+        <input id="load" name="load" type="number" inputmode="decimal" min="0.1" max="100000" step="any" value="120" required>
+        <small>Somma i consumi medi dei dispositivi collegati.</small>
+      </label>
+      <label for="efficiency">Rendimento stimato (%)
+        <input id="efficiency" name="efficiency" type="number" inputmode="decimal" min="1" max="100" step="any" value="80" required>
+        <small>Ipotesi modificabile, non valore certificato.</small>
+      </label>
+      <label for="reserve">Riserva non utilizzata (%)
+        <input id="reserve" name="reserve" type="number" inputmode="decimal" min="0" max="99" step="any" value="10" required>
+        <small>Quota di energia che si desidera conservare.</small>
+      </label>
+      <label for="output">Potenza continua massima (W) — facoltativa
+        <input id="output" name="output" type="number" inputmode="decimal" min="0.1" max="100000" step="any">
+        <small>Verifica il valore sul manuale del modello esatto.</small>
+      </label>
+    </div>
+    <button type="submit">Stima autonomia</button>
+    <p id="error" class="error" role="alert" hidden></p>
+  </form>
+  <section id="result" class="card result" aria-live="polite" hidden>
+    <h2>Autonomia stimata: <span id="hours"></span></h2>
+    <p>Energia teoricamente disponibile: <strong id="energy"></strong> Wh.</p>
+    <p id="power-warning" class="notice" hidden></p>
+    <p>Formula: Wh nominali × (rendimento ÷ 100) × (1 − riserva ÷ 100) ÷ W medi.</p>
+  </section>
+  <section class="card">
+    <h2>Limiti della stima</h2>
+    <p>Verifica separatamente potenza continua, picchi di avvio, tensione, frequenza, tipo di uscita e compatibilità. Temperatura, età della batteria, inverter, carichi variabili e perdite possono modificare molto l'autonomia reale. Non usare questa stima come unica base per apparecchiature mediche o salvavita.</p>
+    <p>Non vengono raccolti dati e non sono presenti cookie, pubblicità o link di affiliazione. Il calcolo avviene soltanto nel browser.</p>
+    <h2>Fonti e data di verifica</h2>
+    <p>Verificato il 16 ottobre 2026: <a href="https://faq.jackery.com/hc/en-us/articles/52357015569179-How-can-I-estimate-the-runtime-of-my-portable-power-station" rel="noopener noreferrer">Jackery, FAQ sul calcolo orientativo</a> (2 luglio 2026); <a href="https://eu.flashfishtech.com/pages/portable-power-station-runtime-calculator" rel="noopener noreferrer">FlashFish, metodologia e limiti del calcolo</a> (pagina consultata il 16 ottobre 2026).</p>
+  </section>
+</main>
+<script>
+  "use strict";
+  const form = document.getElementById("calculator");
+  const error = document.getElementById("error");
+  const result = document.getElementById("result");
+  const powerWarning = document.getElementById("power-warning");
+  const formatter = new Intl.NumberFormat("it-IT", {maximumFractionDigits: 2});
+  const ranges = {capacity:[1,100000], load:[0.1,100000], efficiency:[1,100], reserve:[0,99], output:[0.1,100000]};
+  function numberOf(id) {
+    const element = document.getElementById(id);
+    if (id === "output" && element.value.trim() === "") return null;
+    const n = element.valueAsNumber;
+    const [min,max] = ranges[id];
+    if (!Number.isFinite(n) || n < min || n > max) {
+      throw new Error("Controlla il campo «" + element.labels[0].textContent.trim().split("\n")[0] + "»: valore non valido.");
+    }
+    return n;
+  }
+  function calculate(capacity, load, efficiency, reserve) {
+    return capacity * (efficiency / 100) * (1 - reserve / 100) / load;
+  }
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    error.hidden = true;
+    result.hidden = true;
+    powerWarning.hidden = true;
+    try {
+      const capacity = numberOf("capacity");
+      const load = numberOf("load");
+      const efficiency = numberOf("efficiency");
+      const reserve = numberOf("reserve");
+      const output = numberOf("output");
+      const hours = calculate(capacity, load, efficiency, reserve);
+      document.getElementById("hours").textContent = formatter.format(hours) + " ore";
+      document.getElementById("energy").textContent = formatter.format(hours * load);
+      if (output !== null && load > output) {
+        powerWarning.textContent = "Attenzione: il consumo medio supera la potenza continua dichiarata. La stima non implica che il dispositivo possa essere alimentato.";
+        powerWarning.hidden = false;
+      } else if (output !== null) {
+        powerWarning.textContent = "Anche se il consumo medio non supera la potenza continua, controlla picchi di avvio e compatibilità.";
+        powerWarning.hidden = false;
+      }
+      result.hidden = false;
+    } catch (e) {
+      error.textContent = e.message;
+      error.hidden = false;
+    }
+  });
+  // Test manuale: 1024 Wh, 120 W, 80%, riserva 10% => 6,144 ore.
+</script>
+</body>
+</html>
