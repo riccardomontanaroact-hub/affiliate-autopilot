@@ -103,16 +103,16 @@
       const efficiency = numberOf("efficiency");
       const reserve = numberOf("reserve");
       const output = numberOf("output");
+      if (output !== null && load > output) {
+        throw new Error("Carico non alimentabile: consumo medio superiore alla potenza continua massima. Nessuna autonomia stimata.");
+      }
       const hours = calculate(capacity, load, efficiency, reserve);
       document.getElementById("hours").textContent = formatter.format(hours) + " ore";
       document.getElementById("energy").textContent = formatter.format(hours * load);
-      if (output !== null && load > output) {
-        powerWarning.textContent = "Attenzione: il consumo medio supera la potenza continua dichiarata. La stima non implica che il dispositivo possa essere alimentato.";
-        powerWarning.hidden = false;
-      } else if (output !== null) {
-        powerWarning.textContent = "Anche se il consumo medio non supera la potenza continua, controlla picchi di avvio e compatibilità.";
-        powerWarning.hidden = false;
-      }
+      powerWarning.textContent = output === null
+        ? "Potenza continua non indicata: compatibilità non verificata. Controlla il manuale, i picchi di avvio e le uscite."
+        : "Verifica comunque picchi di avvio, tensione, tipo di uscita e compatibilità.";
+      powerWarning.hidden = false;
       result.hidden = false;
     } catch (e) {
       error.textContent = e.message;
