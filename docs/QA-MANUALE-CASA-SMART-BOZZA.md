@@ -1,7 +1,7 @@
 # QA manuale — Casa Smart senza sorprese (bozza HTML)
 
 **Stato:** checklist di verifica; non equivale a un test eseguito.
-**Ultimo controllo automatico:** GitHub Actions run 29 (11 ottobre 2026), esito positivo. Il PDF generato è A4, 7 pagine; la sezione «Compro o aspetto?» e il campo «La mia decisione» risultano nella stessa pagina. Il test automatico non sostituisce le prove manuali, la verifica di accessibilità del PDF o l'approvazione finale.  
+**Ultimo controllo automatico HTML/PDF:** GitHub Actions run 61, 17 ottobre 2026, esito positivo sul file HTML al commit `4691a293ee65eca3be2f4a03a70790ffdd1bb485`. Chromium ha verificato indice/ancore, toggle delle note e `aria-expanded`, link esterni previsti, assenza di overflow a 360/390 px e generato screenshot mobile/desktop e PDF A4 di 6 pagine. La sezione «Compro o aspetto?», «La mia decisione», le fonti e il piè di pagina risultano nella stessa pagina finale. Il PDF è ancora **non tagged** (`Tagged: no`): accessibilità del PDF e revisione visiva su dispositivo reale restano da completare. Il commit successivo `466802bf4484f0d81b4d2d62590a11e2d4562c04` modifica solo la versione Markdown; non modifica l'HTML testato. Il test automatico non sostituisce le prove manuali, la verifica di accessibilità del PDF o l'approvazione finale.  
 **File da verificare:** `vault/products/casa-smart-senza-sorprese-layout-bozza-02.html`  
 **Rilascio:** bloccato finché i controlli richiesti e l'approvazione del proprietario non sono completati.
 
