@@ -40,6 +40,8 @@ th{background:var(--pale)}
 .small{font-size:.88rem;color:var(--muted)}
 footer{margin-top:1.2rem;padding-top:.55rem;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
 a{color:#164ec4;overflow-wrap:anywhere}
+.skip-link{position:absolute;left:1rem;top:-5rem;z-index:5;padding:.65rem 1rem;background:#fff;color:#172033;border:2px solid #172033;border-radius:.4rem}
+.skip-link:focus{top:1rem}
 a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
 .contents ol{line-height:1.9}
 .pagebreak{break-before:page}
@@ -67,12 +69,13 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
 </style>
 </head>
 <body>
-<div class="toolbar" aria-label="Strumenti documento">
+<a class="skip-link" href="#contenuto-principale">Salta al contenuto principale</a>
+<div class="toolbar" role="group" aria-label="Strumenti documento">
 <button class="primary" type="button" onclick="window.print()">Stampa / salva in PDF</button>
-<button class="secondary" type="button" aria-expanded="true" aria-controls="draft-notes">Nascondi note di bozza</button>
+<button class="secondary" type="button" aria-expanded="true" aria-controls="draft-notes">Nascondi avviso di bozza</button>
 
 </div>
-<main class="document">
+<main class="document" id="contenuto-principale" tabindex="-1">
 <section class="cover">
 <div class="brand">VORLI</div>
 <p class="kicker">Guida pratica · Checklist</p>
@@ -130,7 +133,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
 <h2 id="controllo-periodico">3. Controllo periodico</h2>
 <p>Usa la tabella, per esempio una volta al mese o quando l'app segnala un aggiornamento. Annota le azioni necessarie senza registrare password o altri dati sensibili.</p>
 <div class="table-wrap" role="region" aria-label="Tabella di controllo periodico" tabindex="0"><table>
-<thead><tr><th>Data</th><th>Dispositivo</th><th>Aggiornamenti controllati</th><th>Account/permessi rivisti</th><th>Azione necessaria</th></tr></thead>
+<caption>Registro dei controlli periodici dei dispositivi smart</caption><thead><tr><th scope="col">Data</th><th scope="col">Dispositivo</th><th scope="col">Aggiornamenti controllati</th><th scope="col">Account/permessi rivisti</th><th scope="col">Azione necessaria</th></tr></thead>
 <tbody><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr><tr><td style="height:3.4rem"></td><td></td><td>□ Sì □ No</td><td>□ Sì □ No</td><td></td></tr></tbody>
 </table></div>
 <h2 id="cambio-casa">4. Se cambi casa, rete o proprietario</h2>
@@ -186,7 +189,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3p
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!expanded));
     notes.hidden = expanded;
-    toggle.textContent = expanded ? 'Mostra note di bozza' : 'Nascondi note di bozza';
+    toggle.textContent = expanded ? 'Mostra avviso di bozza' : 'Nascondi avviso di bozza';
   });
 })();
 </script>
