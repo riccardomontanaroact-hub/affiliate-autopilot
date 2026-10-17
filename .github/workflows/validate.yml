@@ -75,12 +75,13 @@ jobs:
               await page.setViewportSize({ width: 1440, height: 1000 });
               await page.screenshot({ path: 'preview-output/desktop.png', fullPage: true });
               await page.emulateMedia({ media: 'print' });
-              await page.pdf({ path: 'preview-output/guide-a4.pdf', format: 'A4', printBackground: true, preferCSSPageSize: true });
+              await page.pdf({ path: 'preview-output/guide-a4.pdf', format: 'A4', printBackground: true, preferCSSPageSize: true, tagged: true });
             } finally { await browser.close(); }
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
           pdfinfo preview-output/guide-a4.pdf | tee preview-output/pdf-info.txt
           grep -Eq '^Pages:[[:space:]]+[1-9][0-9]*' preview-output/pdf-info.txt
+          grep -Eiq '^Tagged:[[:space:]]+yes' preview-output/pdf-info.txt || (echo 'Il PDF generato non risulta tagged/accessibile' && exit 1)
           pages=$(awk '/^Pages:/ {print $2}' preview-output/pdf-info.txt)
           section_page=""
           final_page=""
