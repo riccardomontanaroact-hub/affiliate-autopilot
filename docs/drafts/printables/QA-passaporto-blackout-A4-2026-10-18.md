@@ -56,3 +56,8 @@ Questo controllo riguarda esclusivamente il codice HTML/CSS letto nel repository
 - [Awin — FAQ ufficiali italiane](https://www.awin.com/it/faq): l'approvazione di un publisher non equivale all'approvazione di ogni programma advertiser; commissioni e termini individuali richiedono la dashboard.
 - [Awin — eWeki IT, profilo pubblico 19988](https://ui.awin.com/merchant-profile/19988): settore elettronica di consumo e cookie pubblico di 30 giorni; commissione individuale e stato contrattuale **non verificati**.
 - La revisione del workbook **non** risolve obblighi IVA, recesso sui contenuti digitali o altri requisiti per la vendita diretta da parte di un venditore individuale italiano. Non trarre conclusioni fiscali senza verifica professionale.
+
+## Correzione al test automatico — 18/10/2026, ore 19:15 (Europe/Rome)
+- Corretto un caso di **falso positivo**: se `pdfinfo` non restituisce le dimensioni della pagina, il test ora registra un errore e termina con codice non zero anziché poter dichiarare il controllo superato.
+- Commit: `4608edbb`. Verifica statica del codice: presenza del controllo sulle dimensioni mancanti e dell'uscita non zero in caso di errori.
+- **Non eseguito** il rendering del workbook in PDF; quattro pagine A4 e resa visiva restano **NON VERIFICATI**. Non sbloccare la distribuzione sulla base di questa correzione.
