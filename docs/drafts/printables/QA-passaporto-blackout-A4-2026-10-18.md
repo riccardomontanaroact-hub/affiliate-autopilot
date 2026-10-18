@@ -1,5 +1,5 @@
 # VORLI Lab — QA di prepubblicazione: Passaporto blackout tecnologico
-**Revisione statica del 18 ottobre 2026 · documento interno alla bozza pubblica · NON approvato per vendita/pubblicazione**
+**Revisione statica aggiornata il 18 ottobre 2026 · documento interno alla bozza pubblica · NON approvato per vendita/pubblicazione**
 
 ## Oggetto e perimetro
 File esaminato: `docs/drafts/printables/passaporto-blackout-tecnologico-A4-2026-10-18.html` (stesso branch).
@@ -15,17 +15,23 @@ Questo controllo riguarda esclusivamente il codice HTML/CSS letto nel repository
 | Assenza di monetizzazione nel file | OK nel sorgente | Nessun checkout, prezzo, modulo di raccolta dati o link affiliato |
 | Dipendenze remote | Nessuna nel sorgente | CSS incorporato, nessuno script, immagine o font esterno |
 | Contatti/identificativi privati | Nessuno individuato nel file esaminato | Non equivale a una bonifica dell'intero repository o della sua cronologia |
-| Test effettivo di stampa | **NON ESEGUITO** | Richiede anteprima/stampa PDF con browser |
+| Test effettivo di stampa | **NON ESEGUITO** | Le modifiche CSS non dimostrano che il PDF contenga esattamente 4 pagine |
 | Accessibilità | **DA COLLAUDARE** | Tabelle, leggibilità e navigazione con tecnologie assistive |
 | Conformità commerciale/fiscale | **NON VERIFICATA** | Recesso digitale, IVA, venditore individuale italiano, disclosure |
 
 ## Rischi editoriali da risolvere
-1. **Impaginazione:** `min-height:297mm` e footer posizionato in modo assoluto non garantiscono da soli quattro pagine effettive; testo o tabelle potrebbero estendersi e generare pagine aggiuntive.
-2. **Leggibilità:** testi da 8–9 pt e celle vuote devono essere valutati in stampa reale, soprattutto in bianco e nero.
+1. **Impaginazione:** la regola di stampa ora imposta `height:297mm` e `break-inside:avoid` per ciascuna scheda, ma footer assoluto e tabelle potrebbero ancora creare sovrapposizioni o pagine extra. Occorre un collaudo PDF reale.
+2. **Leggibilità:** tabelle e footer sono stati aumentati rispettivamente a 9,5 pt e 9 pt; le celle vuote devono comunque essere valutate in stampa reale, soprattutto in bianco e nero.
 3. **Uso offline:** controllare che stampa e salvataggio PDF funzionino senza rete e senza perdita di bordi/contrasti.
 4. **Sicurezza:** far verificare da una persona competente formulazioni tecniche, limiti dei dispositivi e disclaimer; non sostituire indicazioni di autorità o produttori.
-5. **Coerenza editoriale:** la quarta pagina contiene note di revisione destinate all'editore: **rimuoverle o spostarle in documentazione interna** prima di un'eventuale versione per il pubblico.
+5. **Coerenza editoriale:** le note interne sono state rimosse dalla quarta pagina e sostituite con una checklist per il lettore. La dicitura BOZZA resta intenzionalmente presente, perché il prodotto non è pronto per il pubblico.
 6. **Privacy generale:** la pulizia del file `data/config.json` proposta nella PR di bonifica privacy non cancella eventuali informazioni già presenti nella cronologia Git pubblica.
+
+## Modifiche statiche effettuate in questo ciclo
+- Rimosso il paragrafo di note editoriali dalla quarta pagina; inserito un promemoria per il lettore.
+- Impostata altezza A4 esplicita nella regola CSS di stampa e aggiunte indicazioni per evitare spezzature delle sezioni.
+- Aumentata la dimensione delle tabelle e dei footer; le caselle decorative sono marcate `aria-hidden`.
+- **Non eseguiti** rendering PDF, verifica della paginazione effettiva, prova in bianco e nero, controllo con lettore di schermo o revisione legale/tecnica.
 
 ## Protocollo di collaudo prima di qualsiasi rilascio
 - Aprire il file HTML localmente in Chrome desktop; stampare in PDF con A4, scala 100%, intestazioni/piè di pagina del browser disattivati. **Accettazione:** esattamente 4 pagine, nessun contenuto tagliato, footer leggibili.
