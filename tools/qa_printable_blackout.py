@@ -90,6 +90,8 @@ def main() -> int:
         sizes = re.findall(r"^Page\s+\d+\s+size:\s+([\d.]+) x ([\d.]+) pts", info, re.M)
         if not sizes:
             sizes = re.findall(r"^Page size:\s+([\d.]+) x ([\d.]+) pts", info, re.M)
+        if not sizes:
+            failures.append("Could not verify PDF page dimensions (A4 check missing)")
         for width, height in sizes:
             if not (594 <= float(width) <= 596 and 841 <= float(height) <= 843):
                 failures.append(f"Unexpected page size: {width} x {height} pt (expected A4)")
