@@ -1,3 +1,23 @@
-# VORLI Reolink research
+# VORLI | Reolink: ricerca e checklist (bozza)
 
-Date: 2026-10-18. Draft only. Public affiliate program: https://reolink.com/it/affiliate/ . Advertised commission range 6-20%, not verified for VORLI. No applications or sales.
+**Data ricerca:** 18 ottobre 2026. **Stato:** non pubblicato, nessuna candidatura.
+
+## Opportunità
+La pagina ufficiale https://reolink.com/it/affiliate/ pubblicizza commissioni tra il 6% e il 20%, legate a livelli di vendite, e cita Awin e Impact. Il contenuto della pagina italiana appare in spagnolo, quindi la disponibilità locale richiede conferma. La pagina di assistenza https://support.reolink.com/articles/900000762383-How-Can-I-Cooperate-With-Reolink/ indica il 6% come riferimento. Entrambe consultate il 18/10/2026.
+
+**Non verificati per VORLI:** approvazione, ammissibilità dell'editore individuale italiano, costi di accesso, commissione assegnata, cookie, esclusioni, tempi e soglie di pagamento.
+
+## Contenuto SEO originale: 9 controlli prima di scegliere una telecamera Wi-Fi
+1. Definisci l'area privata da riprendere.
+2. Verifica il segnale Wi-Fi nel punto di installazione.
+3. Confronta alimentazione fissa, PoE e batteria.
+4. Controlla la disponibilità di memoria locale.
+5. Calcola il costo eventuale del cloud.
+6. Valuta notifiche e falsi allarmi.
+7. Controlla visione notturna e limiti dichiarati.
+8. Cerca aggiornamenti software e gestione accessi.
+9. Confronta il costo totale del primo anno.
+
+**Prodotto digitale in bozza:** worksheet «La mia telecamera, senza sorprese» con campi per rete, alimentazione, archiviazione, accessi, budget e requisiti essenziali.
+
+Non attribuire al marchio funzioni non documentate e non presentare prove di prodotto mai svolte come test reali. Nessun link affiliato incluso.
