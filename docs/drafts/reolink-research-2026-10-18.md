@@ -21,3 +21,6 @@ La pagina ufficiale https://reolink.com/it/affiliate/ pubblicizza commissioni tr
 **Prodotto digitale in bozza:** worksheet «La mia telecamera, senza sorprese» con campi per rete, alimentazione, archiviazione, accessi, budget e requisiti essenziali.
 
 Non attribuire al marchio funzioni non documentate e non presentare prove di prodotto mai svolte come test reali. Nessun link affiliato incluso.
+
+## Verifiche prima di monetizzare
+Disclosure chiara dei link affiliati, in linea con l'orientamento AGCM (https://agcm.it/media/comunicati-stampa/2017/7/alias-8853). Per la privacy delle telecamere domestiche consultare le linee guida EDPB (https://www.edpb.europa.eu/system/files/2026-04/summary_edpb_guidelines_201903_video_devices_en.pdf). Per eventuali prodotti digitali valutare recesso, consenso e conferma previsti dalla direttiva UE 2011/83 e la disciplina IVA/OSS, con un consulente qualificato. Fonti consultate il 18/10/2026. Nessun checkout attivato.
