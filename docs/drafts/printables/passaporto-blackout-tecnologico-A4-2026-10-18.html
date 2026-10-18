@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passaporto blackout tecnologico — VORLI Lab (bozza stampabile)</title>
+<style>
+:root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; color:#18232f; background:#f4f7fa; }
+* { box-sizing:border-box; }
+body { margin:0; line-height:1.45; }
+.page { background:#fff; width:210mm; min-height:297mm; margin:12mm auto; padding:17mm 17mm 20mm; box-shadow:0 4px 22px #0002; position:relative; }
+header { display:flex; justify-content:space-between; align-items:flex-start; gap:12mm; border-bottom:3px solid #164e63; padding-bottom:5mm; margin-bottom:8mm; }
+.brand { font-weight:800; letter-spacing:.13em; font-size:13pt; color:#164e63; }
+.kicker { font-size:9pt; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#526578; }
+h1 { font-size:23pt; line-height:1.13; margin:5mm 0 4mm; }
+h2 { font-size:15pt; margin:0 0 4mm; }
+h3 { font-size:11pt; margin:6mm 0 2mm; }
+p { margin:2.5mm 0 4mm; }
+.lead { font-size:11.5pt; }
+.notice { background:#eff6f8; border-left:4px solid #164e63; padding:4mm 5mm; margin:5mm 0; font-size:9.5pt; }
+.warning { background:#fff5e8; border-left:4px solid #ad6b12; padding:4mm 5mm; margin:5mm 0; font-size:9pt; }
+table { width:100%; border-collapse:collapse; table-layout:fixed; margin:3mm 0 5mm; font-size:9pt; }
+th,td { border:1px solid #9babb8; text-align:left; padding:2.5mm; vertical-align:top; overflow-wrap:anywhere; }
+th { background:#e8f1f4; font-weight:700; }
+td.blank { height:15mm; }
+.check { display:flex; align-items:flex-start; gap:2mm; margin:3mm 0; font-size:10pt; }
+.box { flex:0 0 4mm; width:4mm; height:4mm; border:1.5px solid #51677a; margin-top:1mm; }
+.lines { border-bottom:1px solid #8196a6; min-height:10mm; margin:2mm 0 4mm; }
+.small { font-size:8.5pt; color:#34495e; }
+footer { position:absolute; bottom:11mm; left:17mm; right:17mm; border-top:1px solid #b6c4cf; padding-top:3mm; font-size:8pt; display:flex; justify-content:space-between; color:#51677a; }
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+@media print {
+ @page { size:A4; margin:0; }
+ html,body { background:#fff; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+ .page { margin:0; box-shadow:none; break-after:page; page-break-after:always; min-height:297mm; }
+ .page:last-child { break-after:auto; page-break-after:auto; }
+}
+@media screen and (max-width:900px) { .page { width:100%; min-height:auto; margin:0 0 15px; padding:22px; } footer { position:static; margin-top:30px; } .two-col { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<section class="page" aria-labelledby="titolo">
+<header><div><div class="brand">VORLI LAB</div><div class="kicker">Workbook originale · prototipo di stampa</div></div><div class="kicker">18 ottobre 2026</div></header>
+<h1 id="titolo">Passaporto blackout tecnologico</h1>
+<p class="lead">Quattro schede per preparare comunicazioni, ricarica e piccoli dispositivi prima di un'interruzione elettrica.</p>
+<div class="notice"><strong>Come usarlo.</strong> Stampa in formato A4, compila a penna e conserva una copia in un luogo accessibile anche senza connessione. Questa è una bozza educativa, non una certificazione tecnica né un piano di emergenza completo.</div>
+<h2>1. Priorità e contatti</h2>
+<div class="check"><span class="box"></span><span>Ho identificato dove trovare avvisi ufficiali e istruzioni delle autorità locali.</span></div>
+<div class="check"><span class="box"></span><span>Ho una torcia funzionante e una fonte di ricarica compatibile per il telefono.</span></div>
+<div class="check"><span class="box"></span><span>Ho annotato contatti importanti su carta e previsto alternative se Internet non funziona.</span></div>
+<div class="check"><span class="box"></span><span>Ho verificato periodicamente batterie, cavi e istruzioni del produttore.</span></div>
+<table><thead><tr><th>Informazione essenziale</th><th>Dove trovarla / alternativa offline</th><th>Ultima verifica</th></tr></thead><tbody>
+<tr><td>Contatti familiari / di supporto</td><td class="blank"></td><td></td></tr>
+<tr><td>Informazioni e avvisi locali</td><td class="blank"></td><td></td></tr>
+<tr><td>Fonte luce e batterie</td><td class="blank"></td><td></td></tr>
+<tr><td>Ricarica telefono / radio</td><td class="blank"></td><td></td></tr>
+</tbody></table>
+<div class="warning"><strong>Attenzione:</strong> non utilizzare generatori a combustione, barbecue o fornelli da campeggio in casa, garage o vicino ad aperture. Non improvvisare collegamenti alla rete elettrica domestica. Per dispositivi medici o altre esigenze critiche occorre un piano dedicato concordato con professionisti.</div>
+<footer><span>BOZZA NON IN VENDITA · nessun link affiliato</span><span>1 / 4</span></footer>
+</section>
+<section class="page" aria-labelledby="energia">
+<header><div><div class="brand">VORLI LAB</div><div class="kicker">Passaporto blackout · scheda B</div></div><div class="kicker">Inventario energetico</div></header>
+<h2 id="energia">2. Quanta energia serve davvero?</h2>
+<p><strong>W</strong> indica la potenza assorbita; <strong>Wh</strong> indica l'energia. Per una prima stima del fabbisogno: <strong>Wh richiesti = W medi × ore d'uso</strong>. Per più dispositivi, somma le energie; per il funzionamento simultaneo somma anche le potenze in W.</p>
+<table><thead><tr><th>Dispositivo</th><th>Potenza media (W)</th><th>Ore desiderate</th><th>Energia (Wh)</th><th>Priorità</th></tr></thead><tbody>
+<tr><td class="blank"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="blank"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="blank"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="blank"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="blank"></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<div class="two-col"><div><h3>Somma delle energie</h3><div class="lines"></div><h3>Potenza simultanea totale</h3><div class="lines"></div></div><div><h3>Fonte delle misure (etichetta / misuratore)</h3><div class="lines"></div><h3>Picchi di avvio da verificare</h3><div class="lines"></div></div></div>
+<div class="notice"><strong>Esempio puramente illustrativo.</strong> Un dispositivo da 20 W usato per 3 ore richiede circa 60 Wh prima delle perdite. Una batteria nominale da 300 Wh non garantisce 300 Wh utilizzabili: inverter, temperatura, invecchiamento e carico incidono sull'autonomia. Non dedurre la compatibilità dai soli Wh.</div>
+<h3>Domande prima di acquistare</h3>
+<div class="check"><span class="box"></span><span>La potenza di uscita <strong>continua</strong> copre tutti i carichi simultanei?</span></div>
+<div class="check"><span class="box"></span><span>Il dispositivo gestisce eventuali <strong>picchi di avvio</strong> documentati?</span></div>
+<div class="check"><span class="box"></span><span>Il produttore fornisce dati attendibili sull'autonomia per carichi simili?</span></div>
+<div class="warning">Questa scheda non serve a dimensionare alimentazioni per apparecchiature mediche, conservazione di farmaci o altre funzioni essenziali per la sicurezza.</div>
+<footer><span>BOZZA NON IN VENDITA · stime non garantite</span><span>2 / 4</span></footer>
+</section>
+<section class="page" aria-labelledby="compatibilita">
+<header><div><div class="brand">VORLI LAB</div><div class="kicker">Passaporto blackout · scheda C</div></div><div class="kicker">Prima dell'acquisto</div></header>
+<h2 id="compatibilita">3. Compatibilità della batteria</h2>
+<p>Confronta i requisiti dei tuoi dispositivi con le specifiche <strong>del modello esatto</strong> che stai valutando. Non basta leggere la capacità nominale o il numero di porte.</p>
+<table><thead><tr><th>Controllo</th><th>Dato verificato</th><th>Fonte / pagina manuale</th></tr></thead><tbody>
+<tr><td>Capacità nominale (Wh)</td><td class="blank"></td><td></td></tr>
+<tr><td>Potenza continua AC (W)</td><td class="blank"></td><td></td></tr>
+<tr><td>Picco / surge (W e durata)</td><td class="blank"></td><td></td></tr>
+<tr><td>USB-C: profili e potenza in uscita</td><td class="blank"></td><td></td></tr>
+<tr><td>Numero e tipo prese necessarie</td><td class="blank"></td><td></td></tr>
+<tr><td>Ricarica, ventilazione e temperatura</td><td class="blank"></td><td></td></tr>
+<tr><td>Garanzia, assistenza e resi</td><td class="blank"></td><td></td></tr>
+<tr><td>Dimensioni e peso</td><td class="blank"></td><td></td></tr>
+</tbody></table>
+<h3>Verifiche da completare</h3>
+<div class="check"><span class="box"></span><span>Ho consultato manuale e avvertenze di sicurezza del produttore.</span></div>
+<div class="check"><span class="box"></span><span>Ho controllato le uscite e i cavi compatibili, senza adattatori improvvisati.</span></div>
+<div class="check"><span class="box"></span><span>Non considero automaticamente la funzione EPS/UPS equivalente a un vero UPS.</span></div>
+<div class="check"><span class="box"></span><span>Non ho basato la decisione su sconti o recensioni non verificati.</span></div>
+<div class="warning">Non collegare una batteria all'impianto domestico con cavi di ritorno o collegamenti fai-da-te. Eventuali interventi sull'impianto richiedono professionisti e dispositivi idonei.</div>
+<footer><span>BOZZA NON IN VENDITA · nessun prodotto raccomandato</span><span>3 / 4</span></footer>
+</section>
+<section class="page" aria-labelledby="test">
+<header><div><div class="brand">VORLI LAB</div><div class="kicker">Passaporto blackout · scheda D</div></div><div class="kicker">Controlli periodici</div></header>
+<h2 id="test">4. Test e manutenzione</h2>
+<p>Programma verifiche periodiche senza collegare carichi critici. Registra ciò che hai realmente osservato; non usare una prova breve come garanzia di autonomia futura.</p>
+<table><thead><tr><th>Data</th><th>Dispositivi di prova</th><th>Stato carica iniziale</th><th>Durata osservata</th><th>Problemi / azioni</th></tr></thead><tbody>
+<tr><td class="blank"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="blank"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="blank"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="blank"></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h3>Riepilogo personale</h3>
+<p>La mia priorità principale in caso di blackout:</p><div class="lines"></div>
+<p>La prima azione da completare prima del prossimo controllo:</p><div class="lines"></div>
+<p>Data del prossimo controllo:</p><div class="lines"></div>
+<div class="notice"><strong>Regola pratica:</strong> tieni separati il piano di comunicazione, il fabbisogno energetico e la verifica tecnica dei dispositivi. Un accessorio può essere utile senza essere indispensabile: acquista solo dopo aver definito il bisogno.</div>
+<h3>Note di revisione editoriale</h3>
+<p class="small">Prototipo originale basato sulla bozza VORLI del 18/10/2026: <code>docs/drafts/blackout-tech-kit-workbook-2026-10-18.md</code> (branch dedicato). Da verificare prima di un'eventuale distribuzione: impaginazione e stampa A4, accessibilità, accuratezza tecnica, istruzioni di sicurezza, diritti del consumatore, IVA e condizioni commerciali. Nessuna vendita o affiliazione attivata.</p>
+<footer><span>BOZZA NON IN VENDITA · revisione obbligatoria</span><span>4 / 4</span></footer>
+</section>
+</body>
+</html>
