@@ -33,6 +33,13 @@ Questo controllo riguarda esclusivamente il codice HTML/CSS letto nel repository
 - Aumentata la dimensione delle tabelle e dei footer; le caselle decorative sono marcate `aria-hidden`.
 - **Non eseguiti** rendering PDF, verifica della paginazione effettiva, prova in bianco e nero, controllo con lettore di schermo o revisione legale/tecnica.
 
+## Controllo aggiuntivo di accessibilità del sorgente (18/10/2026)
+- Le **16 intestazioni** delle quattro tabelle ora usano `<th scope="col">`, così la funzione di intestazione di colonna è esplicita.
+- Le **10 caselle decorative** precedentemente prive di `aria-hidden` sono state marcate `aria-hidden="true"`; le altre erano già marcate. Le caselle restano decorative e non sono controlli interattivi.
+- Controllo programmatico sul sorgente aggiornato: **4** elementi `section.page`, **4** riferimenti `aria-labelledby` risolti a ID esistenti, nessun ID duplicato, nessun indirizzo email individuato nel file HTML.
+- Commit della correzione HTML: `69cad2b8`.
+- **Limiti:** questo controllo statico non è una prova con lettore di schermo né una prova di stampa. Non certifica accessibilità, impaginazione o conformità legale.
+
 ## Protocollo di collaudo prima di qualsiasi rilascio
 - Aprire il file HTML localmente in Chrome desktop; stampare in PDF con A4, scala 100%, intestazioni/piè di pagina del browser disattivati. **Accettazione:** esattamente 4 pagine, nessun contenuto tagliato, footer leggibili.
 - Ripetere in bianco e nero e con stampa senza grafica di sfondo. **Accettazione:** avvertenze e celle rimangono distinguibili.
