@@ -67,11 +67,13 @@ def main() -> int:
         )
         if not output.is_file():
             raise RuntimeError("Chromium did not produce a PDF")
-        info = run(pdfinfo, str(output))
-        pages_match = re.search(r"^Pages:\s+(\d+)$", info, flags=re.MULTILINE)
+        # First determine page count; then request detailed sizes for all pages.
+        basic_info = run(pdfinfo, str(output))
+        pages_match = re.search(r"^Pages:\s+(\d+)$", basic_info, flags=re.MULTILINE)
         if not pages_match:
             raise RuntimeError("Could not read PDF page count")
         count = int(pages_match.group(1))
+        info = run(pdfinfo, "-f", "1", "-l", str(count), str(output))
         text = run(pdftotext, "-layout", str(output), "-")
         pdf_pages = [p for p in text.split("\f") if p.strip()]
         failures = []
@@ -87,16 +89,26 @@ def main() -> int:
                 failures.append(f"Page {idx + 1} does not contain expected heading: {heading}")
             if not re.search(rf"\b{idx + 1}\s*/\s*4\b", pdf_pages[idx]):
                 failures.append(f"Page {idx + 1} is missing its {idx + 1}/4 footer")
-        sizes = re.findall(r"^Page\s+\d+\s+size:\s+([\d.]+) x ([\d.]+) pts", info, re.M)
-        if not sizes:
-            sizes = re.findall(r"^Page size:\s+([\d.]+) x ([\d.]+) pts", info, re.M)
-        if not sizes:
-            failures.append("Could not verify PDF page dimensions (A4 check missing)")
-        for width, height in sizes:
+        # Require individual dimensions for each page; never accept a single
+        # aggregate "Page size" line as proof for a multi-page document.
+        sizes = re.findall(
+            r"^Page\s+(\d+)\s+size:\s+([\d.]+)\s+x\s+([\d.]+)\s+pts",
+            info, re.MULTILINE,
+        )
+        found_pages = [int(page) for page, _, _ in sizes]
+        expected_pages = list(range(1, count + 1))
+        if found_pages != expected_pages:
+            failures.append(
+                f"Could not verify dimensions of every PDF page: "
+                f"expected {expected_pages}, got {found_pages}"
+            )
+        for page, width, height in sizes:
             if not (594 <= float(width) <= 596 and 841 <= float(height) <= 843):
-                failures.append(f"Unexpected page size: {width} x {height} pt (expected A4)")
+                failures.append(
+                    f"Page {page}: unexpected size {width} x {height} pt (expected A4)"
+                )
         print(f"PDF pages: {count}; extracted pages: {len(pdf_pages)}")
-        print("A4 check:", "PASS" if sizes and not any("page size" in s for s in failures) else "UNVERIFIED/FAIL")
+        print("A4 check:", "PASS" if found_pages == expected_pages and not any("unexpected size" in f or "dimensions" in f for f in failures) else "UNVERIFIED/FAIL")
         print("Headings and footers:", "PASS" if not failures else "FAIL")
         if failures:
             for failure in failures:
