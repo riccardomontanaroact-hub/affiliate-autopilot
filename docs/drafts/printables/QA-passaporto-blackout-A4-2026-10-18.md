@@ -43,3 +43,9 @@ Questo controllo riguarda esclusivamente il codice HTML/CSS letto nel repository
 
 ## Stato di rilascio
 **BLOCCATO — bozza per revisione.** La presenza di un file HTML stampabile non significa che il prodotto sia pronto per essere distribuito o venduto. Nessuna modifica al sito pubblico è autorizzata da questa checklist.
+
+## Fonti pubbliche e perimetro commerciale (consultazione 18/10/2026)
+- [AGCM — riconoscibilità della comunicazione pubblicitaria](https://www.agcm.it/media/comunicati-stampa/2018/12/L%27Antitrust-chiude-anche-la-seconda-moral-suasion-su-influencer-e-marchi%2C-ma-avvia-istruttoria-per-possibili-promozioni-occulte/): l'eventuale futura promozione affiliata dovrà essere identificabile; il prototipo non contiene affiliazioni.
+- [Awin — FAQ ufficiali italiane](https://www.awin.com/it/faq): l'approvazione di un publisher non equivale all'approvazione di ogni programma advertiser; commissioni e termini individuali richiedono la dashboard.
+- [Awin — eWeki IT, profilo pubblico 19988](https://ui.awin.com/merchant-profile/19988): settore elettronica di consumo e cookie pubblico di 30 giorni; commissione individuale e stato contrattuale **non verificati**.
+- La revisione del workbook **non** risolve obblighi IVA, recesso sui contenuti digitali o altri requisiti per la vendita diretta da parte di un venditore individuale italiano. Non trarre conclusioni fiscali senza verifica professionale.
