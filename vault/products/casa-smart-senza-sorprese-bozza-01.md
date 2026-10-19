@@ -1,7 +1,7 @@
 # VORLI — Casa Smart senza sorprese
 ## Guida pratica e checklist per scegliere e gestire dispositivi connessi
 
-**Versione:** bozza editoriale 0.1  
+**Versione:** bozza editoriale 0.2  
 **Stato:** prodotto digitale in preparazione; non pubblicato e non in vendita  
 **Formato previsto:** PDF A4 stampabile + versione digitale compilabile  
 **Pubblico:** persone che vogliono scegliere e gestire dispositivi smart home con più consapevolezza
@@ -24,7 +24,7 @@ Compila una scheda per ogni prodotto che stai valutando.
 - **Funziona senza connessione Internet?** ☐ Sì ☐ No ☐ Da verificare
 - **Richiede un account?** ☐ Sì ☐ No ☐ Da verificare
 - **Richiede un abbonamento o acquisti aggiuntivi?** ___________________
-- **Durata e modalità degli aggiornamenti dichiarate:** ________________
+- **Periodo di supporto e data di fine aggiornamenti dichiarati:** _______
 - **Garanzia, assistenza e condizioni di reso:** _______________________
 - **Data del controllo e fonte consultata:** ___________________________
 
@@ -36,11 +36,12 @@ Prima di collegare il dispositivo all'uso quotidiano:
 
 - ☐ Cambia le credenziali predefinite, se presenti, con una password unica e robusta.
 - ☐ Attiva l'autenticazione a più fattori, se disponibile.
-- ☐ Installa gli aggiornamenti ufficiali disponibili.
+- ☐ Installa gli aggiornamenti ufficiali disponibili e attiva l'aggiornamento automatico, se previsto e adatto al dispositivo.
 - ☐ Controlla i permessi richiesti dall'app e concedi solo quelli necessari alla funzione scelta.
 - ☐ Verifica quali membri della famiglia possono controllare il dispositivo.
 - ☐ Esamina le impostazioni relative a microfono, videocamera e notifiche, se presenti.
-- ☐ Controlla le impostazioni di sicurezza del router e la password della rete Wi-Fi.
+- ☐ Controlla le impostazioni di sicurezza del router, cambia le credenziali amministrative predefinite e usa la cifratura Wi-Fi più aggiornata supportata.
+- ☐ Se non ti serve controllare il dispositivo da fuori casa, disattiva l'accesso remoto quando l'opzione è disponibile.
 - ☐ Conserva il manuale e annota la procedura ufficiale per ripristinare il dispositivo.
 - ☐ Leggi l'informativa privacy per capire quali dati vengono raccolti e come gestire l'account.
 
@@ -70,7 +71,7 @@ Prima di cedere o dismettere un dispositivo:
 
 ## 5. Scheda rapida: comprare o aspettare?
 
-Segna un punto per ogni risposta positiva.
+Spunta le voci per cui hai trovato una risposta sufficientemente chiara.
 
 - ☐ So quale problema pratico risolve.
 - ☐ Ho verificato il modello e la compatibilità sulla fonte ufficiale.
@@ -94,11 +95,11 @@ Il punteggio non è una certificazione: se una voce importante resta sconosciuta
 
 ## Fonti da consultare
 
-Queste risorse erano indicate nella bozza di ricerca iniziale; prima della pubblicazione commerciale è necessario riaprire i link, verificare che siano ancora validi e controllare la data e la pertinenza delle informazioni:
+Collegamenti ricontrollati il 17 ottobre 2026. La pagina della Commissione europea indica che gli obblighi di segnalazione della CRA si applicano dall'11 settembre 2026 e che la maggior parte degli obblighi si applicherà dall'11 dicembre 2027. Queste date riguardano gli obblighi previsti per gli operatori interessati, non azioni normative che il consumatore deve eseguire. Le fonti offrono indicazioni generali; prima di un rilascio commerciale bisogna ricontrollare aggiornamenti, pertinenza e accuratezza dei singoli passaggi, senza presentare questo elenco come una revisione tecnica o legale completa:
 
 - Federal Trade Commission — Securing your internet-connected devices at home: https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home
-- UK National Cyber Security Centre — Smart devices: https://www.ncsc.gov.uk/blog-post/smart-devices-law
-- Commissione europea — Cyber Resilience Act e prodotti digitali: https://commission.europa.eu/news-and-media/news/safer-and-more-secure-digital-products-2026-09-11_en
+- UK National Cyber Security Centre — Smart devices: using them safely in your home: https://www.ncsc.gov.uk/guidance/smart-devices-in-the-home
+- Commissione europea — Legge sulla ciberresilienza (Cyber Resilience Act): https://digital-strategy.ec.europa.eu/it/policies/cyber-resilience-act
 
 ## Nota editoriale e commerciale
 
