@@ -1,0 +1,25 @@
+import unittest
+from datetime import date
+from agent.offer_policy import ready_for_publication, public_metadata
+
+
+class TestOfferPolicy(unittest.TestCase):
+    def test_default_denied(self):
+        self.assertFalse(ready_for_publication({"name": "Draft"}))
+
+    def test_stale_review_denied(self):
+        item = dict(
+            merchant="Shop", publication_approved=True,
+            affiliate_status="approved", approval_source="awin_dashboard",
+            approval_verified_at="2025-01-01",
+            affiliate_url="https://example.org/product",
+        )
+        self.assertFalse(ready_for_publication(item, date(2026, 10, 19)))
+
+    def test_public_export_is_allowlisted(self):
+        item = {"name": "Test", "unknown_field": "Do not export"}
+        self.assertEqual(public_metadata(item), {"name": "Test", "status": "unavailable"})
+
+
+if __name__ == "__main__":
+    unittest.main()
