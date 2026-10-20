@@ -18,3 +18,6 @@
 Questa sessione ha effettuato letture GitHub e controlli strutturali; **nessun test su browser reale** o audit WCAG completo. Un tentativo di aggiornare la pagina interattiva è stato bloccato dal connettore, quindi **non dichiarare implementata la correzione**. Non aprire una PR di rilascio fino al completamento dell'intervento.
 
 Nessun link affiliato, checkout, prezzo, dato personale, deploy o pagamento aggiunto.
+
+## Aggiornamento del 20 ottobre 2026
+Correzione applicata sul branch `vorli/catalog-navigation-fallback-fixed-20261020`: il catalogo interattivo ora collega la pagina statica nella navigazione visibile e nel blocco `noscript`; la pagina statica offre navigazione bidirezionale completa. Verificati mediante lettura GitHub: otto schede statiche, cinque sorgenti editoriali esistenti, link locali delle tre pagine Lab, `noindex` e assenza di checkout. Test reali in browser e audit WCAG ancora da eseguire. Nessuna modifica alla produzione.
