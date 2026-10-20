@@ -3,6 +3,11 @@ import json
 from pathlib import Path
 
 try:
+    from .editorial_order import editorial_order
+except ImportError:
+    from editorial_order import editorial_order
+
+try:
     from .offer_policy import public_metadata, ready_for_publication
 except ImportError:
     from offer_policy import public_metadata, ready_for_publication
@@ -23,21 +28,8 @@ def esc(value):
     return html.escape(str(value))
 
 
-def score(product):
-    return round(
-        (product.get("commission_rate", 0) * 100) * 25
-        + min(product.get("rating", 0), 5) * 8
-        + min(product.get("price", 0) / 100, 5) * 2
-        + len(product.get("pros", [])) * 2,
-        2,
-    )
-
-
 cfg = load("config.json")
-products = load("products.json")
-for product in products:
-    product["score"] = score(product)
-products.sort(key=lambda item: item["score"], reverse=True)
+products = editorial_order(load("products.json"))
 
 # Publish the reviewed mobile-first VORLI design, rather than the old generated shell.
 index_source = (PREVIEW / "index.html").read_text(encoding="utf-8")
@@ -101,7 +93,6 @@ catalog = f"""<!doctype html>
 # Public dashboard: no commissions, scores, tracking URLs or private identifiers.
 rows = "".join(
     f"<tr><td>{esc(p.get('name', ''))}</td>"
-    f"<td>{esc(p.get('merchant', ''))}</td>"
     f"<td>{'Revisione editoriale' if ready_for_publication(p) else 'Non disponibile'}</td></tr>"
     for p in products
 )
@@ -110,7 +101,7 @@ dashboard = f"""<!doctype html><html lang="it"><head><meta charset="utf-8">
 <title>Dashboard — {esc(cfg['site_name'])}</title><link rel="stylesheet" href="style.css?v=vorli-brand-lockup-20261011">
 </head><body><main class="wrap"><h1>Dashboard Autopilot</h1>
 <p class="muted">Stato editoriale delle schede. Nessuna offerta è acquistabile da questa pagina.</p>
-<table><thead><tr><th>Prodotto</th><th>Network</th><th>Stato</th></tr></thead>
+<table><thead><tr><th>Prodotto</th><th>Stato</th></tr></thead>
 <tbody>{rows}</tbody></table></main></body></html>"""
 (SITE / "dashboard.html").write_text(dashboard, encoding="utf-8")
 (DATA / "ranked_products.json").write_text(
