@@ -2,6 +2,11 @@ import html
 import json
 from pathlib import Path
 
+try:
+    from .offer_policy import public_metadata, ready_for_publication
+except ImportError:
+    from offer_policy import public_metadata, ready_for_publication
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 SITE = ROOT / "site"
@@ -52,27 +57,17 @@ for page in ("risorse.html", "guida.html", "usb-c.html"):
 # explicitly marked as demos and never link visitors to example.com.
 cards = []
 for product in products:
-    demo = (
-        product.get("affiliate_url", "").startswith("https://example.com")
-        or product.get("merchant", "").strip().upper() in {"INSERISCI NETWORK", "DEMO"}
-    )
-    if demo:
-        action = '<span class="tag demo">Scheda dimostrativa · offerta non disponibile</span>'
-    else:
-        action = (
-            f'<a class="button" href="{esc(product.get("affiliate_url", ""))}" '
-            'rel="sponsored nofollow noopener" target="_blank">Vedi offerta</a>'
-        )
-    price = product.get("price")
-    price_html = f'<p class="price">€ {float(price):.2f}</p>' if price is not None and not demo else ""
+    # Editorial status is not a substitute for live Awin approval.
+    reviewed = ready_for_publication(product)
+    label = "Scheda revisionata" if reviewed else "Scheda dimostrativa / in verifica"
+    action = '<span class="tag demo">Acquisto non disponibile: offerta da verificare</span>'
     cards.append(
         '<article class="card">'
-        f'<span class="tag demo">{ "Demo" if demo else "Prodotto" }</span>'
+        f'<span class="tag demo">{esc(label)}</span>'
         f'<h2>{esc(product.get("name", "Prodotto"))}</h2>'
-        f'<p class="muted">{esc(product.get("category", ""))}'
-        f' · {("⭐ " + esc(product.get("rating"))) if product.get("rating") and not demo else ""}</p>'
+        f'<p class="muted">{esc(product.get("category", ""))}</p>'
         f'<p>{esc(product.get("description", ""))}</p>'
-        f'{price_html}{action}</article>'
+        f'{action}</article>'
     )
 
 catalog = f"""<!doctype html>
@@ -103,21 +98,22 @@ catalog = f"""<!doctype html>
 </body></html>"""
 (SITE / "catalogo.html").write_text(catalog, encoding="utf-8")
 
+# Public dashboard: no commissions, scores, tracking URLs or private identifiers.
 rows = "".join(
-    f"<tr><td>{esc(p.get('name', ''))}</td><td>{esc(p.get('merchant', ''))}</td>"
-    f"<td>{'—' if (p.get('affiliate_url', '').startswith('https://example.com') or p.get('merchant', '').strip().upper() in {'INSERISCI NETWORK', 'DEMO'}) else f'{float(p.get("commission_rate", 0)) * 100:.2f}%'}</td>"
-    f"<td>{'Non disponibile (demo)' if (p.get('affiliate_url', '').startswith('https://example.com') or p.get('merchant', '').strip().upper() in {'INSERISCI NETWORK', 'DEMO'}) else p['score']}</td></tr>"
+    f"<tr><td>{esc(p.get('name', ''))}</td>"
+    f"<td>{esc(p.get('merchant', ''))}</td>"
+    f"<td>{'Revisione editoriale' if ready_for_publication(p) else 'Non disponibile'}</td></tr>"
     for p in products
 )
 dashboard = f"""<!doctype html><html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dashboard — {esc(cfg['site_name'])}</title><link rel="stylesheet" href="style.css?v=vorli-brand-lockup-20261011">
 </head><body><main class="wrap"><h1>Dashboard Autopilot</h1>
-<p class="muted">Priorità prodotti calcolata automaticamente. Non contiene credenziali.</p>
-<table><thead><tr><th>Prodotto</th><th>Network</th><th>Commissione</th><th>Score</th></tr></thead>
+<p class="muted">Stato editoriale delle schede. Nessuna offerta è acquistabile da questa pagina.</p>
+<table><thead><tr><th>Prodotto</th><th>Network</th><th>Stato</th></tr></thead>
 <tbody>{rows}</tbody></table></main></body></html>"""
 (SITE / "dashboard.html").write_text(dashboard, encoding="utf-8")
 (DATA / "ranked_products.json").write_text(
-    json.dumps(products, ensure_ascii=False, indent=2), encoding="utf-8"
+    json.dumps([public_metadata(p) for p in products], ensure_ascii=False, indent=2), encoding="utf-8"
 )
 print(f"Build completata: {len(products)} prodotti; home VORLI Next e catalogo generati.")
