@@ -67,7 +67,7 @@ catalog = f"""<!doctype html>
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Catalogo VORLI: schede prodotto e offerte da verificare.">
-<title>Catalogo | VORLI</title><link rel="stylesheet" href="style.css?v=vorli-brand-lockup-20261011">
+<meta name="robots" content="noindex,nofollow">\n<title>Catalogo | VORLI</title><link rel="stylesheet" href="style.css?v=vorli-brand-lockup-20261011">
 </head>
 <body>
 <header class="top"><div class="wrap nav">
