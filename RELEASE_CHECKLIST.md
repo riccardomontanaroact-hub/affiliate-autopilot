@@ -13,6 +13,17 @@ python agent/build.py
 
 The preflight is expected to exit with a non-zero status while any release blocker remains. This is deliberate.
 
+## Audit della baseline `main` — 21 ottobre 2026
+
+La revisione del repository ha rilevato che la configurazione attualmente presente su `main` non coincide con quella prudenziale proposta in questa PR:
+
+- `data/config.json` su `main` contiene ancora il segnaposto `INSERISCI IL TUO NOME` e il contatto `riccardomontanaro@etik.com`; la configurazione della PR indica invece il nome fornito per la bozza e `vorli.notifications@gmail.com`.
+- `data/products.json` su `main` contiene ancora `Prodotto demo da sostituire`, il merchant segnaposto `INSERISCI NETWORK` e l'URL `https://example.com/`.
+- La dichiarazione affiliati presente su `main` afferma che il sito contiene link affiliati, mentre il catalogo esaminato è ancora dimostrativo: verificare e allineare dichiarazione e contenuti prima di una pubblicazione commerciale.
+- Il workflow `.github/workflows/build.yml` prevede build/deploy quando cambia `main` e una build pianificata giornaliera. La PR non modifica da sola la produzione; la configurazione effettiva di GitHub Pages e l'aspetto dell'URL pubblico non sono stati verificati da questa audit.
+
+Questi riscontri sono blocchi pre-lancio, non autorizzano a fondere la PR né a cambiare impostazioni di pubblicazione. Non è stata confermata la visualizzazione corrente del sito in un browser.
+
 ## Required before any public commercial launch
 
 - [x] Owner supplied for the draft: Riccardo Montanaro, natural person (still confirm the final legal presentation before launch).
