@@ -18,8 +18,8 @@ The preflight is expected to exit with a non-zero status while any release block
 - [ ] Replace the owner placeholder with the real legal person/entity responsible for the site.
 - [ ] Add a real monitored contact address approved by the owner.
 - [ ] Review and publish an appropriate privacy notice based on the actual data flows, hosting, providers, cookies, and tracking; obtain professional review where appropriate.
-- [ ] Decide whether public pages should remain `noindex,nofollow`; change indexing deliberately only when the site is ready.
-- [ ] Manually verify GitHub Pages source branch/folder and the deployed URL. The repository checks cannot prove the hosting configuration or what a visitor currently sees.
+- [ ] Decide whether public pages should remain `noindex,nofollow`; after the owner explicitly approves the strategy, set `indexing_strategy_reviewed` to `true` in `data/config.json`. Keep it `false` until then.
+- [ ] Manually verify GitHub Pages source branch/folder and the deployed URL. Only after checking the actual repository settings, set `github_pages_source_verified` to `true` in `data/config.json`; code tests cannot prove the hosting configuration or what a visitor currently sees.
 - [ ] Remove the demo product from the public catalogue and add only real offers with evidence of current program approval, terms, price, stock, and destination URL.
 - [ ] Verify every affiliate offer in the relevant network dashboard immediately before activation. A record in JSON is not proof of approval.
 - [ ] Review affiliate disclosures, price/availability wording, accessibility, mobile layout, and all external destinations.
