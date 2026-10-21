@@ -60,7 +60,9 @@ class TestGeneratedSiteSafety(unittest.TestCase):
     def test_public_ranked_export_excludes_demo_merchant(self):
         data = json.loads((ROOT / "data" / "ranked_products.json").read_text(encoding="utf-8"))
         self.assertTrue(data)
-        self.assertTrue(all(item.get("status") == "unavailable" for item in data))
+        demo_items = [item for item in data if item.get("id") == "demo-001"]
+        self.assertTrue(demo_items, "The demo fixture should remain in the public export")
+        self.assertTrue(all(item.get("status") == "unavailable" for item in demo_items))
         self.assertTrue(all(item.get("merchant") != "INSERISCI NETWORK" for item in data))
 
 
