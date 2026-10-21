@@ -44,6 +44,13 @@ class TestGeneratedSiteSafety(unittest.TestCase):
                 html = (self.site / name).read_text(encoding="utf-8")
                 self.assertIn('<meta name="robots" content="noindex,nofollow">', html)
 
+    def test_generated_catalog_and_dashboard_have_skip_navigation(self):
+        for name in ("catalogo.html", "dashboard.html"):
+            with self.subTest(page=name):
+                html = (self.site / name).read_text(encoding="utf-8")
+                self.assertIn('<a class="skip" href="#contenuto">Salta al contenuto</a>', html)
+                self.assertIn('id="contenuto"', html)
+
     def test_local_navigation_targets_exist(self):
         import re
         pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "catalogo.html", "dashboard.html")
