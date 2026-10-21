@@ -49,7 +49,7 @@ class TestGeneratedSiteSafety(unittest.TestCase):
         pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "catalogo.html", "dashboard.html")
         for page in pages:
             html = (self.site / page).read_text(encoding="utf-8")
-            for target in re.findall(r'href=["\\']([^"\\']+)["\\']', html):
+            for target in re.findall(r"""href=["']([^"']+)["']""", html):
                 if target.startswith(("https://", "http://", "mailto:", "tel:", "#", "javascript:")):
                     continue
                 local = target.split("#", 1)[0].split("?", 1)[0]
