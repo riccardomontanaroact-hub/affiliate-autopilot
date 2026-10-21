@@ -25,6 +25,19 @@ class TestGeneratedSiteSafety(unittest.TestCase):
         self.assertIn('<meta name="robots" content="noindex,nofollow">\n<title>Catalogo | VORLI</title>', html)
         self.assertNotIn("\\n<title>Catalogo | VORLI</title>", html)
 
+    def test_catalog_disclosure_matches_inactive_affiliate_state(self):
+        html = (self.site / "catalogo.html").read_text(encoding="utf-8")
+        self.assertIn("In questa anteprima non sono presenti link affiliati attivi.", html)
+        self.assertNotIn("Questo sito contiene link di affiliazione", html)
+
+    def test_homepage_and_resources_list_the_same_four_original_guides(self):
+        import re
+        home = (self.site / "index.html").read_text(encoding="utf-8")
+        resources = (self.site / "risorse.html").read_text(encoding="utf-8")
+        github_md = r"https://github\.com/riccardomontanaroact-hub/affiliate-autopilot/blob/[^\" ]+\.md"
+        self.assertEqual(len(re.findall(github_md, home)), 4)
+        self.assertEqual(len(re.findall(github_md, resources)), 4)
+
     def test_demo_catalog_has_no_purchase_links(self):
         html = (self.site / "catalogo.html").read_text(encoding="utf-8")
         self.assertIn("Acquisto non disponibile", html)
