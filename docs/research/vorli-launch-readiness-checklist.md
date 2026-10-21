@@ -15,14 +15,15 @@ Ultimo controllo documentato: 21 ottobre 2026. Questo documento è una checklist
 9. **Programmi affiliati** — verificare manualmente nella dashboard di ciascun network l'accettazione, i termini, il paese, le categorie consentite e i link ufficiali. Un invito non equivale ad approvazione.
 10. **Rilascio controllato** — prima del merge e del deploy, fare revisione finale e ottenere approvazione umana; controllare il sito pubblico dopo il rilascio e conservare un piano di rollback.
 
-## Stato verificato al momento della stesura
+## Stato verificato — 21 ottobre 2026
 
-- La run GitHub Actions n. 96 ha avuto esito positivo sul commit `deece03f04ede181d6e6a9c1c9b0602561a4a5c6` (compile, test runner a cinque agenti, build e controllo whitespace).
-- La PR #47 è ancora una bozza aperta; non è stata unita.
+- La run GitHub Actions [39608979873](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/actions/runs/39608979873) è riuscita sul commit `0a81cb0df7c3c93cf331fb7230084e91c0614e54`: compilazione Python, test runner dei cinque agenti, build del sito/catalogo e controllo whitespace superati. È una validazione CI della PR, non un deploy Pages.
+- La PR #47 resta aperta in bozza e non è stata unita.
+- La configurazione della bozza contiene il titolare `Riccardo Montanaro` e il contatto `vorli.notifications@gmail.com`; la loro presenza nei file non sostituisce una revisione finale prima del lancio.
 - Il catalogo contiene ancora una scheda dimostrativa e non deve essere trattato come catalogo commerciale.
-- Homepage, pagine preview e pagine generate devono mantenere `noindex,nofollow` finché il prototipo non viene approvato per il lancio.
-- Il proprietario è ancora un segnaposto e il campo contatto è vuoto.
-- Non è stata verificata un'approvazione attiva di programmi affiliati sufficiente a rendere acquistabile una scheda.
+- Le pagine generate mantengono `noindex,nofollow` finché il prototipo non viene approvato per il lancio.
+- Non è stata verificata nella dashboard Awin un'approvazione attiva sufficiente a rendere acquistabile una scheda.
+- La configurazione effettiva di GitHub Pages e la versione restituita dal dominio pubblico non sono state verificate; `site/privacy.html` non è presente su `main` e la modifica è ancora limitata alla PR.
 
 ## Regole di sicurezza
 
