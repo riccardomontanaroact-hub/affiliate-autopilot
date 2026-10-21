@@ -1,7 +1,11 @@
 """Public-safe editorial catalogue helpers for VORLI.
 
-Reviewed 2026-10-20. No ranking by affiliate commission or commercial score.
+No ranking by affiliate commission or commercial score.
 """
+try:
+    from .offer_policy import ready_for_publication
+except ImportError:
+    from offer_policy import ready_for_publication
 
 PUBLIC_FIELDS = ("id", "name", "category", "description")
 
@@ -12,17 +16,8 @@ def editorial_order(products):
 
 
 def is_public_offer(product):
-    """Only explicitly reviewed HTTPS offers may produce an outbound link."""
-    url = product.get("affiliate_url", "")
-    merchant = product.get("merchant", "")
-    return (
-        product.get("approved_for_publication") is True
-        and isinstance(url, str)
-        and url.startswith("https://")
-        and not url.startswith("https://example.com")
-        and isinstance(merchant, str)
-        and merchant.strip().upper() not in {"INSERISCI NETWORK", "DEMO"}
-    )
+    """Use the single fail-closed offer policy, never a weaker duplicate gate."""
+    return ready_for_publication(product)
 
 
 def public_catalog(products):
