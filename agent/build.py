@@ -98,6 +98,7 @@ rows = "".join(
 )
 dashboard = f"""<!doctype html><html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>Dashboard — {esc(cfg['site_name'])}</title><link rel="stylesheet" href="style.css?v=vorli-brand-lockup-20261011">
 </head><body><main class="wrap"><h1>Dashboard Autopilot</h1>
 <p class="muted">Stato editoriale delle schede. Nessuna offerta è acquistabile da questa pagina.</p>
