@@ -51,6 +51,11 @@ class TestGeneratedSiteSafety(unittest.TestCase):
                 self.assertIn('<a class="skip" href="#contenuto">Salta al contenuto</a>', html)
                 self.assertIn('id="contenuto"', html)
 
+    def test_mobile_navigation_has_touch_targets_and_reduced_motion_support(self):
+        css = (self.site / "style.css").read_text(encoding="utf-8")
+        self.assertIn("min-height:44px", css)
+        self.assertIn("@media(prefers-reduced-motion:reduce)", css)
+
     def test_local_navigation_targets_exist(self):
         import re
         pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "catalogo.html", "dashboard.html")
