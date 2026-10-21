@@ -26,6 +26,19 @@ class TestOfferPolicy(unittest.TestCase):
         )
         self.assertFalse(ready_for_publication(item, date(2026, 10, 21)))
 
+    def test_demo_merchant_variants_are_rejected(self):
+        for merchant in ("Demo Merchant", "INSERISCI NETWORK  ", "Shop Placeholder"):
+            with self.subTest(merchant=merchant):
+                item = dict(
+                    publication_approved=True,
+                    affiliate_status="approved",
+                    approval_source="awin_dashboard",
+                    approval_verified_at="2026-10-21",
+                    merchant=merchant,
+                    affiliate_url="https://merchant.test/product",
+                )
+                self.assertFalse(ready_for_publication(item, date(2026, 10, 21)))
+
     def test_http_affiliate_url_is_rejected(self):
         item = dict(
             publication_approved=True,
