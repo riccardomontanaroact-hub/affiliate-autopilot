@@ -29,6 +29,31 @@ class TestOfferPolicy(unittest.TestCase):
         item = {"name": "Test", "unknown_field": "Do not export"}
         self.assertEqual(public_metadata(item), {"name": "Test", "status": "unavailable"})
 
+    def test_public_export_excludes_commercial_and_tracking_fields(self):
+        item = {
+            "id": "product-1",
+            "name": "Test",
+            "category": "Tech",
+            "merchant": "Merchant",
+            "description": "Public description",
+            "rating": 4.5,
+            "price": 99.90,
+            "commission_rate": 0.10,
+            "affiliate_url": "https://tracking.example/secret",
+            "score": 999,
+            "private_account_id": "private",
+        }
+        result = public_metadata(item)
+        self.assertEqual(
+            set(result),
+            {"id", "name", "category", "merchant", "description", "rating", "status"},
+        )
+        self.assertNotIn("price", result)
+        self.assertNotIn("commission_rate", result)
+        self.assertNotIn("affiliate_url", result)
+        self.assertNotIn("score", result)
+        self.assertNotIn("private_account_id", result)
+
 
 if __name__ == "__main__":
     unittest.main()
