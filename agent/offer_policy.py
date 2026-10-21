@@ -7,6 +7,13 @@ from datetime import date, datetime, timezone
 from urllib.parse import urlsplit
 
 
+DEMO_MERCHANTS = {"INSERISCI NETWORK", "DEMO", "TEST", "PLACEHOLDER"}
+PLACEHOLDER_HOSTS = {
+    "example.com", "example.org", "example.net",
+    "www.example.com", "www.example.org", "www.example.net",
+}
+
+
 def ready_for_publication(product: dict, today: date | None = None) -> bool:
     """Default deny unless a human explicitly reviewed an approved offer."""
     if product.get("publication_approved") is not True:
@@ -15,17 +22,25 @@ def ready_for_publication(product: dict, today: date | None = None) -> bool:
         return False
     if product.get("approval_source") != "awin_dashboard":
         return False
-    if not product.get("merchant"):
+
+    merchant = product.get("merchant")
+    if not isinstance(merchant, str) or not merchant.strip():
         return False
+    if merchant.strip().upper() in DEMO_MERCHANTS:
+        return False
+
     try:
         reviewed = date.fromisoformat(product["approval_verified_at"])
         days = ((today or datetime.now(timezone.utc).date()) - reviewed).days
         if not 0 <= days <= 30:
             return False
-        parsed = urlsplit(product["affiliate_url"])
+        url = product["affiliate_url"]
+        if not isinstance(url, str):
+            return False
+        parsed = urlsplit(url)
         if (parsed.scheme != "https" or not parsed.hostname
                 or parsed.username or parsed.password
-                or parsed.hostname.lower() in {"example.com", "www.example.com"}):
+                or parsed.hostname.lower() in PLACEHOLDER_HOSTS):
             return False
     except (KeyError, TypeError, ValueError):
         return False
