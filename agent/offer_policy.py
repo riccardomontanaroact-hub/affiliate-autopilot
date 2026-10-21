@@ -26,7 +26,10 @@ def ready_for_publication(product: dict, today: date | None = None) -> bool:
     merchant = product.get("merchant")
     if not isinstance(merchant, str) or not merchant.strip():
         return False
-    if merchant.strip().upper() in DEMO_MERCHANTS:
+    normalized_merchant = " ".join(merchant.upper().split())
+    if (normalized_merchant in DEMO_MERCHANTS
+            or any(marker in normalized_merchant
+                   for marker in ("INSERISCI", "PLACEHOLDER", "DEMO"))):
         return False
 
     try:
