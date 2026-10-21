@@ -21,6 +21,8 @@
   function norm(value) {
     return String(value || "").toLocaleLowerCase("it").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
   }
+  const categoryFragment = document.createDocumentFragment();
+  const resourceFragment = document.createDocumentFragment();
   data.categories.forEach(function (c, index) {
     const option = el("option", "", c.name);
     option.value = c.id;
@@ -35,7 +37,7 @@
     card.appendChild(el("h3", "", c.name));
     card.appendChild(el("p", "", c.description));
     card.appendChild(el("span", "tag demo", "Categoria demo"));
-    categoryRoot.appendChild(card);
+    categoryFragment.appendChild(card);
   });
   data.resources.forEach(function (r, index) {
     const card = el("article", "tile resource");
@@ -58,8 +60,12 @@
       body.appendChild(link);
     }
     card.appendChild(body);
-    resourceRoot.appendChild(card);
+    resourceFragment.appendChild(card);
   });
+  // Only replace static fallback after both card collections have rendered successfully.
+  categoryRoot.replaceChildren(categoryFragment);
+  resourceRoot.replaceChildren(resourceFragment);
+  document.documentElement.classList.add("js-ready");
   const cards = Array.from(document.querySelectorAll(".tile[data-category]"));
   function apply() {
     const query = norm(search.value);
