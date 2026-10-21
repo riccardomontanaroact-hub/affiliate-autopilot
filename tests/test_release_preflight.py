@@ -26,8 +26,8 @@ class TestReleasePreflight(unittest.TestCase):
         self.assertIn("Pagina privacy ancora preliminare: serve revisione prima del lancio.", blockers)
         self.assertIn("Nessuna offerta verificata e approvata pronta per la pubblicazione.", blockers)
         self.assertIn("Il catalogo contiene ancora almeno una scheda dimostrativa.", blockers)
-        self.assertIn("Le pagine sono in noindex: prima del lancio va decisa e verificata la strategia di indicizzazione.", blockers)
-        self.assertIn("Le impostazioni GitHub Pages (branch/cartella di pubblicazione) richiedono una verifica manuale: il controllo automatico non può confermarle.", blockers)
+        self.assertIn("Strategia di indicizzazione non approvata esplicitamente.", blockers)
+        self.assertIn("Origine GitHub Pages non verificata manualmente.", blockers)
 
     def test_preflight_does_not_claim_publication_or_compliance(self):
         from agent.release_preflight import release_blockers
