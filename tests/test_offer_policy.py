@@ -104,6 +104,24 @@ class TestOfferPolicy(unittest.TestCase):
             ],
         )
 
+    def test_public_export_includes_merchant_only_after_approval(self):
+        item = {
+            "id": "approved-1",
+            "name": "Approved item",
+            "category": "Tech",
+            "description": "Reviewed offer",
+            "rating": 4.8,
+            "merchant": "Real Merchant",
+            "publication_approved": True,
+            "affiliate_status": "approved",
+            "approval_source": "awin_dashboard",
+            "approval_verified_at": "2026-10-21",
+            "affiliate_url": "https://merchant.test/product",
+        }
+        result = public_metadata(item)
+        self.assertEqual(result["merchant"], "Real Merchant")
+        self.assertEqual(result["status"], "reviewed")
+
     def test_public_export_excludes_commercial_and_tracking_fields(self):
         item = {
             "id": "product-1",
@@ -121,8 +139,9 @@ class TestOfferPolicy(unittest.TestCase):
         result = public_metadata(item)
         self.assertEqual(
             set(result),
-            {"id", "name", "category", "merchant", "description", "rating", "status"},
+            {"id", "name", "category", "description", "rating", "status"},
         )
+        self.assertNotIn("merchant", result)
         self.assertNotIn("price", result)
         self.assertNotIn("commission_rate", result)
         self.assertNotIn("affiliate_url", result)
