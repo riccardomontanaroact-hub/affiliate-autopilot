@@ -51,10 +51,11 @@ def ready_for_publication(product: dict, today: date | None = None) -> bool:
 
 
 def public_metadata(product: dict) -> dict:
-    """Allowlist safe editorial fields; omit tracking URLs and account details."""
-    fields = ("id", "name", "category", "merchant", "description", "rating")
+    """Allowlist safe editorial fields; omit merchant until offer is approved."""
+    fields = ("id", "name", "category", "description", "rating")
     output = {key: product[key] for key in fields if key in product}
-    output["status"] = (
-        "reviewed" if ready_for_publication(product) else "unavailable"
-    )
+    approved = ready_for_publication(product)
+    if approved and isinstance(product.get("merchant"), str):
+        output["merchant"] = product["merchant"]
+    output["status"] = "reviewed" if approved else "unavailable"
     return output
