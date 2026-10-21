@@ -3,7 +3,6 @@
     "id": "demo-001",
     "name": "Prodotto demo da sostituire",
     "category": "Casa",
-    "merchant": "INSERISCI NETWORK",
     "description": "Scheda dimostrativa: sostituisci questo prodotto con un'offerta reale approvata dal tuo programma di affiliazione.",
     "rating": 4.5,
     "status": "unavailable"
