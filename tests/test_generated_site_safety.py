@@ -38,6 +38,25 @@ class TestGeneratedSiteSafety(unittest.TestCase):
         self.assertNotIn("affiliate_url", html)
         self.assertIn("Non disponibile", html)
 
+    def test_all_generated_public_pages_remain_noindex(self):
+        for name in ("index.html", "risorse.html", "guida.html", "usb-c.html", "catalogo.html", "dashboard.html"):
+            with self.subTest(page=name):
+                html = (self.site / name).read_text(encoding="utf-8")
+                self.assertIn('<meta name="robots" content="noindex,nofollow">', html)
+
+    def test_local_navigation_targets_exist(self):
+        import re
+        pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "catalogo.html", "dashboard.html")
+        for page in pages:
+            html = (self.site / page).read_text(encoding="utf-8")
+            for target in re.findall(r'href=["\\']([^"\\']+)["\\']', html):
+                if target.startswith(("https://", "http://", "mailto:", "tel:", "#", "javascript:")):
+                    continue
+                local = target.split("#", 1)[0].split("?", 1)[0]
+                if local:
+                    with self.subTest(page=page, target=target):
+                        self.assertTrue((self.site / local).is_file(), f"Missing local target {target}")
+
     def test_public_ranked_export_excludes_demo_merchant(self):
         data = json.loads((ROOT / "data" / "ranked_products.json").read_text(encoding="utf-8"))
         self.assertTrue(data)
