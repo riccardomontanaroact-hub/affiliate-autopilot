@@ -24,6 +24,13 @@ La revisione del repository ha rilevato che la configurazione attualmente presen
 
 Questi riscontri sono blocchi pre-lancio, non autorizzano a fondere la PR né a cambiare impostazioni di pubblicazione. Non è stata confermata la visualizzazione corrente del sito in un browser.
 
+## Verifica repository e interfaccia — 21 ottobre 2026
+
+- La cartella `site/` presente su `main` include le pagine `index.html`, `catalogo.html`, `guida.html`, `risorse.html` e `usb-c.html`; non risulta presente `site/privacy.html`. La pagina privacy è invece nella cartella di anteprima della PR. Prima di una pubblicazione commerciale va aggiunta e verificata nel sito generato, non solo nell'anteprima.
+- Il CSS della versione `main` contiene media query per layout desktop e mobile, focus visibile e preferenze di movimento ridotto. Questo è un controllo del codice, non una prova visiva su un dispositivo reale.
+- La lettura delle impostazioni GitHub Pages tramite l'integrazione disponibile non è riuscita; quindi sorgente effettiva, stato di pubblicazione e contenuto restituito dal dominio non sono confermati da questa verifica.
+- La scansione statica del repository non sostituisce una verifica completa dei flussi dati, dei log del provider, dei link esterni o una revisione legale. Nessuna conformità normativa viene dichiarata.
+
 ## Required before any public commercial launch
 
 - [x] Owner supplied for the draft: Riccardo Montanaro, natural person (still confirm the final legal presentation before launch).
