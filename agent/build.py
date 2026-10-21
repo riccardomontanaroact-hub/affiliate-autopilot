@@ -88,7 +88,7 @@ catalog = f"""<!doctype html>
 </main>
 <footer class="foot"><div class="wrap"><strong>VORLI</strong>
 <p>Prezzi e disponibilità possono cambiare. Le schede demo non sono offerte acquistabili.</p>
-<p>© 2026 VORLI · <a href="guida.html">Metodo editoriale</a></p></div></footer>
+<p>© 2026 VORLI · <a href="guida.html">Metodo editoriale</a> · <a href="privacy.html">Privacy e trasparenza</a></p></div></footer>
 </body></html>"""
 (SITE / "catalogo.html").write_text(catalog, encoding="utf-8")
 
