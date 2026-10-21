@@ -8,9 +8,9 @@ except ImportError:
     from editorial_order import editorial_order
 
 try:
-    from .offer_policy import public_metadata, ready_for_publication
+    from .offer_policy import public_metadata
 except ImportError:
-    from offer_policy import public_metadata, ready_for_publication
+    from offer_policy import public_metadata
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -50,8 +50,8 @@ for page in ("risorse.html", "guida.html", "usb-c.html"):
 cards = []
 for product in products:
     # Editorial status is not a substitute for live Awin approval.
-    reviewed = ready_for_publication(product)
-    label = "Scheda revisionata" if reviewed else "Scheda dimostrativa / in verifica"
+    # This draft does not activate purchases, even when approval metadata exists.
+    label = "Offerta non attiva"
     action = '<span class="tag demo">Acquisto non disponibile: offerta da verificare</span>'
     cards.append(
         '<article class="card">'
@@ -93,7 +93,7 @@ catalog = f"""<!doctype html>
 # Public dashboard: no commissions, scores, tracking URLs or private identifiers.
 rows = "".join(
     f"<tr><td>{esc(p.get('name', ''))}</td>"
-    f"<td>{'Revisione editoriale' if ready_for_publication(p) else 'Non disponibile'}</td></tr>"
+    f"<td>Non disponibile</td></tr>"
     for p in products
 )
 dashboard = f"""<!doctype html><html lang="it"><head><meta charset="utf-8">
