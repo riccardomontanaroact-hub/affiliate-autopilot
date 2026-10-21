@@ -47,6 +47,8 @@ def release_blockers():
             break
 
     pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "privacy.html", "catalogo.html", "dashboard.html")
+    blockers.append("Le pagine sono in noindex: prima del lancio va decisa e verificata la strategia di indicizzazione.")
+    blockers.append("Le impostazioni GitHub Pages (branch/cartella di pubblicazione) richiedono una verifica manuale: il controllo automatico non può confermarle.")
     for page in pages:
         source = PREVIEW / page if page not in ("catalogo.html", "dashboard.html") else None
         generated = SITE / page
