@@ -15,8 +15,8 @@ The preflight is expected to exit with a non-zero status while any release block
 
 ## Required before any public commercial launch
 
-- [ ] Replace the owner placeholder with the real legal person/entity responsible for the site.
-- [ ] Add a real monitored contact address approved by the owner.
+- [x] Owner supplied for the draft: Riccardo Montanaro, natural person (still confirm the final legal presentation before launch).
+- [x] Contact address supplied for the draft: vorli.notifications@gmail.com (monitoring and suitability should be confirmed before launch).
 - [ ] Review and publish an appropriate privacy notice based on the actual data flows, hosting, providers, cookies, and tracking; obtain professional review where appropriate.
 - [ ] Decide whether public pages should remain `noindex,nofollow`; after the owner explicitly approves the strategy, set `indexing_strategy_reviewed` to `true` in `data/config.json`. Keep it `false` until then.
 - [ ] Manually verify GitHub Pages source branch/folder and the deployed URL. Only after checking the actual repository settings, set `github_pages_source_verified` to `true` in `data/config.json`; code tests cannot prove the hosting configuration or what a visitor currently sees.
