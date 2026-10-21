@@ -1,6 +1,7 @@
 import unittest
 from datetime import date
 from agent.offer_policy import ready_for_publication, public_metadata
+from agent.editorial_order import public_catalog
 
 
 class TestOfferPolicy(unittest.TestCase):
@@ -28,6 +29,45 @@ class TestOfferPolicy(unittest.TestCase):
     def test_public_export_is_allowlisted(self):
         item = {"name": "Test", "unknown_field": "Do not export"}
         self.assertEqual(public_metadata(item), {"name": "Test", "status": "unavailable"})
+
+    def test_public_catalog_is_allowlisted_and_keeps_order(self):
+        products = [
+            {
+                "id": "first",
+                "name": "First",
+                "category": "Tech",
+                "description": "Public description",
+                "merchant": "Private merchant metadata",
+                "affiliate_url": "https://tracking.example/secret",
+                "commission_rate": 0.20,
+            },
+            {
+                "id": "second",
+                "name": "Second",
+                "category": "Casa",
+                "description": "Second description",
+                "score": 999,
+            },
+        ]
+        self.assertEqual(
+            public_catalog(products),
+            [
+                {
+                    "id": "first",
+                    "name": "First",
+                    "category": "Tech",
+                    "description": "Public description",
+                    "status": "not_published",
+                },
+                {
+                    "id": "second",
+                    "name": "Second",
+                    "category": "Casa",
+                    "description": "Second description",
+                    "status": "not_published",
+                },
+            ],
+        )
 
     def test_public_export_excludes_commercial_and_tracking_fields(self):
         item = {
