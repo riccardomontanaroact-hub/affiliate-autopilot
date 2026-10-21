@@ -17,10 +17,10 @@ Ultimo controllo documentato: 21 ottobre 2026. Questo documento è una checklist
 
 ## Stato verificato al momento della stesura
 
-- La run GitHub Actions n. 92 ha avuto esito positivo sul commit precedente ai test per varianti di merchant segnaposto.
+- La run GitHub Actions n. 96 ha avuto esito positivo sul commit `deece03f04ede181d6e6a9c1c9b0602561a4a5c6` (compile, test runner a cinque agenti, build e controllo whitespace).
 - La PR #47 è ancora una bozza aperta; non è stata unita.
 - Il catalogo contiene ancora una scheda dimostrativa e non deve essere trattato come catalogo commerciale.
-- La homepage e la pagina Risorse della preview contengono `noindex,nofollow`.
+- Homepage, pagine preview e pagine generate devono mantenere `noindex,nofollow` finché il prototipo non viene approvato per il lancio.
 - Il proprietario è ancora un segnaposto e il campo contatto è vuoto.
 - Non è stata verificata un'approvazione attiva di programmi affiliati sufficiente a rendere acquistabile una scheda.
 
