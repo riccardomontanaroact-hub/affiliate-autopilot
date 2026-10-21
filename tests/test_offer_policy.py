@@ -26,6 +26,28 @@ class TestOfferPolicy(unittest.TestCase):
         )
         self.assertFalse(ready_for_publication(item, date(2026, 10, 21)))
 
+    def test_http_affiliate_url_is_rejected(self):
+        item = dict(
+            publication_approved=True,
+            affiliate_status="approved",
+            approval_source="awin_dashboard",
+            approval_verified_at="2026-10-21",
+            merchant="Real Merchant",
+            affiliate_url="http://merchant.test/product",
+        )
+        self.assertFalse(ready_for_publication(item, date(2026, 10, 21)))
+
+    def test_url_with_embedded_credentials_is_rejected(self):
+        item = dict(
+            publication_approved=True,
+            affiliate_status="approved",
+            approval_source="awin_dashboard",
+            approval_verified_at="2026-10-21",
+            merchant="Real Merchant",
+            affiliate_url="https://user:password@merchant.test/product",
+        )
+        self.assertFalse(ready_for_publication(item, date(2026, 10, 21)))
+
     def test_public_export_is_allowlisted(self):
         item = {"name": "Test", "unknown_field": "Do not export"}
         self.assertEqual(public_metadata(item), {"name": "Test", "status": "unavailable"})
