@@ -47,7 +47,7 @@ class TestGeneratedSiteSafety(unittest.TestCase):
         import re
         home = (self.site / "index.html").read_text(encoding="utf-8")
         resources = (self.site / "risorse.html").read_text(encoding="utf-8")
-        github_md = r"https://github\\.com/riccardomontanaroact-hub/affiliate-autopilot/blob/[^\\" ]+\\.md"
+        github_md = r"https://github\\.com/riccardomontanaroact-hub/affiliate-autopilot/blob/[^\\\" ]+\\.md"
         self.assertEqual(len(re.findall(github_md, home)), 4)
         self.assertEqual(len(re.findall(github_md, resources)), 4)
 
