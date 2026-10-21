@@ -25,6 +25,12 @@ class TestGeneratedSiteSafety(unittest.TestCase):
         self.assertIn('<meta name="robots" content="noindex,nofollow">\n<title>Catalogo | VORLI</title>', html)
         self.assertNotIn("\\n<title>Catalogo | VORLI</title>", html)
 
+    def test_privacy_page_is_linked_from_main_pages(self):
+        for name in ("index.html", "risorse.html", "guida.html", "usb-c.html", "catalogo.html"):
+            with self.subTest(page=name):
+                html = (self.site / name).read_text(encoding="utf-8")
+                self.assertIn('href="privacy.html"', html)
+
     def test_privacy_page_is_cautious_and_noindex(self):
         html = (self.site / "privacy.html").read_text(encoding="utf-8")
         self.assertIn('<meta name="robots" content="noindex,nofollow">', html)
