@@ -25,6 +25,13 @@ class TestGeneratedSiteSafety(unittest.TestCase):
         self.assertIn('<meta name="robots" content="noindex,nofollow">\n<title>Catalogo | VORLI</title>', html)
         self.assertNotIn("\\n<title>Catalogo | VORLI</title>", html)
 
+    def test_privacy_page_is_cautious_and_noindex(self):
+        html = (self.site / "privacy.html").read_text(encoding="utf-8")
+        self.assertIn('<meta name="robots" content="noindex,nofollow">', html)
+        self.assertIn("nota informativa preliminare", html)
+        self.assertIn("informativa privacy di GitHub", html)
+        self.assertIn("non integra moduli di contatto", html)
+
     def test_catalog_disclosure_matches_inactive_affiliate_state(self):
         html = (self.site / "catalogo.html").read_text(encoding="utf-8")
         self.assertIn("In questa anteprima non sono presenti link affiliati attivi.", html)
@@ -52,7 +59,7 @@ class TestGeneratedSiteSafety(unittest.TestCase):
         self.assertIn("Non disponibile", html)
 
     def test_all_generated_public_pages_remain_noindex(self):
-        for name in ("index.html", "risorse.html", "guida.html", "usb-c.html", "catalogo.html", "dashboard.html"):
+        for name in ("index.html", "risorse.html", "guida.html", "usb-c.html", "privacy.html", "catalogo.html", "dashboard.html"):
             with self.subTest(page=name):
                 html = (self.site / name).read_text(encoding="utf-8")
                 self.assertIn('<meta name="robots" content="noindex,nofollow">', html)
