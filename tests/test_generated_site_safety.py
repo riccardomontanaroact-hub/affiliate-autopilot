@@ -47,7 +47,7 @@ class TestGeneratedSiteSafety(unittest.TestCase):
         import re
         home = (self.site / "index.html").read_text(encoding="utf-8")
         resources = (self.site / "risorse.html").read_text(encoding="utf-8")
-        github_md = r"https://github\.com/riccardomontanaroact-hub/affiliate-autopilot/blob/[^\" ]+\.md"
+        github_md = r"https://github\\.com/riccardomontanaroact-hub/affiliate-autopilot/blob/[^\\" ]+\\.md"
         self.assertEqual(len(re.findall(github_md, home)), 4)
         self.assertEqual(len(re.findall(github_md, resources)), 4)
 
@@ -84,7 +84,7 @@ class TestGeneratedSiteSafety(unittest.TestCase):
 
     def test_local_navigation_targets_exist(self):
         import re
-        pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "catalogo.html", "dashboard.html")
+        pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "privacy.html", "catalogo.html", "dashboard.html")
         for page in pages:
             html = (self.site / page).read_text(encoding="utf-8")
             for target in re.findall(r"""href=["']([^"']+)["']""", html):
