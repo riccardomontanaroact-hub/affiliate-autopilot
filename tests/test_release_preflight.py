@@ -29,6 +29,19 @@ class TestReleasePreflight(unittest.TestCase):
         self.assertIn("Strategia di indicizzazione non approvata esplicitamente.", blockers)
         self.assertIn("Origine GitHub Pages non verificata manualmente.", blockers)
 
+    def test_preflight_cli_fails_closed_while_release_blockers_remain(self):
+        result = subprocess.run(
+            [sys.executable, "agent/release_preflight.py"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("VORLI — PRE-FLIGHT: BLOCCATO", result.stdout)
+        self.assertIn("Nessuna offerta verificata e approvata pronta per la pubblicazione.", result.stdout)
+        self.assertIn("Origine GitHub Pages non verificata manualmente.", result.stdout)
+
+
     def test_preflight_does_not_claim_publication_or_compliance(self):
         from agent.release_preflight import release_blockers
         self.assertTrue(release_blockers(), "The current draft must not be treated as release-ready")
