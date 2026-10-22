@@ -30,7 +30,7 @@ h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.12;letter-spacing:-.035em}h2{l
 .card:hover{transform:translateY(-3px);border-color:rgba(71,209,255,.5);box-shadow:0 16px 42px rgba(0,0,0,.26),0 0 24px rgba(54,200,255,.06)}
 .card p{color:var(--muted)}
 .tag{display:inline-block;background:rgba(63,194,255,.12);color:#9deaff;border:1px solid rgba(63,194,255,.2);border-radius:20px;padding:.2rem .6rem;font-size:.8rem;font-weight:750}
-.tag.demo{background:rgba(255,190,91,.12);color:#ffd28a;border-color:rgba(255,190,91,.24)}.tag.draft{background:rgba(176,157,255,.12);color:#d5c8ff;border-color:rgba(176,157,255,.2)}
+.tag.demo{background:rgba(255,190,91,.12);color:#ffd28a;border-color:rgba(255,190,91,.24)}.tag.verified{background:rgba(91,225,164,.12);color:#a8f5ce;border-color:rgba(91,225,164,.28)}.tag.blocked{background:rgba(255,120,120,.1);color:#ffb6b6;border-color:rgba(255,120,120,.28)}.tag.draft{background:rgba(176,157,255,.12);color:#d5c8ff;border-color:rgba(176,157,255,.2)}
 .button{display:inline-block;background:linear-gradient(100deg,#087fc2,#2f9df1);color:white;padding:.7rem 1rem;border:1px solid rgba(143,229,255,.28);border-radius:10px;text-decoration:none;font-weight:800;margin:.3rem .4rem .3rem 0;box-shadow:0 6px 20px rgba(12,133,214,.18)}
 .button:hover{background:linear-gradient(100deg,#119bdc,#6b75f4);transform:translateY(-1px)}.button.alt{background:rgba(12,34,64,.65);color:#d8f8ff;border-color:rgba(107,211,255,.35)}
 .notice{border-left:4px solid #35cfff;padding:1rem;background:rgba(21,70,110,.35);border-radius:0 10px 10px 0;color:#d9edff}.muted{color:var(--muted)}
