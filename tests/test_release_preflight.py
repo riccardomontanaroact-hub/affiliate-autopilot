@@ -53,6 +53,13 @@ class TestReleasePreflight(unittest.TestCase):
         self.assertNotIn("enablement: true", workflow)
         self.assertIn("if: github.ref == 'refs/heads/main'", workflow)
         self.assertIn("vars.VORLI_ENABLE_PAGES_DEPLOY == 'true'", workflow)
+        self.assertIn("permissions:\\n  contents: read", workflow)
+        self.assertIn("build:\\n    permissions:\\n      contents: write", workflow)
+        self.assertIn("deploy:\\n    # Fail closed", workflow)
+        self.assertIn("pages: write", workflow)
+        self.assertIn("id-token: write", workflow)
+        self.assertEqual(workflow.count("pages: write"), 1)
+        self.assertEqual(workflow.count("id-token: write"), 1)
 
 
     def test_local_fragment_targets_exist(self):
