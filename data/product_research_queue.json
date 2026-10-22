@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "purpose": "Ricerca preliminare: questi candidati NON fanno parte del catalogo pubblicabile e non attivano CTA affiliate.",
+  "checked_at": "2026-10-22",
+  "network": "Awin",
+  "advertiser": "ALLPOWERS IT",
+  "advertiser_id": "107466",
+  "publisher_id": "3118306",
+  "affiliate_homepage_link_already_tested": "https://www.awin1.com/cread.php?awinmid=107466&awinaffid=3118306&ued=https%3A%2F%2Fiallpowers.it%2F",
+  "candidates": [
+    {
+      "id": "allpowers-p1800",
+      "name": "ALLPOWERS P1800 Centrale Elettrica Portatile",
+      "category": "Energia portatile",
+      "product_source_url": "https://iallpowers.it/products/allpowers-p1800-centrale-elettrica-portatile-1800w-1024wh-lifep04-batteria",
+      "specifications_from_source": {
+        "output_w": 1800,
+        "capacity_wh": 1024,
+        "battery": "LiFePO4",
+        "ups_response_ms": "<10"
+      },
+      "observed_price_eur": 499,
+      "availability_observed": "Esaurito",
+      "approval_status": "pending",
+      "affiliate_product_deep_link": null,
+      "commission_rate": null,
+      "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
+    },
+    {
+      "id": "allpowers-r1500-lite",
+      "name": "ALLPOWERS R1500 LITE Power Station Portatile",
+      "category": "Energia portatile",
+      "product_source_url": "https://iallpowers.it/products/allpowers-r1500-lite-centrale-portatile-1600w-lifepo4",
+      "specifications_from_source": {
+        "output_w": 1600,
+        "capacity_wh": 1056,
+        "battery": "LiFePO4"
+      },
+      "observed_price_eur": 429,
+      "availability_observed": "Esaurito",
+      "approval_status": "pending",
+      "affiliate_product_deep_link": null,
+      "commission_rate": null,
+      "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
+    },
+    {
+      "id": "allpowers-s2000-pro",
+      "name": "ALLPOWERS S2000 Pro Power Station Portatile",
+      "category": "Energia portatile",
+      "product_source_url": "https://iallpowers.it/products/allpowers-s2000-pro-centrale-elettrica-portatile-2400w-1451wh",
+      "specifications_from_source": {
+        "output_w": 2400,
+        "capacity_wh": 1451
+      },
+      "observed_price_eur": 559,
+      "availability_observed": "Esaurito",
+      "approval_status": "pending",
+      "affiliate_product_deep_link": null,
+      "commission_rate": null,
+      "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
+    }
+  ],
+  "safety_note": "I prezzi sono una fotografia della pagina ufficiale al momento del controllo, ma i prodotti risultavano esauriti. Non copiarli nel catalogo live. La pagina ufficiale del programma e il redirect homepage non bastano a verificare l'attribuzione della commissione o a sostituire un deep link generato da Awin.",
+  "last_recheck": {
+    "checked_at": "2026-10-22",
+    "result": "Trovate tre pagine prodotto Decathlon Marketplace che mostrano prezzo e pulsante Aggiungi al carrello; i prodotti sono venduti/spediti da Findenergy. R600 €239, S2000 Pro €689, R2500 V2 €849. Il programma Decathlon IT Awin esiste (ID 9643) e pubblica cookie di 30 giorni; commissione standard publisher indicata 2,29%. Non è stato generato alcun link affiliato e non è stata confermata l'approvazione account. Nessun candidato è ancora pubblicabile."
+  },
+  "alternative_retailer_candidates": [
+    {
+      "id": "decathlon-allpowers-r600",
+      "name": "ALLPOWERS R600 Stazione di energia portatile",
+      "retailer": "Decathlon Italia Marketplace",
+      "seller": "Findenergy",
+      "product_source_url": "https://www.decathlon.it/p/mp/allpowers-r600-stazione-di-energia-portatile/42f90631-2390-4dcd-a85b-e5bf20e29998/novar",
+      "source_checked_at": "2026-10-22",
+      "observed_price_eur": 239,
+      "availability_observed": "Pagina consultata oggi: pulsante Aggiungi al carrello; stock finale da confermare al checkout",
+      "specs": {
+        "capacity_wh": 299,
+        "output_w": 600,
+        "peak_w": 1200,
+        "battery": "LiFePO4",
+        "usb_c_ports": 2,
+        "usb_c_w_each": 100
+      },
+      "network": "Decathlon IT Awin",
+      "advertiser_id": "9643",
+      "public_program_terms": "Cookie 30 giorni; tariffe CPA negoziabili; publisher standard (siti di affiliazione) 2,29% secondo pagina Awin pubblica.",
+      "affiliate_deep_link": null,
+      "approval_status": "pending",
+      "commission_rate": null,
+      "next_action": "Confermare iscrizione/approvazione a Decathlon IT in Awin e generare link tracciato al prodotto."
+    },
+    {
+      "id": "decathlon-allpowers-s2000-pro",
+      "name": "ALLPOWERS S2000 Pro",
+      "retailer": "Decathlon Italia Marketplace",
+      "seller": "Findenergy",
+      "product_source_url": "https://www.decathlon.it/p/mp/s2000-pro-stazione-di-alimentazione-portatile-2400w-1451wh/86e2a9ec-de37-41bd-9a38-556eb0e61e97/novar",
+      "source_checked_at": "2026-10-22",
+      "observed_price_eur": 689,
+      "availability_observed": "Pagina consultata oggi: pulsante Aggiungi al carrello; stock finale da confermare al checkout",
+      "specs": {
+        "capacity_wh": 1451,
+        "output_w": 2400,
+        "peak_w": 4000,
+        "battery_cycles_over_80pct": 2500
+      },
+      "network": "Decathlon IT Awin",
+      "advertiser_id": "9643",
+      "affiliate_deep_link": null,
+      "approval_status": "pending",
+      "commission_rate": null,
+      "next_action": "Confermare iscrizione/approvazione a Decathlon IT in Awin e generare link tracciato al prodotto."
+    },
+    {
+      "id": "decathlon-allpowers-r2500-v2",
+      "name": "ALLPOWERS R2500 V2",
+      "retailer": "Decathlon Italia Marketplace",
+      "seller": "Findenergy",
+      "product_source_url": "https://www.decathlon.it/p/mp/allpowers-r2500-v2-stazione-di-alimentazione-portatile-1920wh/33af4062-b564-4007-b9b6-77d03e7e7efd/novar",
+      "source_checked_at": "2026-10-22",
+      "observed_price_eur": 849,
+      "availability_observed": "Pagina consultata oggi: pulsante Aggiungi al carrello; stock finale da confermare al checkout",
+      "specs": {
+        "capacity_wh": 1920,
+        "output_w": 2500,
+        "peak_w": 5000,
+        "battery": "LiFePO4",
+        "solar_input_w": 1000
+      },
+      "network": "Decathlon IT Awin",
+      "advertiser_id": "9643",
+      "affiliate_deep_link": null,
+      "approval_status": "pending",
+      "commission_rate": null,
+      "next_action": "Confermare iscrizione/approvazione a Decathlon IT in Awin e generare link tracciato al prodotto."
+    }
+  ],
+  "affiliate_program_research": {
+    "allpowers_it": {
+      "network": "Awin",
+      "advertiser_id": "107466",
+      "public_commission_rate": 0.05,
+      "cookie_days": 30,
+      "source_url": "https://ui.awin.com/merchant-profile/107466",
+      "account_specific_approval": "Non verificabile dalla pagina pubblica; richiede accesso publisher."
+    },
+    "decathlon_it": {
+      "network": "Awin",
+      "advertiser_id": "9643",
+      "public_standard_publisher_rate": 0.0229,
+      "cookie_days": 30,
+      "source_url": "https://ui.awin.com/merchant-profile/9643/commission-groups",
+      "source_terms_url": "https://ui.awin.com/merchant-profile-terms/9643",
+      "account_specific_approval": "Non verificabile dalla pagina pubblica; richiede accesso publisher.",
+      "caveat": "La tariffa del 2,29% si riferisce ai siti standard di affiliazione; gruppi content creator/club hanno tariffe diverse. Confermare il gruppo applicabile al publisher."
+    }
+  }
+}
