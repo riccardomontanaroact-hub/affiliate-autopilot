@@ -16,6 +16,7 @@
       "program": "REPLACE_WITH_NETWORK_NAME",
       "approval_status": "pending",
       "source_url": "",
+      "source_checked_at": null,
       "price_checked_at": null,
       "commission_source_url": "",
       "commission_checked_at": null,
