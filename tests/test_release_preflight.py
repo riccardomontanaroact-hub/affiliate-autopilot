@@ -34,6 +34,13 @@ class TestReleasePreflight(unittest.TestCase):
         self.assertTrue(release_blockers(), "The current draft must not be treated as release-ready")
 
 
+    def test_workflow_does_not_enable_pages_automatically(self):
+        workflow = (ROOT / ".github" / "workflows" / "build.yml").read_text(encoding="utf-8")
+        self.assertIn("enablement: false", workflow)
+        self.assertNotIn("enablement: true", workflow)
+        self.assertIn("if: github.ref == 'refs/heads/main'", workflow)
+
+
     def test_local_fragment_targets_exist(self):
         import re
         pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "privacy.html", "catalogo.html", "dashboard.html")
