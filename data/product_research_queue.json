@@ -60,5 +60,19 @@
       "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
     }
   ],
-  "safety_note": "I prezzi sono una fotografia della pagina ufficiale al momento del controllo, ma i prodotti risultavano esauriti. Non copiarli nel catalogo live. La pagina ufficiale del programma e il redirect homepage non bastano a verificare l'attribuzione della commissione o a sostituire un deep link generato da Awin."
+  "safety_note": "I prezzi sono una fotografia della pagina ufficiale al momento del controllo, ma i prodotti risultavano esauriti. Non copiarli nel catalogo live. La pagina ufficiale del programma e il redirect homepage non bastano a verificare l'attribuzione della commissione o a sostituire un deep link generato da Awin.",
+  "last_recheck": {
+    "checked_at": "2026-10-22",
+    "official_awin_program_page": "https://ui.awin.com/merchant-profile/107466",
+    "public_program_terms": "La scheda pubblica Awin indica commissione del 5% su tutte le vendite e cookie di 30 giorni.",
+    "commission_status": "Pubblicata come condizione generale del programma; da confermare nel pannello publisher che il tasso sia quello effettivamente applicabile all'account e alla transazione.",
+    "in_stock_recheck": {
+      "product": "ALLPOWERS R2500 V2",
+      "product_source_url": "https://iallpowers.it/products/allpowers-r2500-centrale-elettrica-portatile-2500w-2016wh",
+      "observed_price_eur": 799,
+      "availability_observed": "Esaurito",
+      "source_checked_at": "2026-10-22"
+    },
+    "result": "Nessun prodotto esaminato risulta confermato disponibile nelle pagine prodotto aperte. Nessun deep link prodotto creato perché non è stato generato dal pannello Awin. Nessuna offerta promossa al catalogo live."
+  }
 }
