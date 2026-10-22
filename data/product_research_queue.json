@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "purpose": "Ricerca preliminare: questi candidati NON fanno parte del catalogo pubblicabile e non attivano CTA affiliate.",
+  "checked_at": "2026-10-22",
+  "network": "Awin",
+  "advertiser": "ALLPOWERS IT",
+  "advertiser_id": "107466",
+  "publisher_id": "3118306",
+  "affiliate_homepage_link_already_tested": "https://www.awin1.com/cread.php?awinmid=107466&awinaffid=3118306&ued=https%3A%2F%2Fiallpowers.it%2F",
+  "candidates": [
+    {
+      "id": "allpowers-p1800",
+      "name": "ALLPOWERS P1800 Centrale Elettrica Portatile",
+      "category": "Energia portatile",
+      "product_source_url": "https://iallpowers.it/products/allpowers-p1800-centrale-elettrica-portatile-1800w-1024wh-lifep04-batteria",
+      "specifications_from_source": {
+        "output_w": 1800,
+        "capacity_wh": 1024,
+        "battery": "LiFePO4",
+        "ups_response_ms": "<10"
+      },
+      "observed_price_eur": 499,
+      "availability_observed": "Esaurito",
+      "approval_status": "pending",
+      "affiliate_product_deep_link": null,
+      "commission_rate": null,
+      "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
+    },
+    {
+      "id": "allpowers-r1500-lite",
+      "name": "ALLPOWERS R1500 LITE Power Station Portatile",
+      "category": "Energia portatile",
+      "product_source_url": "https://iallpowers.it/products/allpowers-r1500-lite-centrale-portatile-1600w-lifepo4",
+      "specifications_from_source": {
+        "output_w": 1600,
+        "capacity_wh": 1056,
+        "battery": "LiFePO4"
+      },
+      "observed_price_eur": 429,
+      "availability_observed": "Esaurito",
+      "approval_status": "pending",
+      "affiliate_product_deep_link": null,
+      "commission_rate": null,
+      "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
+    },
+    {
+      "id": "allpowers-s2000-pro",
+      "name": "ALLPOWERS S2000 Pro Power Station Portatile",
+      "category": "Energia portatile",
+      "product_source_url": "https://iallpowers.it/products/allpowers-s2000-pro-centrale-elettrica-portatile-2400w-1451wh",
+      "specifications_from_source": {
+        "output_w": 2400,
+        "capacity_wh": 1451
+      },
+      "observed_price_eur": 559,
+      "availability_observed": "Esaurito",
+      "approval_status": "pending",
+      "affiliate_product_deep_link": null,
+      "commission_rate": null,
+      "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
+    }
+  ],
+  "safety_note": "I prezzi sono una fotografia della pagina ufficiale al momento del controllo, ma i prodotti risultavano esauriti. Non copiarli nel catalogo live. La pagina ufficiale del programma e il redirect homepage non bastano a verificare l'attribuzione della commissione o a sostituire un deep link generato da Awin."
+}
