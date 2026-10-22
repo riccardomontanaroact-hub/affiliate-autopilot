@@ -38,7 +38,7 @@ class TestReleasePreflight(unittest.TestCase):
         import re
         pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "privacy.html", "catalogo.html", "dashboard.html")
         for page in pages:
-            html = (self.site / page).read_text(encoding="utf-8")
+            html = (ROOT / "site" / page).read_text(encoding="utf-8")
             ids = set(re.findall(r"""\\bid=["']([^"']+)["']""", html))
             links = re.findall(r"""href=["']([^"']+)["']""", html)
             for target in links:
@@ -50,7 +50,7 @@ class TestReleasePreflight(unittest.TestCase):
                     local = page
                 if not separator or not fragment:
                     continue
-                target_file = self.site / local
+                target_file = ROOT / "site" / local
                 with self.subTest(page=page, target=target):
                     self.assertTrue(target_file.is_file(), f"Missing local target file {local}")
                     target_html = target_file.read_text(encoding="utf-8")
