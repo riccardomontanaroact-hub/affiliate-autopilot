@@ -21,6 +21,7 @@ La revisione del repository ha rilevato che la configurazione attualmente presen
 - `data/products.json` su `main` contiene ancora `Prodotto demo da sostituire`, il merchant segnaposto `INSERISCI NETWORK` e l'URL `https://example.com/`.
 - La dichiarazione affiliati presente su `main` afferma che il sito contiene link affiliati, mentre il catalogo esaminato è ancora dimostrativo: verificare e allineare dichiarazione e contenuti prima di una pubblicazione commerciale.
 - Il workflow `.github/workflows/build.yml` prevede build/deploy quando cambia `main` e una build pianificata giornaliera. La PR non modifica da sola la produzione; la configurazione effettiva di GitHub Pages e l'aspetto dell'URL pubblico non sono stati verificati da questa audit.
+- Verifica comparativa successiva della workflow: su `main` è presente `enablement: true` nel passo `actions/configure-pages@v5`; nella branch della PR è impostato `enablement: false`. Quindi la protezione proposta non è ancora attiva su `main` finché la modifica non viene approvata e integrata. Non ho effettuato il merge né modificato `main`.
 
 Questi riscontri sono blocchi pre-lancio, non autorizzano a fondere la PR né a cambiare impostazioni di pubblicazione. Non è stata confermata la visualizzazione corrente del sito in un browser.
 
