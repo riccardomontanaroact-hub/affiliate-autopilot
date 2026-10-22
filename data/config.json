@@ -3,8 +3,14 @@
   "tagline": "Scopri. Confronta. Scegli.",
   "niche": "prodotti utili per casa, lavoro e tecnologia",
   "currency": "EUR",
-  "affiliate_disclosure": "Questo sito contiene link di affiliazione: se acquisti tramite un link potremmo ricevere una commissione, senza costi aggiuntivi per te.",
-  "owner": "INSERISCI IL TUO NOME",
-  "contact": "riccardomontanaro@etik.com",
-  "networks": ["amazon", "awin", "direct"]
+  "affiliate_disclosure": "In questa anteprima non sono presenti link affiliati attivi. Le eventuali affiliazioni saranno dichiarate chiaramente prima della pubblicazione.",
+  "owner": "Riccardo Montanaro",
+  "contact": "vorli.notifications@gmail.com",
+  "indexing_strategy_reviewed": false,
+  "github_pages_source_verified": false,
+  "networks": [
+    "amazon",
+    "awin",
+    "direct"
+  ]
 }
