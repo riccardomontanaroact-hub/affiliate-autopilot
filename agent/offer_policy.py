@@ -41,9 +41,14 @@ def ready_for_publication(product: dict, today: date | None = None) -> bool:
         if not isinstance(url, str):
             return False
         parsed = urlsplit(url)
-        if (parsed.scheme != "https" or not parsed.hostname
+        hostname = parsed.hostname.lower().rstrip(".") if parsed.hostname else ""
+        confusing_placeholder_host = any(
+            hostname.startswith(host + ".") for host in PLACEHOLDER_HOSTS
+        )
+        if (parsed.scheme != "https" or not hostname
                 or parsed.username or parsed.password
-                or parsed.hostname.lower() in PLACEHOLDER_HOSTS):
+                or hostname in PLACEHOLDER_HOSTS
+                or confusing_placeholder_host):
             return False
     except (KeyError, TypeError, ValueError):
         return False
