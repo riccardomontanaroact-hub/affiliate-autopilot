@@ -73,6 +73,24 @@
       "availability_observed": "Esaurito",
       "source_checked_at": "2026-10-22"
     },
-    "result": "Nessun prodotto esaminato risulta confermato disponibile nelle pagine prodotto aperte. Nessun deep link prodotto creato perché non è stato generato dal pannello Awin. Nessuna offerta promossa al catalogo live."
-  }
+    "result": "Nessun prodotto esaminato risulta confermato disponibile nelle pagine prodotto aperte. Nessun deep link prodotto creato perché non è stato generato dal pannello Awin. Nessuna offerta promossa al catalogo live.",
+    "note": "Ricerca web eseguita direttamente: sul sito ufficiale ALLPOWERS IT R600 (199 €) e S2000 Pro (559 €) sono esplicitamente esauriti. Alternativa di mercato trovata su Decathlon Marketplace: R600 a 239 €, pulsante Aggiungi al carrello, venduto/spedito dal partner Findenergy; va verificato il programma affiliato del rivenditore separato."
+  },
+  "alternative_retailer_candidates": [
+    {
+      "id": "decathlon-marketplace-allpowers-r600",
+      "name": "ALLPOWERS R600 Stazione di energia portatile",
+      "retailer": "Decathlon Italia Marketplace",
+      "seller": "Findenergy",
+      "product_source_url": "https://www.decathlon.it/p/mp/allpowers-r600-stazione-di-energia-portatile/42f90631-2390-4dcd-a85b-e5bf20e29998/novar",
+      "observed_price_eur": 239,
+      "page_status": "Pulsante Aggiungi al carrello presente alla verifica; venduto e spedito da partner marketplace",
+      "source_checked_at": "2026-10-22",
+      "affiliate_network": "Da verificare",
+      "approval_status": "pending",
+      "affiliate_product_deep_link": null,
+      "commission_rate": null,
+      "next_action": "Verificare programma affiliate Decathlon disponibile per il publisher e condizioni, poi generare il link nel network. Non usare il link ALLPOWERS per questo venditore."
+    }
+  ]
 }
