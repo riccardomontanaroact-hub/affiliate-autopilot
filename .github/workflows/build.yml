@@ -9,9 +9,7 @@ on:
     - cron: '17 5 * * *'
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 concurrency:
   group: pages-${{ github.ref }}
@@ -19,6 +17,8 @@ concurrency:
 
 jobs:
   build:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -54,6 +54,9 @@ jobs:
   deploy:
     # Fail closed: deployment requires an explicit repository variable approved by the owner.
     if: github.ref == 'refs/heads/main' && vars.VORLI_ENABLE_PAGES_DEPLOY == 'true'
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
