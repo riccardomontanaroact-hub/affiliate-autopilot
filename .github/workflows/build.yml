@@ -43,7 +43,8 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
-          enablement: true
+          # Do not change repository Pages settings automatically; owner must verify them first.
+          enablement: false
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
