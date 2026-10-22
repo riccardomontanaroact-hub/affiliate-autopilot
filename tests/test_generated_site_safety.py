@@ -64,6 +64,27 @@ class TestGeneratedSiteSafety(unittest.TestCase):
         self.assertNotIn("affiliate_url", html)
         self.assertIn("Non disponibile", html)
 
+    def test_preview_pages_do_not_silently_add_tracking_or_data_collection(self):
+        pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "privacy.html", "catalogo.html", "dashboard.html")
+        forbidden_markers = (
+            "<script",
+            "<form",
+            "<iframe",
+            "google-analytics",
+            "googletagmanager",
+            "gtag(",
+            "fbq(",
+            "connect.facebook.net",
+            "hotjar",
+            "clarity.ms",
+            "doubleclick.net",
+        )
+        for name in pages:
+            html = (self.site / name).read_text(encoding="utf-8").lower()
+            with self.subTest(page=name):
+                for marker in forbidden_markers:
+                    self.assertNotIn(marker, html, f"Unexpected tracking/data-collection marker {marker!r} in {name}")
+
     def test_all_generated_public_pages_remain_noindex(self):
         for name in ("index.html", "risorse.html", "guida.html", "usb-c.html", "privacy.html", "catalogo.html", "dashboard.html"):
             with self.subTest(page=name):
