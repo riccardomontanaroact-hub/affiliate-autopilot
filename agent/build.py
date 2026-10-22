@@ -1,6 +1,12 @@
 import html
 import json
+import math
 from pathlib import Path
+
+try:
+    from .offer_validation import is_demo, is_publishable
+except ImportError:  # Support direct execution: python agent/build.py
+    from offer_validation import is_demo, is_publishable
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -18,12 +24,23 @@ def esc(value):
     return html.escape(str(value))
 
 
+def _number(value, default=0.0):
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
+        return default
+    return float(value)
+
+
 def score(product):
+    commission = _number(product.get("commission_rate"))
+    rating = _number(product.get("rating"))
+    price = _number(product.get("price"))
+    pros = product.get("pros", [])
+    pros_count = len(pros) if isinstance(pros, list) else 0
     return round(
-        (product.get("commission_rate", 0) * 100) * 25
-        + min(product.get("rating", 0), 5) * 8
-        + min(product.get("price", 0) / 100, 5) * 2
-        + len(product.get("pros", [])) * 2,
+        (commission * 100) * 25
+        + min(max(rating, 0), 5) * 8
+        + min(max(price, 0) / 100, 5) * 2
+        + pros_count * 2,
         2,
     )
 
@@ -52,25 +69,30 @@ for page in ("risorse.html", "guida.html", "usb-c.html"):
 # explicitly marked as demos and never link visitors to example.com.
 cards = []
 for product in products:
-    demo = (
-        product.get("affiliate_url", "").startswith("https://example.com")
-        or product.get("merchant", "").strip().upper() in {"INSERISCI NETWORK", "DEMO"}
-    )
+    demo = is_demo(product)
+    publishable = is_publishable(product)
     if demo:
         action = '<span class="tag demo">Scheda dimostrativa · offerta non disponibile</span>'
-    else:
+    elif publishable:
         action = (
             f'<a class="button" href="{esc(product.get("affiliate_url", ""))}" '
             'rel="sponsored nofollow noopener" target="_blank">Vedi offerta</a>'
         )
+    else:
+        action = '<span class="tag blocked">Offerta non disponibile · verifica incompleta</span>'
     price = product.get("price")
-    price_html = f'<p class="price">€ {float(price):.2f}</p>' if price is not None and not demo else ""
+    price_html = (
+        f'<p class="price">€ {float(price):.2f}</p>'
+        if publishable and price is not None else ""
+    )
+    rating = product.get("rating")
+    rating_html = f' · ⭐ {esc(rating)}' if publishable and rating is not None else ""
+    label = "Demo" if demo else ("Prodotto verificato" if publishable else "In verifica")
     cards.append(
         '<article class="card">'
-        f'<span class="tag demo">{ "Demo" if demo else "Prodotto" }</span>'
+        f'<span class="tag {"demo" if demo else ("verified" if publishable else "blocked")}">{label}</span>'
         f'<h2>{esc(product.get("name", "Prodotto"))}</h2>'
-        f'<p class="muted">{esc(product.get("category", ""))}'
-        f' · {("⭐ " + esc(product.get("rating"))) if product.get("rating") and not demo else ""}</p>'
+        f'<p class="muted">{esc(product.get("category", ""))}{rating_html}</p>'
         f'<p>{esc(product.get("description", ""))}</p>'
         f'{price_html}{action}</article>'
     )
@@ -103,12 +125,17 @@ catalog = f"""<!doctype html>
 </body></html>"""
 (SITE / "catalogo.html").write_text(catalog, encoding="utf-8")
 
-rows = "".join(
-    f"<tr><td>{esc(p.get('name', ''))}</td><td>{esc(p.get('merchant', ''))}</td>"
-    f"<td>{'—' if (p.get('affiliate_url', '').startswith('https://example.com') or p.get('merchant', '').strip().upper() in {'INSERISCI NETWORK', 'DEMO'}) else f'{float(p.get("commission_rate", 0)) * 100:.2f}%'}</td>"
-    f"<td>{'Non disponibile (demo)' if (p.get('affiliate_url', '').startswith('https://example.com') or p.get('merchant', '').strip().upper() in {'INSERISCI NETWORK', 'DEMO'}) else p['score']}</td></tr>"
-    for p in products
-)
+rows = []
+for p in products:
+    demo = is_demo(p)
+    publishable = is_publishable(p)
+    commission_display = f"{float(p['commission_rate']) * 100:.2f}%" if publishable else "—"
+    score_display = str(p["score"]) if publishable else ("Non disponibile (demo)" if demo else "Non pubblicabile")
+    rows.append(
+        f"<tr><td>{esc(p.get('name', ''))}</td><td>{esc(p.get('merchant', ''))}</td>"
+        f"<td>{commission_display}</td><td>{score_display}</td></tr>"
+    )
+rows = "".join(rows)
 dashboard = f"""<!doctype html><html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dashboard — {esc(cfg['site_name'])}</title><link rel="stylesheet" href="style.css?v=vorli-brand-lockup-20261011">
