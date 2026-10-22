@@ -1,11 +1,11 @@
 # Scheda di produzione — Casa Smart senza sorprese
 
 **ID interno:** VORLI-DIG-001  
-**Stato:** bozza non pubblicata  
+**Stato:** PDF v1 impaginato il 22/10/2026; in revisione finale, non pubblicato e non in vendita  
 **File contenuto:** `vault/products/casa-smart-senza-sorprese-bozza-01.md`  
-**Formato previsto:** PDF A4 stampabile e versione digitale compilabile  
-**Prezzo:** non definito  
-**Checkout/consegna:** non configurati
+**Formato disponibile:** PDF A4 stampabile v1; versione digitale compilabile non ancora verificata  
+**Prezzo:** non definito; richiede decisione prima della vendita  
+**Checkout/consegna:** non configurati; il PDF v1 è stato generato nella sessione di lavoro, non caricato su una piattaforma di vendita
 
 ## Checklist prima di un'eventuale vendita
 
