@@ -52,7 +52,8 @@ jobs:
           path: ./site
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    # Fail closed: deployment requires an explicit repository variable approved by the owner.
+    if: github.ref == 'refs/heads/main' && vars.VORLI_ENABLE_PAGES_DEPLOY == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
