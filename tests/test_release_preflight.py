@@ -34,5 +34,29 @@ class TestReleasePreflight(unittest.TestCase):
         self.assertTrue(release_blockers(), "The current draft must not be treated as release-ready")
 
 
+    def test_local_fragment_targets_exist(self):
+        import re
+        pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "privacy.html", "catalogo.html", "dashboard.html")
+        for page in pages:
+            html = (self.site / page).read_text(encoding="utf-8")
+            ids = set(re.findall(r"""\\bid=["']([^"']+)["']""", html))
+            links = re.findall(r"""href=["']([^"']+)["']""", html)
+            for target in links:
+                if target.startswith(("https://", "http://", "mailto:", "tel:", "javascript:")):
+                    continue
+                path, separator, fragment = target.partition("#")
+                local = path.split("?", 1)[0] if path else page
+                if not local:
+                    local = page
+                if not separator or not fragment:
+                    continue
+                target_file = self.site / local
+                with self.subTest(page=page, target=target):
+                    self.assertTrue(target_file.is_file(), f"Missing local target file {local}")
+                    target_html = target_file.read_text(encoding="utf-8")
+                    target_ids = set(re.findall(r"""\\bid=["']([^"']+)["']""", target_html))
+                    self.assertIn(fragment, target_ids, f"Missing fragment #{fragment} in {local}")
+
+
 if __name__ == "__main__":
     unittest.main()
