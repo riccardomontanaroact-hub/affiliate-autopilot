@@ -52,6 +52,7 @@ class TestReleasePreflight(unittest.TestCase):
         self.assertIn("enablement: false", workflow)
         self.assertNotIn("enablement: true", workflow)
         self.assertIn("if: github.ref == 'refs/heads/main'", workflow)
+        self.assertIn("vars.VORLI_ENABLE_PAGES_DEPLOY == 'true'", workflow)
 
 
     def test_local_fragment_targets_exist(self):
