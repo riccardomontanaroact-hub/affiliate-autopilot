@@ -39,10 +39,15 @@ class TestOfferPolicyEdgeCases(unittest.TestCase):
                     self.candidate(merchant=merchant), date(2026, 10, 21)
                 ))
 
-    def test_placeholder_domain_suffix_is_not_confused_with_placeholder_host(self):
-        # The policy blocks exact example hosts, not every hostname containing that text.
-        self.assertTrue(ready_for_publication(
+    def test_placeholder_domain_suffix_is_rejected_as_host_confusion(self):
+        self.assertFalse(ready_for_publication(
             self.candidate(affiliate_url="https://example.com.attacker.test/product"),
+            date(2026, 10, 21),
+        ))
+
+    def test_placeholder_text_in_path_does_not_change_host_validation(self):
+        self.assertTrue(ready_for_publication(
+            self.candidate(affiliate_url="https://merchant.test/example.com/product"),
             date(2026, 10, 21),
         ))
 
