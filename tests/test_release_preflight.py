@@ -39,7 +39,7 @@ class TestReleasePreflight(unittest.TestCase):
         pages = ("index.html", "risorse.html", "guida.html", "usb-c.html", "privacy.html", "catalogo.html", "dashboard.html")
         for page in pages:
             html = (ROOT / "site" / page).read_text(encoding="utf-8")
-            ids = set(re.findall(r"""\\bid=["']([^"']+)["']""", html))
+            ids = set(re.findall(r"""\bid=["']([^"']+)["']""", html))
             links = re.findall(r"""href=["']([^"']+)["']""", html)
             for target in links:
                 if target.startswith(("https://", "http://", "mailto:", "tel:", "javascript:")):
@@ -54,7 +54,7 @@ class TestReleasePreflight(unittest.TestCase):
                 with self.subTest(page=page, target=target):
                     self.assertTrue(target_file.is_file(), f"Missing local target file {local}")
                     target_html = target_file.read_text(encoding="utf-8")
-                    target_ids = set(re.findall(r"""\\bid=["']([^"']+)["']""", target_html))
+                    target_ids = set(re.findall(r"""\bid=["']([^"']+)["']""", target_html))
                     self.assertIn(fragment, target_ids, f"Missing fragment #{fragment} in {local}")
 
 
