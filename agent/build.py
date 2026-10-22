@@ -97,10 +97,12 @@ for product in products:
         f'{price_html}{action}</article>'
     )
 
+robots_meta = "" if any(is_publishable(product) for product in products) else '<meta name="robots" content="noindex,nofollow">'
 catalog = f"""<!doctype html>
 <html lang="it">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+{robots_meta}
 <meta name="description" content="Catalogo VORLI: schede prodotto e offerte da verificare.">
 <title>Catalogo | VORLI</title><link rel="stylesheet" href="style.css?v=vorli-brand-lockup-20261011">
 </head>
