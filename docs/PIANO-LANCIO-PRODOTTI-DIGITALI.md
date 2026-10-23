@@ -4,7 +4,7 @@ Aggiornato: 2026-10-23
 
 ## Confini del progetto
 
-Questo documento riguarda esclusivamente VORLI. Prodotti, file, prezzi, account e attività di AZETA Editing sono esterni al progetto e non devono essere importati nel catalogo, nei report o nei materiali commerciali VORLI.
+Questo documento riguarda esclusivamente VORLI. Non importare nel progetto materiali, prodotti, prezzi, account o attività appartenenti ad altri progetti; mantieni separati catalogo, file e comunicazione commerciale.
 
 ## Regola di pubblicazione
 
