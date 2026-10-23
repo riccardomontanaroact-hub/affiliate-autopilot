@@ -12,3 +12,13 @@ nav{display:flex;flex-wrap:wrap;gap:4px 16px}nav a{color:#dcecff;text-decoration
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.resources{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{grid-template-columns:1fr .75fr}.lab-pill{display:none}}
 @media(max-width:620px){.header-inner{align-items:flex-start}.header-inner nav{width:100%}.hero-grid{grid-template-columns:1fr}.hero-art{height:175px}.device{height:145px;width:58%}.device strong{font-size:55px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:12px}.stat strong{font-size:22px}.stat span{font-size:11px}.section{padding-block:48px}.section-heading{display:block}.filters{grid-template-columns:1fr}.grid,.resources{grid-template-columns:1fr}.category{min-height:0}.category p{margin-bottom:15px}h1{font-size:46px}.lead{font-size:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tile{transition:none}.tile:hover{transform:none}}
+
+/* High-contrast and Windows forced-colors accessibility: preserve visible hero text and controls. */
+@media(prefers-contrast:more){:root{--muted:#e4f2ff;--line:#89b9d5}nav a{text-decoration:underline}}
+@media(forced-colors:active){
+  h1 em{background:none;color:CanvasText}
+  a{text-decoration:underline}
+  .tile,.stat,.trust-box,.status,.lab-pill,.button,.reset,.field input,.field select{border:1px solid CanvasText}
+  .button,.reset{background:Canvas;color:LinkText}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid Highlight}
+}
