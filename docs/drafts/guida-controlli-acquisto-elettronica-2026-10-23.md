@@ -41,7 +41,8 @@ Conserva ricevute, schermate dei tempi promessi e comunicazioni con il venditore
 Il contenuto non promuove un venditore specifico e non sostituisce consulenza legale. Qualora in futuro fossero aggiunti link remunerati, segnalare **prima del link** la natura pubblicitaria con una disclosure chiara. Evitare recensioni inventate, prezzi non aggiornati e promesse di consegna non verificabili.
 
 **Fonti consultate il 23/10/2026:**
-- Commissione europea — diritti dei consumatori negli acquisti: https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/index_it.htm
+- Commissione europea — diritti dei consumatori negli acquisti: https://europa.eu/youreurope/citizens/consumers/shopping/returns/index_it.htm
+- Commissione europea — garanzie sui beni: https://europa.eu/youreurope/citizens/consumers/shopping/guarantees/index_it.htm
 - AGCM — pubblicità trasparente: https://www.agcm.it/media/comunicati-stampa/2017/7/alias-8853
 
 **Stato:** solo bozza; non distribuire né pubblicare senza revisione editoriale e normativa.
