@@ -36,6 +36,31 @@ jobs:
       - name: Exclude internal dashboard from public site
         run: rm -f site/dashboard.html
 
+      # Fail closed if internal files accidentally enter the Pages upload tree.
+      - name: Verify public artifact has no internal files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          site = Path("site")
+          if not site.is_dir():
+              raise SystemExit("Public site directory missing")
+          forbidden_names = {"dashboard.html", "config.json", ".env", ".env.local"}
+          forbidden_suffixes = {".pem", ".key", ".p12", ".sqlite", ".db"}
+          forbidden_dirs = {".git", "__pycache__"}
+          violations = [
+              p for p in site.rglob("*")
+              if p.is_symlink()
+              or p.name in forbidden_names
+              or p.suffix.lower() in forbidden_suffixes
+              or any(part in forbidden_dirs for part in p.relative_to(site).parts)
+          ]
+          if violations:
+              # Do not echo paths: filenames themselves may contain private data.
+              raise SystemExit(f"Blocked {len(violations)} unsafe path(s) in Pages artifact")
+          print("Pages artifact privacy guard passed")
+          PY
+
       # Only main is allowed to persist generated catalog changes.
       - name: Commit generated catalog
         if: github.ref == 'refs/heads/main'
