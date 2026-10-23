@@ -12,6 +12,8 @@
 
 Una casa connessa può essere comoda, ma ogni dispositivo aggiunge una decisione: compatibilità, aggiornamenti, account, autorizzazioni, rete e trattamento dei dati. Questa guida aiuta a raccogliere le informazioni prima dell'acquisto e a fare controlli periodici. Non certifica la sicurezza di un prodotto e non sostituisce le istruzioni del produttore.
 
+Le raccomandazioni pratiche qui raccolte sono generali: funzioni, menu e supporto cambiano da modello a modello. Le indicazioni normative possono dipendere dal Paese e dal tipo di prodotto; per decisioni legali o di conformità occorre consultare le fonti ufficiali aggiornate.
+
 ## 1. Prima di acquistare: scheda del dispositivo
 
 Compila una scheda per ogni prodotto che stai valutando.
@@ -92,13 +94,16 @@ Il punteggio non è una certificazione: se una voce importante resta sconosciuta
 - **Permesso dell'app:** autorizzazione ad accedere a funzioni o dati del telefono.
 - **Ripristino di fabbrica:** procedura che riporta il dispositivo alle impostazioni iniziali; gli effetti esatti dipendono dal produttore.
 
-## Fonti da consultare
+## Fonti ufficiali di partenza
 
-Queste risorse erano indicate nella bozza di ricerca iniziale; prima della pubblicazione commerciale è necessario riaprire i link, verificare che siano ancora validi e controllare la data e la pertinenza delle informazioni:
+Link controllati il **23 ottobre 2026**. Prima del rilascio commerciale occorre verificare nuovamente contenuti e collegamenti, registrare la data della revisione e assicurarsi che le raccomandazioni restino attuali.
 
-- Federal Trade Commission — Securing your internet-connected devices at home: https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home
-- UK National Cyber Security Centre — Smart devices: https://www.ncsc.gov.uk/blog-post/smart-devices-law
-- Commissione europea — Cyber Resilience Act e prodotti digitali: https://commission.europa.eu/news-and-media/news/safer-and-more-secure-digital-products-2026-09-11_en
+- **Federal Trade Commission (FTC), Stati Uniti — Securing Your Internet-Connected Devices at Home:** https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home  
+  Indicazioni pratiche su router, credenziali, autenticazione a più fattori, aggiornamenti e dispositivi connessi. È una fonte statunitense di orientamento al consumatore, non una norma italiana.
+- **National Cyber Security Centre (NCSC), Regno Unito — Smart devices: using them safely in your home:** https://www.ncsc.gov.uk/guidance/smart-devices-in-the-home  
+  Indicazioni sulla scelta dei dispositivi, sul supporto del produttore e sulla sicurezza. Le informazioni normative citate si riferiscono al Regno Unito e non vanno presentate come legge italiana.
+- **Commissione europea — Cyber Resilience Act:** https://digital-strategy.ec.europa.eu/it/policies/cyber-resilience-act  
+  Fonte istituzionale per il quadro UE. Alla data del controllo, gli obblighi di segnalazione previsti dal regolamento si applicano dall'11 settembre 2026; la maggior parte degli obblighi principali si applicherà dall'11 dicembre 2027. La guida non sostituisce la lettura del testo normativo e non costituisce consulenza legale.
 
 ## Nota editoriale e commerciale
 
