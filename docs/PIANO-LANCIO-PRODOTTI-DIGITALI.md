@@ -1,52 +1,47 @@
-# Registro prodotti digitali — stato lancio
+# Piano di rilascio prodotti digitali VORLI
 
-Aggiornato: 2026-10-22
+Aggiornato: 2026-10-23
+
+## Confini del progetto
+
+Questo documento riguarda esclusivamente VORLI. Prodotti, file, prezzi, account e attività di AZETA Editing sono esterni al progetto e non devono essere importati nel catalogo, nei report o nei materiali commerciali VORLI.
 
 ## Regola di pubblicazione
 
-Un file PDF finito non equivale a un prodotto vendibile: per dichiararlo acquistabile occorrono il file finale caricato sulla piattaforma, prezzo e descrizione corretti, copertina, pagamento attivo, consegna automatica configurata e un test del percorso d'acquisto. Non pubblicare file a pagamento in questo repository pubblico.
+Un PDF finito non equivale a un prodotto vendibile. Prima di presentarlo come acquistabile devono essere completati e verificati: contenuto finale, revisione editoriale e tecnica, diritti e fonti, copertina e metadati, prezzo e condizioni approvati, piattaforma scelta, caricamento del file, pagamento e consegna protetta configurati, prova del percorso d'acquisto e approvazione esplicita del proprietario. Non pubblicare PDF a pagamento nel repository pubblico.
 
-## Prodotti AZETA Editing / Payhip
+## Prodotto VORLI in lavorazione
 
-### 1. Manuale di scrittura creativa
-- File PDF presente nella libreria: `manuale_di_scrittura_creativa_primo_romanzo.pdf`
-- Prezzo stabilito: €12,90
-- Stato: PDF presente; scheda Payhip risultava salvata con titolo, prezzo e descrizione.
-- Da completare: controllare copertina associata, anteprima pubblica, disponibilità del download, collegamento del processore di pagamento e test di acquisto/consegna.
-- Non dichiarare checkout attivo finché non testato.
+### VORLI-DIG-001 — Casa Smart senza sorprese
 
-### 2. Metodo: Scrivere un romanzo in 3 mesi
-- File PDF presente nella libreria: `metodo_scrivere_un_romanzo_in_3_mesi.pdf`
-- Prezzo stabilito: €17,90
-- Stato: PDF presente; scheda Payhip risultava salvata con titolo, prezzo e descrizione.
-- Da completare: controllare copertina associata, anteprima pubblica, disponibilità del download, collegamento del processore di pagamento e test di acquisto/consegna.
-- Non dichiarare checkout attivo finché non testato.
+- Sorgente editoriale: `vault/products/casa-smart-senza-sorprese-bozza-01.md`.
+- PDF A4 v1 impaginato il 22 ottobre 2026 nella sessione di lavoro; non è pubblicato né in vendita.
+- Prezzo: non definito; nessun prezzo deve essere inventato o impostato senza decisione.
+- Piattaforma, checkout e consegna: non configurati.
+- Prima del rilascio: verifica tecnica e aggiornamento delle fonti; revisione italiana; controllo link; prova di leggibilità su telefono e desktop e in stampa; accessibilità; controllo dei diritti; copertina; contenuto finale; condizioni commerciali, assistenza e rimborsi; valutazione degli obblighi applicabili; test di acquisto/consegna senza dati di clienti.
+- Il PDF di lavoro non va inserito nel repository pubblico.
 
-### 3. Guida al preventivo personalizzato
-- File PDF presente nella libreria: `Guida al preventivo AZETA Editing.pdf`
-- Stato: guida informativa esistente; ruolo commerciale e prezzo non confermati.
-- Da completare: decidere se usarla come risorsa gratuita/lead magnet o come prodotto a pagamento, poi impostare la scheda coerentemente. Non assegnare un prezzo automaticamente.
+## Catalogo affiliato
 
-## Prodotto VORLI
+Il catalogo `data/products.json` è vuoto dopo la rimozione della scheda dimostrativa. Mantenerlo vuoto finché non esiste un'offerta reale verificata e approvata con URL affiliato valido, fonte e data di verifica, rete/merchant identificati e disclosure corretta. Non inserire i prodotti digitali VORLI nel catalogo delle offerte affiliate.
 
-### 4. Casa Smart senza sorprese
-- Sorgente editoriale: `vault/products/casa-smart-senza-sorprese-bozza-01.md`
-- PDF di lavoro generato il 2026-10-22: `VORLI_Casa_Smart_senza_sorprese_v1.pdf` (conservato nella sessione di lavoro, non in questo repository pubblico).
-- Stato: prima versione PDF impaginata; revisione finale, test accessibilità/leggibilità e controllo fonti ancora necessari.
-- Prezzo: non definito.
-- Checkout e consegna: non configurati.
-- Da completare: revisione contenuti e fonti, verifica resa su telefono e stampa, copertina finale, decisione prezzo, caricamento su una piattaforma di vendita, termini e informativa applicabili, test di acquisto e consegna.
+## Cinque agenti VORLI
 
-## Blocco tecnico sul catalogo affiliato
+1. **Coordinatore e Stratega** — ordina le dipendenze e mantiene aggiornato il registro dei blocchi.
+2. **Creatore del Sito e Catalogo** — verifica pagine, build e catalogo pubblico.
+3. **Monetizzatore** — controlla che non si prometta la vendita prima che prezzo, pagamento e consegna siano verificati.
+4. **Designer e SEO** — controlla presentazione, copertina, metadati, leggibilità e accessibilità.
+5. **Promotore e Partnership** — prepara materiali e checklist di lancio, senza inviare contatti o campagne.
 
-Il segnaposto dimostrativo in `data/products.json` è stato rimosso dal catalogo pubblico. I prodotti digitali sopra elencati sono gestiti separatamente dalle offerte affiliate: non devono essere inseriti in `data/products.json` come se fossero offerte di merchant.
+Gli agenti implementati nel repository eseguono audit automatizzati deterministici: non sono cinque agenti LLM autonomi e non possono accedere a piattaforme esterne, caricare file, collegare pagamenti, contattare partner o spendere denaro. I loro esiti vanno trattati come controlli tecnici, non come prova che un prodotto sia stato pubblicato.
 
-## Ruoli dei cinque agenti
+## Sequenza operativa
 
-- Coordinatore e Stratega: mantiene l'ordine delle dipendenze e segnala i blocchi.
-- Creatore del Sito e Catalogo: controlla pagine e build.
-- Monetizzatore: verifica che le schede non vengano presentate come vendibili prima del checkout.
-- Designer e SEO: controlla copertine, metadati, accessibilità e presentazione.
-- Promotore e Partnership: prepara materiali di lancio; non invia contatti o campagne.
+1. Tenere separati i progetti e verificare che il sito pubblico non contenga materiali AZETA Editing.
+2. Completare la revisione editoriale e tecnica di Casa Smart senza sorprese.
+3. Decidere esplicitamente prezzo, condizioni e piattaforma prima di creare una scheda commerciale.
+4. Caricare il file finale solo sulla piattaforma scelta, configurare pagamento e consegna e verificare il checkout.
+5. Pubblicare soltanto dopo i controlli e l'approvazione del proprietario.
+6. In parallelo, mantenere il catalogo affiliato inattivo finché non ci sono offerte approvate e tracciamenti verificati.
 
-Gli agenti attualmente presenti nel repository eseguono audit deterministici; non possono accedere a Payhip, caricare file su un account esterno, collegare pagamenti o pubblicare schede per conto dell'utente. Le azioni commerciali vanno confermate e verificate sulla piattaforma.
+Nessun prodotto è da considerare acquistabile finché questi controlli non sono stati completati.
