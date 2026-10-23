@@ -35,9 +35,8 @@ class CatalogLinksTests(unittest.TestCase):
                     with self.subTest(page=page, target=target):
                         self.assertTrue((ROOT / target).is_file())
 
-    @unittest.expectedFailure
     def test_interactive_catalog_exposes_static_fallback(self):
-        """Known accessibility gap until interactive HTML can be updated."""
+        """Regression: interactive HTML must keep a static fallback link."""
         html = (ROOT / "catalogo-lab.html").read_text(encoding="utf-8")
         self.assertIn('href="catalogo-statico-lab.html"', html)
 
