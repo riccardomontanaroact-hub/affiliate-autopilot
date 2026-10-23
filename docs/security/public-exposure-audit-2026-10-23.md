@@ -23,3 +23,17 @@
 Controllati tramite connettore GitHub i file indicati e i metadati del repository. Non sono stati eseguiti test autenticati sul sito pubblicato, audit dell'intera cronologia o verifica di tutti gli artefatti di deploy. Nessuna conclusione definitiva sull'assenza di esposizioni.
 
 Fonti interne: `data/config.json` (`main` e branch PR #41), `site/dashboard.html` (`main`), `site/index.html` (`main`), metadati del repository. Data verifica: 2026-10-23.
+
+## Rischio aggiuntivo verificato nei workflow (23/10/2026, ore 23:14 Europe/Rome)
+
+**Criticità concreta nella configurazione, non prova di esposizione attuale sul dominio.** Nel branch `main` coesistono due workflow GitHub Pages attivati da push su `main`:
+
+- `.github/workflows/build.yml`: esegue `python agent/build.py`, poi carica `./site` con `actions/upload-pages-artifact@v3` **senza escludere `site/dashboard.html`**.
+- `.github/workflows/deploy-pages.yml`: dopo la build esegue `rm -f site/dashboard.html` prima del caricamento dell'artefatto. Questo non protegge gli artefatti prodotti dall'altro workflow.
+- `agent/build.py` scrive esplicitamente `site/dashboard.html` con colonne di prodotto, network, commissione e punteggio. Il file attualmente tracciato in `main` contiene una tabella vuota, ma il file generato può cambiare in base ai prodotti.
+
+**Conseguenza:** non si può affermare che la dashboard interna sia esclusa da tutti i deployment; occorre controllare l'artefatto e il deployment effettivo. Il tentativo di interrogare direttamente il dominio Pages non è riuscito, quindi **non** si dichiara che la dashboard sia pubblicamente raggiungibile.
+
+La **PR #52**, attualmente **in bozza**, propone di eliminare il secondo workflow e inserire la rimozione di `site/dashboard.html` nel workflow rimanente. Non è integrata e non costituisce una correzione già applicata a `main`. Prima di qualunque merge: verificare l'unicità del workflow Pages, i permessi, i test e l'assenza di dashboard/configurazioni interne nell'artefatto finale; controllare che il workflow schedulato non ripubblichi una versione diversa. Nessun merge o deploy autorizzato.
+
+Fonti verificate: `.github/workflows/build.yml`, `.github/workflows/deploy-pages.yml`, `agent/build.py` sul branch `main`; diff e stato della PR #52. Nessun dato personale o URL affiliato copiato.
