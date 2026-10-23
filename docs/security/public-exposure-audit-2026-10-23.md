@@ -37,3 +37,18 @@ Fonti interne: `data/config.json` (`main` e branch PR #41), `site/dashboard.html
 La **PR #52**, attualmente **in bozza**, propone di eliminare il secondo workflow e inserire la rimozione di `site/dashboard.html` nel workflow rimanente. Non è integrata e non costituisce una correzione già applicata a `main`. Prima di qualunque merge: verificare l'unicità del workflow Pages, i permessi, i test e l'assenza di dashboard/configurazioni interne nell'artefatto finale; controllare che il workflow schedulato non ripubblichi una versione diversa. Nessun merge o deploy autorizzato.
 
 Fonti verificate: `.github/workflows/build.yml`, `.github/workflows/deploy-pages.yml`, `agent/build.py` sul branch `main`; diff e stato della PR #52. Nessun dato personale o URL affiliato copiato.
+
+## Verifica artefatti effettivi — 24 ottobre 2026, ore 00:11 Europe/Rome
+
+Sono stati scaricati tramite il connettore GitHub e ispezionati **entrambi** gli artefatti `github-pages` degli ultimi due workflow di pubblicazione riusciti su `main`, entrambi avviati il 23/10/2026 alle 11:13:41 UTC sullo stesso commit `7fe9744`.
+
+| Workflow | Run GitHub | Artefatto | `dashboard.html` |
+| --- | --- | --- | --- |
+| `VORLI build and deploy — main` | [39944605424](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/actions/runs/39944605424) | `12498255056` | **PRESENTE** (530 byte) |
+| `Build and deploy VORLI to GitHub Pages` | [39944605393](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/actions/runs/39944605393) | `12497517209` | **ASSENTE** |
+
+Procedura: lettura dell'archivio ZIP scaricato per ciascun artefatto, apertura del file `artifact.tar` contenuto e verifica dell'elenco dei membri. Nel primo artefatto è stato letto il file `./dashboard.html` (530 byte); nel secondo non compare. Entrambi gli artefatti risultavano non scaduti al momento della verifica.
+
+**Risultato:** non è soltanto un rischio teorico nei workflow: un artefatto di pubblicazione **reale** include la dashboard interna. Questo **non** dimostra quale artefatto sia stato effettivamente distribuito per ultimo né che la dashboard sia attualmente raggiungibile sul dominio pubblico. I tentativi di accesso diretto al sito non hanno restituito una verifica affidabile; lo stato online resta non accertato.
+
+**Blocco prima di ogni integrazione:** verificare la versione effettivamente distribuita e rimuovere la dashboard da *tutti* gli artefatti Pages. Rivedere la PR #52 e controllare i workflow rimasti dopo il merge ipotetico, ma non eseguire merge o deploy senza approvazione. Conservare la PR #41 in bozza. Nessun dato personale, link affiliato o credenziale è riportato in questo audit.
