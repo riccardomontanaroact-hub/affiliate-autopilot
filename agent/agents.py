@@ -11,6 +11,11 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+try:
+    from .offer_validation import is_demo, is_publishable
+except ImportError:  # Support direct execution: python agent/agents.py
+    from offer_validation import is_demo, is_publishable
+
 ROOT = Path(__file__).resolve().parents[1]
 REPORT_DIR = ROOT / "reports"
 REQUIRED_PAGES = ("index.html", "catalogo.html", "risorse.html", "guida.html", "usb-c.html")
@@ -34,12 +39,6 @@ def result(name, role, status, summary, findings=None, next_step=""):
     }
 
 
-def is_demo(product):
-    url = str(product.get("affiliate_url", ""))
-    merchant = str(product.get("merchant", "")).strip().upper()
-    return url.startswith("https://example.com") or merchant in {"INSERISCI NETWORK", "DEMO"}
-
-
 def run_agents(root: Path = ROOT):
     data_dir = root / "data"
     site_dir = root / "site"
@@ -50,6 +49,8 @@ def run_agents(root: Path = ROOT):
     missing_pages = [p for p in REQUIRED_PAGES if p not in present_pages]
     demo_products = [p for p in products if is_demo(p)]
     real_products = [p for p in products if not is_demo(p)]
+    publishable_products = [p for p in products if is_publishable(p)]
+    unverified_products = [p for p in real_products if not is_publishable(p)]
     agents = []
 
     # 1. Coordinator / strategist: inventory and next-step readiness.
@@ -80,13 +81,14 @@ def run_agents(root: Path = ROOT):
     invalid_links = [p for p in products if p.get("affiliate_url") and not str(p["affiliate_url"]).startswith("https://")]
     missing_links = [p for p in real_products if not p.get("affiliate_url")]
     disclosure = bool(config.get("affiliate_disclosure"))
-    status = "ATTENZIONE" if demo_products or invalid_links or missing_links or not disclosure else "OK"
+    status = "ATTENZIONE" if demo_products or invalid_links or missing_links or unverified_products or not disclosure else "OK"
     agents.append(result(
         "Monetizzatore",
         "Controlla la preparazione delle schede e la trasparenza affiliata senza attivare vendite.",
         status,
-        f"Schede reali candidate: {len(real_products)}; schede demo: {len(demo_products)}; disclosure presente: {'sì' if disclosure else 'no'}.",
+        f"Schede candidate: {len(real_products)}; offerte pubblicabili verificate: {len(publishable_products)}; schede demo: {len(demo_products)}; disclosure presente: {'sì' if disclosure else 'no'}.",
         [*(f"Scheda demo da sostituire: {p.get('id', p.get('name', 'senza ID'))}" for p in demo_products),
+         *(f"Offerta non pubblicabile: approvazione o verifiche mancanti: {p.get('id', p.get('name', 'senza ID'))}" for p in unverified_products),
          *(f"Link non HTTPS: {p.get('id', p.get('name', 'senza ID'))}" for p in invalid_links),
          *(f"Link affiliato mancante: {p.get('id', p.get('name', 'senza ID'))}" for p in missing_links),
          *([] if disclosure else ["Disclosure affiliata mancante"])],
@@ -127,15 +129,15 @@ def run_agents(root: Path = ROOT):
 
     # 5. Promotion / partnerships: assess readiness, never send outreach.
     promo_findings = []
-    if not real_products:
-        promo_findings.append("Nessuna scheda prodotto reale pronta da promuovere.")
+    if not publishable_products:
+        promo_findings.append("Nessuna offerta verificata e approvata pronta da promuovere.")
     if not config.get("networks"):
         promo_findings.append("Nessun network affiliato configurato.")
     agents.append(result(
         "Promotore e Partnership",
         "Valuta se catalogo e tracciamento sono pronti per future collaborazioni.",
         "ATTENZIONE" if promo_findings else "OK",
-        f"Schede reali candidate alla promozione: {len(real_products)}. Nessun contatto esterno inviato.",
+        f"Offerte verificate candidate alla promozione: {len(publishable_products)}. Nessun contatto esterno inviato.",
         promo_findings,
         "Preparare proposte e materiali; ogni contatto, accordo o campagna richiede approvazione umana."
     ))
@@ -152,6 +154,7 @@ def run_agents(root: Path = ROOT):
             "products_total": len(products),
             "products_demo": len(demo_products),
             "products_real_candidates": len(real_products),
+            "products_publishable": len(publishable_products),
         },
         "agents": agents,
     }
@@ -166,7 +169,7 @@ def render_markdown(report):
         f"- Modalità: `{report['execution_mode']}`",
         f"- Agenti eseguiti: {summary['agents_run']}",
         f"- Agenti con rilievi: {summary['agents_with_findings']}",
-        f"- Prodotti: {summary['products_total']} totali, {summary['products_demo']} demo, {summary['products_real_candidates']} candidati reali",
+        f"- Prodotti: {summary['products_total']} totali, {summary['products_demo']} demo, {summary['products_real_candidates']} candidati reali, {summary.get('products_publishable', 0)} pubblicabili verificati",
         "",
         "> I controlli sono automatici e basati sui file del repository. Non sono ancora agenti LLM autonomi; non contattano partner, non spendono denaro e non attivano vendite.",
         "",

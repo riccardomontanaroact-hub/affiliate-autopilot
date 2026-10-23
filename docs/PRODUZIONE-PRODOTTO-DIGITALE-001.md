@@ -1,18 +1,21 @@
 # Scheda di produzione — Casa Smart senza sorprese
 
 **ID interno:** VORLI-DIG-001  
-**Stato:** bozza non pubblicata  
+**Stato:** PDF v1 impaginato il 22/10/2026; in revisione, non pubblicato e non in vendita  
 **File contenuto:** `vault/products/casa-smart-senza-sorprese-bozza-01.md`  
-**Formato previsto:** PDF A4 stampabile e versione digitale compilabile  
-**Prezzo:** non definito  
-**Checkout/consegna:** non configurati
+**Formato disponibile:** PDF A4 stampabile v1; versione digitale compilabile non ancora verificata  
+**Prezzo:** non definito; richiede decisione prima della vendita  
+**Checkout/consegna:** non configurati; il PDF v1 è stato generato nella sessione di lavoro, non caricato su una piattaforma di vendita
 
-## Checklist prima di un'eventuale vendita
+## Avanzamento verificato il 23/10/2026
 
-- [ ] Revisione tecnica dei consigli e controllo di tutte le fonti, date e collegamenti.
+- [x] Separazione del piano prodotti VORLI dai prodotti AZETA Editing.
+- [x] Verifica preliminare dei collegamenti alle fonti istituzionali e aggiornamento dei riferimenti FTC, NCSC e Commissione europea nel sorgente.
+- [x] Chiarito nel sorgente che FTC e NCSC sono fonti rispettivamente statunitense e britannica, non norme italiane.
+- [ ] Revisione tecnica completa dei consigli e verifica di tutte le affermazioni.
 - [ ] Revisione editoriale in italiano e controllo di refusi.
-- [ ] Impaginazione con gerarchia tipografica, margini, contrasto e campi stampabili.
-- [ ] Esportazione e verifica del PDF su telefono e desktop.
+- [ ] Impaginazione finale con gerarchia tipografica, margini, contrasto e campi stampabili.
+- [ ] Esportazione e verifica del PDF aggiornato su telefono e desktop.
 - [ ] Controllo di accessibilità e leggibilità in bianco e nero.
 - [ ] Verifica dei diritti su testi, immagini, font e materiali utilizzati.
 - [ ] Definizione del contenuto finale e della versione del prodotto.
