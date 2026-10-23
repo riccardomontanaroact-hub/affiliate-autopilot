@@ -70,7 +70,7 @@ test("Internal links in all Lab pages resolve to repository files", () => {
 
 test("External links in catalog are only registered original GitHub sources", () => {
   const external = Array.from(html.matchAll(/href="(https?:\/\/[^"]+)"/g), m => m[1]).sort();
-  const registered = data.resources.map(r => repoBlob + r.source).sort();
+  const registered = Array.from(data.resources, r => repoBlob + r.source).sort();
   assert.deepEqual(external, registered);
   assert.doesNotMatch(html + js + css, /<iframe\b|<script[^>]+src="https?:\/\//i);
 });
