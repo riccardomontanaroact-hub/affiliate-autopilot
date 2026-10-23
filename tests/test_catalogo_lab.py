@@ -61,7 +61,8 @@ class CatalogLabTests(unittest.TestCase):
         parser = Links()
         parser.feed(self.html)
         self.assertEqual([], parser.images)
-        self.assertEqual([], parser.remote)
+        expected_sources = sorted("https://github.com/riccardomontanaroact-hub/affiliate-autopilot/blob/" + item["source"] for item in self.data["resources"])
+        self.assertEqual(expected_sources, sorted(parser.remote), "Only the five verified GitHub source links are allowed")
         for path in parser.local:
             self.assertTrue((ROOT / path).is_file(), path)
         self.assertNotIn("checkout", self.js.lower())
