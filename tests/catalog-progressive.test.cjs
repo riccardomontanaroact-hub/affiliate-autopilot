@@ -52,6 +52,8 @@ test("Hydration filters existing HTML instead of replacing it", () => {
   assert.match(js, /classList\.add\("js-ready"\)/);
   assert.match(css, /\.filters\{display:none/);
   assert.match(css, /\.js-ready \.filters\{display:grid/);
+  assert.match(css, /@media\(forced-colors:active\)/);
+  assert.match(css, /@media\(prefers-contrast:more\)/);
 });
 
 test("Internal links in all Lab pages resolve to repository files", () => {
