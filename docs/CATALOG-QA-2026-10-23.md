@@ -7,7 +7,7 @@ Branch: `vorli/catalog-qa-regression-20261023`, derivato da `vorli/catalog-stati
 1. `tests/catalog-progressive.test.cjs` verificava ancora `createDocumentFragment` e `replaceChildren` della vecchia implementazione: test obsoleto dopo l'hydration statica del 22 ottobre. Ora verifica schede HTML esistenti, sincronizzazione, assenza di sostituzione DOM, filtri, link e sicurezza.
 2. `tests/test_catalogo_lab.py` rifiutava **tutti** i link esterni, mentre la pagina mostra cinque sorgenti GitHub reali. Ora accetta **solo** gli esatti cinque URL registrati nei dati editoriali, senza permettere domini pubblicitari.
 3. `tests/test_catalog_lab_links_20261019.py` manteneva `@unittest.expectedFailure` per un collegamento di fallback già corretto. Rimosso il marcatore: il collegamento è ora un requisito da verificare normalmente.
-4. `catalogo-lab.css`: aggiunto supporto `prefers-contrast: more` e `forced-colors: active`, con testo della hero visibile anche quando il gradiente viene disattivato dal sistema.
+4. `catalogo-lab.css`: aggiunto supporto `prefers-contrast: more` e `forced-colors: active`, con testo della hero visibile anche quando il gradiente viene disattivato dal sistema. Il gradiente del CTA primario parte ora da `#046fa9`: contrasto teorico bianco/sfondo circa **5,45:1** su quell'estremo (calcolo sRGB statico, non audit WCAG completo).
 5. Aggiunto `tests/browser_catalog_lab.py`, test Chromium **opzionale** sul file HTML completo (non una fixture) a 360/768/1440 px, JavaScript attivo/disattivato, filtri, ricerca, risultati vuoti, overflow orizzontale ed errori JS.
 
 ## Controlli effettuati in questa sessione
