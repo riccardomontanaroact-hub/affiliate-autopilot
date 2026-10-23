@@ -27,6 +27,6 @@ Tabella editoriale da compilare: modello | compatibilità | video | potenza | po
 Creare una guida principale sulle specifiche USB-C, un glossario su USB4 e Thunderbolt e una checklist stampabile. Nessuna recensione di prodotti non provati, nessun prezzo inventato, nessun link affiliato non autorizzato.
 
 ## Stato
-Controllo Gmail del 12 ottobre 2026: nessuna nuova email individuata per ACEMAGIC, eWeki IT, 2GO Software IT e ALLPOWERS IT. Una promozione BrickZoneHub già nota non è una conferma. La casella non sostituisce il pannello Awin. eWeki IT appartiene all'elettronica di consumo secondo la scheda pubblica Awin 19988: https://ui.awin.com/merchant-profile/19988
+**Revisione 23 ottobre 2026:** rimosso un riepilogo email storico non pertinente e potenzialmente fuorviante. Le comunicazioni individuali dei publisher sono verificate separatamente e non vengono riportate in documenti del repository pubblico. Lo stato contrattuale e le commissioni individuali vanno verificati nella dashboard Awin, senza deduzioni dalle schede pubbliche. Per confronto, eWeki IT è presentato come elettronica di consumo nella scheda pubblica Awin (cookie 30 giorni; commissione individuale non verificata): https://ui.awin.com/merchant-profile/19988
 
 Nessuna spesa, candidatura, email inviata, pubblicazione, vendita o pagamento effettuato.
