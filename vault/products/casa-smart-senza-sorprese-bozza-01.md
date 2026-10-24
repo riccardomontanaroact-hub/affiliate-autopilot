@@ -1,7 +1,7 @@
 # VORLI — Casa Smart senza sorprese
 ## Guida pratica e checklist per scegliere e gestire dispositivi connessi
 
-**Versione:** bozza editoriale 0.1  
+**Versione:** bozza editoriale 0.2  
 **Stato:** prodotto digitale in preparazione; non pubblicato e non in vendita  
 **Formato previsto:** PDF A4 stampabile + versione digitale compilabile  
 **Pubblico:** persone che vogliono scegliere e gestire dispositivi smart home con più consapevolezza
@@ -105,8 +105,8 @@ Collegamenti ricontrollati il **24 ottobre 2026**. Prima del rilascio commercial
 - **Federal Trade Commission (FTC), Stati Uniti — Securing Your Internet-Connected Devices at Home:** https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home  
   Indicazioni pratiche su router, credenziali, autenticazione a più fattori, aggiornamenti e dispositivi connessi. È una fonte statunitense di orientamento al consumatore, non una norma italiana.
 - **National Cyber Security Centre (NCSC), Regno Unito — Smart devices: using them safely in your home:** https://www.ncsc.gov.uk/guidance/smart-devices-in-the-home  
-  Indicazioni sulla scelta dei dispositivi, sul supporto del produttore e sulla sicurezza. Le informazioni normative citate si riferiscono al Regno Unito e non vanno presentate come legge italiana.
-- **Commissione europea — Regolamento sulla ciberresilienza (Cyber Resilience Act):** https://commission.europa.eu/news-and-media/news/safer-and-more-secure-digital-products-2026-09-11_it  
+  Indicazioni sulla scelta dei dispositivi, sul supporto del produttore e sulla sicurezza. La pagina risulta revisionata il 23 febbraio 2024; prima del rilascio va ricontrollata. Le informazioni normative britanniche non vanno presentate come legge italiana.
+- **Commissione europea — Regolamento sulla ciberresilienza (Cyber Resilience Act):** https://digital-strategy.ec.europa.eu/it/policies/cyber-resilience-act  
   Fonte istituzionale UE. Alla data del controllo, gli obblighi di segnalazione dei fabbricanti per vulnerabilità attivamente sfruttate e incidenti gravi si applicano dall'11 settembre 2026; la maggior parte degli obblighi principali si applicherà dall'11 dicembre 2027. Non significa che ogni dispositivo abbia già oggi tutti gli obblighi principali applicabili: ambito, ruolo e disposizioni transitorie vanno verificati nel testo normativo aggiornato. Questa guida non costituisce consulenza legale.
 
 ## Nota editoriale e commerciale
