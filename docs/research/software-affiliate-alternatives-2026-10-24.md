@@ -57,3 +57,16 @@ Nell'articolo ufficiale AdGuard vengono descritti, **a titolo informativo e non 
 **Implicazioni:** il claim generico «50% su tutto» sarebbe scorretto; le percentuali si riferiscono ai ricavi del merchant e possono differire per prodotto. La pagina pubblica non specifica minimo di pagamento, metodi concreti, periodicità contrattuale, finestra cookie o requisiti fiscali/documentali per un individuo italiano. Nessuno di questi aspetti va presentato come verificato. Le regole di conversione sopra sono tratte da un articolo non datato: confermarle nei termini attuali del programma prima di promuovere offerte.
 
 **Esito due diligence:** mantenere AdGuard nella shortlist **solo in valutazione**. Nessuna adesione, link, prezzo, promessa di commissione o scheda commerciale pubblica finché non saranno confermati termini individuali, tracciamento e payout. Questa sezione è ricerca interna priva di dati personali o link di tracciamento.
+
+## Correzione importante: fonti AdGuard ufficiali in conflitto (verifica 24/10/2026, ore 06:10 Europe/Rome)
+
+**Discrepanza riscontrata:** la pagina italiana ufficiale del programma affiliati indica **fino al 50%** per vendite e rinnovi, mentre un articolo del blog ufficiale in inglese dichiara **fino al 70%** per vendite e rinnovi. Un altro articolo ufficiale già analizzato descrive invece **50% Ad Blocker e 40% VPN/DNS**, calcolati sui ricavi AdGuard e con specifiche condizioni di conversione. Queste fonti **non consentono di determinare una commissione effettiva uniforme**, né di affermare che il 70% sia accessibile a VORLI.
+
+Fonti consultate il 24/10/2026:
+- Landing affiliate IT (claim 50%): https://adguard.com/it/partners/affiliate.html
+- Blog ufficiale EN (claim 70%): https://adguard.com/en/blog/affiliate-program-for-software.html
+- Articolo ufficiale EN per prodotto (50%/40%): https://adguard.com/en/blog/adguard-affiliate-program.html
+
+**Verifica payout:** nelle pagine pubbliche sopra esaminate si parla di pagamenti regolari o di diversi metodi, **senza indicare una soglia minima verificabile**. Non dedurre che la soglia sia assente o che i piccoli importi siano liquidabili. Restano ignoti metodo disponibile in Italia, tempi, eventuali commissioni di trasferimento, approvazione e documenti richiesti a persona fisica italiana.
+
+**Decisione operativa:** segnare AdGuard come *CONDIZIONI PUBBLICHE CONTRADDITTORIE — NON PROMUOVERE*. Prima di qualunque candidatura o contenuto commerciale, acquisire condizioni contrattuali aggiornate, tabella commissionale applicabile, regole di attribuzione e payout per publisher italiano. Non inserire claim 70%, 50% o 40% in schede prodotto rivolte al pubblico come promessa di guadagno. Nessun account, link di tracciamento, messaggio o spesa generati in questa verifica.
