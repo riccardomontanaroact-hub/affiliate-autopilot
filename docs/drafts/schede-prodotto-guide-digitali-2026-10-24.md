@@ -22,9 +22,9 @@ Queste schede descrivono bozze esistenti nel repository; non dichiarano che i PD
 
 **Cosa NON promette:** autonomia garantita, test reali su modelli specifici, compatibilità con qualunque apparecchio, sicurezza per dispositivi medici o applicazioni critiche.
 
-**Formato e consegna:** il sorgente attuale è Markdown; formato finale, pagine, accessibilità, compatibilità mobile e modalità di consegna **da verificare dopo esportazione**. Non descrivere come PDF già pronto.
+**Formato e consegna:** esistono una bozza Markdown e una versione HTML predisposta per stampa A4 (`docs/drafts/print/power-station-autonomia-2026-10-24.html`). PDF finale, pagine, accessibilità, compatibilità mobile e modalità di consegna **non ancora verificati**. Non descrivere come PDF già pronto.
 
-**Stato:** bozza testuale presente in `docs/drafts/power-station-autonomia-worksheet-2026-10-24.md`; da revisionare e impaginare.
+**Stato:** bozza Markdown in `docs/drafts/power-station-autonomia-worksheet-2026-10-24.md` e impaginazione HTML preliminare nel percorso indicato sopra; nessun PDF testato.
 
 **Prossimo controllo tecnico:** verificare che gli esempi numerici e le unità siano coerenti; distinguere carichi AC/DC, picchi e assorbimento a vuoto; testare apertura e leggibilità su smartphone.
 
@@ -48,9 +48,9 @@ Queste schede descrivono bozze esistenti nel repository; non dichiarano che i PD
 
 **Cosa NON promette:** anonimato totale, protezione assoluta, valutazioni di prodotti testati, classifiche commerciali o prezzi reali.
 
-**Formato e consegna:** attualmente Markdown; PDF finale, numero pagine, test di compatibilità e accessibilità **non verificati**.
+**Formato e consegna:** esistono una bozza Markdown e una versione HTML predisposta per stampa A4 (`docs/drafts/print/software-privacy-2026-10-24.html`). PDF finale, numero pagine, test di compatibilità e accessibilità **non verificati**.
 
-**Stato:** bozza testuale in `docs/drafts/guida-scegliere-software-privacy-20261024.md`; da revisionare, verificare e impaginare.
+**Stato:** bozza Markdown in `docs/drafts/guida-scegliere-software-privacy-20261024.md` e impaginazione HTML preliminare nel percorso indicato sopra; nessun PDF testato.
 
 **Prossimo controllo editoriale:** evitare confusioni tra VPN e antimalware; verificare fonti tecniche e qualsiasi dato di prezzo prima di una futura pubblicazione.
 
@@ -71,3 +71,5 @@ Queste schede descrivono bozze esistenti nel repository; non dichiarano che i PD
 - AGCM, pubblicità trasparente e riconoscibile: https://www.agcm.it/media/comunicati-stampa/2017/7/alias-8853
 
 **Nota:** documento di lavoro, non parere legale/fiscale e non offerta commerciale. Nessun dato personale, identificativo account o link di tracciamento.
+
+**Aggiornamento di controllo del 24/10/2026:** allineate le schede alla presenza effettiva delle due versioni HTML in branch di lavoro. Precisato il limite delle VPN su Wi-Fi pubblico nelle versioni Markdown/HTML della guida privacy, in base a EFF: https://ssd.eff.org/ps/module/choosing-vpn-thats-right-you . Non sono stati esportati PDF o effettuati test su dispositivi.
