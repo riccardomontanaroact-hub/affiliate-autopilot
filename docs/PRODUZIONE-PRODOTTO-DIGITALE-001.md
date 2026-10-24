@@ -28,6 +28,16 @@
 - [ ] Test di acquisto e consegna senza usare dati reali di clienti.
 - [ ] Approvazione esplicita del proprietario prima della pubblicazione.
 
+## Blocco di riservatezza commerciale
+
+Il repository GitHub `riccardomontanaroact-hub/affiliate-autopilot` è pubblico e il sorgente Markdown del prodotto si trova al suo interno. Quindi il testo della guida è già consultabile da chiunque tramite GitHub, anche se il PDF non è pubblicato su GitHub Pages. Rimuovere il file in futuro non cancellerebbe le copie presenti nella cronologia Git o quelle già scaricate.
+
+Prima di vendere una versione che si intende mantenere esclusiva, decidere se:
+- trasformare questa bozza in una risorsa gratuita/lead magnet; oppure
+- creare una nuova edizione sostanzialmente arricchita, conservando il contenuto non pubblicato in un archivio privato, e definire una strategia realistica rispetto alla versione già esposta.
+
+Non inserire segreti, dati personali, credenziali o materiali con diritti non verificati nel repository pubblico.
+
 ## Regole di rilascio
 
 - Non inserire la bozza nel catalogo come prodotto acquistabile.
