@@ -41,3 +41,19 @@
 2. Verificare cookie, commissione individuale, tempi, valuta e soglie di payout dai contratti applicabili.
 3. Valutare recesso e obblighi IVA solo con fonti istituzionali e consulenza adeguata prima di vendite dirette.
 4. Mantenere l'analisi in branch/PR in bozza; non pubblicare in produzione.
+
+## Approfondimento AdGuard — condizioni per prodotto (24/10/2026)
+
+**Nuova fonte primaria:** https://adguard.com/en/blog/adguard-affiliate-program.html (articolo ufficiale, data di pubblicazione non chiaramente riportata nella pagina consultata il 24/10/2026). La pagina generale italiana https://adguard.com/it/partners/affiliate.html parla invece di commissioni **fino al 50%** su vendite e rinnovi, senza specificare percentuali per singolo prodotto.
+
+Nell'articolo ufficiale AdGuard vengono descritti, **a titolo informativo e non come condizioni contrattuali attuali per VORLI**:
+
+| Prodotto | Percentuale dichiarata nell'articolo | Evento descritto come necessario |
+| --- | --- | --- |
+| AdGuard Ad Blocker | 50% **dei ricavi AdGuard**, non necessariamente del prezzo pagato dal cliente | Download tramite link affiliato, acquisto licenza e attivazione nell'app installata. |
+| AdGuard VPN | 40% **dei ricavi AdGuard** | Download tramite link affiliato, acquisto licenza e attivazione nell'app installata. |
+| AdGuard DNS | 40% **dei ricavi AdGuard** | Registrazione tramite link affiliato e acquisto dell'abbonamento. |
+
+**Implicazioni:** il claim generico «50% su tutto» sarebbe scorretto; le percentuali si riferiscono ai ricavi del merchant e possono differire per prodotto. La pagina pubblica non specifica minimo di pagamento, metodi concreti, periodicità contrattuale, finestra cookie o requisiti fiscali/documentali per un individuo italiano. Nessuno di questi aspetti va presentato come verificato. Le regole di conversione sopra sono tratte da un articolo non datato: confermarle nei termini attuali del programma prima di promuovere offerte.
+
+**Esito due diligence:** mantenere AdGuard nella shortlist **solo in valutazione**. Nessuna adesione, link, prezzo, promessa di commissione o scheda commerciale pubblica finché non saranno confermati termini individuali, tracciamento e payout. Questa sezione è ricerca interna priva di dati personali o link di tracciamento.
