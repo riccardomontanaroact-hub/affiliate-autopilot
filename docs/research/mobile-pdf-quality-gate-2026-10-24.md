@@ -25,7 +25,7 @@
 
 ## Gate SEO — prima di creare qualunque pagina pubblica
 
-1. Definire **una sola URL canonica** per guida; gli slug proposti nelle schede e nel worksheet power station oggi **divergono** (`/risorse/autonomia-power-station/` vs `/guide/calcolare-autonomia-power-station/`). **Sceglierne uno in revisione** prima di generare link interni; non creare duplicati.
+1. **Discrepanza slug risolta editorialmente il 24/10/2026:** le due bozze della guida power station ora usano `/guide/calcolare-autonomia-power-station/` come *percorso proposto*, non URL esistente. Non creare la pagina, duplicati o link interni finché non autorizzati. Se pubblicata in futuro, usare una sola URL preferita e coerenza fra collegamenti interni e segnali canonici.
 2. Una sola intenzione di ricerca principale per guida; titolo H1, title e description coerenti con ciò che il file contiene realmente, senza «PDF disponibile» o «acquista» finché non è vero.
 3. Inserire data della **revisione effettiva**, fonti consultate e metodo degli esempi ipotetici. Non cambiare date solo per simulare freschezza.
 4. Evitare markup `Product`/`Offer` con prezzo, disponibilità, recensioni o rating inventati. Le schede attuali sono **bozze informative**, non offerte acquistabili; qualsiasi markup futuro deve corrispondere ai dati visibili e verificati.
@@ -41,3 +41,4 @@
 - W3C WAI, PDF9, intestazioni nei PDF: https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF9.html
 - Google Search Central, contenuti utili e originali: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
 - Google Search Central, differenza tra product snippets e merchant listings: https://developers.google.com/search/docs/appearance/structured-data/product
+- Google Search Central, consolidamento URL duplicate e link canonici: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
