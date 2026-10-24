@@ -50,3 +50,29 @@ Fonte ufficiale: Commissione europea, sportello unico IVA (OSS): https://europa.
 **Scheda di verifica da sottoporre al professionista (senza dati personali nel repository):** descrizione delle attività (affiliazione vs vendita diretta), frequenza programmata di pubblicazione, natura delle provvigioni, paesi dei network/clienti, presenza di un sito automatizzato e continuativo, soggetti che fatturano/incassano, modalità di payout e documentazione fiscale richiesta. Nessuna conclusione fiscale individuale è stata formulata.
 
 **Stato:** ricerca preparatoria, nessun account creato, nessuna vendita, nessun checkout o link affiliato attivato. Conservare in PR in bozza fino a revisione.
+
+
+## Verifica documentale Awin per publisher individuale italiano (24/10/2026, ore 13:06 Europe/Rome)
+
+**Nuova fonte primaria Awin, distinta dalla valutazione fiscale italiana:**
+- FAQ ufficiali «Dettagli Fiscali per Publisher», consultate 24/10/2026: https://success.awin.com/articles/it/Knowledge/Publisher-Tax-Details-FAQs
+- FAQ ufficiali «Pagamenti non riusciti», consultate 24/10/2026: https://success.awin.com/articles/it/Knowledge/Failed-Payments-Publishers-FAQs
+- FAQ ufficiali «IVA Reverse Charge», consultate 24/10/2026: https://success.awin.com/articles/it/Knowledge/VAT-Reverse-Charge-FAQs
+- FAQ ufficiali «Requisiti per entrare nella rete Awin», consultate 24/10/2026: https://success.awin.com/articles/it/Knowledge/What-are-the-requirements-for-joining-the-Awin-network
+
+### Elementi accertati nella documentazione del network
+1. Awin prevede espressamente il caso di publisher **senza attività registrata**: la FAQ indica il tipo «Operatore esclusivo» (traduzione italiana della categoria di persona che gestisce autonomamente l'attività). **È una categoria del modulo Awin, non un'autorizzazione a esercitare professionalmente senza partita IVA italiana.**
+2. I dati fiscali si trovano nella sezione `Account > Dettagli di Pagamento`; sono necessari, assieme ai dati bancari, per l'erogazione delle commissioni. La sola approvazione del profilo o degli advertiser non prova che i pagamenti siano configurati.
+3. La FAQ distingue il numero di partita IVA, quando posseduto, dal codice fiscale locale per publisher UE non registrati ai fini IVA. **Non inserire alcun codice fiscale, indirizzo, IBAN, documento o screenshot nel repository pubblico**; la scelta effettiva va verificata nella piattaforma e con un consulente italiano.
+4. La FAQ Awin sul reverse charge descrive autofatturazione e inversione contabile per taluni servizi verso il network, ma precisa che obblighi dichiarativi e corretta contabilità rimangono in capo al publisher. **Il reverse charge non elimina automaticamente la necessità di inquadramento IVA, registrazioni o adempimenti in Italia.**
+5. Awin segnala che dati fiscali o bancari mancanti, o incongruenze fra nominativo e titolare del conto, possono impedire il pagamento. Il network può chiedere ulteriori documenti di verifica. Non presumere che un cambio dell'email di contatto garantisca la consegna delle notifiche.
+
+### Verifiche da fare in area privata (non svolte in questa ricerca)
+- [ ] Verificare che il profilo fiscale sia completo e coerente con l'inquadramento confermato da professionista italiano.
+- [ ] Verificare metodo di pagamento effettivo, valuta e soglia configurata, senza modificarli automaticamente.
+- [ ] Verificare eventuali richieste documentali o messaggi di errore nel pannello Awin, senza copiarne dati personali.
+- [ ] Verificare intestazione del conto e dati anagrafici soltanto nel servizio privato.
+- [ ] Verificare il soggetto contrattuale e le autofatture disponibili prima di qualsiasi dichiarazione sul trattamento IVA.
+- [ ] Mantenere separate le **provvigioni da affiliazione** dalle **vendite dirette di PDF**: venditore effettivo, obblighi al consumatore e trattamento IVA possono essere diversi.
+
+**Decisione:** nessuna modifica ai dati Awin, nessuna attivazione commerciale o payout; blocco della monetizzazione finché non sono confermati i requisiti individuali. Nessuna consulenza fiscale conclusiva.
