@@ -62,7 +62,7 @@ if 'class="brand-mark"' not in index_source or 'vorli-gradient' not in index_sou
 (SITE / "index.html").write_text(index_source, encoding="utf-8")
 (SITE / "style.css").write_text(style_source, encoding="utf-8")
 # Publish the supporting pages linked by the new navigation as well.
-for page in ("risorse.html", "guida.html", "usb-c.html", "casa-smart.html", "privacy.html", "condizioni.html"):
+for page in ("risorse.html", "guida.html", "usb-c.html"):
     (SITE / page).write_text((PREVIEW / page).read_text(encoding="utf-8"), encoding="utf-8")
 
 # Keep the product catalogue available as a separate page. Placeholder offers are
@@ -123,7 +123,7 @@ catalog = f"""<!doctype html>
 </main>
 <footer class="foot"><div class="wrap"><strong>VORLI</strong>
 <p>Prezzi e disponibilità possono cambiare. Le schede demo non sono offerte acquistabili.</p>
-<p>© 2026 VORLI · <a href="guida.html">Metodo editoriale</a> · <a href="privacy.html">Privacy</a> · <a href="condizioni.html">Informazioni commerciali</a></p></div></footer>
+<p>© 2026 VORLI · <a href="guida.html">Metodo editoriale</a></p></div></footer>
 </body></html>"""
 (SITE / "catalogo.html").write_text(catalog, encoding="utf-8")
 
