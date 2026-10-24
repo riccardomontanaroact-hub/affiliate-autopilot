@@ -81,3 +81,17 @@ Fonti consultate il 24/10/2026:
 - Nessun account AdGuard creato e nessun metodo di pagamento configurato. **Stato: ancora in due diligence, non pronto per la promozione.**
 
 **Prossima verifica prioritaria:** ottenere termini affiliato attuali che esplicitino minimo PayPal/Mellow, tempi, commissioni e requisiti del publisher italiano. Non inferire payout immediati o senza soglia dalla sola presenza di PayPal nella policy.
+
+## AdGuard — soglia e calendario payout da portale partner (verifica 24/10/2026, ore 10:12 Europe/Rome)
+
+**Fonte primaria aggiuntiva:** https://adguardpartner.com/en/welcome.html (pagina del portale partner con footer «© 2009–2026 Adguard Software Ltd.», collegamenti ai servizi AdGuard e FAQ pubbliche; consultata il 24/10/2026). Questa pagina è più specifica per i payout della landing generale. Le affermazioni precedenti «soglia non documentata nelle pagine consultate» restano corrette *solo per quelle pagine*; non sono più corrette come conclusione globale.
+
+- **Prelievo minimo dichiarato: 20 USD.** Payout **settimanali il giovedì**, via **PayPal**, **Mellow/Solar Staff** o wallet crypto. Per PayPal e bonifico la valuta indicata è **USD**; per crypto USDT TRC20. Non equivale a una promessa di accredito automatico settimanale: verificare saldo maturato, eventuali trattenute e disponibilità effettiva del metodo per l'Italia.
+- La FAQ indica **4% di commissione per prelievi tramite Mellow/Solar Staff**, oltre a possibili conversioni valutarie. **Non attribuire automaticamente il 4% a PayPal**; verificare eventuali spese PayPal/cambio separatamente.
+- **Cookie dichiarato: 365 giorni.** Si tratta di una regola pubblica del programma diretto, non di una garanzia che ogni conversione venga riconosciuta.
+- **Commissioni:** il portale esplicita un *welcome boost* per i primi 30 giorni (70% Ad Blocker, 60% VPN, 60% DNS Personal, 40% DNS Team); poi aliquote base dichiarate rispettivamente 50%, 40%, 40%, 20%, con fasce variabili secondo risultati. Le aliquote sono applicate alla base di ricavo del merchant **dopo IVA e commissioni del sistema di pagamento**, quando applicabili, e non automaticamente al prezzo finale lordo.
+- **Costo di ingresso:** il programma *affiliate* è presentato senza investimento iniziale; il programma *reseller* è distinto e prevede acquisto di licenze (non adatto al vincolo zero costi).
+- **Restrizioni esplicite:** no email/SMS non richiesti, spam social, traffico incentivato, auto-surf, phishing, installazioni artificiali, pop-up/pop-under e altre pratiche ingannevoli.
+- **Restano NON verificati:** ammissibilità e documenti richiesti a una persona fisica residente in Italia senza partita IVA; accettazione effettiva di VORLI; eventuali restrizioni geografiche e contrattuali; payout netto e conversione per un conto italiano; condizioni individuali dopo l'approvazione.
+
+**Esito aggiornato:** AdGuard è *più interessante* per piccoli incassi rispetto a programmi con soglie elevate, grazie al minimo pubblico di 20 USD e PayPal dichiarato, ma **NON È APPROVATO per VORLI** e non deve essere promosso o integrato finché i requisiti individuali non saranno confermati. Non creare account, non attivare pagamenti, non pubblicare offerte o link di tracking.
