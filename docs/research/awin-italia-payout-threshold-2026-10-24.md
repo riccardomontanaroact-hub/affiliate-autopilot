@@ -24,3 +24,14 @@ La soglia pubblica di **20 EUR per BACS** è più favorevole di programmi con so
 3. Eventuali commissioni bancarie e requisiti per un publisher individuale italiano: da verificare in condizioni contrattuali e, per gli obblighi fiscali, con consulenza qualificata.
 
 **Nessuna candidatura, modifica di produzione, attivazione pagamenti o email inviata. Nessun dato personale o link di tracciamento incluso.**
+
+## Chiarimento Awin: soglia minima vs soglia predefinita (24/10/2026, ore 10:12 Europe/Rome)
+
+**Fonte primaria più specifica:** Awin Success Center, articolo «Quali sono le soglie di pagamento?», ultima pubblicazione indicata **13/03/2026**: https://success.awin.com/articles/it/Knowledge/What-are-the-payment-thresholds (consultato 24/10/2026).
+
+- L'articolo del Centro assistenza indica **20 EUR** come **minimo per pagamenti in euro** (oltre a 20 GBP per sterline e 20 USD per dollari), senza limitarlo nella formulazione al solo BACS. La FAQ generale Awin Italia rimane più restrittiva nel riferimento a BACS: mantenere la distinzione tra le due formulazioni ufficiali, senza inferire il metodo specifico di VORLI.
+- **Attenzione alla differenza cruciale:** la **soglia predefinita** in assenza di configurazione è **50 EUR** (anche 50 GBP/USD e altre valute elencate). Quindi **20 EUR è il minimo configurabile, non necessariamente la soglia già impostata nel conto**.
+- Awin indica che il saldo di commissioni confermate deve raggiungere la soglia entro il 15 o l'ultimo giorno del mese; altrimenti viene riportato al ciclo successivo. La soglia e la frequenza sono modificabili nella dashboard in Account > Dettagli di pagamento.
+- **Da verificare senza modificare l'account:** soglia effettiva attuale, valuta, metodo disponibile, requisiti di verifica e saldo confermato. Nessuna promessa di pagamento sotto soglia o di ricavi maturati.
+
+Questa precisazione integra e corregge il rischio di interpretare «minimo 20 EUR» come «conto VORLI automaticamente impostato a 20 EUR». Nessuna configurazione, spesa o dato privato inserito nel repository.
