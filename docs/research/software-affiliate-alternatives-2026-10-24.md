@@ -70,3 +70,14 @@ Fonti consultate il 24/10/2026:
 **Verifica payout:** nelle pagine pubbliche sopra esaminate si parla di pagamenti regolari o di diversi metodi, **senza indicare una soglia minima verificabile**. Non dedurre che la soglia sia assente o che i piccoli importi siano liquidabili. Restano ignoti metodo disponibile in Italia, tempi, eventuali commissioni di trasferimento, approvazione e documenti richiesti a persona fisica italiana.
 
 **Decisione operativa:** segnare AdGuard come *CONDIZIONI PUBBLICHE CONTRADDITTORIE — NON PROMUOVERE*. Prima di qualunque candidatura o contenuto commerciale, acquisire condizioni contrattuali aggiornate, tabella commissionale applicabile, regole di attribuzione e payout per publisher italiano. Non inserire claim 70%, 50% o 40% in schede prodotto rivolte al pubblico come promessa di guadagno. Nessun account, link di tracciamento, messaggio o spesa generati in questa verifica.
+
+## AdGuard — provider di payout verificati nella privacy policy (24/10/2026, ore 08:14 Europe/Rome)
+
+**Nuova fonte primaria, documento datato 28 aprile 2026:** https://adguard.com/fc/en/website-privacy.html, sezione "When you use the Affiliate Account" / "Processing your payouts".
+
+- La privacy policy ufficiale menziona esplicitamente **PayPal** e **Mellow** come provider di pagamento per i compensi degli affiliati; descrive il trattamento dell'indirizzo del conto presso il provider selezionato. Questo conferma che i due metodi sono contemplati nel processo di payout, **non** che siano entrambi disponibili per ogni paese o account.
+- **Non documentati in questa fonte:** soglia minima per PayPal o Mellow, periodicità effettiva, commissioni, valuta, tempi di liquidazione, KYC e ammissibilità di una persona fisica residente in Italia senza partita IVA.
+- La stessa policy distingue i provider usati per l'**acquisto dei prodotti** (Paddle/PayPro Global) dai provider usati per i **payout affiliati** (PayPal/Mellow): non confondere i due flussi.
+- Nessun account AdGuard creato e nessun metodo di pagamento configurato. **Stato: ancora in due diligence, non pronto per la promozione.**
+
+**Prossima verifica prioritaria:** ottenere termini affiliato attuali che esplicitino minimo PayPal/Mellow, tempi, commissioni e requisiti del publisher italiano. Non inferire payout immediati o senza soglia dalla sola presenza di PayPal nella policy.
