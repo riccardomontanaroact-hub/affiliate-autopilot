@@ -23,6 +23,8 @@ Prima di pagare, scrivi in una frase cosa vuoi ottenere: «Voglio ridurre i trac
 
 Le categorie possono sovrapporsi: alcune VPN includono filtri DNS, alcuni browser già bloccano parte dei tracker e certi antivirus offrono estensioni. **Non pagare due volte per una funzione che possiedi già senza averne misurato il beneficio.**
 
+**Chiarimento verificato il 24/10/2026 (EFF):** una VPN non è automaticamente necessaria su ogni rete Wi-Fi pubblica, perché gran parte del traffico web moderno usa già HTTPS. Su reti particolarmente non fidate può essere utile, ma non elimina il problema della fiducia: il fornitore VPN può vedere informazioni sul traffico. Valuta il rischio reale e la politica sui dati prima di sottoscrivere un abbonamento.
+
 ## Il controllo in 10 minuti prima dell'acquisto
 
 1. **Dispositivi e compatibilità.** Funziona sul tuo sistema operativo e sulla versione del browser? Quanti dispositivi copre la licenza? Esistono limiti tra desktop e smartphone?
