@@ -35,3 +35,18 @@ Fonte ufficiale: Commissione europea, sportello unico IVA (OSS): https://europa.
 7. Autorizzazione esplicita del titolare prima di merge, pubblicazione o pagamenti.
 
 **Stato al 24/10/2026:** ricerca preparatoria; nessuna conclusione sulla posizione fiscale individuale e nessuna autorizzazione alla vendita.
+
+## Chiarimento fiscale: occasionalità, abitualità e soglie (24/10/2026, ore 12:13 Europe/Rome)
+
+**Fonti istituzionali esaminate il 24/10/2026:**
+- Normattiva, DPR 633/1972, art. 4, testo vigente nel 2026: https://www.normattiva.it/atto/caricaDettaglioAtto?atto.articolo.numero=4&atto.codiceRedazionale=072U0633&atto.dataPubblicazioneGazzetta=1972-11-11
+- Agenzia delle Entrate, istruzioni alla dichiarazione precompilata per redditi da attività commerciali e lavoro autonomo **non esercitati abitualmente**: https://infoprecompilata.agenziaentrate.gov.it/portale/web/guest/semplificata-mod-redditi-di-capitale
+- Agenzia delle Entrate, quadro D e altri redditi: https://infoprecompilata.agenziaentrate.gov.it/portale/quadro-d-altri-redditi
+
+**Distinzione essenziale.** L'art. 4 del DPR 633/1972 definisce l'esercizio d'impresa, ai fini IVA, anche tramite il requisito della **professionalità abituale, ancorché non esclusiva**. Le istruzioni dell'Agenzia delle Entrate distinguono invece redditi da attività commerciali o di lavoro autonomo **non esercitate abitualmente**. L'esistenza di categorie dichiarative per proventi occasionali **non prova** che un sito di affiliazione strutturato e continuativo possa rientrarvi.
+
+**Correzione operativa:** non assumere che un incasso inferiore a 5.000 EUR, la sola presenza di PayPal, la qualifica di persona fisica nei termini del network o l'assenza di vendite iniziali dispensino automaticamente dagli obblighi di partita IVA, dichiarazione o altri adempimenti. Queste fonti **non stabiliscono una soglia generale** di esenzione per VORLI. Il trattamento delle provvigioni affiliate, la continuità dell'attività, i rapporti con network esteri, eventuali obblighi previdenziali e le vendite B2C digitali richiedono un esame individuale da parte di un professionista italiano prima dell'attivazione commerciale.
+
+**Scheda di verifica da sottoporre al professionista (senza dati personali nel repository):** descrizione delle attività (affiliazione vs vendita diretta), frequenza programmata di pubblicazione, natura delle provvigioni, paesi dei network/clienti, presenza di un sito automatizzato e continuativo, soggetti che fatturano/incassano, modalità di payout e documentazione fiscale richiesta. Nessuna conclusione fiscale individuale è stata formulata.
+
+**Stato:** ricerca preparatoria, nessun account creato, nessuna vendita, nessun checkout o link affiliato attivato. Conservare in PR in bozza fino a revisione.
