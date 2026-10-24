@@ -119,7 +119,7 @@ catalog = f"""<!doctype html>
 <p>Le schede dimostrative sono chiaramente indicate. Verifica sempre venditore, prezzo e disponibilità.</p>
 <p class="notice">{esc(cfg.get("affiliate_disclosure", "Alcuni link possono essere affiliati."))}</p>
 </section>
-<div class="grid three">{''.join(cards)}</div>
+<div class="grid three">{''.join(cards) if cards else '<article class="card"><span class="tag draft">Catalogo in preparazione</span><h2>Nessuna offerta verificata al momento</h2><p>Stiamo controllando disponibilità, condizioni commerciali e tracciamento. Non mostriamo prodotti demo come offerte acquistabili.</p><a class="button" href="risorse.html">Esplora le risorse VORLI</a></article>'}</div>
 </main>
 <footer class="foot"><div class="wrap"><strong>VORLI</strong>
 <p>Prezzi e disponibilità possono cambiare. Le schede demo non sono offerte acquistabili.</p>
