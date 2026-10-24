@@ -10,7 +10,7 @@ Queste schede descrivono bozze esistenti nel repository; non dichiarano che i PD
 
 **Titolo SEO proposto:** Autonomia power station: calcolo Wh, W, perdite e limiti reali.
 
-**Slug proposto:** `/risorse/autonomia-power-station/` (non creare la pagina).
+**Slug editoriale scelto:** `/guide/calcolare-autonomia-power-station/` (coerente con il worksheet; NON è una URL pubblicata, non creare la pagina).
 
 **Meta description proposta:** Impara a stimare l'autonomia di una power station usando capacità in Wh, consumo in W, efficienza e una tabella di controllo prima di scegliere.
 
