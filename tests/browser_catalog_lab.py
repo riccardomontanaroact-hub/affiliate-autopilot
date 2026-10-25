@@ -19,6 +19,13 @@ LAB = Path(__file__).resolve().parents[1] / "preview" / "vorli-next"
 PAGE = (LAB / "catalogo-lab.html").as_uri()
 EVIDENCE = Path(__file__).resolve().parents[1] / "artifacts" / "catalog-lab"
 WIDTHS = (320, 360, 768, 1440)
+RESOURCE_TITLES = (
+    "Kit compatibilità USB-C",
+    "Casa Smart Sicura",
+    "Confronta Power Station",
+    "Confronta Elettrodomestici",
+    "Casa Smart — scheda compilabile",
+)
 
 
 def visible(page, kind):
@@ -65,6 +72,13 @@ def verify_viewport(browser, width):
     assert page.locator('nav[aria-label="Navigazione principale"]').count() == 1
     assert page.locator('label[for="catalog-search"]').count() == 1
     assert page.locator('label[for="category-filter"]').count() == 1
+    # Accessible names must identify the draft, including when links are listed out of context.
+    for title in RESOURCE_TITLES:
+        name = f"Consulta il sorgente su GitHub: {title} (nuova scheda)"
+        link = page.get_by_role("link", name=name, exact=True)
+        assert link.count() == 1, (width, "missing unique link name", name)
+        assert link.get_attribute("target") == "_blank"
+        assert "noopener" in (link.get_attribute("rel") or "")
     check_local_navigation(page)
     check_no_overflow(page, width, "JS")
     assert not errors, (width, errors)
@@ -108,6 +122,40 @@ def verify_viewport(browser, width):
     no_js.close()
 
 
+
+def verify_accessibility_modes(browser, width):
+    """Check forced-colors and reduced-motion modes on the full local page."""
+    context = browser.new_context(
+        viewport={"width": width, "height": 800},
+        forced_colors="active",
+        reduced_motion="reduce",
+    )
+    page = context.new_page()
+    errors = []
+    page.on("pageerror", lambda err: errors.append(str(err)))
+    page.goto(PAGE, wait_until="load")
+    assert page.evaluate("matchMedia('(forced-colors: active)').matches")
+    assert page.evaluate("matchMedia('(prefers-reduced-motion: reduce)').matches")
+    assert visible(page, "category") == 8
+    assert visible(page, "resource") == 5
+    # Gradient-clipped headline text must not disappear in forced-colors mode.
+    color = page.locator("h1 em").evaluate("el => getComputedStyle(el).color")
+    assert color not in ("transparent", "rgba(0, 0, 0, 0)"), (width, color)
+    transition = page.locator(".tile").first.evaluate(
+        "el => getComputedStyle(el).transitionDuration"
+    )
+    assert transition == "0s", (width, "reduced-motion transition", transition)
+    page.keyboard.press("Tab")
+    skip = page.locator("a.skip")
+    assert skip.evaluate("el => document.activeElement === el")
+    outline = skip.evaluate("el => getComputedStyle(el).outlineStyle")
+    assert outline != "none", (width, "keyboard focus invisible")
+    check_no_overflow(page, width, "forced colors + reduced motion")
+    assert not errors, (width, errors)
+    page.screenshot(path=str(EVIDENCE / f"catalog-{width}-forced-colors.png"), full_page=True)
+    context.close()
+
+
 def main():
     try:
         from playwright.sync_api import sync_playwright
@@ -124,6 +172,9 @@ def main():
             for width in WIDTHS:
                 verify_viewport(browser, width)
                 print(f"PASS: {width}px, JS on/off, filters, keyboard, links, no overflow")
+            for width in (360, 1440):
+                verify_accessibility_modes(browser, width)
+                print(f"PASS: {width}px, forced-colors, reduced motion, keyboard focus")
         finally:
             browser.close()
     print(f"PASS: actual VORLI Lab smoke test; screenshots in {EVIDENCE}")
