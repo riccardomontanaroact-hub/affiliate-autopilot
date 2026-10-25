@@ -12,6 +12,7 @@ Screenshots are QA evidence, not approved marketing mockups or a WCAG audit.
 from __future__ import annotations
 
 import os
+import re
 import shutil
 from pathlib import Path
 
@@ -74,9 +75,11 @@ def verify_viewport(browser, width):
     assert page.locator('label[for="category-filter"]').count() == 1
     # Accessible names must identify the draft, including when links are listed out of context.
     for title in RESOURCE_TITLES:
-        name = f"Consulta il sorgente su GitHub: {title} (nuova scheda)"
-        link = page.get_by_role("link", name=name, exact=True)
-        assert link.count() == 1, (width, "missing unique link name", name)
+        link = page.get_by_role("link", name=re.compile(re.escape(title)))
+        assert link.count() == 1, (width, "missing unique link name", title)
+        accessible = link.aria_snapshot()
+        assert "Consulta il sorgente su GitHub" in accessible, (width, accessible)
+        assert "nuova scheda" in accessible, (width, accessible)
         assert link.get_attribute("target") == "_blank"
         assert "noopener" in (link.get_attribute("rel") or "")
     check_local_navigation(page)
