@@ -1,18 +1,18 @@
 # VORLI — Casa Smart senza sorprese
 ## Guida pratica e checklist per scegliere e gestire dispositivi connessi
 
-**Versione:** bozza editoriale 0.2  
+**Versione:** bozza editoriale 0.3  
 **Stato:** prodotto digitale in preparazione; non pubblicato e non in vendita  
-**Formato previsto:** PDF A4 stampabile + versione digitale compilabile  
+**Formato previsto:** PDF A4 stampabile; versione digitale compilabile da verificare  
 **Pubblico:** persone che vogliono scegliere e gestire dispositivi smart home con più consapevolezza
 
 ---
 
 ## Prima di iniziare
 
-Una casa connessa può essere comoda, ma ogni dispositivo aggiunge una decisione: compatibilità, aggiornamenti, account, autorizzazioni, rete e trattamento dei dati. Questa guida aiuta a raccogliere le informazioni prima dell'acquisto e a fare controlli periodici. Non certifica la sicurezza di un prodotto e non sostituisce le istruzioni del produttore.
+Una casa connessa può essere comoda, ma ogni dispositivo aggiunge una decisione: compatibilità, aggiornamenti, account, autorizzazioni, rete e trattamento dei dati. Questa guida aiuta a raccogliere informazioni prima dell'acquisto e a fare controlli periodici. Non certifica la sicurezza di un prodotto e non sostituisce le istruzioni del produttore.
 
-Le raccomandazioni pratiche qui raccolte sono generali: funzioni, menu e supporto cambiano da modello a modello. Le indicazioni normative possono dipendere dal Paese e dal tipo di prodotto; per decisioni legali o di conformità occorre consultare le fonti ufficiali aggiornate.
+Le raccomandazioni sono generali: funzioni, menu, interoperabilità e supporto cambiano da modello a modello. Le indicazioni normative possono dipendere dal Paese, dal tipo di prodotto e dal ruolo dell'operatore. Per decisioni legali o di conformità occorre consultare fonti ufficiali aggiornate e, quando necessario, un professionista competente.
 
 ## 1. Prima di acquistare: scheda del dispositivo
 
@@ -23,23 +23,51 @@ Compila una scheda per ogni prodotto che stai valutando.
 - **Funzione che mi serve davvero:** __________________________________
 - **Compatibile con il mio ecosistema?** ☐ Sì ☐ No ☐ Da verificare
 - **Serve un hub, un bridge o un'app specifica?** ______________________
+- **Richiede una rete Wi-Fi con banda specifica o altri requisiti?** ______
 - **Funziona senza connessione Internet?** ☐ Sì ☐ No ☐ Da verificare
 - **Richiede un account?** ☐ Sì ☐ No ☐ Da verificare
 - **Richiede un abbonamento o acquisti aggiuntivi?** ___________________
-- **Durata e data di fine supporto/aggiornamenti dichiarate:** _________
+- **Durata e data di fine supporto/aggiornamenti dichiarate:** ___________
 - **Garanzia, assistenza e condizioni di reso:** _______________________
 - **Data del controllo e fonte consultata:** ___________________________
 
-**Regola pratica:** non basarti solo sul nome commerciale o sulla forma del connettore. Controlla il modello esatto e la documentazione ufficiale.
+**Regola pratica:** non basarti solo sul nome commerciale, sul connettore o sul logo di un ecosistema. Controlla il modello esatto e la documentazione ufficiale. Se una funzione è essenziale, chiedi conferma al produttore o al venditore prima dell'acquisto.
 
-## 2. Durante la configurazione
+## 2. Compatibilità: cinque controlli prima di pagare
+
+- ☐ **Ecosistema:** il dispositivo funziona con l'assistente, l'app o la piattaforma che usi già?
+- ☐ **Requisiti tecnici:** sono indicate bande Wi-Fi, hub, bridge, versioni software o altri requisiti particolari?
+- ☐ **Standard e interoperabilità:** se il produttore dichiara il supporto a uno standard, hai verificato modello e funzioni effettivamente compatibili? Un logo non garantisce che ogni funzione sia disponibile in ogni ecosistema.
+- ☐ **Connessione e dipendenze:** quali funzioni smettono di funzionare senza Internet, cloud, account o abbonamento?
+- ☐ **Fine supporto:** è indicata una data o una politica di aggiornamento? Se non trovi informazioni chiare, considera il dato non verificato.
+
+Annota ciò che manca, invece di indovinare:
+
+**Domanda da chiarire:** __________________________________________________  
+**Chi deve rispondere (produttore/venditore):** ____________________________  
+**Risposta e data:** ______________________________________________________
+
+## 3. Privacy e costi ricorrenti
+
+Prima di creare un account o acquistare, cerca l'informativa privacy e le condizioni del servizio.
+
+- ☐ Ho identificato quali dati può raccogliere il dispositivo o la sua app.
+- ☐ Ho controllato se sono presenti microfono, videocamera, posizione o registrazioni cloud.
+- ☐ Ho capito se i dati vengono conservati localmente o su servizi online, quando l'informazione è disponibile.
+- ☐ Ho verificato come eliminare l'account, le registrazioni e i dati associati.
+- ☐ Ho controllato se alcune funzioni richiedono un abbonamento, un piano cloud o acquisti aggiuntivi.
+- ☐ Ho verificato chi può accedere all'app e condividere il controllo del dispositivo.
+
+Se un'informazione importante non è reperibile, segnala il dubbio e chiedi chiarimenti. Non inserire dati sensibili solo per provare una funzione che non ti serve.
+
+## 4. Durante la configurazione
 
 Prima di collegare il dispositivo all'uso quotidiano:
 
 - ☐ Cambia le credenziali predefinite, se presenti, con una password unica e robusta.
 - ☐ Attiva l'autenticazione a più fattori, se disponibile.
 - ☐ Installa gli aggiornamenti ufficiali disponibili e attiva gli aggiornamenti automatici se il produttore li offre e sono adatti al dispositivo.
-- ☐ Controlla la data di fine supporto: se non è dichiarata, chiedi conferma al produttore prima dell'acquisto.
+- ☐ Controlla la data di fine supporto: se non è dichiarata, chiedi conferma al produttore.
 - ☐ Controlla i permessi richiesti dall'app e concedi solo quelli necessari alla funzione scelta.
 - ☐ Verifica quali membri della famiglia possono controllare il dispositivo.
 - ☐ Esamina le impostazioni relative a microfono, videocamera e notifiche, se presenti.
@@ -52,7 +80,7 @@ Prima di collegare il dispositivo all'uso quotidiano:
 
 Non seguire istruzioni di configurazione provenienti da pagine non ufficiali se richiedono di disattivare protezioni o condividere credenziali.
 
-## 3. Controllo periodico
+## 5. Controllo periodico
 
 Usa questa tabella ogni 1–3 mesi come promemoria pratico, e ogni volta che ricevi una notifica di sicurezza, cambi rete o modifichi gli utenti autorizzati. La frequenza è un suggerimento organizzativo, non un obbligo normativo.
 
@@ -63,7 +91,7 @@ Usa questa tabella ogni 1–3 mesi come promemoria pratico, e ogni volta che ric
 | | | ☐ Sì ☐ No | ☐ Sì ☐ No | |
 | | | ☐ Sì ☐ No | ☐ Sì ☐ No | |
 
-## 4. Se cambi casa, rete o proprietario
+## 6. Se cambi casa, rete o proprietario
 
 Prima di cedere o dismettere un dispositivo:
 
@@ -74,7 +102,7 @@ Prima di cedere o dismettere un dispositivo:
 5. Verifica nell'app che il dispositivo non sia più associato al tuo account.
 6. Smaltisci il dispositivo e le batterie secondo le regole locali applicabili.
 
-## 5. Scheda rapida: comprare o aspettare?
+## 7. Scheda rapida: comprare o aspettare?
 
 Segna un punto per ogni risposta positiva.
 
@@ -90,27 +118,28 @@ Segna un punto per ogni risposta positiva.
 
 Il punteggio non è una certificazione: se una voce importante resta sconosciuta, verifica prima di decidere.
 
-## 6. Mini glossario
+## 8. Mini glossario
 
 - **Autenticazione a più fattori:** passaggio aggiuntivo per verificare l'identità oltre alla password.
 - **Hub/bridge:** dispositivo che collega o coordina altri dispositivi smart.
 - **Firmware:** software interno del dispositivo, aggiornabile in alcuni casi dal produttore.
 - **Permesso dell'app:** autorizzazione ad accedere a funzioni o dati del telefono.
+- **Cloud:** servizio remoto che conserva dati o abilita funzioni tramite Internet.
 - **Ripristino di fabbrica:** procedura che riporta il dispositivo alle impostazioni iniziali; gli effetti esatti dipendono dal produttore.
 
 ## Fonti ufficiali di partenza
 
-Collegamenti ricontrollati il **24 ottobre 2026**. Prima del rilascio commerciale occorre verificare nuovamente contenuti e collegamenti, registrare la data della revisione e assicurarsi che le raccomandazioni restino attuali.
+Collegamenti controllati in via preliminare il **25 ottobre 2026**. Prima del rilascio occorre ricontrollare tutti i link, registrare la data della revisione e assicurarsi che le raccomandazioni restino attuali.
 
 - **Federal Trade Commission (FTC), Stati Uniti — Securing Your Internet-Connected Devices at Home:** https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home  
   Indicazioni pratiche su router, credenziali, autenticazione a più fattori, aggiornamenti e dispositivi connessi. È una fonte statunitense di orientamento al consumatore, non una norma italiana.
 - **National Cyber Security Centre (NCSC), Regno Unito — Smart devices: using them safely in your home:** https://www.ncsc.gov.uk/guidance/smart-devices-in-the-home  
-  Indicazioni sulla scelta dei dispositivi, sul supporto del produttore e sulla sicurezza. La pagina risulta revisionata il 23 febbraio 2024; prima del rilascio va ricontrollata. Le informazioni normative britanniche non vanno presentate come legge italiana.
+  Indicazioni sulla scelta dei dispositivi, sul supporto del produttore e sulla sicurezza. Le indicazioni normative britanniche non vanno presentate come legge italiana.
 - **Commissione europea — Regolamento sulla ciberresilienza (Cyber Resilience Act):** https://digital-strategy.ec.europa.eu/it/policies/cyber-resilience-act  
-  Fonte istituzionale UE. Alla data del controllo, gli obblighi di segnalazione dei fabbricanti per vulnerabilità attivamente sfruttate e incidenti gravi si applicano dall'11 settembre 2026; la maggior parte degli obblighi principali si applicherà dall'11 dicembre 2027. Non significa che ogni dispositivo abbia già oggi tutti gli obblighi principali applicabili: ambito, ruolo e disposizioni transitorie vanno verificati nel testo normativo aggiornato. Questa guida non costituisce consulenza legale.
+  Fonte istituzionale UE. Le date di applicazione possono dipendere dalla disposizione, dal prodotto e dal ruolo dell'operatore: prima di descrivere obblighi specifici, controllare il testo normativo aggiornato e le disposizioni transitorie. Questa guida non costituisce consulenza legale.
 
 ## Nota editoriale e commerciale
 
-Questa è una bozza educativa originale VORLI. Non è un audit tecnico, una consulenza professionale o una garanzia che un dispositivo sia sicuro. Le funzioni e le impostazioni cambiano da modello a modello: consulta sempre il manuale e il supporto ufficiale del produttore.
+Questa è una bozza educativa VORLI. Non è un audit tecnico, una consulenza professionale o una garanzia che un dispositivo sia sicuro. Le funzioni e le impostazioni cambiano da modello a modello: consulta sempre il manuale e il supporto ufficiale del produttore.
 
-Prima di una possibile vendita occorre: revisione tecnica da persona competente, verifica puntuale dei link e delle affermazioni, correzione editoriale, impaginazione accessibile, test del PDF su telefono/desktop e stampa, controllo dei diritti e delle condizioni di vendita, quindi predisposizione di pagamento e consegna digitale. **Non pubblicare né vendere questa bozza finché tali controlli non sono completati e approvati.**
+Prima di una possibile vendita occorrono revisione tecnica da persona competente, correzione editoriale, verifica puntuale dei link e delle affermazioni, impaginazione accessibile, test del PDF su telefono/desktop e stampa, controllo dei diritti e delle condizioni di vendita. **Non pubblicare né vendere questa bozza finché tali controlli non sono completati e approvati.**
