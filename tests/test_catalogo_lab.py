@@ -70,6 +70,18 @@ class CatalogLabTests(unittest.TestCase):
         self.assertNotIn("XMLHttpRequest", self.js)
         self.assertNotIn("https://example.com", self.html + self.js)
 
+    def test_external_draft_links_have_unique_accessible_names(self):
+        # Each GitHub link opens a new tab; screen readers must identify its draft.
+        self.assertIn(".sr-only{", self.css)
+        self.assertEqual(5, self.html.count('class="sr-only"'))
+        self.assertEqual(5, self.html.count('target="_blank" rel="noopener noreferrer"'))
+        self.assertEqual(5, self.html.count('aria-hidden="true"> ↗</span>'))
+        for item in self.data["resources"]:
+            self.assertIn(
+                ': ' + item["title"] + ' (nuova scheda)</span>',
+                self.html,
+            )
+
     def test_accessibility_basics(self):
         self.assertIn("prefers-reduced-motion", self.css)
         self.assertIn(":focus-visible", self.css)
