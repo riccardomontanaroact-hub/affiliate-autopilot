@@ -1,10 +1,11 @@
 # QA only: never builds or deploys site/, never accesses secrets or payments.
-# Scoped to PRs targeting the previous VORLI lab branch, not main.
+# Scoped to PRs targeting unpublished VORLI lab branches, never main.
 name: VORLI Lab browser evidence
 on:
   pull_request:
     branches:
       - vorli/catalog-qa-regression-20261023
+      - vorli/catalog-browser-ci-20261024
     paths:
       - 'preview/vorli-next/**'
       - 'tests/**'
@@ -38,7 +39,7 @@ jobs:
         run: |
           python -m pip install --disable-pip-version-check 'playwright==1.56.0'
           python -m playwright install --with-deps chromium
-      - name: Test real catalog in Chromium (320/360/768/1440px)
+      - name: Test real catalog in Chromium (responsive and accessibility modes)
         run: python tests/browser_catalog_lab.py
       - name: Preserve screenshots for human review
         if: always()
