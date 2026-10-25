@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Quanto dura una power station? — Scheda pratica VORLI (bozza)</title>
+  <meta name="description" content="Scheda pratica per stimare l'autonomia di una power station: Wh, W, perdite e limiti. Bozza interna, non pubblicata.">
+  <style>
+    :root { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; color: #152334; background: #f3f6f8; font-size: 16px; line-height: 1.55; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 760px; margin: 1.5rem auto; padding: 2rem; background: #fff; box-shadow: 0 3px 22px #15233412; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; margin: .35rem 0 1rem; }
+    h2 { font-size: 1.4rem; line-height: 1.3; margin-top: 2rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.25rem; }
+    p, li, dd { overflow-wrap: anywhere; }
+    .eyebrow { color: #445b70; font-size: .9rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .status { border-left: 5px solid #d08b19; background: #fff6e6; padding: .8rem 1rem; margin: 1.25rem 0; }
+    .formula { background: #eaf3fb; border-radius: .4rem; padding: 1rem; font-weight: 700; }
+    .example { background: #f3f6f8; border-radius: .4rem; padding: 1rem; }
+    .field { border-bottom: 1px solid #b9c7d3; padding: .5rem 0; break-inside: avoid; }
+    .field dt { font-weight: 700; }
+    .field dd { margin: .25rem 0; min-height: 1.6rem; }
+    .blank { display: inline-block; min-width: 9rem; border-bottom: 1px dotted #617486; }
+    .note { font-size: .92rem; color: #34485b; }
+    a { color: #164b85; }
+    :focus-visible { outline: 3px solid #b15c00; outline-offset: 3px; }
+    section { break-inside: auto; }
+    .sources li { margin-bottom: .6rem; }
+    @media (max-width: 600px) {
+      main { margin: 0; padding: 1.2rem; box-shadow: none; }
+      .formula { font-size: 1rem; }
+    }
+    @page { size: A4; margin: 17mm; }
+    @media print {
+      :root { background: #fff; font-size: 10.5pt; color: #111; }
+      main { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+      h1 { font-size: 23pt; }
+      h2 { font-size: 15pt; break-after: avoid; }
+      h3 { break-after: avoid; }
+      .status, .formula, .example { background: #fff; border: 1px solid #777; }
+      a { color: #111; text-decoration: underline; }
+      .field { padding: .35rem 0; }
+      .field dd { min-height: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">VORLI · Risorsa educativa · 24 ottobre 2026</p>
+    <h1>Quanto dura una power station?</h1>
+    <p>Una scheda per stimare l'autonomia in modo trasparente, senza confondere capacità della batteria e potenza disponibile.</p>
+    <p class="status"><strong>BOZZA INTERNA.</strong> Non è un PDF esportato o testato, né un prodotto in vendita. Gli esempi sono ipotetici e non descrivono modelli reali.</p>
+  </header>
+
+  <section aria-labelledby="misure">
+    <h2 id="misure">1. Prima di calcolare: W e Wh</h2>
+    <p><strong>Watt (W)</strong> indica la potenza assorbita o erogata in un istante. <strong>Wattora (Wh)</strong> indica energia: 1.000 Wh non significano necessariamente 1.000 W di potenza continua.</p>
+    <p>Verifica anche la <strong>potenza massima continua</strong> e i <strong>picchi di avvio</strong> consentiti. Un apparecchio può non avviarsi se supera questi limiti, anche con batteria carica.</p>
+  </section>
+
+  <section aria-labelledby="formula">
+    <h2 id="formula">2. Formula di stima</h2>
+    <p>Per un carico approssimativamente costante alimentato in corrente alternata:</p>
+    <p class="formula">Autonomia stimata (ore) = capacità nominale (Wh) × fattore di energia utilizzabile ÷ potenza media (W)</p>
+    <p>Il fattore è una semplificazione che include perdite e capacità non utilizzabile. Se conosci l'autoconsumo dell'inverter, aggiungilo al consumo del carico <em>solo se</em> non è già incluso nel fattore: non conteggiare le stesse perdite due volte.</p>
+    <div class="example">
+      <h3>Esempio didattico (numeri inventati)</h3>
+      <p>Capacità 768 Wh; carico 80 W; fattore ipotetico 0,80.</p>
+      <p><strong>768 × 0,80 = 614,4 Wh</strong> stimati utilizzabili.<br>
+      <strong>614,4 ÷ 80 = 7,68 ore</strong>, cioè circa <strong>7 ore e 41 minuti</strong>.</p>
+      <p class="note">Lo 0,80 non è un rendimento garantito. Temperatura, età, elettronica, uscita AC/DC e consumi variabili cambiano il risultato.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="worksheet">
+    <h2 id="worksheet">3. Scheda da compilare</h2>
+    <p>Scrivi valori misurati o dichiarati dal produttore e conserva sempre la fonte e la data.</p>
+    <dl>
+      <div class="field"><dt>Modello e manuale consultato</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Capacità nominale (Wh)</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Potenza AC continua massima (W)</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Potenza di picco e durata ammessa</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Apparecchio da alimentare</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Assorbimento medio reale (W)</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Ore desiderate</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Fattore utilizzabile (misurato o assunto?)</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Autoconsumo inverter (W), se noto</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Autonomia stimata (ore)</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+      <div class="field"><dt>Condizioni, fonte e data della verifica</dt><dd><span class="blank" aria-label="spazio da compilare"></span></dd></div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="esercizio">
+    <h2 id="esercizio">4. Mini-esercizio</h2>
+    <p>Router ipotetico da 12 W + lampada LED ipotetica da 8 W, per 5 ore:</p>
+    <p><strong>12 + 8 = 20 W</strong> complessivi; <strong>20 × 5 = 100 Wh</strong> ideali. Con fattore ipotetico 0,80, <strong>100 ÷ 0,80 = 125 Wh</strong> di capacità nominale teorica minima.</p>
+    <p>È un punto di partenza matematico, <strong>non</strong> una raccomandazione di acquisto. Verifica margini, compatibilità, autoconsumo e picchi.</p>
+  </section>
+
+  <section aria-labelledby="errori">
+    <h2 id="errori">5. Tre errori comuni</h2>
+    <ol>
+      <li>Confondere Wh della batteria e W di uscita.</li>
+      <li>Trattare un frigorifero o un carico con motore come se assorbisse sempre la stessa potenza.</li>
+      <li>Ignorare l'inverter, le perdite e i consumi a vuoto, oppure contarli due volte.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="limiti">
+    <h2 id="limiti">6. Limiti e sicurezza</h2>
+    <p>Non usare questa scheda per garantire autonomia a dispositivi medici, sistemi di sicurezza o applicazioni critiche. Consulta il manuale del produttore e professionisti qualificati per impieghi sensibili.</p>
+    <p>Non sono presenti recensioni, offerte, link affiliati, prestazioni misurate o prezzi. Un'eventuale distribuzione o vendita richiede revisione tecnica, editoriale, legale e fiscale separata.</p>
+  </section>
+
+  <footer aria-labelledby="fonti">
+    <h2 id="fonti">Fonti tecniche e metodo</h2>
+    <p class="note">Fonti pubbliche di produttori consultate il 24/10/2026; non equivalgono a prove indipendenti. La formula è indicativa.</p>
+    <ol class="sources">
+      <li><a href="https://faq.jackery.com/hc/en-us/articles/52357015569179-How-can-I-estimate-the-runtime-of-my-portable-power-station">Jackery — stima della durata delle power station</a>.</li>
+      <li><a href="https://www.bluettipower.com/blogs/knowledge/what-is-inverter-efficiency">BLUETTI — efficienza dell'inverter</a>.</li>
+    </ol>
+    <p class="note"><strong>Gate di qualità:</strong> prima di generare un PDF occorre verificare impaginazione, font, ordine di lettura, heading tag, selezionabilità del testo e apertura su smartphone. La stampa dal browser non garantisce un PDF accessibile.</p>
+  </footer>
+</main>
+</body>
+</html>
