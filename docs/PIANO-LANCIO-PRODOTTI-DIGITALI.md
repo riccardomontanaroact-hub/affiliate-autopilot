@@ -1,47 +1,67 @@
 # Piano di rilascio prodotti digitali VORLI
 
-Aggiornato: 2026-10-23
+Aggiornato: 2026-10-25
 
-## Confini del progetto
+## Confini e regola di pubblicazione
 
-Questo documento riguarda esclusivamente VORLI. Non importare nel progetto materiali, prodotti, prezzi, account o attività appartenenti ad altri progetti; mantieni separati catalogo, file e comunicazione commerciale.
+Questo documento riguarda esclusivamente VORLI. Non importare materiali, prodotti, prezzi, account o attività di AZETA Editing. Un PDF finito non equivale a un prodotto vendibile: prima di presentarlo come acquistabile devono essere completati contenuto finale, revisioni, diritti e fonti, accessibilità, prezzo e condizioni approvati, piattaforma, pagamento, consegna protetta, test e approvazione esplicita del proprietario. Non pubblicare PDF a pagamento nel repository pubblico.
 
-## Regola di pubblicazione
+## Prodotto in lavorazione: VORLI-DIG-001 — Casa Smart senza sorprese
 
-Un PDF finito non equivale a un prodotto vendibile. Prima di presentarlo come acquistabile devono essere completati e verificati: contenuto finale, revisione editoriale e tecnica, diritti e fonti, copertina e metadati, prezzo e condizioni approvati, piattaforma scelta, caricamento del file, pagamento e consegna protetta configurati, prova del percorso d'acquisto e approvazione esplicita del proprietario. Non pubblicare PDF a pagamento nel repository pubblico.
+- Sorgente: `vault/products/casa-smart-senza-sorprese-bozza-01.md`.
+- La versione editoriale 0.3 è in revisione; il PDF A4 precedente deve essere rigenerato e controllato.
+- Prezzo: non definito.
+- Checkout/consegna: non configurati.
+- La bozza è già consultabile nel repository pubblico; non promettere esclusività del testo già esposto. Valutare un'edizione sostanzialmente arricchita o un utilizzo gratuito della bozza.
+- Nessun account è stato creato, nessun file caricato, nessun pagamento attivato e nessuna spesa sostenuta.
 
-## Prodotto VORLI in lavorazione
+## Piattaforme: confronto su fonti ufficiali (25/10/2026)
 
-### VORLI-DIG-001 — Casa Smart senza sorprese
+Le tariffe possono cambiare; ricontrollarle prima di aprire uno store.
 
-- Sorgente editoriale: `vault/products/casa-smart-senza-sorprese-bozza-01.md`.
-- PDF A4 v1 impaginato il 22 ottobre 2026 nella sessione di lavoro; non è pubblicato né in vendita.
-- Prezzo: non definito; nessun prezzo deve essere inventato o impostato senza decisione.
-- Piattaforma, checkout e consegna: non configurati.
-- Prima del rilascio: verifica tecnica e aggiornamento delle fonti; revisione italiana; controllo link; prova di leggibilità su telefono e desktop e in stampa; accessibilità; controllo dei diritti; copertina; contenuto finale; condizioni commerciali, assistenza e rimborsi; valutazione degli obblighi applicabili; test di acquisto/consegna senza dati di clienti.
-- Il PDF di lavoro non va inserito nel repository pubblico.
+| Piattaforma | Costi pubblici indicati | Gestione imposte indirette dichiarata | Nota |
+|---|---|---|---|
+| Payhip | Piano Free: $0/mese + 5% per transazione; commissioni Stripe/PayPal o altri processori a parte | Dichiara di raccogliere e versare IVA digitale UE/UK e alcune imposte indirette in altri mercati | Prima candidata da approfondire per avvio senza canone |
+| Gumroad | Vendita diretta: 10% + $0,50 per transazione, oltre alle commissioni indicate per elaborazione; Discover 30% | Dichiara di operare come Merchant of Record e gestire la riscossione/versamento delle imposte indirette nei territori coperti | Alternativa se si privilegia l'esternalizzazione della riscossione, ma più costosa per vendite piccole |
+| Ko-fi Shop | 5% di commissione del negozio, più commissioni del processore; nessun canone obbligatorio per iniziare | Incassi diretti sul proprio PayPal/Stripe; non presumere che la piattaforma assolva gli obblighi fiscali del venditore | Alternativa semplice, ma richiede più verifiche a carico del venditore |
+
+### Fonti ufficiali
+
+- Payhip prezzi e imposte: https://payhip.com/pricing e https://payhip.com/faq
+- Payhip consegna digitale: https://help.payhip.com/article/59-adding-a-digital-product
+- Gumroad commissioni: https://gumroad.com/help/article/66-gumroads-fees
+- Gumroad Merchant of Record e imposte: https://gumroad.com/pricing e https://gumroad.com/help/article/121-sales-tax-on-gumroad
+- Ko-fi commissioni: https://help.ko-fi.com/hc/en-us/articles/360002506494-Does-Ko-fi-take-a-fee
+- Ko-fi Shop e download: https://help.ko-fi.com/hc/en-us/articles/360009712917-Ko-fi-Shop-Sell-digital-physical-products
+
+## Consumatore, contenuto digitale e verifiche fiscali
+
+- Le informazioni precontrattuali devono essere chiare e includere identità e contatti del venditore, caratteristiche principali, prezzo totale e condizioni applicabili.
+- Il diritto di recesso per contenuti digitali non forniti su supporto materiale ha un'eccezione specifica, non automatica: in linea generale occorrono consenso espresso preventivo all'avvio immediato, riconoscimento della perdita del diritto di recesso e conferma del contratto secondo le formalità applicabili. Non copiare una checkbox standard senza verificare il flusso della piattaforma e la normativa applicabile.
+- La gestione dell'IVA da parte della piattaforma non elimina automaticamente tutti gli obblighi fiscali, contabili o amministrativi personali. Prima di vendere, verificare con un commercialista la situazione concreta del venditore residente in Italia.
+- Fonti: Direttiva 2011/83/UE, https://eur-lex.europa.eu/eli/dir/2011/83/oj/eng ; Your Europe, https://europa.eu/youreurope/citizens/consumers/shopping/returns/index_en.htm ; Commissione europea, https://vat-one-stop-shop.ec.europa.eu/national-vat-rules/italy-vat-rules_en
+
+## Decisioni e blocchi
+
+- **Raccomandazione preliminare:** valutare Payhip per prima, senza considerarla scelta definitiva.
+- Restano al proprietario: piattaforma finale, prezzo, condizioni commerciali, eventuali spese e autorizzazione alla pubblicazione.
+- Restano da verificare: idoneità e metodi d'incasso per il venditore, documentazione fiscale, privacy, termini, recesso/rimborsi, assistenza e diritti.
+- Nessun prodotto è acquistabile finché non sono completati i controlli e l'approvazione.
 
 ## Catalogo affiliato
 
-Il catalogo `data/products.json` è vuoto dopo la rimozione della scheda dimostrativa. Mantenerlo vuoto finché non esiste un'offerta reale verificata e approvata con URL affiliato valido, fonte e data di verifica, rete/merchant identificati e disclosure corretta. Non inserire i prodotti digitali VORLI nel catalogo delle offerte affiliate.
-
-## Cinque agenti VORLI
-
-1. **Coordinatore e Stratega** — ordina le dipendenze e mantiene aggiornato il registro dei blocchi.
-2. **Creatore del Sito e Catalogo** — verifica pagine, build e catalogo pubblico.
-3. **Monetizzatore** — controlla che non si prometta la vendita prima che prezzo, pagamento e consegna siano verificati.
-4. **Designer e SEO** — controlla presentazione, copertina, metadati, leggibilità e accessibilità.
-5. **Promotore e Partnership** — prepara materiali e checklist di lancio, senza inviare contatti o campagne.
-
-Gli agenti implementati nel repository eseguono audit automatizzati deterministici: non sono cinque agenti LLM autonomi e non possono accedere a piattaforme esterne, caricare file, collegare pagamenti, contattare partner o spendere denaro. I loro esiti vanno trattati come controlli tecnici, non come prova che un prodotto sia stato pubblicato.
+`data/products.json` deve restare vuoto finché non esiste un'offerta reale verificata e approvata con URL affiliato valido, fonte e data di verifica, merchant/rete identificati, disponibilità/prezzo controllati e disclosure corretta. Non inserire il prodotto digitale VORLI nel catalogo delle offerte affiliate.
 
 ## Sequenza operativa
 
-1. Tenere separati i progetti e verificare che il sito pubblico non contenga materiali AZETA Editing.
-2. Completare la revisione editoriale e tecnica di Casa Smart senza sorprese.
-3. Decidere esplicitamente prezzo, condizioni e piattaforma prima di creare una scheda commerciale.
-4. Caricare il file finale solo sulla piattaforma scelta, configurare pagamento e consegna e verificare il checkout.
-5. Pubblicare soltanto dopo i controlli e l'approvazione del proprietario.
-6. In parallelo, mantenere il catalogo affiliato inattivo finché non ci sono offerte approvate e tracciamenti verificati.
+1. Completare revisione umana editoriale e tecnica di Casa Smart.
+2. Risolvere la questione della bozza già esposta pubblicamente e dei diritti.
+3. Ottenere le decisioni su prezzo, piattaforma e condizioni; verificare gli obblighi con un professionista.
+4. Preparare il PDF finale, la copertina e i metadati; testare accessibilità e download.
+5. Configurare pagamento e consegna sulla piattaforma scelta e verificare il flusso d'acquisto.
+6. Pubblicare soltanto dopo l'approvazione esplicita.
+7. Mantenere inattivo il catalogo affiliato finché non esistono offerte verificate.
 
-Nessun prodotto è da considerare acquistabile finché questi controlli non sono stati completati.
+## Limiti degli agenti VORLI
+
+Gli agenti del repository eseguono audit automatizzati deterministici, non sono cinque agenti LLM autonomi. Non possono aprire account, caricare file su piattaforme esterne, collegare pagamenti, contattare partner o spendere denaro.
