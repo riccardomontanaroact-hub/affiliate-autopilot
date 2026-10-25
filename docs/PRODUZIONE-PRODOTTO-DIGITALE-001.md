@@ -3,7 +3,7 @@
 **ID interno:** VORLI-DIG-001  
 **Stato:** bozza editoriale 0.3 in revisione; non pubblicata e non in vendita  
 **Sorgente:** `vault/products/casa-smart-senza-sorprese-bozza-01.md`  
-**PDF A4 v1:** generato in precedenza, non è una prova di qualità della nuova bozza e va rigenerato  
+**PDF bozza 0.3:** generato localmente il 25/10/2026, 4 pagine A4, circa 10 KB; non caricato nel repository né su una piattaforma di vendita  
 **Versione compilabile:** non realizzata/verificata  
 **Prezzo:** non definito; nessun prezzo va inventato o impostato senza decisione del proprietario  
 **Checkout/consegna:** non configurati; nessun account creato e nessun pagamento attivato
@@ -15,14 +15,15 @@
 - [x] Migliorata la struttura editoriale: compatibilità, privacy e costi ricorrenti, configurazione, controlli periodici, trasferimento/dismissione, decisione d'acquisto e glossario.
 - [x] Distinte le fonti pratiche FTC/NCSC dal quadro normativo UE.
 - [x] Aggiunto avviso esplicito: il controllo preliminare non è una certificazione tecnica né consulenza legale.
+- [x] Generata una bozza PDF locale v0.3 e controllati numero pagine, formato A4, estrazione del testo e resa visiva generale.
 - [x] Verificata la documentazione ufficiale preliminare per piattaforme di checkout e costi (vedere piano di lancio).
 - [ ] Revisione tecnica indipendente da persona competente; la revisione automatizzata e documentale non sostituisce questa verifica.
 - [ ] Revisione umana completa dell'italiano e dei refusi.
 - [ ] Verifica manuale di ogni collegamento e data delle fonti subito prima del rilascio.
 - [ ] Verifica dei diritti su testi, immagini, font e materiali utilizzati.
 - [ ] Definizione della versione finale e verifica di eventuali duplicazioni con la bozza già esposta nel repository pubblico.
-- [ ] Impaginazione professionale, copertina e metadati; PDF A4 stampabile e versione compilabile se fattibile.
-- [ ] Test PDF su telefono, desktop e stampa; accessibilità, contrasto e leggibilità in bianco e nero.
+- [ ] Copertina e metadati finali.
+- [ ] Test PDF su telefono, desktop e stampa; accessibilità, contrasto e leggibilità in bianco e nero. Il PDF attuale non è taggato come PDF accessibile.
 - [ ] Definizione approvata di prezzo, identità del venditore, condizioni, assistenza e rimborsi.
 - [ ] Verifica con un commercialista degli obblighi italiani applicabili alla situazione concreta del venditore.
 - [ ] Scelta definitiva della piattaforma da parte del proprietario e verifica di idoneità, incassi, documentazione fiscale e gestione dei dati.
