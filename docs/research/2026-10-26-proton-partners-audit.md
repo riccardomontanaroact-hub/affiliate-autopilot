@@ -22,9 +22,16 @@
 
 Scheda pubblica Awin 19988: elettronica di consumo, cookie/attribuzione **30 giorni**. Nessuna commissione individuale desumibile dalla pagina pubblica. La scheda non certifica adesione o stato dell'account VORLI.
 
-## Aspetti normativi ancora aperti
+## Compliance: verifiche istituzionali, non consulenza fiscale
 
-Disclosure pubblicitaria e affiliazioni, inquadramento fiscale del venditore individuale italiano, IVA e recesso per eventuali prodotti digitali propri: da verificare su fonti istituzionali e con professionista competente prima di vendere. Non dedurre un'esenzione IVA da soglie OSS e non presumere perdita automatica del diritto di recesso sui contenuti digitali.
+- **Disclosure commerciale in Italia:** l'AGCM ricorda che la natura pubblicitaria dei contenuti online deve essere chiaramente riconoscibile; nei procedimenti 2025 ha contestato anche l'assenza di diciture che segnalino finalità commerciali. Prima di inserire link affiliati, predisporre disclosure visibile e contestuale (non affidarsi alla sola pagina “Chi siamo”).
+- **Contenuti digitali venduti direttamente:** la direttiva 2011/83/UE, come modificata, prevede condizioni specifiche per l'eccezione al recesso dei contenuti digitali non forniti su supporto materiale: avvio dell'esecuzione, consenso espresso preventivo, riconoscimento della perdita del diritto e conferma contrattuale richiesta. Non presumere che il solo download annulli automaticamente il diritto di recesso.
+- **IVA e inquadramento italiano:** nessuna conclusione su partita IVA, occasionalità dell'attività, soglie OSS o imposte è stata verificata per la situazione individuale VORLI. Bloccare vendita diretta e attivazione pagamenti finché non siano chiariti con fonti fiscali aggiornate e un professionista competente.
+
+Fonti istituzionali (consultate 2026-10-26):
+- AGCM, comunicato 11 giugno 2025: https://www.agcm.it/media/comunicati-stampa/2025/6/PS12814-PS12815-PS12816-PS12817-PS12818-PS12826
+- AGCM, principi di riconoscibilità pubblicitaria: https://agcm.it/media/comunicati-stampa/2017/7/alias-8853
+- EUR-Lex, direttiva 2011/83/UE consolidata: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02011L0083-20220528
 
 ## Fonti pubbliche e data di consultazione
 
