@@ -44,3 +44,9 @@ https://europa.eu/youreurope/citizens/consumers/shopping/guarantees/index_it.htm
 - Eventuale valutazione legale/fiscale per attività commerciale individuale italiana prima di vendere prodotti digitali propri.
 
 Nessuna spesa, candidatura, pubblicazione, invio di messaggi o modifica di produzione.
+
+## Due diligence reputazionale: eWeki (segnale, non verdetto)
+
+Alla verifica del 26/10/2026, la pagina pubblica Trustpilot per eWeki riportava **2,0/5 su 158 recensioni**, con diverse segnalazioni negative su spedizione e assistenza. Le recensioni sono testimonianze non verificate in modo indipendente: **non dimostrano da sole frodi o inadempienze**. Tuttavia costituiscono un segnale di rischio per un sito che intende raccomandare venditori ai lettori. Prima di proporre eWeki, verificare gestione reclami, tempi di spedizione, resi e risposte ufficiali, oltre a commissioni e stato Awin. Non presentare come affidabilità certificata né riportare accuse come fatti.
+
+Fonte di recensioni, consultata 26/10/2026: https://www.trustpilot.com/review/eweki.it
