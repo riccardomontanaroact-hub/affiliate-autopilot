@@ -82,6 +82,15 @@ class CatalogLabTests(unittest.TestCase):
                 self.html,
             )
 
+    def test_no_results_feedback_is_near_search(self):
+        # No-results controls must be near filters, not after the resource grid.
+        self.assertEqual(self.html.count('id="empty-results"'), 1)
+        self.assertEqual(self.html.count('id="empty-reset"'), 1)
+        self.assertLess(self.html.index('id="results-count"'),
+                        self.html.index('id="empty-results"'))
+        self.assertLess(self.html.index('id="empty-results"'),
+                        self.html.index('id="category-cards"'))
+
     def test_accessibility_basics(self):
         self.assertIn("prefers-reduced-motion", self.css)
         self.assertIn(":focus-visible", self.css)

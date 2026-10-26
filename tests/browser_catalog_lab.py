@@ -104,7 +104,20 @@ def verify_viewport(browser, width):
     page.locator("#reset-filters").click()
     page.locator("#catalog-search").fill("parola-che-non-esiste")
     assert page.locator("#empty-results").is_visible()
+    # Feedback must appear beside filters, before the empty category grid,
+    # rather than below the entire resources section off-screen.
+    empty_box = page.locator("#empty-results").bounding_box()
+    cards_box = page.locator("#category-cards").bounding_box()
+    assert empty_box and cards_box and empty_box["y"] < cards_box["y"], (
+        width, "no-results feedback is too far from search"
+    )
+    assert "0 categorie demo" in page.locator("#results-count").inner_text()
+    if width == 360:
+        page.screenshot(path=str(EVIDENCE / "catalog-360-empty-state.png"), full_page=True)
     page.locator("#empty-reset").click()
+    assert page.locator("#catalog-search").evaluate("el => document.activeElement === el"), (
+        width, "reset must restore keyboard focus to search"
+    )
     assert visible(page, "category") == 8
     assert visible(page, "resource") == 5
     check_no_overflow(page, width, "JS after filters")

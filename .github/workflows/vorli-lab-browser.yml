@@ -6,6 +6,7 @@ on:
     branches:
       - vorli/catalog-qa-regression-20261023
       - vorli/catalog-browser-ci-20261024
+      - vorli/catalog-accessibility-regression-20261025
     paths:
       - 'preview/vorli-next/**'
       - 'tests/**'
