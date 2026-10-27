@@ -109,3 +109,23 @@ Fonte ufficiale consultata il 27/10/2026: https://www.agcom.it/influencer-linee-
 - Garante Privacy, “La privacy sotto l'albero”, edizione 2025: https://www.garanteprivacy.it/it/temi/natale
 
 **Gate invariati:** approvazioni/commissioni individuali solo da Awin riservato; verifica fiscale e IVA per publisher italiano prima della commercializzazione; recesso e informativa digitale prima di un eventuale checkout. Solo bozza per revisione; nessuna modifica alla produzione.
+
+
+## Screening integrativo — ieGeek IT e privacy smart cam (27/10/2026, ore 10:09 CET)
+
+**ieGeek IT (Awin, profilo pubblico 129595):** il testo pubblico indicizzato del programma descrive telecamere domestiche, videocitofoni e dispositivi per la sicurezza con **10% sulle vendite validate** e **cookie di 30 giorni**. Questa percentuale è una **condizione pubblicizzata**, non una commissione individuale attribuita a VORLI. Il programma menziona un periodo di validazione di circa 30 giorni: non confonderlo con la data effettiva di pagamento Awin. La pagina contiene anche promozioni con scadenza al 31 agosto, da **non** riproporre come attuali. Non è stata confermata l'ammissibilità di publisher individuali italiani, né lo stato di iscrizione, né la percentuale individuale. Nessuna candidatura effettuata.
+
+**Comparazione con IMOU IT:** entrambi dichiarano pubblicamente cookie 30 giorni, ma IMOU indica **fino al 10%**, mentre ieGeek indica **10% sulle vendite validate**. Non trasformare questa differenza in un ranking di convenienza senza conoscere categorie escluse, tassi individuali, reversals, disponibilità prodotti e territorio delle vendite. In entrambi i casi lo stato del programma nell'account Awin privato è sconosciuto.
+
+**Gate privacy per contenuti smart cam:** il Garante Privacy (FAQ n. 10 e n. 12, consultate il 27/10/2026) distingue l'uso esclusivamente domestico da riprese che coinvolgono terzi o spazi pubblici. Una smart cam in casa non autorizza automaticamente a riprendere aree comuni, strade o proprietà altrui; vanno valutati angolo di ripresa, mascheramento delle aree, accessi ai filmati, protezione dei dati e informazione di eventuali collaboratori domestici. Non presentare questo riassunto come consulenza legale per ogni situazione.
+
+**Decisione editoriale:** aggiunta una guida comparativa *neutrale* e una scheda di valutazione senza marchi, prezzi, ranking, test inventati, link di affiliazione o CTA di acquisto. La guida rimane in bozza, senza pubblicazione.
+
+**Fonti pubbliche consultate il 27/10/2026 (URL senza parametri di tracciamento):**
+- ieGeek IT, profilo pubblico Awin: https://ui.awin.com/merchant-profile/129595 (contenuti pubblici reperiti da indicizzazione; apertura diretta temporaneamente non riuscita).
+- IMOU IT, profilo pubblico Awin: https://ui.awin.com/merchant-profile/122428
+- Garante Privacy, FAQ videosorveglianza, nn. 10 e 12: https://www.garanteprivacy.it/faq/videosorveglianza
+- Garante Privacy, infografica domestica: https://www.garanteprivacy.it/temi/videosorveglianza
+- EDPB, Linee guida 3/2019 (finale 30/01/2020): https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-32019-processing-personal-data-through-video_it
+
+**Limiti invariati:** nessuna verifica della dashboard Awin privata, nessuna conferma di adesione o pagamento, nessuna attivazione commerciale. Requisiti fiscali italiani, disclosure e recesso digitale da verificare prima di ogni vendita o promozione.
