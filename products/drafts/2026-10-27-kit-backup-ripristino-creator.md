@@ -5,6 +5,8 @@
 ## Istruzioni d'uso
 Duplica questa scheda per ogni progetto o tipologia di contenuto. Compila con **nomi generici** e non con password, token, codici di recupero o dati di clienti. Esegui le prove su file fittizi.
 
+**Ambiente di prova sicuro:** usa una cartella locale isolata, fuori dalle cartelle sincronizzate automaticamente (cloud drive, backup continuo, cartelle condivise). Rinominare o spostare una cartella sincronizzata può propagare la modifica anche alle copie remote: non usare questa simulazione su dati veri o su una cartella sincronizzata. Per valutare davvero il backup, recupera i file **dalla copia di sicurezza scelta**, non dalla cartella originale rinominata. Non scollegare, eliminare o sovrascrivere dati di lavoro per simulare un guasto.
+
 ### Scheda A — Inventario essenziale
 | Tipo di file | Importanza (1–3) | Frequenza modifiche | Posizione principale (generica) | Tempo massimo accettabile per recupero | Perdita massima di lavoro accettabile |
 | --- | --- | --- | --- | --- | --- |
@@ -45,8 +47,8 @@ Duplica questa scheda per ogni progetto o tipologia di contenuto. Compila con **
 
 1. Crea i tre file di prova in una cartella `lavoro-demo` e registra il contenuto atteso di ciascuno (per esempio una frase diversa).
 2. Copiali su un supporto o servizio separato, annotando l'ora della copia e se è possibile recuperare versioni precedenti.
-3. **Senza cancellare gli originali**, simula un guasto rendendo temporaneamente indisponibile la cartella di lavoro (per esempio rinominandola `lavoro-demo-non-usare`).
-4. Ripristina i tre file in una **nuova** cartella `ripristino-demo`; non sovrascrivere l'originale.
+3. **Solo nella cartella locale isolata e con file fittizi, senza cancellare gli originali**, simula l'indisponibilità della cartella di lavoro (per esempio rinominandola `lavoro-demo-non-usare`). Non farlo in cartelle cloud sincronizzate: la rinomina potrebbe propagarsi. Mantieni l'originale fuori dal percorso usato per il ripristino.
+4. Ripristina i tre file **esclusivamente dal backup separato** in una **nuova** cartella `ripristino-demo`; non usare i file originali e non sovrascriverli. Se il recupero dal backup non riesce, registra l'esito negativo: non sostituirlo con una semplice copia dalla cartella di lavoro.
 5. Apri tutti i file, confronta il contenuto atteso, misura il tempo effettivo e annota la data della versione recuperata. Se il progetto richiede applicazioni o media collegati, verifica anche che si apra e che i collegamenti funzionino.
 6. Ripristina la situazione iniziale e conserva soltanto un verbale generico del test, senza nomi reali di clienti o percorsi sensibili.
 
