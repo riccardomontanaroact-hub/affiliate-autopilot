@@ -1,5 +1,22 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Correzione di conformità e incassi — Awin (27/10/2026, ore 21:13 CET)
+
+**Incoerenza ufficiale sui costi di iscrizione:** nelle FAQ italiane Awin la sezione «Come posso diventare un publisher» dice «gratuita», mentre «Diventare publisher su Awin comporta dei costi?» specifica un **deposito una tantum** richiesto in registrazione, rimborsabile alla prima soglia. Non è stata verificata l'entità corrente del deposito né se vi siano eccezioni. Per un progetto con vincolo *zero esborso*, evitare di raccomandare nuove iscrizioni sulla sola dicitura «gratis»; nessun nuovo account è necessario per VORLI.
+
+**Liquidazione non immediata:** Awin indica **20 EUR** come soglia minima per publisher in Italia con **BACS**, non per ogni metodo e valuta; le commissioni devono essere confermate e pagabili. La stessa FAQ indica cicli il **1° e il 15 del mese**, con tempi di accredito successivi. I 20 EUR non rappresentano un saldo disponibile né una garanzia di incasso: soglia e metodo effettivamente impostati richiedono accesso riservato. Non affermare che PayPal sia disponibile per le commissioni Awin: nella FAQ italiana sono menzionati BACS, bonifico internazionale, ACH e SEPA.
+
+**Persona fisica e obblighi fiscali:** le FAQ fiscali Awin (ultimo aggiornamento **22/01/2026**) prevedono il tipo di profilo «Operatore esclusivo» per chi non ha un'attività registrata, e distinguono codice fiscale locale e identificativo IVA. È una **modalità di compilazione della piattaforma**, non un'autorizzazione fiscale italiana a svolgere abitualmente attività commerciale senza partita IVA, né un'esenzione dal rispetto delle norme nazionali. Non inserire dati personali nel repository; prima di attivare incassi chiedere verifica professionale sulla situazione concreta.
+
+**eWeki IT:** nuova lettura della scheda pubblica Awin (merchant **19988**): commercio di elettronica di consumo, **cookie 30 giorni**; non compare una commissione individuale verificabile, né è provata l'ammissione di VORLI. Nessuna nuova decisione privata desumibile dalla scheda.
+
+**Fonti primarie consultate il 27/10/2026:**
+- FAQ ufficiali Awin Italia, sezioni Publisher, costi, pagamenti e soglia: https://www.awin.com/it/faq
+- Awin, Dettagli fiscali per Publisher — FAQ (pubblicata 22/01/2026): https://success.awin.com/articles/it/Knowledge/Publisher-Tax-Details-FAQs
+- Awin, eWeki IT, scheda pubblica: https://ui.awin.com/merchant-profile/19988
+
+**Gate:** nessun nuovo account, spesa, modifica di produzione, email, pagamento, link affiliato o candidatura. Verifiche riservate ancora necessarie: condizioni contrattuali individuali, stato dei merchant e dettagli di pagamento dell'account.
+
 ## Verifica pubblica — DoctorQuality (27/10/2026, ore 16:10 CET)
 
 Il profilo pubblico **DoctorQuality** su Awin (merchant 121176) descrive un catalogo generalista con **elettronica e tecnologia**, accessori gaming, elettrodomestici, casa e sport: categorie pertinenti alla linea editoriale VORLI. La scheda riporta **cookie di 30 giorni**. Non è stata verificata dalla pagina pubblica una **commissione per categoria**, né sono accessibili da questa fonte i termini contrattuali individuali, le esclusioni e il territorio delle vendite commissionabili. La sola presenza di prodotti tecnologici nel catalogo non prova disponibilità, qualità o prezzo di alcun articolo.
@@ -14,7 +31,7 @@ Il profilo pubblico **DoctorQuality** su Awin (merchant 121176) descrive un cata
 
 **Nuovo screening: Elettronicshop IT (Awin, merchant pubblico 118501).** Profilo pertinente a sportwatch, accessori e tecnologia sportiva; **cookie 30 giorni post-click**, validazione dichiarata delle transazioni entro **30 giorni**, pagamento del merchant **verso Awin** entro 30 giorni dalla fattura. **Esclusi ricondizionati e outlet**. La pagina non espone una percentuale di commissione pubblica verificabile né conferma ammissibilità di persona fisica italiana: **nessuna candidatura e nessuna stima di ricavi**. Le modalità «carta, PayPal, bonifico, Klarna» elencate nella descrizione del negozio non dimostrano le modalità di **pagamento delle commissioni al publisher**. Fonte: https://ui.awin.com/merchant-profile/118501 .
 
-**Distinzione dei costi:** le FAQ Awin precisano che l'iscrizione **publisher** è gratuita, mentre i piani a pagamento per **advertiser** non devono essere attribuiti a VORLI. La gratuità della rete non certifica l'idoneità a ogni programma né risolve requisiti fiscali italiani. Fonti: https://www.awin.com/it/faq e https://www.awin.com/it/pricing/affiliate-partners .
+**Distinzione dei costi (rettifica 27/10, ore 21:13 CET):** le FAQ Awin definiscono la candidatura publisher «gratuita», **ma nella stessa pagina dichiarano necessario un deposito una tantum all'iscrizione**, rimborsabile quando si raggiunge la prima soglia di pagamento; l'importo attuale va verificato nel form di registrazione. Dunque **non qualificare una nuova registrazione Awin come zero esborso iniziale garantito**. VORLI dispone già di un account: non creare altri account né sostenere costi. I piani a pagamento per advertiser sono distinti e non vanno attribuiti ai publisher. Fonte primaria: https://www.awin.com/it/faq .
 
 **Decisione:** proseguire solo con revisione delle bozze esistenti e controlli riservati su ammissibilità, commissioni personali, territori, pagamenti e obblighi legali; nessuna pubblicazione, iscrizione, spesa o attivazione commerciale. Tutte le fonti consultate il 27/10/2026.
 
