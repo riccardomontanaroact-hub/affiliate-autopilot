@@ -1,6 +1,6 @@
 # Kit VORLI — Piano backup e test di ripristino per creator
 
-**Versione:** bozza originale 0.1 · 27/10/2026 · Non in vendita · Nessun prezzo, checkout o link affiliato attivo.
+**Versione:** bozza originale 0.2 · 27/10/2026 · Non in vendita · Nessun prezzo, checkout o link affiliato attivo.
 
 ## Istruzioni d'uso
 Duplica questa scheda per ogni progetto o tipologia di contenuto. Compila con **nomi generici** e non con password, token, codici di recupero o dati di clienti. Esegui le prove su file fittizi.
@@ -38,6 +38,23 @@ Duplica questa scheda per ogni progetto o tipologia di contenuto. Compila con **
 - Versione recuperata: __________
 - Errori riscontrati e correzioni: __________
 - Prossimo test: __________
+
+### Esempio compilato — prova di recupero senza dati reali
+
+*Scenario puramente illustrativo, non un test effettuato da VORLI.* Un creator ha tre file fittizi: `clip-demo.txt`, `audio-demo.txt`, `progetto-demo.txt`. L'obiettivo scelto è tornare operativo entro **2 ore** e perdere non più di **1 giorno** di modifiche. Queste sono soglie dell'esempio, non prestazioni garantite.
+
+1. Crea i tre file di prova in una cartella `lavoro-demo` e registra il contenuto atteso di ciascuno (per esempio una frase diversa).
+2. Copiali su un supporto o servizio separato, annotando l'ora della copia e se è possibile recuperare versioni precedenti.
+3. **Senza cancellare gli originali**, simula un guasto rendendo temporaneamente indisponibile la cartella di lavoro (per esempio rinominandola `lavoro-demo-non-usare`).
+4. Ripristina i tre file in una **nuova** cartella `ripristino-demo`; non sovrascrivere l'originale.
+5. Apri tutti i file, confronta il contenuto atteso, misura il tempo effettivo e annota la data della versione recuperata. Se il progetto richiede applicazioni o media collegati, verifica anche che si apra e che i collegamenti funzionino.
+6. Ripristina la situazione iniziale e conserva soltanto un verbale generico del test, senza nomi reali di clienti o percorsi sensibili.
+
+**Esito:** `SUPERATO` soltanto se i file sono integri e utilizzabili, il tempo misurato non supera l'obiettivo e l'età della copia rientra nella perdita massima accettabile. Altrimenti `NON SUPERATO`: registra il problema, correggi il piano e ripeti la prova. Un backup «completato» senza ripristino verificato non basta per dichiarare superato il test.
+
+**Diagnosi rapida in caso di fallimento:** file mancanti → ricontrollare cartelle incluse e filtri; versione troppo vecchia → rivedere frequenza e conservazione; file presenti ma progetto inutilizzabile → verificare dipendenze, software e file collegati; ripristino troppo lento → verificare dimensioni, velocità e disponibilità del supporto. Non effettuare prove distruttive su dati di lavoro.
+
+**Riferimento tecnico:** CISA, *StopRansomware Guide*, v3.1 (2023), raccomanda copie offline protette e prove regolari di disponibilità e integrità: https://www.cisa.gov/sites/default/files/2023-10/StopRansomware-Guide-508C-v3_1.pdf (consultata 27/10/2026).
 
 ### Scheda D — Confronto servizi o supporti
 Assegna un voto da 0 (non soddisfa) a 3 (soddisfa bene). **Non sommare il punteggio se mancano dati essenziali.**
