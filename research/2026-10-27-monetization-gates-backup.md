@@ -1,5 +1,21 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Correzione prioritaria: soglia di incasso Awin (verifica 27/10/2026)
+
+**Soglia minima e soglia predefinita sono diverse.** Il Centro assistenza ufficiale Awin (articolo aggiornato il 13/03/2026, consultato il 27/10/2026) indica **20 EUR** come minimo per pagamenti in euro, ma **50 EUR** come soglia **predefinita** in assenza di configurazione. Le commissioni devono essere confermate: se non si raggiunge la soglia, il saldo passa al ciclo successivo. Il centro assistenza indica due cicli mensili, non una garanzia di liquidazione immediata.
+
+- **Impatto sul modello VORLI:** 5 o 10 EUR di commissioni confermate non sono prelevabili da Awin con la soglia minima pubblicata; 20 EUR potrebbero soddisfare la soglia minima, ma solo se questa è effettivamente impostata e sono soddisfatti gli altri requisiti di pagamento. La soglia attuale dell'account non è stata letta: **non affermare che sia già 20 EUR**.
+- **Verifica riservata ancora necessaria:** Account > Dettagli di pagamento > Dettagli bancari; soglia impostata, valuta, metodo effettivo, dati fiscali, eventuali verifiche richieste, commissioni confermate e costi di accredito. La FAQ pubblica Awin menziona 20 EUR per publisher in Italia con BACS: non estendere senza verifica questa specifica a ogni metodo.
+- **Separare i circuiti:** l'Autopay da 10 USD pubblicizzato da Bitdefender riguarda il suo programma su piattaforma esterna e **non** riduce la soglia di Awin. Condizioni individuali e spese di pagamento Bitdefender rimangono non verificate.
+- **eWeki IT:** il profilo Awin pubblico documenta elettronica di consumo e cookie di 30 giorni, non commissione individuale, approvazione del publisher o tempi di validazione. Non stimare ricavi da questa sola fonte.
+- **Priorità editoriale:** completare la revisione delle bozze esistenti e dei gate commerciali prima di aggiungere altri kit; nessun link affiliato o checkout finché stato, condizioni e obblighi di trasparenza non sono verificati.
+
+**Fonti primarie consultate il 27/10/2026:**
+- Awin Centro assistenza, soglie (aggiornato il 13/03/2026): https://success.awin.com/articles/it/Knowledge/What-are-the-payment-thresholds
+- Awin FAQ Italia, soglia, metodi e tempi: https://www.awin.com/it/faq
+- eWeki IT, profilo pubblico: https://ui.awin.com/merchant-profile/19988
+- Bitdefender, condizioni pubbliche e Autopay: https://www.bitdefender.com/en-us/partners/affiliate-partners/
+
 **Stato:** ricerca pubblica e piano di revisione, non destinati a produzione. Nessuna candidatura, attivazione pagamento o pubblicazione.
 
 ## Priorità economiche (solo condizioni pubbliche)
