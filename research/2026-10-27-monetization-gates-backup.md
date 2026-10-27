@@ -71,3 +71,41 @@ I termini generali pubblici riportano inoltre per l'Italia un intervallo **0,5�
 - Awin, termini LG IT, sezioni 3, 5, 7 e 14.1 (tassi per mercato e vincoli): https://ui.awin.com/merchant-profile-terms/116027
 
 **Controllo qualità per future schede VORLI:** prima di investire in contenuti commerciali, esaminare nell'ordine (a) ammissibilità di persona fisica italiana, (b) paese delle vendite commissionabili, (c) esclusioni e permessi di traffico, (d) commissione e cookie, (e) soglia e costi di pagamento, (f) necessità di approvazione. Evitare contenuti SEO seriali generati solo per intercettare query: una guida utile deve spiegare criteri verificabili, dichiarare i limiti dei dati e distinguere chiaramente ricerca documentale da test pratici.
+
+
+## Screening commerciale successivo — 27/10/2026, ore 09:11 CET
+
+**Ambito:** due programmi Awin pubblici coerenti con tecnologia/smart home; nessuna candidatura, nessuna approvazione dedotta. I tassi pubblici non sono condizioni individuali. Le informazioni riservate sull'account eWeki non sono accessibili da queste fonti.
+
+| Programma | Dati pubblici verificati | Ostacolo decisivo / incertezza | Priorità |
+| --- | --- | --- | --- |
+| **Pc Componentes IT** | Awin: cookie **15 giorni**, commissioni per categoria **0,75–7%** (computer 1%, elettrodomestici 5%, cavi 7%); calcolo sul valore al netto di IVA e spedizione. Vendite convalidate dopo **30–60 giorni**; pagamento dell'advertiser alla rete indicato entro 30 giorni dalla fattura. | La pagina richiede sito attivo, design curato e controlla **nuovi contenuti ogni giorno**. VORLI non deve dichiarare di soddisfare questo requisito finché la qualità e la frequenza reali del sito non sono state verificate. Ammissibilità di persona fisica italiana non esplicitamente confermata. | **Da rivalutare dopo preflight del sito**, non candidare ora. |
+| **IMOU IT** | Awin: telecamere, campanelli e dispositivi smart home; cookie **30 giorni**, commissione pubblicizzata **fino al 10%**; invita recensori, blogger e creator. Vietato il PPC sul marchio. | “Fino al 10%” **non** significa commissione standard garantita; requisiti di persona fisica, territorio delle vendite e condizioni individuali non verificati. | **Ricerca preliminare**, nessuna candidatura. |
+
+**Fonti primarie consultate il 27/10/2026:**
+- Pc Componentes IT, profilo Awin e condizioni operative: https://ui.awin.com/merchant-profile/74650
+- Pc Componentes IT, gruppi di commissione pubblici: https://ui.awin.com/merchant-profile/74650/commission-groups
+- IMOU IT, profilo Awin: https://ui.awin.com/merchant-profile/122428
+- eWeki IT, profilo Awin (cookie pubblico 30 giorni; commissione personale non nota): https://ui.awin.com/merchant-profile/19988
+
+### Nuova verifica trasparenza ADV per eventuali canali social VORLI
+
+Le FAQ operative **AGCOM del 16/03/2026** indicano che anche sotto le soglie degli “influencer rilevanti” permangono doveri di trasparenza delle comunicazioni commerciali. In presenza di link/codici di affiliazione, la natura pubblicitaria va resa immediatamente riconoscibile: non basta il solo link o tag del brand. Per video social la guida chiede dicitura nelle prime scene **e** nella descrizione; per post, all'inizio della caption, prima di “altro”. Le FAQ sono orientative e l'applicabilità al singolo formato va valutata; non confondere l'eventuale esenzione dall'iscrizione all'Elenco influencer con esenzione dalla disclosure. La guida è specificamente dedicata a contenuti su piattaforme, non sostituisce una verifica legale per il sito e-commerce.
+
+Fonte ufficiale consultata il 27/10/2026: https://www.agcom.it/influencer-linee-guida-codice-di-condotta-e-faq
+
+### Bozza di brief SEO originale, non pubblicata
+
+**Titolo proposto:** “Telecamere smart per casa: 7 verifiche prima dell'acquisto (senza classifiche inventate)”.
+
+**Intento di ricerca:** aiutare chi valuta una videocamera domestica a confrontare requisiti e rischi, indipendentemente da un programma di affiliazione.
+
+**Scaletta editoriale:** (1) ripresa interna/esterna e campo visivo; (2) alimentazione, autonomia e comportamento senza rete; (3) registrazione locale/cloud, costi ricorrenti e conservazione; (4) aggiornamenti firmware e durata del supporto dichiarata; (5) password robuste, 2FA se disponibile e accessi condivisi; (6) collocazione e rispetto della privacy di terzi; (7) confronto del costo totale su 24 mesi. Chiudere con una matrice vuota compilabile dall'utente, senza prezzi o caratteristiche non verificati.
+
+**Vincoli:** non attribuire a prodotti specifici test mai svolti; non dichiarare conformità GDPR di singoli modelli; nessun link affiliato, CTA commerciale o prodotto vendibile. Le linee guida EDPB sulla videosorveglianza evidenziano che l'eccezione domestica richiede una valutazione contestuale e non copre automaticamente riprese di spazi pubblici o proprietà altrui. Il Garante consiglia password robuste e aggiornamenti dei dispositivi smart.
+
+**Fonti primarie consultate il 27/10/2026:**
+- EDPB, Linee guida 3/2019 dispositivi video (versione finale 30/01/2020): https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-32019-processing-personal-data-through-video_it
+- Garante Privacy, “La privacy sotto l'albero”, edizione 2025: https://www.garanteprivacy.it/it/temi/natale
+
+**Gate invariati:** approvazioni/commissioni individuali solo da Awin riservato; verifica fiscale e IVA per publisher italiano prima della commercializzazione; recesso e informativa digitale prima di un eventuale checkout. Solo bozza per revisione; nessuna modifica alla produzione.
