@@ -7,7 +7,7 @@ Duplica questa scheda per ogni progetto o tipologia di contenuto. Compila con **
 
 ### Scheda A — Inventario essenziale
 | Tipo di file | Importanza (1–3) | Frequenza modifiche | Posizione principale (generica) | Tempo massimo accettabile per recupero | Perdita massima di lavoro accettabile |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Video sorgenti | | | | | |
 | Progetti di montaggio | | | | | |
 | Audio e immagini | | | | | |
