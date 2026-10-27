@@ -73,6 +73,9 @@ def verify_viewport(browser, width):
     assert page.locator('nav[aria-label="Navigazione principale"]').count() == 1
     assert page.locator('label[for="catalog-search"]').count() == 1
     assert page.locator('label[for="category-filter"]').count() == 1
+    assert page.get_by_role("search", name="Ricerca e filtri del catalogo demo").count() == 1
+    for control in ("#catalog-search", "#category-filter"):
+        assert page.locator(control).get_attribute("aria-controls") == "category-cards resource-cards"
     # Accessible names must identify the draft, including when links are listed out of context.
     for title in RESOURCE_TITLES:
         link = page.get_by_role("link", name=re.compile(re.escape(title)))
@@ -98,6 +101,14 @@ def verify_viewport(browser, width):
     page.locator("#reset-filters").click()
     assert visible(page, "category") == 8
     assert visible(page, "resource") == 5
+    # Multi-word search must match terms across name, description and keywords.
+    page.locator("#catalog-search").fill("casa smart")
+    assert visible(page, "category") == 1, (width, "multi-word category search")
+    assert visible(page, "resource") == 2, (width, "multi-word resource search")
+    page.locator("#catalog-search").fill("smart    casa")
+    assert visible(page, "category") == 1, (width, "search order / whitespace")
+    assert visible(page, "resource") == 2, (width, "search order / whitespace")
+    page.locator("#reset-filters").click()
     page.locator("#category-filter").select_option("sport-tech")
     assert visible(page, "category") == 1
     assert visible(page, "resource") == 0
