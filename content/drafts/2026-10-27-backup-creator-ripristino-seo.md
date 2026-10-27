@@ -31,7 +31,7 @@ Prima di scegliere un servizio, controlla cronologia versioni, possibilità di r
 
 ## 4. Prova il recupero, non soltanto il salvataggio
 
-Crea un progetto fittizio con tre file, esegui una copia, elimina la copia di lavoro e ripristinala in una cartella separata. Apri i file e controlla che il progetto sia integro. Registra data, durata del ripristino e problemi incontrati. Non usare dati personali o progetti di clienti per la prima prova.
+Crea un progetto fittizio con tre file e registra il contenuto atteso di ciascuno. Esegui una copia su un supporto o servizio distinto e annota la data della versione salvata. **Non cancellare né sovrascrivere i file originali:** per simulare un guasto, rendi temporaneamente indisponibile la cartella di prova, ad esempio rinominandola. Recupera la copia in una **nuova cartella separata**, apri i file e confrontali con il contenuto atteso. Se usi un progetto di montaggio fittizio, verifica anche che si apra e ritrovi i media collegati. Registra data, tempo effettivo di ripristino, età della copia e problemi incontrati; ripristina poi il nome originale della cartella di prova. Considera il test superato solo se i file sono utilizzabili e tempi e versione recuperata rispettano gli obiettivi stabiliti. Non usare dati personali o progetti di clienti per la prima prova.
 
 ## 5. Pianifica una verifica periodica
 
