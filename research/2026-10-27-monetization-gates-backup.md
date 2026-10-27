@@ -259,3 +259,16 @@ La pagina dichiara **30 giorni come periodo di validazione**, distinti dai 30 gi
 - Awin, eWeki IT: https://ui.awin.com/merchant-profile/19988
 
 **Stato:** sola ricerca e bozza interna in PR; nessun cambiamento a produzione, pagamenti o candidature. Obblighi italiani di trasparenza, recesso per eventuali prodotti digitali e trattamento IVA restano da verificare in base all'attività concreta, senza conclusioni fiscali automatiche.
+
+
+## Screening incrementale — ALTERNATE IT, 28/10/2026 (fonte pubblica)
+
+**Candidato non approvato, nessuna candidatura:** il profilo Awin pubblico **alternate IT** (merchant 9322) è pertinente a hardware, software, laptop, accessori, elettronica ed elettrodomestici; dichiara **cookie 30 giorni**, creatività banner e catalogo CSV per partner. Il CSV pubblicizzato non costituisce da solo autorizzazione a importare/pubblicare prodotti, immagini o prezzi: verificare accesso, licenza e aggiornamento dopo eventuale approvazione.
+
+**Vincolo territoriale esplicito:** per il programma italiano sono commissionabili **solo le vendite generate in Italia**; non risultano commissionabili vendite internazionali, link a siti ALTERNATE di altri paesi o transazioni più vecchie di sei mesi ai fini di accredito retroattivo. Non confondere la presenza internazionale del merchant con la commissionabilità internazionale del programma IT.
+
+**Limiti:** la scheda parla di commissioni competitive, **senza una percentuale pubblica verificata**. Non sono verificati approvazione VORLI, commissione personale, esclusioni per categoria, ammissibilità di publisher italiano persona fisica, condizioni di riuso feed, termini di pagamento e requisiti fiscali. Nessun link affiliato, prezzo o promessa di ricavi.
+
+**Uso editoriale consentito in bozza:** nella guida comparativa già esistente valutare compatibilità hardware, garanzia, assistenza, costo totale e paese di vendita, senza aggiungere classifiche commerciali né nuovi contenuti seriali. Nessuna modifica al sito pubblico, nessun acquisto, invio email, nuova registrazione o attivazione pagamenti.
+
+**Fonte ufficiale consultata il 28/10/2026:** https://ui.awin.com/merchant-profile/9322 (profilo Awin; cookie, CSV, restrizioni geografiche). La pagina pubblica non sostituisce i termini individuali riservati.
