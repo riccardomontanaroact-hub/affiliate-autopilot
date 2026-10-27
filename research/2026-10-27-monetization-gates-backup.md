@@ -56,3 +56,18 @@ Le PR #112 (energia portatile), #114 (sicurezza) e #118 (software creativi) sono
 - Commissione europea, OSS: https://vat-one-stop-shop.ec.europa.eu/one-stop-shop_en
 
 **Limitazione:** non sono stati verificati in questo documento né dati riservati della dashboard Awin né termini individuali dei publisher. Non è consulenza legale o fiscale.
+
+## Nuovo gate di ammissibilità — LG IT (verifica pubblica 27/10/2026)
+
+**Esito per VORLI: non candidare nella configurazione attuale di venditore/publisher individuale.** La scheda pubblica del programma LG IT su Awin mostra una commissione commerciale pubblicizzata del **3%** e un cookie di **30 giorni**, e include editoria, recensioni e comparatori tra le categorie di publisher considerate. **La stessa pagina esclude però esplicitamente «affiliazione di persone fisiche»**, oltre alle attività site-under e SEM. Il tasso pubblicitario non equivale dunque a idoneità del publisher: il vincolo soggettivo prevale nella selezione commerciale. Non presentare LG come opportunità immediatamente candidabile per VORLI.
+
+I termini generali pubblici riportano inoltre per l'Italia un intervallo **0,5–3%** e avvertono che le commissioni effettive possono cambiare per prodotto/categoria; alcune transazioni possono essere escluse o stornate. Questi termini si presentano come quadro generale con adattamenti locali: **non inferire** che il 3% sia garantito su ogni acquisto, né che l'esclusione possa essere superata senza conferma scritta dell'advertiser. Non è stata letta alcuna dashboard privata, né effettuata candidatura.
+
+**Decisione operativa:** declassare LG IT a *non idoneo sulla base delle condizioni pubbliche attuali*; mantenere soltanto l'eventuale ricerca editoriale neutrale su efficienza, compatibilità e costi totali, senza promuovere LG con link affiliati e senza creare una nuova scheda commerciale dedicata.
+
+**Fonti ufficiali consultate il 27/10/2026:**
+- Awin, scheda pubblica LG IT, sezione condizioni di collaborazione ed esclusione delle persone fisiche: https://ui.awin.com/merchant-profile/116027
+- Awin, commissioni pubbliche LG IT: https://ui.awin.com/merchant-profile/116027/commission-groups
+- Awin, termini LG IT, sezioni 3, 5, 7 e 14.1 (tassi per mercato e vincoli): https://ui.awin.com/merchant-profile-terms/116027
+
+**Controllo qualità per future schede VORLI:** prima di investire in contenuti commerciali, esaminare nell'ordine (a) ammissibilità di persona fisica italiana, (b) paese delle vendite commissionabili, (c) esclusioni e permessi di traffico, (d) commissione e cookie, (e) soglia e costi di pagamento, (f) necessità di approvazione. Evitare contenuti SEO seriali generati solo per intercettare query: una guida utile deve spiegare criteri verificabili, dichiarare i limiti dei dati e distinguere chiaramente ricerca documentale da test pratici.
