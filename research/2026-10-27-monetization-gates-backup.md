@@ -159,3 +159,19 @@ Fonte ufficiale consultata il 27/10/2026: https://www.agcom.it/influencer-linee-
 - Awin, OBSBOT DE commissioni pubbliche 79596: https://ui.awin.com/merchant-profile/79596/commission-groups
 
 **Stato e vincoli:** screening documentale e brief SEO in bozza; nessuna candidatura, checkout, email, pubblicazione in produzione o modifica dei dati dell'account. Le verifiche fiscali italiane, la disclosure di affiliazione e gli obblighi relativi ai prodotti digitali rimangono gate indipendenti prima di qualsiasi attività commerciale.
+
+
+## Screening Joom IT — 27/10/2026, ore 12:14 CET (solo ricerca pubblica)
+
+**Esito:** opportunità Awin da monitorare, **non** programma già approvato per VORLI. La scheda pubblica di **Joom IT** (merchant Awin **48437**) indica **15% come commissione predefinita**, sia per nuovi sia per clienti esistenti, e **cookie di 30 giorni**. Tuttavia, **non applicare il 15% indistintamente all'elettronica**: la stessa scheda riporta categorie ridotte, fra cui **10% per smartwatch/fitness tracker, smart glasses, smart rings e videocamere**, **5% per elettrodomestici per la pulizia** e **2% per laptop, tablet, smartphone e mini PC**. Queste sono percentuali pubbliche e non tassi contrattuali individuali; le categorie effettive possono dipendere dall'attribuzione del prodotto e da aggiornamenti del programma.
+
+La pagina dichiara **30 giorni come periodo di validazione**, distinti dai 30 giorni di cookie: non confonderli con disponibilità immediata del denaro. Le candidature dei publisher sono esaminate con cadenza settimanale e il programma *mira* a rispondere entro 7 giorni, **non** garantisce l'approvazione. Non è stata verificata l'ammissibilità di una persona fisica residente in Italia, né la disponibilità di un programma senza spese o obblighi specifici per il singolo publisher; nessuna candidatura effettuata. Per i pagamenti valgono comunque le condizioni applicabili alla rete e all'account, non il solo periodo di validazione del merchant.
+
+**Decisione editoriale:** usare Joom solo come esempio *non commerciale* per un futuro articolo originale «Smartwatch, videocamera o mini PC: 6 controlli prima di acquistare tecnologia online», con scheda di confronto su compatibilità, aggiornamenti, garanzia, venditore, costi di reso, supporto e prezzo totale. Non inserire prodotti, prezzi, link affiliati, percentuali di commissione rivolte al consumatore, recensioni o test non verificati. Evitare una classifica automatica basata sulla commissione; l'interesse del lettore prevale sulla remunerazione. Non aprire nuove PR o creare contenuti seriali prima di revisionare le bozze esistenti.
+
+**Fonti pubbliche consultate il 27/10/2026:**
+- Awin, profilo Joom IT (dettaglio categorie, validazione e candidature): https://ui.awin.com/merchant-profile/48437
+- Awin, commissioni pubbliche Joom IT (15% predefinito, con eccezioni): https://ui.awin.com/merchant-profile/48437/commission-groups
+- Awin, eWeki IT (elettronica di consumo e cookie 30 giorni; percentuale individuale non verificata): https://ui.awin.com/merchant-profile/19988
+
+**Gate:** verificare prima di ogni uso commerciale idoneità della persona fisica italiana, stato di approvazione nell'area privata Awin, gruppi di commissione effettivi, territori commissionabili, eventuali esclusioni, requisiti di disclosure, recesso e trattamento IVA applicabile. Nessuna consulenza fiscale dedotta dalla scheda merchant. Nessuna modifica alla produzione, pagamento, invio email o dato personale pubblicato.
