@@ -1,5 +1,21 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Gate pratico per kit e PDF digitali — controllo documentale 27/10/2026, ore 14:06 CET
+
+**Decisione:** le guide e i kit originali in bozza NON sono pronti per checkout o consegna commerciale. Prima di attivare una vendita B2C di contenuti digitali scaricabili occorre verificare anche i punti seguenti, oltre ai controlli fiscali e di trasparenza già elencati.
+
+1. **Scheda informativa prima dell'ordine:** descrivere cosa riceve il cliente, formato e funzionalità del file, compatibilità/interoperabilità con software e dispositivi pertinenti, eventuali limitazioni tecniche o d'uso, prezzo totale e condizioni di fornitura. Non attribuire funzionalità non testate al kit.
+2. **Ordine a pagamento:** l'interfaccia deve rendere inequivocabile l'obbligo di pagare; evitare caselle preselezionate per servizi aggiuntivi. Non attivare alcun pulsante di acquisto finché queste informazioni non sono verificate.
+3. **Recesso e accesso immediato:** per contenuti digitali non forniti su supporto materiale, l'avvio della fornitura durante il periodo di recesso non elimina automaticamente il diritto. Quando si applica l'eccezione prevista dalla legge, sono richiesti consenso espresso preventivo, riconoscimento esplicito della perdita del diritto e conferma contrattuale con le informazioni richieste. Non usare un checkbox generico o preselezionato per presumere una rinuncia valida.
+4. **Conferma e prove:** prevedere conferma del contratto su supporto durevole e conservazione riservata delle evidenze di consenso e consegna; **mai** conservare dati di clienti, ordini o consensi nel repository pubblico. Verificare con professionista gli obblighi italiani applicabili, compresa l'eventuale funzione online di recesso e gli aspetti fiscali/IVA, prima di commercializzare.
+
+**Applicazione editoriale:** usare questi criteri per revisionare il kit backup/ripristino e il kit valutazione software già in PR, senza generare nuovi prodotti seriali o promesse di vendita. Il materiale resta informativo, non è una consulenza legale e non attesta conformità del futuro checkout.
+
+**Fonti istituzionali consultate il 27/10/2026:**
+- Commissione europea, Your Europe, requisiti e-commerce B2C, contenuti digitali, conferma del contratto: https://europa.eu/youreurope/business/selling-in-eu/selling-goods-services/ecommerce-distance-selling/index_en.htm
+- Your Europe, recesso di 14 giorni ed eccezioni per contenuti digitali: https://europa.eu/youreurope/citizens/consumers/shopping/returns/
+- Direttiva 2011/83/UE, articoli 8, 14 e 16 (testo consolidato): https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02011L0083-20220528
+
 ## Correzione prioritaria: soglia di incasso Awin (verifica 27/10/2026)
 
 **Soglia minima e soglia predefinita sono diverse.** Il Centro assistenza ufficiale Awin (articolo aggiornato il 13/03/2026, consultato il 27/10/2026) indica **20 EUR** come minimo per pagamenti in euro, ma **50 EUR** come soglia **predefinita** in assenza di configurazione. Le commissioni devono essere confermate: se non si raggiunge la soglia, il saldo passa al ciclo successivo. Il centro assistenza indica due cicli mensili, non una garanzia di liquidazione immediata.
