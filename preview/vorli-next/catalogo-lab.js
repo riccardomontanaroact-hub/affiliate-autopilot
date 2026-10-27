@@ -54,12 +54,13 @@
   });
   const cards = categoryCards.concat(resourceCards);
   function apply() {
-    const query = norm(search.value);
+    // Match every word, regardless of spacing or order (e.g. "casa smart").
+    const terms = norm(search.value).split(/\s+/).filter(Boolean);
     const chosen = select.value;
     let categories = 0, drafts = 0;
     cards.forEach(function (card) {
       const matches = (chosen === "all" || card.dataset.category === chosen) &&
-        card.dataset.search.includes(query);
+        terms.every(function (term) { return card.dataset.search.includes(term); });
       card.hidden = !matches;
       if (matches) {
         if (card.classList.contains("category")) categories++;
