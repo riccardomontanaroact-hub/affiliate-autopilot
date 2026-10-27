@@ -6,13 +6,15 @@
 Duplica questa scheda per ogni progetto o tipologia di contenuto. Compila con **nomi generici** e non con password, token, codici di recupero o dati di clienti. Esegui le prove su file fittizi.
 
 ### Scheda A — Inventario essenziale
-| Tipo di file | Importanza (1–3) | Frequenza modifiche | Posizione principale (generica) | Tempo massimo accettabile per recupero |
+| Tipo di file | Importanza (1–3) | Frequenza modifiche | Posizione principale (generica) | Tempo massimo accettabile per recupero | Perdita massima di lavoro accettabile |
 | --- | --- | --- | --- | --- |
-| Video sorgenti | | | | |
-| Progetti di montaggio | | | | |
-| Audio e immagini | | | | |
-| Esportazioni finali | | | | |
-| Documenti di lavoro | | | | |
+| Video sorgenti | | | | | |
+| Progetti di montaggio | | | | | |
+| Audio e immagini | | | | | |
+| Esportazioni finali | | | | | |
+| Documenti di lavoro | | | | | |
+
+**Come compilare le ultime due colonne:** il *tempo massimo di recupero* è quanto puoi aspettare prima di tornare a lavorare; la *perdita massima di lavoro* è quante ore o giorni di modifiche puoi tollerare di perdere. Questi obiettivi guidano la frequenza dei backup e la prova di ripristino, ma non sono garanzie del servizio.
 
 ### Scheda B — Mappa delle copie
 | Copia | Supporto / servizio (categoria) | Sempre connessa? | Versioni precedenti? | Protezione accesso | Ultima verifica |
@@ -21,7 +23,7 @@ Duplica questa scheda per ogni progetto o tipologia di contenuto. Compila con **
 | Backup 1 | | | | | |
 | Backup 2 | | | | | |
 
-**Controllo rischio:** se tutte le copie dipendono dallo stesso dispositivo, account o luogo, il piano può fallire per una causa comune. Valuta una copia indipendente e una modalità di recupero in caso di account non accessibile.
+**Controllo rischio:** se tutte le copie dipendono dallo stesso dispositivo, account o luogo, il piano può fallire per una causa comune. Per i dati critici, valuta una copia offline/non sempre raggiungibile e verifica periodicamente che sia leggibile e ripristinabile. Valuta una copia indipendente e una modalità di recupero in caso di account non accessibile.
 
 ### Scheda C — Prova di ripristino
 - Data del test: __________
@@ -30,6 +32,9 @@ Duplica questa scheda per ogni progetto o tipologia di contenuto. Compila con **
 - Origine della copia usata: __________
 - Tempo di recupero: __________
 - File aperti e verificati correttamente? Sì / No
+- Progetto ricollegato ai file sorgente e riaperto nell'applicazione prevista? Sì / No / Non applicabile
+- Età della versione recuperata rispetto all'ultima modifica: __________
+- Il tempo e la perdita di lavoro simulata rispettano gli obiettivi della Scheda A? Sì / No
 - Versione recuperata: __________
 - Errori riscontrati e correzioni: __________
 - Prossimo test: __________
