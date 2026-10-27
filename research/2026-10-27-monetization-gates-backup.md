@@ -1,5 +1,20 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Gate legale aggiornato — funzione di recesso online (27/10/2026, ore 22:15 CET)
+
+**Fonte primaria italiana identificata:** il D.Lgs. **31 dicembre 2025, n. 209**, art. 1, ha inserito nel Codice del consumo l'**art. 54-bis** per i contratti a distanza conclusi tramite interfaccia online. Per il futuro checkout B2C VORLI, quando sussiste il diritto di recesso, non basta indicare un indirizzo email o un PDF: occorre valutare una **funzione di recesso online** visibile, accessibile e disponibile per tutto il periodo utile. L'interfaccia deve permettere di indicare nome, contratto e recapito elettronico, presentare un passaggio distinto di **conferma del recesso** e inviare senza indebito ritardo una ricevuta su supporto durevole con contenuto, data e ora. L'informativa precontrattuale deve indicare esistenza e posizione della funzione, quando applicabile (art. 49, comma 1, lett. h). La disciplina è applicabile dal **19 giugno 2026** ai nuovi contratti online, secondo il quadro di recepimento e la decorrenza europea; il decreto è entrato in vigore il 23 gennaio 2026.
+
+**Eccezioni:** la funzione non crea un diritto di recesso dove questo non esiste; per PDF/contenuti digitali scaricabili, l'eventuale perdita del diritto dopo l'avvio della fornitura richiede i presupposti specifici dell'art. 59 del Codice del consumo e le informazioni e consensi prescritti. Non presumere una rinuncia automatica. Se VORLI vende solo tramite piattaforma esterna, verificare chi è il professionista contraente e quale interfaccia gestisce validamente recesso e conferme; non assumere che il fornitore terzo assolva gli obblighi di VORLI.
+
+**Checklist tecnica in bozza (nessuna implementazione live):** (1) link/funzione riconoscibile anche da mobile; (2) identificazione del contratto con dati minimi; (3) pulsante di conferma distinto; (4) ricevuta durevole e registrazione riservata dell'evento; (5) informazioni precontrattuali coerenti; (6) test con contratti fittizi; (7) verifica legale della casistica digitale e della responsabilità del venditore prima del rilascio. Non raccogliere dati reali né pubblicare log di clienti in GitHub.
+
+**Fonti istituzionali consultate il 27/10/2026:**
+- Normattiva, D.Lgs. 209/2025, art. 1, testo e art. 54-bis: https://www.normattiva.it/atto/caricaDettaglioAtto?atto.codiceRedazionale=26G00002&atto.dataPubblicazioneGazzetta=2026-01-08&tipoDettaglio=originario
+- Gazzetta Ufficiale, pubblicazione 08/01/2026: https://www.gazzettaufficiale.it/atto/serie_generale/caricaArticoloDefault/originario?atto.codiceRedazionale=26G00002&atto.dataPubblicazioneGazzetta=2026-01-08&atto.tipoProvvedimento=DECRETO+LEGISLATIVO
+- Direttiva (UE) 2023/2673 (introduzione art. 11-bis nella direttiva 2011/83/UE): https://eur-lex.europa.eu/eli/dir/2023/2673/oj/eng
+
+**Gate:** revisione giuridica italiana del caso concreto ancora necessaria. Nessuna vendita, pagamento, pubblicazione, account, candidatura o email attivati.
+
 ## Correzione di conformità e incassi — Awin (27/10/2026, ore 21:13 CET)
 
 **Incoerenza ufficiale sui costi di iscrizione:** nelle FAQ italiane Awin la sezione «Come posso diventare un publisher» dice «gratuita», mentre «Diventare publisher su Awin comporta dei costi?» specifica un **deposito una tantum** richiesto in registrazione, rimborsabile alla prima soglia. Non è stata verificata l'entità corrente del deposito né se vi siano eccezioni. Per un progetto con vincolo *zero esborso*, evitare di raccomandare nuove iscrizioni sulla sola dicitura «gratis»; nessun nuovo account è necessario per VORLI.
