@@ -48,6 +48,10 @@ test("Hydration filters existing HTML instead of replacing it", () => {
   assert.match(js, /resourceSync/);
   assert.match(js, /if \(!categorySync \|\| !resourceSync\)/);
   assert.match(js, /card\.hidden = !matches/);
+  assert.match(js, /split\(\/\\s\+\/\)\.filter\(Boolean\)/);
+  assert.match(js, /terms\.every\(/);
+  assert.match(html, /role="search" aria-label="Ricerca e filtri del catalogo demo"/);
+  assert.equal((html.match(/aria-controls="category-cards resource-cards"/g) || []).length, 2);
   assert.doesNotMatch(js, /replaceChildren\s*\(|innerHTML\s*=/);
   assert.match(js, /classList\.add\("js-ready"\)/);
   assert.match(css, /\.filters\{display:none/);
