@@ -129,3 +129,33 @@ Fonte ufficiale consultata il 27/10/2026: https://www.agcom.it/influencer-linee-
 - EDPB, Linee guida 3/2019 (finale 30/01/2020): https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-32019-processing-personal-data-through-video_it
 
 **Limiti invariati:** nessuna verifica della dashboard Awin privata, nessuna conferma di adesione o pagamento, nessuna attivazione commerciale. Requisiti fiscali italiani, disclosure e recesso digitale da verificare prima di ogni vendita o promozione.
+
+
+## Screening aggiuntivo — OBSBOT / webcam per creator (27/10/2026, ore 11:06 CET)
+
+**Opportunità nuova, non candidatura.** OBSBOT produce webcam e dispositivi per riprese video: tema pertinente a creator, smart working e accessori tecnologici. La pagina ufficiale del brand presenta il programma come **gratuito**, senza quota di candidatura né minimo di vendite, con commissioni pubblicizzate **8–10%** e **cookie di 30 giorni**. La candidatura è sottoposta a valutazione: non equivale ad adesione.
+
+**Distinzione critica fra programmi pubblici:** il brand indica due percorsi e collega pubblicamente a profili Awin distinti: **OBSBOT** (profilo pubblico Awin **53691**) e **OBSBOT DE** (**79596**). Il secondo è esplicitamente denominato DE; non presumere che vendite italiane o il publisher italiano siano ammessi e commissionabili in entrambi. I numeri sono ID pubblici dei *merchant*, non dati del publisher VORLI.
+
+**Condizioni di commissione pubbliche, da non trasformare in ricavi:** i gruppi pubblici Awin dei due profili riportano **9% per una vendita a nuovo cliente**, **10% con codici ufficiali della piattaforma**, e **0% se si usano codici sconto non autorizzati dalla piattaforma**. I bonus del primo ordine validato pubblicizzati sono **5 USD** nel profilo 53691 e **5 EUR** nel profilo DE 79596; non sono incentivi acquisiti da VORLI. I termini effettivi possono dipendere dal profilo, dal tipo di cliente, dal codice e dal contratto individuale.
+
+**Incongruenza nei pagamenti da risolvere:** la pagina ufficiale OBSBOT elenca link di adesione che puntano a profili Awin, ma nelle FAQ afferma che *tutte* le commissioni sarebbero liquidate via ShareASale. Non è sicuro dedurre da tale FAQ come vengano pagate le vendite attribuite via Awin. Per VORLI, **non assumere** pagamenti ShareASale, PayPal, soglia o frequenza: serve conferma nei termini specifici della rete e nell'area riservata prima di qualsiasi candidatura o previsione. Il programma influencer OBSBOT, distinto dall'affiliazione standard, usa condizioni e sistema di pagamento differenti: non mescolare i due.
+
+**Altri gate:** il brand vieta campagne PPC su marchio e varianti; rimangono non verificati accettazione di persona fisica italiana, paese delle vendite commissionabili, tasso personale, politica dei resi e costi di liquidazione. Nessuna email di approvazione o link affiliato VORLI verificati.
+
+### Brief SEO riutilizzabile — non pubblicato
+
+**Titolo proposto:** «Webcam per videochiamate e creator: 7 controlli prima dell'acquisto».
+
+**Intento:** aiutare a scegliere una webcam in base a requisiti pratici, non a classifiche o test inesistenti.
+
+**Struttura:** (1) ambiente d'uso e distanza dal volto; (2) risoluzione e frequenza fotogrammi dichiarate, distinguendole dalla qualità reale; (3) autofocus e comportamento in scarsa luce da verificare in test indipendenti; (4) microfono, audio separato e riduzione rumore; (5) compatibilità con sistema operativo e software usato; (6) privacy, indicatore di ripresa, aggiornamenti e permessi; (7) costo totale con supporti, illuminazione e accessori. **Scheda comparativa neutrale:** tre colonne vuote, campo «fonte ufficiale/data», campo «non verificato», nessun marchio privilegiato, prezzo o link di tracciamento. Non riprodurre descrizioni del brand senza rielaborazione originale.
+
+**Fonti primarie consultate il 27/10/2026 (URL pubblici, senza tracking):**
+- OBSBOT, programma ufficiale e FAQ: https://www.obsbot.com/affiliate-program
+- Awin, OBSBOT profilo 53691: https://ui.awin.com/merchant-profile/53691
+- Awin, OBSBOT commissioni pubbliche 53691: https://ui.awin.com/merchant-profile/53691/commission-groups
+- Awin, OBSBOT DE profilo 79596: https://ui.awin.com/merchant-profile/79596
+- Awin, OBSBOT DE commissioni pubbliche 79596: https://ui.awin.com/merchant-profile/79596/commission-groups
+
+**Stato e vincoli:** screening documentale e brief SEO in bozza; nessuna candidatura, checkout, email, pubblicazione in produzione o modifica dei dati dell'account. Le verifiche fiscali italiane, la disclosure di affiliazione e gli obblighi relativi ai prodotti digitali rimangono gate indipendenti prima di qualsiasi attività commerciale.
