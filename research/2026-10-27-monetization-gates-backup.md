@@ -1,5 +1,16 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Verifica incrementale — 27/10/2026, ore 15:14 CET
+
+**Correzione prioritaria su OBSBOT/ShareASale.** Le FAQ ufficiali Awin indicano che ShareASale ha cessato definitivamente l'attività il **6 ottobre 2025**, dopo il trasferimento dei clienti attivi ad Awin. La pagina affiliati OBSBOT, tuttora pubblicata, collega già a profili Awin ma descrive ancora report e pagamenti tramite ShareASale. Questa è una **incoerenza documentale datata**, non la prova di un metodo di incasso ancora operativo: non candidare VORLI e non indicare assegno, bonifico o Payoneer come opzioni garantite prima della verifica nei termini aggiornati e nell'area privata Awin. Fonte Awin: https://www.awin.com/it/faq ; fonte OBSBOT: https://www.obsbot.com/affiliate-program .
+
+**Nuovo screening: Elettronicshop IT (Awin, merchant pubblico 118501).** Profilo pertinente a sportwatch, accessori e tecnologia sportiva; **cookie 30 giorni post-click**, validazione dichiarata delle transazioni entro **30 giorni**, pagamento del merchant **verso Awin** entro 30 giorni dalla fattura. **Esclusi ricondizionati e outlet**. La pagina non espone una percentuale di commissione pubblica verificabile né conferma ammissibilità di persona fisica italiana: **nessuna candidatura e nessuna stima di ricavi**. Le modalità «carta, PayPal, bonifico, Klarna» elencate nella descrizione del negozio non dimostrano le modalità di **pagamento delle commissioni al publisher**. Fonte: https://ui.awin.com/merchant-profile/118501 .
+
+**Distinzione dei costi:** le FAQ Awin precisano che l'iscrizione **publisher** è gratuita, mentre i piani a pagamento per **advertiser** non devono essere attribuiti a VORLI. La gratuità della rete non certifica l'idoneità a ogni programma né risolve requisiti fiscali italiani. Fonti: https://www.awin.com/it/faq e https://www.awin.com/it/pricing/affiliate-partners .
+
+**Decisione:** proseguire solo con revisione delle bozze esistenti e controlli riservati su ammissibilità, commissioni personali, territori, pagamenti e obblighi legali; nessuna pubblicazione, iscrizione, spesa o attivazione commerciale. Tutte le fonti consultate il 27/10/2026.
+
+
 ## Gate pratico per kit e PDF digitali — controllo documentale 27/10/2026, ore 14:06 CET
 
 **Decisione:** le guide e i kit originali in bozza NON sono pronti per checkout o consegna commerciale. Prima di attivare una vendita B2C di contenuti digitali scaricabili occorre verificare anche i punti seguenti, oltre ai controlli fiscali e di trasparenza già elencati.
