@@ -1,5 +1,13 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Verifica pubblica — DoctorQuality (27/10/2026, ore 16:10 CET)
+
+Il profilo pubblico **DoctorQuality** su Awin (merchant 121176) descrive un catalogo generalista con **elettronica e tecnologia**, accessori gaming, elettrodomestici, casa e sport: categorie pertinenti alla linea editoriale VORLI. La scheda riporta **cookie di 30 giorni**. Non è stata verificata dalla pagina pubblica una **commissione per categoria**, né sono accessibili da questa fonte i termini contrattuali individuali, le esclusioni e il territorio delle vendite commissionabili. La sola presenza di prodotti tecnologici nel catalogo non prova disponibilità, qualità o prezzo di alcun articolo.
+
+**Gate operativo:** prima di preparare una scheda commerciale, verificare nell'area riservata Awin lo stato attuale del rapporto, la commissione applicabile, i permessi di promozione, il catalogo e le esclusioni; scegliere soltanto prodotti tecnici con schede ufficiali verificabili. Non pubblicare qui comunicazioni private, identificativi publisher o link di tracciamento. Nessuna scheda vendibile o candidatura generata da questa verifica.
+
+**Fonte pubblica consultata il 27/10/2026:** https://ui.awin.com/merchant-profile/121176
+
 ## Verifica incrementale — 27/10/2026, ore 15:14 CET
 
 **Correzione prioritaria su OBSBOT/ShareASale.** Le FAQ ufficiali Awin indicano che ShareASale ha cessato definitivamente l'attività il **6 ottobre 2025**, dopo il trasferimento dei clienti attivi ad Awin. La pagina affiliati OBSBOT, tuttora pubblicata, collega già a profili Awin ma descrive ancora report e pagamenti tramite ShareASale. Questa è una **incoerenza documentale datata**, non la prova di un metodo di incasso ancora operativo: non candidare VORLI e non indicare assegno, bonifico o Payoneer come opzioni garantite prima della verifica nei termini aggiornati e nell'area privata Awin. Fonte Awin: https://www.awin.com/it/faq ; fonte OBSBOT: https://www.obsbot.com/affiliate-program .
