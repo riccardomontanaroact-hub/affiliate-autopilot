@@ -7,6 +7,16 @@
 - **Impatto sul modello VORLI:** 5 o 10 EUR di commissioni confermate non sono prelevabili da Awin con la soglia minima pubblicata; 20 EUR potrebbero soddisfare la soglia minima, ma solo se questa è effettivamente impostata e sono soddisfatti gli altri requisiti di pagamento. La soglia attuale dell'account non è stata letta: **non affermare che sia già 20 EUR**.
 - **Verifica riservata ancora necessaria:** Account > Dettagli di pagamento > Dettagli bancari; soglia impostata, valuta, metodo effettivo, dati fiscali, eventuali verifiche richieste, commissioni confermate e costi di accredito. La FAQ pubblica Awin menziona 20 EUR per publisher in Italia con BACS: non estendere senza verifica questa specifica a ogni metodo.
 - **Separare i circuiti:** l'Autopay da 10 USD pubblicizzato da Bitdefender riguarda il suo programma su piattaforma esterna e **non** riduce la soglia di Awin. Condizioni individuali e spese di pagamento Bitdefender rimangono non verificate.
+
+### Gate aggiuntivo verificato il 27/10/2026: «approvato» non equivale a «pagabile»
+La checklist ufficiale Awin distingue **approvazione/convalida della transazione** da **saldo dell'advertiser verso Awin**: la sola commissione approvata non garantisce il pagamento. Prima di qualsiasi previsione di incasso occorre verificare nell'area riservata lo stato **approvato e saldato / pagabile**, la soglia nella valuta pertinente, la completezza dei dati di pagamento e l'assenza di blocchi. Nessuno di questi stati è stato letto nell'account VORLI.
+
+La guida Awin sui calendari di pagamento (ultima pubblicazione 08/04/2026) indica elaborazioni **il 1° e il 15 del mese** (oppure il giorno lavorativo successivo se festivo), con periodi di competenza differenti; non significa che una vendita effettuata oggi venga liquidata al ciclo immediatamente successivo. L'accredito effettivo dipende anche dal metodo di pagamento. Non promettere incassi in 24 ore o piccoli prelievi sotto la soglia.
+
+**Fonti ufficiali consultate il 27/10/2026:**
+- https://success.awin.com/articles/it/Knowledge/why-haven-t-I-received-payment-a-publisher-check-list (aggiornata 13/02/2026)
+- https://success.awin.com/articles/it/Knowledge/When-will-I-receive-payment (aggiornata 08/04/2026)
+
 - **eWeki IT:** il profilo Awin pubblico documenta elettronica di consumo e cookie di 30 giorni, non commissione individuale, approvazione del publisher o tempi di validazione. Non stimare ricavi da questa sola fonte.
 - **Priorità editoriale:** completare la revisione delle bozze esistenti e dei gate commerciali prima di aggiungere altri kit; nessun link affiliato o checkout finché stato, condizioni e obblighi di trasparenza non sono verificati.
 
