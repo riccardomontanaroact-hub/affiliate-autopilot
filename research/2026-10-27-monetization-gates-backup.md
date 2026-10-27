@@ -175,3 +175,18 @@ La pagina dichiara **30 giorni come periodo di validazione**, distinti dai 30 gi
 - Awin, eWeki IT (elettronica di consumo e cookie 30 giorni; percentuale individuale non verificata): https://ui.awin.com/merchant-profile/19988
 
 **Gate:** verificare prima di ogni uso commerciale idoneità della persona fisica italiana, stato di approvazione nell'area privata Awin, gruppi di commissione effettivi, territori commissionabili, eventuali esclusioni, requisiti di disclosure, recesso e trattamento IVA applicabile. Nessuna consulenza fiscale dedotta dalla scheda merchant. Nessuna modifica alla produzione, pagamento, invio email o dato personale pubblicato.
+
+
+## Screening Freeshop IT vs eWeki IT — 27/10/2026, ore 13:15 CET (fonti pubbliche)
+
+**Nuovo candidato da valutare, non approvato:** Freeshop IT, programma Awin **9554**. La scheda pubblica indica **cookie 30 giorni** e assortimento in elettronica di consumo, elettrodomestici, TV, informatica, telefonia, console e fotografia, con consegne in Italia. **Non indica una commissione individuale verificata** né prova che un publisher persona fisica italiana possa aderire alle condizioni attuali. Non è stata effettuata candidatura.
+
+**Confronto di idoneità editoriale:** eWeki IT (Awin **19988**) indica a sua volta **cookie 30 giorni** e commercio di elettronica di consumo. In entrambe le schede, la durata cookie **non** dimostra né il tasso di commissione personale né l'approvazione del publisher. Non assegnare una classifica commerciale fra i due programmi finché non siano noti almeno: commissioni per categoria, esclusioni, idoneità della persona fisica italiana, canali di traffico ammessi, validazione/resi e condizioni di pagamento dell'account. La pagina pubblica eWeki non consente di risolvere questi punti.
+
+**Possibile contenuto SEO originale, non pubblicato:** «Come confrontare un negozio online di elettronica: 8 controlli prima dell'acquisto». Intento informativo: identità del venditore, condizioni di consegna, prezzo finale, garanzia legale, resi/recesso, disponibilità e assistenza, compatibilità tecnica, sicurezza dei pagamenti. Non attribuire qualità, recensioni, offerte o prezzi a Freeshop/eWeki senza verifiche indipendenti e datate. Nessun link affiliato, banner o invito all'acquisto.
+
+**Fonti primarie consultate il 27/10/2026:**
+- Awin, Freeshop IT: https://ui.awin.com/merchant-profile/9554
+- Awin, eWeki IT: https://ui.awin.com/merchant-profile/19988
+
+**Stato:** sola ricerca e bozza interna in PR; nessun cambiamento a produzione, pagamenti o candidature. Obblighi italiani di trasparenza, recesso per eventuali prodotti digitali e trattamento IVA restano da verificare in base all'attività concreta, senza conclusioni fiscali automatiche.
