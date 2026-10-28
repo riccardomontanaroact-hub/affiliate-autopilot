@@ -1,5 +1,22 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Gate privacy per l'affiliazione — Publisher MasterTag (verifica 28/10/2026, ore 05:11 CET)
+
+**Distinguere il benvenuto in un programma dall'autorizzazione tecnica a installare tracciamento.** Awin descrive il Publisher MasterTag come uno **script JavaScript** che abilita plugin distinti: *Tracking Optimisation* (tracciamento), *Convert-a-Link* (trasforma automaticamente collegamenti ordinari in link affiliati) e *adMission* (etichettatura/disclosure dei link commerciali). L'esistenza di un plugin di disclosure **non garantisce** di per sé conformità della pagina o dei flussi di consenso; una conversione automatica può modificare la destinazione commerciale di link editoriali senza una revisione puntuale.
+
+**Conseguenza per VORLI:** non inserire MasterTag, Convert-a-Link, script di retargeting, cookie/pixel o plugin di monetizzazione nel sito di produzione sulla base di un invito generico. Prima di qualsiasi integrazione: (1) censire script, domini, dati raccolti e finalità; (2) controllare le autorizzazioni dei plugin e l'impatto su link editoriali, trasparenza e performance; (3) classificare le tecnologie secondo le regole applicabili e ottenere preventivamente il consenso quando necessario, con possibilità di rifiuto e revoca; (4) predisporre informativa privacy/cookie e disclosure pubblicitaria visibile; (5) testare in ambiente isolato con dati fittizi, inclusi rifiuto del consenso e assenza di tracciamenti non autorizzati; (6) valutare la liceità del trattamento con competenza adeguata. Le FAQ Awin indicano che **nella maggior parte dei casi** i cookie affiliati di misurazione/analisi richiedono consenso; le linee guida del Garante distinguono per finalità e caratteristiche concrete, con possibili esenzioni per analytics a condizioni specifiche. Non classificare automaticamente *ogni* cookie analytics come sempre soggetto a consenso, né trattare il plugin come esente in blocco.
+
+**Precisazione contrattuale transfrontaliera:** la pagina ufficiale dei termini Awin indica che, per publisher con **residenza fiscale nell'UE** che operano sulla rete, si applicano in linea generale i termini **AWIN AG**; i termini **AWIN LTD** sono indicati per residenza fiscale extra-UE, salve le eccezioni descritte. La residenza fiscale effettiva e le eventuali condizioni aggiuntive vanno confermate: il marchio o il footer di una comunicazione non determinano da soli la controparte contrattuale. Non sono state verificate condizioni individuali o eseguite installazioni.
+
+**Fonti primarie consultate il 28/10/2026:**
+- Awin, «Che cos'è il MasterTag editore?» (ultima modifica 24/08/2026): https://success.awin.com/articles/it/Knowledge/what-is-publisher-mastertag
+- Awin, adMission e disclosure: https://success.awin.com/articles/it/Knowledge/Does-Awin-offer-an-ad-disclosure-tool
+- Awin, consenso cookie per publisher: https://success.awin.com/articles/it/Knowledge/Cookie-Consent-Publisher-FAQs
+- Garante Privacy, linee guida cookie e altri strumenti di tracciamento (10/06/2021): https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876
+- Awin, termini publisher e criterio di residenza fiscale: https://www.awin.com/it/publisher-terms
+
+**Stato:** analisi documentale; nessuna installazione, registrazione, candidatura, spesa, email, checkout, tracciamento aggiuntivo o pubblicazione.
+
 ## Verifica incrociata commissioni Envato — 28/10/2026, ore 04:06 CET
 
 **Incongruenza verificata fra due pagine ufficiali:** la pagina commerciale aggiornata di **Envato** espone un prospetto per piani *Core / Plus / Ultimate*: **120 / 250 / 500 USD** per abbonamento annuale idoneo, e massimi mensili **20 / 40 / 80 USD al mese nei primi tre mesi**. La guida ufficiale del centro assistenza, aggiornata il **5 luglio 2026**, continua invece a riassumere **fino a 120 USD** per abbonato annuale e **fino a 60 USD** per abbonato mensile. Le due presentazioni **non coincidono** e potrebbero descrivere piani o periodi differenti; non è possibile ricavarne un tasso unico attuale, né attribuire il massimo di 500 USD a VORLI. Anche la pagina commerciale usa la formula generale «cookie 90 giorni», mentre i termini contrattuali del **11 agosto 2026** (art. 12(d)) distinguono **90 giorni Envato Market** e **60 giorni Envato/Placeit**, salvo termini dell'offerta.
