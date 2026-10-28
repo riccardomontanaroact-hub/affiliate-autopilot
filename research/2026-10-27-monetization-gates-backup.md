@@ -1,5 +1,22 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Verifica incrementale — DoctorQuality e costo Awin (28/10/2026, 07:07 CET)
+
+**Nuova evidenza commerciale verificata:** una comunicazione privata Awin datata **22/10/2026** attesta **approvazione esplicita** dell'adesione al programma **DoctorQuality**. Non è una semplice newsletter, un invito o un messaggio promozionale. Il testo privato e i collegamenti riservati **non sono riportati né archiviati qui**; lo stato attuale del rapporto, le condizioni personali e l'operatività del tracking richiedono comunque accesso alla dashboard Awin. Non si deducono vendite, commissioni maturate o pagamenti.
+
+**Pertinenza e condizioni pubbliche:** il profilo ufficiale Awin DoctorQuality presenta un megastore con elettronica, gaming, elettrodomestici, casa e sport, e **cookie pubblico di 30 giorni**. La commissione Awin individuale, le esclusioni, i paesi commissionabili e le regole di utilizzo di feed e creatività non sono verificati. Un profilo dello stesso merchant su **Tradedoubler** pubblicizza **6% e cookie 45 giorni**, ma questi valori appartengono a un'altra rete e **NON possono essere trasferiti ad Awin**. Prima di una scheda prodotto: verificare dati tecnici e disponibilità sul sito del merchant, oltre ai termini riservati; evitare prezzi non aggiornati, comparazioni fittizie e contenuti sanitari sensibili.
+
+**Correzione trasparenza costi Awin:** la pagina ufficiale Awin per **siti editoriali e media** dichiara attualmente «Iscrizione gratuita» e «Nessun costo iniziale»; per **affiliate partner** afferma «nessun costo nascosto». Nella stessa pagina la categoria separata dei **technology partner** prevede invece una **fee di integrazione una tantum**, potenzialmente rimborsabile. La pagina generale delle **FAQ Awin** continua a descrivere un deposito di registrazione per publisher, mentre i termini contrattuali agosto 2025 lo indicano come eventuale. Le pagine pubbliche sono dunque **non uniformi**: non affermare né che ogni publisher debba versare un deposito, né che tutte le modalità di iscrizione siano sempre gratuite. Per VORLI l'account esiste già; nessuna nuova iscrizione o esborso.
+
+**Prossimo controllo riservato:** dashboard Awin per stato DoctorQuality, commissioni per categoria, territorio, feed, regole di promozione, soglie di pagamento e documentazione fiscale. Mantenere la distinzione fra approvazione di programma, autorizzazione all'uso dei materiali, transazione validata e somma prelevabile. Nessun account creato, candidatura, messaggio inviato, script installato, acquisto, checkout o deploy.
+
+**Fonti pubbliche consultate il 28/10/2026:**
+- Profilo Awin DoctorQuality: https://ui.awin.com/merchant-profile/121176
+- Pagina Awin prezzi per affiliate partners, editori e technology partners: https://www.awin.com/it/pricing/affiliate-partners
+- FAQ Awin (deposito): https://www.awin.com/it/faq
+- Termini publisher Awin: https://www.awin.com/it/publisher-terms
+- Profilo Doctor Quality su Tradedoubler (rete distinta): https://directory.tradedoubler.com/it/programs/377429-Doctor-Quality-il-tuo-Megastore-di-Fiducia
+
 ## Screening Adobe / Partnerize — 28/10/2026 (06:08 CET)
 
 **Opportunità pubblica, non adesione.** La pagina ufficiale italiana di **Adobe** descrive un programma affiliati per software creativi e documentali, gestito su **Partnerize**. La pagina dichiara **nessuna quota di iscrizione al programma** e **nessuna dimensione minima obbligatoria dell'audience**; Adobe precisa però che le candidature alle campagne sono **esaminate prima dell'approvazione**. Registrarsi alla piattaforma, essere accolti come partner e avere la campagna Adobe attiva sono passaggi diversi. Non è stato verificato che una persona fisica residente in Italia senza attività registrata sia accettata né che l'intero rapporto non comporti costi condizionati.
