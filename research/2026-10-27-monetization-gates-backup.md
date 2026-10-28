@@ -1,5 +1,26 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Screening Namecheap / impact.com — 28/10/2026, 08:12 CET (fonti primarie)
+
+**Candidato internazionale pertinente a VORLI, non candidatura né adesione.** Namecheap offre domini, hosting, SSL, posta professionale, DNS e servizi collegati: può sostenere contenuti originali per creator e piccoli siti, senza forzare il catalogo fisico. Le FAQ ufficiali dichiarano **iscrizione gratuita** al programma affiliati; la pagina del merchant indica i percorsi **impact.com** e **CJ**, con valutazione/approvazione dell'adesione. Nessun account o candidatura creati. L'idoneità di un publisher persona fisica residente in Italia e la copertura geografica delle vendite non sono state confermate nelle condizioni individuali.
+
+**Condizioni pubbliche da non presentare come commissioni VORLI:** pagina ufficiale delle commissioni: **20%** su registrazioni/trasferimenti di domini, Private Email e PremiumDNS; **35%** su pacchetti hosting indicati e certificati SSL. Esistono regole differenti per VPN, EasyWP e altri prodotti; alcune categorie non sono commissionabili. Per le categorie principali, l'attribuzione riguarda **il primo ordine di un nuovo cliente**; non promettere commissioni sui rinnovi o su ordini successivi. Il contratto pubblico indica **cookie/finestra di attribuzione di 30 giorni**, con possibile sovrascrittura da altri canali di referral. Percentuali definitive, categorie, esclusioni e autorizzazioni promozionali restano quelle della piattaforma e del contratto applicabile al singolo publisher.
+
+**Piccoli incassi: dato specifico positivo, non garanzia di liquidità immediata.** La pagina affiliati Namecheap e la relativa guida pagamenti dichiarano per **impact.com una soglia minima di prelievo equivalente a 10 USD** e opzioni fra cui **PayPal** ed EFT; per **CJ** indicano soglie diverse e più elevate. La FAQ generale menziona genericamente una soglia frequente di 50 USD: per la scelta della rete prevale la tabella specifica, ma il dato va riconfermato nell'account e nei termini attuali. **Soglia di prelievo ≠ commissione validata ≠ denaro immediatamente disponibile**. Costi di PayPal/impact, conversione valutaria, eventuali fee condizionate, tempi di validazione e documenti fiscali restano da verificare; non classificare l'operatività come interamente a costo zero solo per l'assenza di quota d'iscrizione.
+
+**Limiti commerciali e legali:** vietare auto-acquisti incentivati e autopresentazioni come clienti nuovi; non utilizzare loghi o asset senza autorizzazione contrattuale; nessuna promessa di risultato, prezzi non aggiornati, banner o link di tracking. Valutare disclosure affiliazione in modo chiaro per il lettore, consenso/tracciamento quando applicabile, requisiti fiscali/IVA per l'attività italiana e condizioni del publisher prima di promuovere il merchant. Non trarre conclusioni fiscali dalla semplice registrazione gratuita.
+
+**Brief SEO neutrale, solo per eventuale revisione futura delle bozze esistenti:** «Dominio, hosting e SSL: 7 controlli prima di aprire un sito». Intento informativo: proprietà/rinnovo del dominio; trasferibilità; hosting e limiti di risorse; backup e restore; HTTPS e gestione certificati; supporto e continuità; costo totale a 12/24 mesi. Tabella vuota con campi fonte, data e dato non verificato. Evitare recensioni fittizie, classifiche basate su commissioni, prezzi e call-to-action affiliate. Nessuna nuova pagina pubblicata.
+
+**Fonti ufficiali consultate il 28/10/2026 (URL senza tracking):**
+- https://www.namecheap.com/affiliates/ (piattaforme, soglia impact e metodi)
+- https://www.namecheap.com/support/knowledgebase/article.aspx/9994/55/payment-options-and-minimum-payout-limits-for-affiliates/ (soglie distinte per rete)
+- https://www.namecheap.com/support/knowledgebase/article.aspx/9933/55/what-are-the-namecheap-commission-rates/ (categorie e percentuali pubbliche)
+- https://www.namecheap.com/legal/affiliate-program/affiliate-agreement/ (30 giorni, primo ordine, restrizioni e approvazione)
+- https://www.namecheap.com/support/knowledgebase/article.aspx/9996/55/affiliate-programs-faq/ (iscrizione gratuita e FAQ generica sulle soglie)
+
+**Esito:** priorità di ulteriore verifica medio-alta per il basso minimo di prelievo dichiarato, ma **nessuna approvazione, tasso personale, idoneità fiscale o pagamento verificati**. Nessun account, spesa, email, checkout, link tracciato o modifica alla produzione.
+
 ## Verifica incrementale — DoctorQuality e costo Awin (28/10/2026, 07:07 CET)
 
 **Nuova evidenza commerciale verificata:** una comunicazione privata Awin datata **22/10/2026** attesta **approvazione esplicita** dell'adesione al programma **DoctorQuality**. Non è una semplice newsletter, un invito o un messaggio promozionale. Il testo privato e i collegamenti riservati **non sono riportati né archiviati qui**; lo stato attuale del rapporto, le condizioni personali e l'operatività del tracking richiedono comunque accesso alla dashboard Awin. Non si deducono vendite, commissioni maturate o pagamenti.
