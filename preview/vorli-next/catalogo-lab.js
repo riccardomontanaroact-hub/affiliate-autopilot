@@ -28,12 +28,16 @@
   const allowedSource = /^vorli\/[a-z0-9-]+\/(?:vault\/products|drafts)\/[a-zA-Z0-9._-]+\.(?:md|html)$/;
   const categorySync = categoryCards.length === data.categories.length && data.categories.every(function (c, i) {
     const heading = categoryCards[i].querySelector("h3");
-    return categoryCards[i].dataset.category === c.id && heading && heading.textContent.trim() === c.name;
+    const description = categoryCards[i].querySelector("p");
+    return categoryCards[i].dataset.category === c.id && heading && heading.textContent.trim() === c.name &&
+      description && description.textContent.trim() === c.description;
   });
   const resourceSync = resourceCards.length === data.resources.length && data.resources.every(function (r, i) {
     const heading = resourceCards[i].querySelector("h3");
+    const description = resourceCards[i].querySelector(".resource-body p");
     const link = resourceCards[i].querySelector("a[href]");
     return resourceCards[i].dataset.category === r.category && heading && heading.textContent.trim() === r.title &&
+      description && description.textContent.trim() === r.description &&
       allowedSource.test(r.source) && link && link.getAttribute("href") === repoBlob + r.source;
   });
   // If editorial data and HTML disagree, preserve the visible static cards and disable filtering.
