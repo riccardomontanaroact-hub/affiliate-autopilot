@@ -272,3 +272,15 @@ La pagina dichiara **30 giorni come periodo di validazione**, distinti dai 30 gi
 **Uso editoriale consentito in bozza:** nella guida comparativa già esistente valutare compatibilità hardware, garanzia, assistenza, costo totale e paese di vendita, senza aggiungere classifiche commerciali né nuovi contenuti seriali. Nessuna modifica al sito pubblico, nessun acquisto, invio email, nuova registrazione o attivazione pagamenti.
 
 **Fonte ufficiale consultata il 28/10/2026:** https://ui.awin.com/merchant-profile/9322 (profilo Awin; cookie, CSV, restrizioni geografiche). La pagina pubblica non sostituisce i termini individuali riservati.
+
+## Screening internazionale — Proton Partners (28/10/2026, ore 01:06 CET)
+
+**Esito: programma pertinente, ma non prioritario per il vincolo di piccoli incassi VORLI.** La pagina ufficiale italiana di Proton presenta un programma affiliati per software di privacy (Mail, VPN, Drive, Pass e altri), aperto a candidature di blogger, creator, editori e organizzazioni, con prodotti distribuiti globalmente. La pagina pubblica mostra commissioni variabili secondo prodotto e durata: in particolare **30% sui rinnovi** delle offerte elencate e fino al **100% su alcune nuove sottoscrizioni mensili**. Questi tassi sono pubblicitari e non costituiscono un'offerta individuale accettata da VORLI; non è stata fatta alcuna candidatura.
+
+**Limite economico decisivo:** nelle FAQ italiane Proton dichiara pagamento **tramite bonifico bancario** il 30 del mese successivo solo quando le commissioni **superano 100 USD**, con rinvio al raggiungimento della soglia. Questo non soddisfa la preferenza VORLI di incassare anche 5/10/20 EUR; non è prova di disponibilità PayPal. Le pagine localizzate non sono del tutto uniformi sulla valuta (la pagina francese riporta 100 EUR): prima di un'eventuale candidatura servono condizioni contrattuali per il paese e la valuta effettivi, senza promettere una soglia definitiva.
+
+**Regole di promozione:** Proton richiede una disclosure chiara della relazione di affiliazione, vieta spam, cookie stuffing, traffico fittizio e acquisto di annunci PPC su nomi di marchio Proton. Recensioni obiettive e accurate. Disponibilità mondiale del prodotto **non dimostra** che ogni paese o ogni transazione sia commissionabile. **Da verificare:** ammissibilità di publisher persona fisica residente in Italia, eventuali costi d'ingresso (non specificati nella pagina), paesi commissionabili, termini di pagamento, ritenute/documentazione fiscale e durata del cookie. Nessuna iscrizione, spesa, invio email, pubblicazione o link tracciato.
+
+**Fonti ufficiali consultate il 28/10/2026:** https://proton.me/it/partners/affiliates ; confronto lingua inglese https://proton.me/partners/affiliates e francese https://proton.me/fr/partners/affiliates .
+
+**Decisione:** tenere Proton nella lista di ricerca a priorità bassa, non in catalogo commerciale; continuare a privilegiare programmi con requisiti documentati e soglie compatibili con micro-incassi. Non aggiungere nuove schede SEO fino a verifica di effettiva monetizzabilità.
