@@ -1,5 +1,17 @@
 # VORLI — gate commerciale e revisione bozze (27 ottobre 2026)
 
+## Verifica incrociata commissioni Envato — 28/10/2026, ore 04:06 CET
+
+**Incongruenza verificata fra due pagine ufficiali:** la pagina commerciale aggiornata di **Envato** espone un prospetto per piani *Core / Plus / Ultimate*: **120 / 250 / 500 USD** per abbonamento annuale idoneo, e massimi mensili **20 / 40 / 80 USD al mese nei primi tre mesi**. La guida ufficiale del centro assistenza, aggiornata il **5 luglio 2026**, continua invece a riassumere **fino a 120 USD** per abbonato annuale e **fino a 60 USD** per abbonato mensile. Le due presentazioni **non coincidono** e potrebbero descrivere piani o periodi differenti; non è possibile ricavarne un tasso unico attuale, né attribuire il massimo di 500 USD a VORLI. Anche la pagina commerciale usa la formula generale «cookie 90 giorni», mentre i termini contrattuali del **11 agosto 2026** (art. 12(d)) distinguono **90 giorni Envato Market** e **60 giorni Envato/Placeit**, salvo termini dell'offerta.
+
+**Regola di pubblicazione:** considerare *non verificata* ogni previsione di CPA Envato finché non siano disponibili l'offerta specifica nell'account impact.com, piano commissionabile, durata, paese, esclusioni, criteri «nuovo cliente», attribuzione e calendario di convalida. Non usare il massimo promozionale nei confronti fra merchant, nei metadati SEO, nei ricavi attesi o nelle schede prodotto. Nessuna candidatura o accesso a un account privato eseguiti. La discrepanza non prova una modifica contrattuale o un errore del merchant: richiede conferma diretta nei termini individuali.
+
+**Fonti ufficiali consultate il 28/10/2026 (URL pubblici, senza tracking):**
+- Pagina commerciale Envato: https://www.envato.com/affiliates/
+- Centro assistenza Envato, «Envato Affiliate Program» (aggiornato 05/07/2026): https://help.elements.envato.com/hc/en-us/articles/11880595894297-Envato-Affiliate-Program
+- Termini Envato, revisione 11/08/2026: https://help.market.envato.com/hc/en-us/articles/42293429394329-Envato-s-Affiliate-Program-Terms
+
+
 ## Screening specifico — Envato / Envato Market / Placeit su impact.com (28/10/2026, ore 03:08 CET)
 
 **Opportunità documentata, NON adesione:** Envato pubblica **tre programmi distinti** gestiti tramite impact.com: Envato (abbonamento per risorse creative), Envato Market (asset digitali singoli, es. template e codice) e Placeit (mockup e strumenti grafici). Sono pertinenti a VORLI come contenuti informativi su software, produttività e strumenti per creator; non sono programmi già attivati. La guida ufficiale indica **fino a 120 USD** per abbonato annuale idoneo e **fino a 60 USD** per abbonato mensile idoneo nel programma Envato; **30% sul primo acquisto** per Envato Market; per Placeit **50 USD** per nuovi abbonamenti annuali, **20 USD** per nuovi abbonamenti mensili e **50%** su transazioni una tantum. Sono valori **pubblici indicativi**, non commissioni contrattuali assegnate a VORLI. I programmi richiedono candidatura e revisione manuale; la qualità del sito e la dimostrazione della titolarità sono fattori di valutazione. Nessun account impact.com creato e nessuna candidatura inviata.
