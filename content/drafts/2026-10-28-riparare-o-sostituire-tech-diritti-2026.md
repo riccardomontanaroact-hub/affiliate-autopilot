@@ -4,7 +4,7 @@ description: "Guida pratica per valutare riparazione, sostituzione e ricondizion
 slug: "riparare-o-sostituire-dispositivo-tech-2026"
 status: "draft-review-required"
 created_at: "2026-10-28"
-last_sources_checked: "2026-10-28"
+last_sources_checked: "2026-10-29"
 content_type: "original-editorial-guide"
 affiliate_links: false
 ---
@@ -23,7 +23,7 @@ La garanzia legale di conformità per acquisti di consumatori da venditori profe
 In linea generale, il venditore professionale risponde dei difetti di conformità che si manifestano entro **due anni dalla consegna**. La tutela non equivale a una copertura gratuita per qualunque danno accidentale o normale usura. I rimedi iniziali sono, secondo le condizioni di legge, riparazione o sostituzione senza spese; riduzione del prezzo o risoluzione del contratto intervengono nelle ipotesi previste dalla normativa. Conserva fattura o prova d'acquisto, descrizione dell'offerta e corrispondenza con il venditore.
 
 ## 4. Novità italiana dal 22 ottobre 2026: riparazione e responsabilità
-Il **D.Lgs. 25 settembre 2026, n. 176**, entrato in vigore il **22 ottobre 2026**, modifica il Codice del consumo. Quando si effettua una riparazione come rimedio per riportare un bene alla conformità **ai sensi dell'art. 135-bis, comma 2**, il periodo di responsabilità del venditore è **esteso una sola volta di dodici mesi** (nuovo art. 133, comma 1-bis). Il venditore deve informare il consumatore del diritto di scelta tra riparazione e sostituzione e dell'eventuale estensione. **Non** significa che qualunque riparazione privata, intervento fuori garanzia o prodotto ricondizionato generi automaticamente dodici mesi aggiuntivi. Verificare applicazione al caso concreto e profili temporali prima di usare questa indicazione in una scheda commerciale.
+Il **D.Lgs. 25 settembre 2026, n. 176**, entrato in vigore il **22 ottobre 2026**, modifica il Codice del consumo. Quando si effettua una riparazione come rimedio per riportare un bene alla conformità **ai sensi dell'art. 135-bis, comma 2**, il periodo di responsabilità del venditore è **esteso una sola volta di dodici mesi** (nuovo art. 133, comma 1-bis). Il venditore deve informare il consumatore del diritto di scelta tra riparazione e sostituzione e dell'eventuale estensione. **Non** significa che qualunque riparazione privata, intervento fuori garanzia o prodotto ricondizionato generi automaticamente dodici mesi aggiuntivi. **Precisazione temporale essenziale (art. 3, comma 1, D.Lgs. 176/2026):** le modifiche agli artt. 129, 133, 135-bis e 135-ter del Codice del consumo si applicano ai **contratti conclusi dal 31 luglio 2026**, benché il decreto sia entrato in vigore il **22 ottobre 2026**. La data rilevante per questa disciplina transitoria è quindi la conclusione del contratto di vendita, non semplicemente la data della riparazione. Per contratti anteriori non presentare l'estensione come automaticamente spettante; verificare sempre il caso concreto e l'interpretazione applicabile.
 
 ## 5. Riparazione fuori dalla responsabilità del venditore: non è sempre gratuita
 Il decreto introduce anche norme sulla riparazione di determinati beni **fuori** dalla responsabilità del venditore. L'obbligo del fabbricante riguarda solo i beni e la misura coperti dagli specifici atti UE richiamati nell'allegato normativo; la riparazione può essere **gratuita oppure a un prezzo ragionevole**, e può non essere dovuta se impossibile. Non scrivere «riparazione gratis per tutti i dispositivi» o «tutti i notebook sono coperti» senza verifica di categoria, modello e regime applicabile. Il modulo europeo di informazioni sulla riparazione è facoltativo per il riparatore; quando utilizzato, riporta condizioni e prezzi, con regole specifiche su validità e costi di diagnosi.
@@ -60,10 +60,10 @@ Usa questa scheda prima di decidere:
 9. Quale opzione riduce meglio il costo totale e il rischio d'interruzione?
 
 ## Nota editoriale VORLI e monetizzazione
-Guida indipendente, senza prodotti, prezzi, merchant, link affiliati o risultati di test inventati. Se in futuro verranno aggiunti collegamenti commerciali, inserire una disclosure visibile vicino ai collegamenti e verificare preventivamente programma approvato, condizioni contrattuali, disponibilità reale e pagine di destinazione. Nessun acquisto, tracciamento o checkout è attivo in questa bozza. Prima di pubblicare: revisione giuridica della portata temporale del D.Lgs. 176/2026, controllo dei riferimenti tecnici e verifica di eventuali modifiche normative.
+Guida indipendente, senza prodotti, prezzi, merchant, link affiliati o risultati di test inventati. Se in futuro verranno aggiunti collegamenti commerciali, inserire una disclosure visibile vicino ai collegamenti e verificare preventivamente programma approvato, condizioni contrattuali, disponibilità reale e pagine di destinazione. Nessun acquisto, tracciamento o checkout è attivo in questa bozza. Prima di pubblicare: revisione giuridica della portata temporale del D.Lgs. 176/2026 (incluso art. 3, comma 1), controllo dei riferimenti tecnici e verifica di eventuali modifiche normative.
 
-## Fonti primarie (consultate il 28 ottobre 2026)
-- Normattiva, **D.Lgs. 25 settembre 2026, n. 176**, entrata in vigore 22/10/2026, art. 1, modifiche agli artt. 127-bis e seguenti, 133 e 135-bis del Codice del consumo: https://www.normattiva.it/eli/id/2026/10/07/26G00191/ORIGINAL
+## Fonti primarie (consultate il 28-29 ottobre 2026)
+- Normattiva, **D.Lgs. 25 settembre 2026, n. 176**, entrata in vigore 22/10/2026; art. 1 (modifiche agli artt. 127-bis e seguenti, 133 e 135-bis del Codice del consumo) e **art. 3, comma 1 (applicazione delle modifiche ai contratti conclusi dal 31/07/2026)**: https://www.normattiva.it/eli/id/2026/10/07/26G00191/ORIGINAL
 - Ministero delle Imprese e del Made in Italy, **Le garanzie post-vendita — FAQ**, in particolare domande 1, 5, 8 e 10: https://www.mimit.gov.it/index.php/it/assistenza/domande-frequenti/le-garanzie-post-vendita-domande-frequenti-faq
 - Commissione europea, **Garanzie sulle merci acquistate nell'UE**: https://europa.eu/youreurope/citizens/consumers/shopping/guarantees/index_it.htm
 - Commissione europea, **Restituzioni e diritto di recesso**: https://europa.eu/youreurope/citizens/consumers/shopping/returns/indexamp_it.htm
