@@ -22,3 +22,14 @@
 
 ## Gate
 Questo file **non** riporta messaggi privati, identificativi, link di tracciamento, commissioni individuali, codici promozionali o statistiche di vendita. Solo preparazione editoriale. Nessuna candidatura, comunicazione, spesa, pubblicazione, merge o deploy.
+
+## Verifica supplementare del 29/10/2026 — calendario e percentuali NON ancora uniformi
+
+- **Pagina italiana pubblica** (`https://2gosoftware.eu/it-it/black-friday-offerte`, consultata il 29/10/2026): il testo introduttivo presenta una finestra **21 novembre–1 dicembre** e il claim **«fino al 70%»**. Questi dati descrivono il testo visualizzato al momento della verifica, non una garanzia che siano definitivi o validi per ogni SKU.
+- **Criticità:** calendari e massimali promozionali possono non coincidere tra la pagina pubblica e altre comunicazioni del merchant. Non riprodurre in repository le comunicazioni riservate e **non dedurre che una promozione sia già attiva** soltanto perché sono disponibili materiali per pianificarla.
+- **Regola di pubblicazione:** nessun articolo o banner con «oggi», «attivo», «scade», percentuali o codici finché non siano riconciliati **periodo, paese, prodotto, prezzo, sconto, condizioni e materiali approvati** sulla pagina pubblica italiana e nell'area Awin pertinente. In particolare, il 29 ottobre è anteriore alla finestra dichiarata nella pagina italiana: non presentare questa campagna come già iniziata per i clienti.
+- **Regali e concorsi:** verificare per ogni SKU la partecipazione, le condizioni dell'omaggio, il regolamento ufficiale del concorso, le limitazioni territoriali e l'eventuale procedura di attivazione; non promettere omaggi indiscriminati, vincite o cumulabilità.
+- **Prezzo di riferimento:** il prezzo consigliato dal produttore mostrato accanto a un prezzo di vendita non dimostra, da solo, il prezzo più basso praticato nei 30 giorni precedenti. Prima di parlare di «risparmio» o «-X%», valutare la natura del bene/servizio e la disciplina applicabile con riferimento alle FAQ MIMIT: https://www.mimit.gov.it/it/assistenza/domande-frequenti/annunci-di-riduzione-di-prezzo-domande-frequenti-faq (consultate il 29/10/2026).
+- **Revisione programmabile:** ricontrollare la pagina italiana e le condizioni effettive a inizio novembre e prima di ciascuna finestra promozionale; in caso di divergenze mantenere le bozze in stato **HOLD**.
+
+**Esito editoriale al 29/10/2026:** HOLD. Questa è una correzione preventiva, non un annuncio promozionale. Nessun dato di email private, identificativo publisher, codice riservato, link affiliato o dato personale riportato.
