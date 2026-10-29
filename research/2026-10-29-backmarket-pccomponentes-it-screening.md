@@ -28,6 +28,7 @@ Fonte: https://ui.awin.com/merchant-profile/74650
 - La scheda specifica che la base commissionabile esclude IVA, spedizione e servizi aggiuntivi. Resi, annullamenti, duplicazioni e frodi possono annullare o rettificare le commissioni.
 - Restrizione esplicita: **vietati gli auto-acquisti** finalizzati a ottenere commissioni. Per social, richiesta identificazione pubblicitaria e disclosure secondo le regole applicabili.
 - La scheda indica tra i profili ricercati editori di contenuti tech, ma **non garantisce ammissibilità di un publisher individuale italiano** né approvazione.
+- Il negozio italiano ospita anche offerte vendute da **partner terzi**: verificare venditore effettivo, assistenza e soprattutto se tali articoli sono commissionabili nel contratto Awin. Fonte catalogo pubblico: https://www.pccomponentes.it/ (consultato il 29/10/2026).
 - Nessuna candidatura, nessun account creato.
 
 ## Confronto decisionale (non promozionale)
