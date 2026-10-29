@@ -1,0 +1,24 @@
+# VORLI — Black Month software: preflight editoriale (solo fonti pubbliche)
+
+**Verifica:** 29 ottobre 2026, Europe/Rome. **Stato:** bozza di ricerca; non pubblicare offerte, prezzi, codici o link affiliati.
+
+## Fonte primaria verificata
+- 2GO Software, pagina italiana Black Month: https://2gosoftware.eu/it-it/black-friday-offerte (consultata il 29/10/2026). Il merchant descrive una selezione di software scontati, con prezzo ridotto già applicato e possibile omaggio per ordini che includano prodotti partecipanti. L'omaggio dipende dal prodotto ed è selezionato al checkout; non è universale. La pagina presenta anche un servizio di installazione gratuito, da verificare per la singola offerta.
+- 2GO Software, catalogo italiano: https://2gosoftware.eu/it-it/home (consultato il 29/10/2026). Prodotti e disponibilità variano per lingua, paese e variante.
+- Awin, scheda pubblica merchant 2GO Software IT: https://ui.awin.com/merchant-profile/120774 (consultata il 29/10/2026). La scheda pubblica non prova commissioni individuali, attribuzione di una specifica vendita o pagamento al publisher.
+- Commissione europea, trasparenza pubblicitaria: https://commission.europa.eu/topics/consumers/consumer-rights-and-complaints/influencer-legal-hub_en (riferimento per identificazione chiara dei contenuti commerciali).
+- UE, diritti dei consumatori: https://europa.eu/youreurope/citizens/consumers/shopping/shopping-consumer-rights/ (recesso e informazioni precontrattuali; condizioni digitali da verificare).
+
+## Verifiche richieste prima di una scheda promozionale
+1. **Paese/lingua:** selezionare solo la pagina italiana e il prodotto effettivamente acquistabile dall'Italia; evitare offerte in lingua estera con condizioni non equivalenti.
+2. **SKU preciso:** nome, versione, licenza, durata, utenti, dispositivi, OS, eventuali limitazioni geografiche e lingua d'attivazione.
+3. **Prezzo e risparmio:** prezzo finale al checkout, prezzo di riferimento dichiarato, periodo e condizioni dell'offerta. Evitare il claim generico «fino all'X%» senza un esempio verificabile e datato.
+4. **Regalo:** indicare solo l'omaggio associato allo specifico prodotto e i relativi requisiti; non descriverlo come denaro o prodotto fisico se è un periodo di prova o servizio digitale.
+5. **Rinnovo:** distinguere licenza prepagata, abbonamento con rinnovo automatico e upgrade; verificare per SKU, non per brand.
+6. **Codici e concorsi:** non diffondere codici o meccaniche di premi prima di una pagina pubblica e del regolamento completo; controllare periodo, prodotti, territorio, esclusioni e cumulabilità.
+7. **Tracciamento e pagamento:** non confondere approvazione al programma con attribuzione, convalida e liquidazione; verificare condizioni riservate nella dashboard Awin prima di qualsiasi monetizzazione.
+8. **Trasparenza:** disclosure immediatamente visibile accanto a link affiliati eventualmente approvati; evitare finte recensioni, urgenza artificiale e prezzi non aggiornati.
+9. **Conformità:** per eventuali download VORLI venduti direttamente, svolgere verifiche fiscali/IVA e recesso digitale prima di abilitare checkout. Questa nota non costituisce parere fiscale.
+
+## Gate
+Questo file **non** riporta messaggi privati, identificativi, link di tracciamento, commissioni individuali, codici promozionali o statistiche di vendita. Solo preparazione editoriale. Nessuna candidatura, comunicazione, spesa, pubblicazione, merge o deploy.
