@@ -82,6 +82,28 @@ class CatalogLabTests(unittest.TestCase):
                 self.html,
             )
 
+    def test_no_results_feedback_is_near_search(self):
+        # No-results controls must be near filters, not after the resource grid.
+        self.assertEqual(self.html.count('id="empty-results"'), 1)
+        self.assertEqual(self.html.count('id="empty-reset"'), 1)
+        self.assertLess(self.html.index('id="results-count"'),
+                        self.html.index('id="empty-results"'))
+        self.assertLess(self.html.index('id="empty-results"'),
+                        self.html.index('id="category-cards"'))
+
+    def test_affiliate_status_copy_does_not_claim_live_approval(self):
+        # Commercial status changes independently from this static, unpublished lab.
+        self.assertIn("Lo stato delle candidature Awin può cambiare", self.html)
+        self.assertIn("offerte e link restano disattivati", self.html)
+        self.assertNotIn("non sono considerati advertiser approvati", self.html)
+        self.assertIn("nessun prodotto acquistabile", self.html.lower())
+
+    def test_search_help_is_associated_with_input(self):
+        self.assertIn('aria-describedby="catalog-search-help"', self.html)
+        self.assertEqual(1, self.html.count('id="catalog-search-help"'))
+        self.assertIn("più parole in qualsiasi ordine", self.html)
+        self.assertIn(".field-help{", self.css)
+
     def test_accessibility_basics(self):
         self.assertIn("prefers-reduced-motion", self.css)
         self.assertIn(":focus-visible", self.css)
