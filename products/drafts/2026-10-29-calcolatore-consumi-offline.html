@@ -77,6 +77,10 @@ function valid(n,min,max){return Number.isFinite(n)&&n>=min&&n<=max;}
 function fmt(n,d){return new Intl.NumberFormat("it-IT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(n);}
 function resetOutput(){rows.replaceChildren();latest=[];exportButton.disabled=true;status.textContent="Compila almeno un dispositivo e calcola.";error.textContent="";}
 form.addEventListener("reset",function(){document.getElementById("price").value="";resetOutput();});
+form.addEventListener("input",function(){
+if(latest.length){resetOutput();status.textContent="Dati modificati: ricalcola prima di esportare o stampare i risultati.";}
+else if(error.textContent){error.textContent="";}
+});
 form.addEventListener("submit",function(event){
 event.preventDefault();resetOutput();
 var price=decimal(value("price"));
