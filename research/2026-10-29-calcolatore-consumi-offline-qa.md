@@ -42,3 +42,12 @@ Correzioni applicate al prototipo della stessa PR:
 - ARERA, guida alle voci della bolletta: https://www.arera.it/fileadmin/bolletta/allegati/guidaele.pdf
 
 **Nessuna pubblicazione, vendita, attivazione di pagamenti o modifica al branch principale.**
+
+
+## Revisione qualità del 29/10/2026, ore 20:14 CET — risultati non aggiornati
+
+**Difetto individuato:** dopo un calcolo riuscito, modificare potenza, ore, giorni, tariffa o nome lasciava visibili i risultati precedenti e manteneva attivo `Esporta CSV`. Il file esportato poteva quindi riferirsi ai valori vecchi, non ai dati attualmente presenti nel modulo.
+
+**Correzione applicata:** l'evento `input` del modulo invalida i risultati non appena cambia un campo dopo un calcolo: svuota la tabella, disabilita l'esportazione CSV e chiede di ricalcolare. Dopo un errore di validazione, la modifica di un campo cancella il messaggio di errore precedente. Non cambia le formule né aggiunge rete, analytics o raccolta dati.
+
+**Verifiche statiche:** codice aggiornato sul branch di bozza; controllata presenza del listener `input`, del reset della tabella e della disabilitazione CSV. **Non ancora verificato in un browser reale**: provare manualmente calcolo → modifica tariffa → CSV disabilitato e tabella svuotata → ricalcolo → CSV riabilitato, anche su mobile. Verificare stampa dopo modifica e utilizzo da tastiera. Nessun merge o deploy.
