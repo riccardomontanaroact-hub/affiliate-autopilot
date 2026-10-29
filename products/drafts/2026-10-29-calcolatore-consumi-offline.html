@@ -32,8 +32,8 @@ a{color:#9ef0e0}footer{margin-top:2rem;color:var(--muted);font-size:.9rem}
 <section class="panel form-panel" aria-labelledby="input-title">
 <h2 id="input-title">I tuoi dati</h2>
 <p class="hint">Inserisci il prezzo variabile indicativo in €/kWh ricavato dal tuo contratto. Puoi usare la virgola decimale. Non è fornita alcuna tariffa preimpostata.</p>
-<div class="grid"><div><label for="price">Prezzo ipotizzato (€/kWh)</label><input id="price" type="text" inputmode="decimal" placeholder="es. 0,25" autocomplete="off"></div></div>
 <form id="calculator" novalidate>
+<div class="grid"><div><label for="price">Prezzo ipotizzato (€/kWh)</label><input id="price" type="text" inputmode="decimal" placeholder="es. 0,25" autocomplete="off"></div></div>
 <div class="device"><h3>Dispositivo 1</h3><div class="grid">
 <div><label for="name1">Nome (facoltativo)</label><input id="name1" placeholder="es. lampada A" maxlength="60"></div>
 <div><label for="watts1">Potenza media (W)</label><input id="watts1" inputmode="decimal" placeholder="es. 10"></div>
@@ -105,7 +105,7 @@ exportButton.addEventListener("click",function(){
 if(!latest.length)return;
 var lines=["Dispositivo;kWh annui;Euro annui;Euro mensili medi"];
 latest.forEach(function(item){
-var safeName=/^[=+@-]/.test(item.name)?"'"+item.name:item.name;
+var safeName="Nome: "+item.name.replace(/[\u0000-\u001f\u007f]/g," ");
 var label='"'+safeName.replace(/"/g,'""')+'"';
 lines.push([label,item.kwh.toFixed(3).replace(".",","),item.cost.toFixed(2).replace(".",","),(item.cost/12).toFixed(2).replace(".",",")].join(";"));
 });
