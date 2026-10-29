@@ -26,3 +26,19 @@ Revisione di accessibilità e prove manuali su browser mobile/desktop; verifica 
 - UE: https://europa.eu/youreurope/citizens/consumers/shopping/energy-labels/
 
 Nessun collegamento a un advertiser o programma non autorizzato. Non effettuare merge, deploy, pubblicazione SEO o vendita senza revisione.
+
+
+## Revisione qualità del 29/10/2026, ore 19:15 CET
+
+Correzioni applicate al prototipo della stessa PR:
+- Il campo **prezzo €/kWh** è stato spostato all'interno del modulo HTML. Prima era esterno al `<form>`: l'invio da tastiera direttamente dal campo tariffa non seguiva il normale comportamento del modulo.
+- L'esportazione CSV usa ora un prefisso testuale costante `Nome: ` per ogni etichetta, rimuovendo anche i caratteri di controllo dal nome. Il prefisso impedisce che un'etichetta scelta dall'utente cominci come formula di foglio di calcolo, anche se inizia con spazi, segni `=`, `+`, `-`, `@`, tab o ritorni a capo. I campi rimangono racchiusi fra doppi apici e i doppi apici interni sono raddoppiati.
+- Il JavaScript incorporato è stato sottoposto a controllo di sintassi; sono stati controllati staticamente otto casi di etichette CSV potenzialmente problematiche. **Non** equivalgono a prove di apertura in Excel, LibreOffice o browser mobili.
+
+**Rischio residuo:** OWASP osserva che non esiste una sanificazione CSV universale valida per tutti i fogli di calcolo. Verificare manualmente l'apertura, il salvataggio e la riapertura del CSV nei software target prima di distribuire il prodotto. Il prefisso `Nome: ` è intenzionale e modifica la rappresentazione della sola etichetta nel CSV, non i calcoli.
+
+**Fonti pubbliche consultate il 29/10/2026:**
+- OWASP, CSV Injection: https://community.owasp.org/attacks/CSV_Injection
+- ARERA, guida alle voci della bolletta: https://www.arera.it/fileadmin/bolletta/allegati/guidaele.pdf
+
+**Nessuna pubblicazione, vendita, attivazione di pagamenti o modifica al branch principale.**
