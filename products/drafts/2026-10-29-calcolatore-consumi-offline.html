@@ -105,7 +105,8 @@ exportButton.addEventListener("click",function(){
 if(!latest.length)return;
 var lines=["Dispositivo;kWh annui;Euro annui;Euro mensili medi"];
 latest.forEach(function(item){
-var label='"'+item.name.replace(/"/g,'""')+'"';
+var safeName=/^[=+@-]/.test(item.name)?"'"+item.name:item.name;
+var label='"'+safeName.replace(/"/g,'""')+'"';
 lines.push([label,item.kwh.toFixed(3).replace(".",","),item.cost.toFixed(2).replace(".",","),(item.cost/12).toFixed(2).replace(".",",")].join(";"));
 });
 var blob=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"});
