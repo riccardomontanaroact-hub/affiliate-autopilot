@@ -51,3 +51,10 @@ Correzioni applicate al prototipo della stessa PR:
 **Correzione applicata:** l'evento `input` del modulo invalida i risultati non appena cambia un campo dopo un calcolo: svuota la tabella, disabilita l'esportazione CSV e chiede di ricalcolare. Dopo un errore di validazione, la modifica di un campo cancella il messaggio di errore precedente. Non cambia le formule né aggiunge rete, analytics o raccolta dati.
 
 **Verifiche statiche:** codice aggiornato sul branch di bozza; controllata presenza del listener `input`, del reset della tabella e della disabilitazione CSV. **Non ancora verificato in un browser reale**: provare manualmente calcolo → modifica tariffa → CSV disabilitato e tabella svuotata → ricalcolo → CSV riabilitato, anche su mobile. Verificare stampa dopo modifica e utilizzo da tastiera. Nessun merge o deploy.
+
+
+## Smoke test ripetibile del 29/10/2026, ore 23:09 CET
+
+Aggiunto `tests/calcolatore-consumi-smoke.js` alla **stessa PR in bozza**. Comando locale: `node tests/calcolatore-consumi-smoke.js` (Node.js standard, senza dipendenze esterne). Sono stati eseguiti **16 controlli con DOM simulato in JavaScript**, tutti superati, sullo script HTML presente nel branch: formule (292 kWh, 73 €, media 6,08 €), virgola decimale, ricalcolo a tariffa modificata (87,60 €), invalidazione della tabella e del CSV, protezione della cella nome nel CSV, input non validi, confronto di due dispositivi, stampa e reset.
+
+**Ambito preciso:** sono smoke test della logica e degli eventi, non una verifica del rendering/accessibilità in Chrome, Safari, Firefox, né un'apertura reale del CSV in Excel/LibreOffice. Rimangono obbligatori i test manuali cross-browser e del CSV prima di distribuire il prodotto. Nessuna pubblicazione, vendita, attivazione di pagamenti o modifica al branch principale.
