@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>VORLI | Confronta i consumi elettrici — bozza offline</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--card:#14243a;--ink:#eff7ff;--muted:#bdd1e5;--accent:#64e4c7;--line:#38516c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1000px;margin:auto;padding:2rem 1rem 4rem}h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2;margin:.2rem 0}
+h2{font-size:1.3rem}p{max-width:75ch}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.08em}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.25rem;margin:1.5rem 0}
+label{display:block;font-weight:650;margin-bottom:.35rem}input{width:100%;background:#081625;border:1px solid #7189a4;color:#fff;border-radius:8px;padding:.7rem;font:inherit}
+input:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1rem}.device{border-top:1px solid var(--line);padding:1rem 0}
+small,.hint{color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.25rem}
+button{border:0;border-radius:8px;padding:.75rem 1.1rem;font:inherit;font-weight:700;cursor:pointer;background:var(--accent);color:#052a2a}
+button.secondary{background:#28415a;color:#fff}button:disabled{opacity:.45;cursor:not-allowed}
+.error{color:#ffb4b4;font-weight:650}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:500px}
+th,td{border-bottom:1px solid var(--line);padding:.75rem;text-align:left}th{color:var(--accent)}
+.notice{border-left:4px solid var(--accent);padding:.5rem 1rem;background:#1b3047}
+a{color:#9ef0e0}footer{margin-top:2rem;color:var(--muted);font-size:.9rem}
+@media print{body{background:white;color:black}main{padding:0}.panel{background:white;color:black;border:1px solid #999}.form-panel,.actions,.eyebrow{display:none!important}th{color:black}small,.hint,footer{color:#333}.notice{background:white;color:black;border-color:black}a{color:black}}
+</style>
+</head>
+<body>
+<main>
+<p class="eyebrow">VORLI · PROTOTIPO DIGITALE · 29/10/2026</p>
+<h1>Confronta i consumi elettrici</h1>
+<p>Calcolatore locale e gratuito da revisionare prima di qualunque distribuzione commerciale. Confronta fino a tre dispositivi usando potenza, ore d'uso e una tariffa <strong>inserita da te</strong>. Nessun dato viene inviato o memorizzato.</p>
+<section class="panel form-panel" aria-labelledby="input-title">
+<h2 id="input-title">I tuoi dati</h2>
+<p class="hint">Inserisci il prezzo variabile indicativo in €/kWh ricavato dal tuo contratto. Puoi usare la virgola decimale. Non è fornita alcuna tariffa preimpostata.</p>
+<div class="grid"><div><label for="price">Prezzo ipotizzato (€/kWh)</label><input id="price" type="text" inputmode="decimal" placeholder="es. 0,25" autocomplete="off"></div></div>
+<form id="calculator" novalidate>
+<div class="device"><h3>Dispositivo 1</h3><div class="grid">
+<div><label for="name1">Nome (facoltativo)</label><input id="name1" placeholder="es. lampada A" maxlength="60"></div>
+<div><label for="watts1">Potenza media (W)</label><input id="watts1" inputmode="decimal" placeholder="es. 10"></div>
+<div><label for="hours1">Ore al giorno</label><input id="hours1" inputmode="decimal" placeholder="es. 5"></div>
+<div><label for="days1">Giorni all'anno</label><input id="days1" inputmode="numeric" placeholder="es. 300"></div>
+</div></div>
+<div class="device"><h3>Dispositivo 2</h3><div class="grid">
+<div><label for="name2">Nome (facoltativo)</label><input id="name2" placeholder="es. lampada B" maxlength="60"></div>
+<div><label for="watts2">Potenza media (W)</label><input id="watts2" inputmode="decimal"></div>
+<div><label for="hours2">Ore al giorno</label><input id="hours2" inputmode="decimal"></div>
+<div><label for="days2">Giorni all'anno</label><input id="days2" inputmode="numeric"></div>
+</div></div>
+<div class="device"><h3>Dispositivo 3</h3><div class="grid">
+<div><label for="name3">Nome (facoltativo)</label><input id="name3" placeholder="es. lampada C" maxlength="60"></div>
+<div><label for="watts3">Potenza media (W)</label><input id="watts3" inputmode="decimal"></div>
+<div><label for="hours3">Ore al giorno</label><input id="hours3" inputmode="decimal"></div>
+<div><label for="days3">Giorni all'anno</label><input id="days3" inputmode="numeric"></div>
+</div></div>
+<p id="error" class="error" role="alert"></p>
+<div class="actions"><button type="submit">Calcola e confronta</button><button type="reset" class="secondary">Azzera</button><button type="button" id="csv" class="secondary" disabled>Esporta CSV</button><button type="button" id="print" class="secondary">Stampa</button></div>
+</form></section>
+<section class="panel" aria-labelledby="result-title"><h2 id="result-title">Risultati indicativi</h2>
+<p id="status" role="status" aria-live="polite">Compila almeno un dispositivo e calcola.</p>
+<div class="table-wrap"><table><thead><tr><th>Dispositivo</th><th>kWh/anno</th><th>€/anno</th><th>€/mese (media)</th></tr></thead><tbody id="results"></tbody></table></div>
+</section>
+<div class="notice"><strong>Limiti del calcolo.</strong> Formula: (W ÷ 1000) × ore/giorno × giorni/anno. Il costo stimato è kWh × €/kWh inseriti. Non rappresenta una bolletta: esclude quote fisse e di potenza, eventuali imposte non incluse nel prezzo scelto, perdite, standby, cicli di lavoro, variazioni di assorbimento e condizioni contrattuali. Nessun risparmio è garantito. Per apparecchi con etichetta energetica in kWh/100 cicli o kWh/1000 ore, usa il dato di etichetta con il suo specifico metodo, non convertirlo automaticamente in W medi.</div>
+<footer><p>Fonti tecniche consultate il 29/10/2026: <a href="https://www.arera.it/en/consumatori/valori-della-materia-energia-per-il-servizio-di-maggior-tutela" rel="noopener noreferrer">ARERA — componenti della bolletta</a>; <a href="https://europa.eu/youreurope/citizens/consumers/shopping/energy-labels/" rel="noopener noreferrer">UE — etichette energetiche</a>. I link sono informativi, non affiliati.</p><p>Bozza originale VORLI. Nessun analytics, cookie, font esterno, rete, pagamento o salvataggio automatico. Non pubblicare in produzione senza revisione.</p></footer>
+</main>
+<script>
+(function(){
+"use strict";
+var form=document.getElementById("calculator");
+var rows=document.getElementById("results");
+var error=document.getElementById("error");
+var status=document.getElementById("status");
+var exportButton=document.getElementById("csv");
+var latest=[];
+function value(id){return document.getElementById(id).value.trim();}
+function decimal(raw){if(!/^\d+(?:[.,]\d+)?$/.test(raw))return NaN;return Number(raw.replace(",","."));}
+function valid(n,min,max){return Number.isFinite(n)&&n>=min&&n<=max;}
+function fmt(n,d){return new Intl.NumberFormat("it-IT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(n);}
+function resetOutput(){rows.replaceChildren();latest=[];exportButton.disabled=true;status.textContent="Compila almeno un dispositivo e calcola.";error.textContent="";}
+form.addEventListener("reset",function(){document.getElementById("price").value="";resetOutput();});
+form.addEventListener("submit",function(event){
+event.preventDefault();resetOutput();
+var price=decimal(value("price"));
+if(!valid(price,0,10)){error.textContent="Inserisci un prezzo €/kWh tra 0 e 10, senza simboli.";return;}
+for(var i=1;i<=3;i++){
+var name=value("name"+i),rawW=value("watts"+i),rawH=value("hours"+i),rawD=value("days"+i);
+if(!rawW&&!rawH&&!rawD)continue;
+var w=decimal(rawW),h=decimal(rawH),d=decimal(rawD);
+if(!valid(w,0.001,100000)||!valid(h,0.001,24)||!valid(d,1,366)||!Number.isInteger(d)){
+error.textContent="Dispositivo "+i+": completa potenza (>0 e ≤100000 W), ore (>0 e ≤24) e giorni interi (1–366).";return;
+}
+var kwh=w*h*d/1000;
+latest.push({name:name||"Dispositivo "+i,kwh:kwh,cost:kwh*price});
+}
+if(!latest.length){error.textContent="Compila almeno un dispositivo.";return;}
+latest.forEach(function(item){
+var tr=document.createElement("tr");
+[item.name,fmt(item.kwh,2),fmt(item.cost,2),fmt(item.cost/12,2)].forEach(function(v){
+var td=document.createElement("td");td.textContent=v;tr.appendChild(td);
+});rows.appendChild(tr);
+});
+status.textContent="Calcolo completato per "+latest.length+" dispositiv"+(latest.length===1?"o.":"i.")+" Valori stimati, non misurati.";
+exportButton.disabled=false;
+});
+exportButton.addEventListener("click",function(){
+if(!latest.length)return;
+var lines=["Dispositivo;kWh annui;Euro annui;Euro mensili medi"];
+latest.forEach(function(item){
+var label='"'+item.name.replace(/"/g,'""')+'"';
+lines.push([label,item.kwh.toFixed(3).replace(".",","),item.cost.toFixed(2).replace(".",","),(item.cost/12).toFixed(2).replace(".",",")].join(";"));
+});
+var blob=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"});
+var url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="vorli-confronto-consumi.csv";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
+});
+document.getElementById("print").addEventListener("click",function(){window.print();});
+})();
+</script>
+</body></html>
