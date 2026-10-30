@@ -108,6 +108,16 @@ def verify_viewport(browser, width):
     page.locator("#catalog-search").fill("smart    casa")
     assert visible(page, "category") == 1, (width, "search order / whitespace")
     assert visible(page, "resource") == 2, (width, "search order / whitespace")
+    # Different separators must behave like spaces in real Chromium searches.
+    page.locator("#catalog-search").fill("power-station")
+    assert visible(page, "category") == 1, (width, "hyphenated power-station category")
+    assert visible(page, "resource") == 1, (width, "hyphenated power-station resource")
+    page.locator("#catalog-search").fill("USB/C")
+    assert visible(page, "category") == 2, (width, "slash-separated USB/C categories")
+    assert visible(page, "resource") == 1, (width, "slash-separated USB/C resource")
+    page.locator("#catalog-search").fill("Wi‑Fi")
+    assert visible(page, "category") == 1, (width, "nonbreaking-hyphen Wi-Fi category")
+    assert visible(page, "resource") == 0, (width, "nonbreaking-hyphen Wi-Fi resources")
     page.locator("#reset-filters").click()
     page.locator("#category-filter").select_option("sport-tech")
     assert visible(page, "category") == 1
