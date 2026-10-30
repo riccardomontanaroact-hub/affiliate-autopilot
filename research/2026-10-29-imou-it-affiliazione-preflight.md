@@ -20,3 +20,12 @@
 - Imou, supporto ufficiale italiano: https://www.imou.com/it/support
 
 **Esito:** contenuto di ricerca pronto per revisione, non una candidatura, un'approvazione o una vendita. Nessuna modifica al sito pubblico.
+
+## Verifica integrativa 30/10/2026 — fonti pubbliche, non una nuova adesione
+
+- **Programma Awin Imou IT:** https://ui.awin.com/merchant-profile/122428 (consultato il 30/10/2026). Cookie pubblico **30 giorni** e commissione standard pubblicizzata **fino al 10%**. Queste condizioni non provano una commissione individuale, una candidatura accettata, la disponibilità di link affiliati o l'incasso.
+- **Assistenza ufficiale Imou:** https://www.imou.com/it/support/faq (consultata il 30/10/2026). Imou Protect è presentato come **opzionale**; il mancato abbonamento non impedisce l'uso base dei dispositivi. Le funzioni aggiuntive e le condizioni variano: verificare il modello e il piano specifici.
+- **Store ufficiale Imou, telecamere interne:** https://store.imou.com/it-it/collections/indoor-camera (consultato il 30/10/2026). La pagina descrive opzioni di archiviazione locale senza canone e cloud opzionale; **non attribuire a ogni modello** la stessa capacità microSD, modalità privacy, NVR o funzionalità offline.
+- **Verifica prima di una scheda prodotto:** consultare pagina SKU/manuale del modello e annotare capacità supportata, eventuali costi cloud, compatibilità Wi-Fi, protezione privacy e disponibilità italiana. Non promettere sicurezza assoluta, anonimato, assenza di abbonamenti per tutte le funzioni o prestazioni non testate.
+
+**Gate confermato:** nessun collegamento affiliato, candidatura, claim promozionale o pubblicazione finché la dashboard privata non confermi adesione e termini individuali e non siano soddisfatti i requisiti legali/commerciali. Questo aggiornamento usa esclusivamente fonti pubbliche, senza riprodurre comunicazioni private.
