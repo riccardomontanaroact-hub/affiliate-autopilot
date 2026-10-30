@@ -40,3 +40,15 @@
 - Direttiva 2011/83/UE consolidata, condizioni di recesso per contenuti digitali: https://eur-lex.europa.eu/eli/dir/2011/83/2022-05-28
 
 **Esito:** opportunità coerente con VORLI, ma **non approvata né monetizzabile automaticamente**. Bozze editoriali pronte per revisione, nessuna attività commerciale eseguita.
+
+## Consolidamento delle bozze esistenti — controllo 30 ottobre 2026
+
+La ricerca sul programma Shelly IT **non va duplicata**: al 30/10/2026 sono presenti tre PR in bozza che ne trattano le condizioni pubbliche:
+
+- **PR #79** (25/10): screening Shelly IT insieme a Shopify Affiliate, più bozza editoriale smart-home. Conservare separatamente i dati specifici di Shopify, che non sono coperti da questa ricerca.
+- **PR #90** (26/10): screening Shelly IT insieme a Wondershare IT, più guida ai consumi delle prese smart. Conservare separatamente la verifica specifica di Wondershare e confrontare la guida con quella della PR #132.
+- **PR #132** (29/10, questa): scheda Shelly più recente con distinzione documentata tra presa che misura e presa che commuta, mini-prodotto digitale e guida originale. **Candidata a riferimento editoriale** per il tema Shelly, ma non pronta al rilascio.
+
+**Verifica delle condizioni pubbliche aggiornata al 30/10/2026:** la [scheda Awin Shelly IT](https://ui.awin.com/merchant-profile/121794) continua a dichiarare cookie **30 giorni** e commissione standard **4%**; il **5%** era una promozione di benvenuto valida soltanto fino a fine **2025**. Il testo del riepilogo contiene ancora un riferimento a «Shelly UK» nella scheda italiana: non dedurre da ciò la validità di condizioni britanniche per il mercato italiano. Commissione personale, stato di adesione, eventuali esclusioni e idoneità di VORLI **non verificati nella dashboard privata**.
+
+**Sequenza di revisione proposta (non eseguita):** confrontare i file delle tre PR; selezionare una sola scheda commerciale Shelly come fonte canonica; conservare le ricerche non duplicate su Shopify/Wondershare; eliminare sovrapposizioni nelle guide dopo verifica tecnica; eseguire controlli privacy e test su branch separato. Nessun merge o deploy finché i problemi di esposizione dei dati identificativi sul branch principale non sono risolti. Questa nota non autorizza candidature, pagamenti o pubblicazioni.
