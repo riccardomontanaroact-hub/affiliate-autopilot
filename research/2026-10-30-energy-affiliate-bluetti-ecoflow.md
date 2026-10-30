@@ -32,3 +32,20 @@ Fonte primaria: [BLUETTI AC50B, FAQ ufficiale](https://www.bluettipower.eu/produ
 - UE, obblighi di vendita a distanza e contenuti digitali: https://europa.eu/youreurope/business/selling-in-eu/selling-goods-services/ecommerce-distance-selling/index_en.htm
 
 **Nessun merge, deploy, pubblicazione di offerte, candidatura, pagamento o contatto commerciale autorizzato.**
+
+## Estensione comparativa — 30/10/2026, verifica dei programmi italiani e UE
+
+| Programma | Dati pubblicati dal titolare del programma | Condizioni ancora da verificare |
+|---|---|---|
+| **Jackery Italia** (sito ufficiale) | La pagina italiana dichiara adesione **gratuita**, programma tramite **Affiliatly**, **8% sulle vendite qualificate** riferite al negozio italiano e pagamento dichiarato alla **fine del mese successivo**. | **Cookie non specificato** nella pagina consultata; durata di attribuzione, eventuali esclusioni, soglie, documentazione fiscale, accettazione del publisher e commissione effettiva richiedono verifica nel contratto del programma. Nessuna adesione VORLI effettuata. |
+| **Anker SOLIX EU** (sito ufficiale) | La sezione dettagli indica **8%** e **cookie di 30 giorni**, ammettendo fra i candidati anche singoli creatori. La pagina indirizza a **Rakuten Advertising, ShareASale e Impact**; non prova la disponibilità delle stesse condizioni per il mercato italiano. | La stessa pagina presenta **incongruenze grafiche/testuali**: un riquadro mostra «7%» accanto alla frase «8%» e «30%» accanto a «30-day cookies». Non trattare l'8% come tariffa garantita; verificare rete, paese di destinazione, termini applicabili, esclusioni e condizioni individuali. Nessuna adesione VORLI effettuata. |
+
+**Distinzione operativa:** un programma di **affiliazione editoriale** non equivale a un programma «presenta un amico» riservato ai clienti. Non utilizzare collegamenti referral consumer come sostituti di un contratto publisher. La percentuale mostrata da un sito non certifica l'approvazione di VORLI né l'ammissibilità del profilo fiscale italiano.
+
+**Valutazione preliminare:** Jackery Italia è una candidata particolarmente pertinente per la guida Wh/W perché dispone di una pagina ufficiale italiana con adesione dichiarata gratuita. Prima di proporre una candidatura servono cookie, termini contrattuali e accettazione del canale editoriale VORLI; nessuna iscrizione è stata avviata. Per Anker SOLIX EU la priorità è chiarire le incoerenze della pagina e la disponibilità per l'Italia. Non creare nuove PR per questa semplice estensione.
+
+**Fonti primarie consultate il 30/10/2026:**
+- Jackery Italia, programma di affiliazione: https://it.jackery.com/pages/affiliate-program
+- Anker SOLIX EU, programma di affiliazione: https://www.ankersolix.com/eu/become-an-affiliate
+
+**Stato:** ricerca documentale soltanto. Nessun account creato, candidatura, link affiliato, email inviata, spesa, pagamento, merge o deploy.
