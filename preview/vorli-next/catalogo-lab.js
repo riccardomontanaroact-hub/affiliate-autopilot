@@ -20,7 +20,10 @@
     return;
   }
   function norm(value) {
-    return String(value || "").toLocaleLowerCase("it").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    return String(value || "").toLocaleLowerCase("it").normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[\u2010-\u2015\u2212/_-]+/g, " ")
+      .replace(/\s+/g, " ").trim();
   }
   const categoryCards = Array.from(categoryRoot.querySelectorAll("article[data-category]"));
   const resourceCards = Array.from(resourceRoot.querySelectorAll("article[data-category]"));
