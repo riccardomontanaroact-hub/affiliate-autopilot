@@ -29,3 +29,10 @@ Data della verifica: 30 ottobre 2026 (Europe/Rome). Documento interno di progett
 - Direttiva sui diritti dei consumatori (versione consolidata), consultata il 30/10/2026: https://eur-lex.europa.eu/eli/dir/2011/83/2022-05-28
 
 Questa nota è una fotografia del backlog, non una decisione di pubblicazione.
+
+## Verifica regressione privacy del 30/10/2026 (05:08 CET)
+- Aggiunto `tests/privacy-public-files-smoke.js` **alla PR #136 già in bozza**: comando previsto `node tests/privacy-public-files-smoke.js`, senza dipendenze o rete.
+- Controlla i sei HTML di `site/` e `preview/vorli-next/` più `data/config.json`: niente indirizzi email o `mailto:` nei sei HTML, niente parametri comuni di tracking affiliato nei sei HTML, contatto vuoto e intestazione del progetto generica nel JSON.
+- I **sette file del branch** sono stati verificati anche tramite lettura diretta dal repository: nei sei HTML nessuna corrispondenza ai pattern email, `mailto:` o parametri di tracking controllati; nel JSON il campo di contatto è vuoto. Il nuovo script non è stato eseguito in Node in questa sessione: rimane da eseguire in un ambiente che abbia il branch.
+- **Limiti:** non copre altri file, dati codificati/obfuscati, dati storici Git, copie esterne o il sito in produzione. Non sostituisce una revisione legale dei contatti obbligatori.
+- **Blocco confermato:** il `data/config.json` di `main` conserva ancora recapiti e nome del gestore; la PR non cambia `main` né il sito pubblico. Non confondere il test di un branch con una bonifica già distribuita.
