@@ -49,3 +49,20 @@ Fonte primaria: [BLUETTI AC50B, FAQ ufficiale](https://www.bluettipower.eu/produ
 - Anker SOLIX EU, programma di affiliazione: https://www.ankersolix.com/eu/become-an-affiliate
 
 **Stato:** ricerca documentale soltanto. Nessun account creato, candidatura, link affiliato, email inviata, spesa, pagamento, merge o deploy.
+
+
+## Mappa anti-duplicazione delle PR energia portatile — ricognizione 30/10/2026
+
+Cinque PR **aperte e in bozza** trattano in parte gli stessi programmi e gli stessi concetti tecnici; **nessuna deve essere unita automaticamente**. Questa mappa serve alla revisione, non dichiara una PR approvata né modifica le altre.
+
+| PR | Ambito già presente | Azione di revisione suggerita |
+|---|---|---|
+| [#45](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/pull/45) | Ricerca BLUETTI IT (bozza storica). | Confrontare fonti e condizioni; non duplicare schede di affiliazione. |
+| [#100](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/pull/100) | Audit BLUETTI/EcoFlow, guida Wh/W e kit di autonomia in `docs/`. | Verificare eventuali dettagli unici, poi evitare la pubblicazione parallela delle guide. |
+| [#112](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/pull/112) | Audit EcoFlow/BLUETTI/eWeki, guida e kit in `docs/`. | Controllare le condizioni eWeki e le eventuali incongruenze; non importare dati privati. |
+| [#130](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/pull/130) | Ricerca BLUETTI IT, guida e modello compilabile in `research/`, `content/` e `products/`. | Valutare il modello compilabile come unico candidato per un futuro kit; non presentarlo come già vendibile. |
+| [#139](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/pull/139) | Audit BLUETTI/EcoFlow/Jackery/Anker SOLIX e guida Wh/W con esempio tecnico documentato. | **Candidato di riferimento per il confronto commerciale**; ricontrollare le fonti prima di una futura decisione editoriale. |
+
+**Sequenza prudente:** (1) revisione manuale dei cinque diff; (2) scegliere una sola guida Wh/W e un solo kit compilabile, mantenendo i crediti e le fonti; (3) riconciliare eventuali differenze nelle condizioni pubbliche con le pagine ufficiali datate; (4) verifica privata delle condizioni Awin e della conformità; (5) soltanto dopo, valutare un'eventuale PR di consolidamento. La mappa **non** autorizza merge, deploy, candidatura o pagamento. Nessuna percentuale pubblica è una commissione individuale garantita.
+
+**Fonti di verifica per la mappa (30/10/2026):** metadati e percorsi delle PR GitHub sopra collegate; [Awin BLUETTI IT](https://ui.awin.com/merchant-profile/32261/commission-groups) per 5% pubblicizzato e cookie di 30 giorni. Lo stato del publisher non è verificabile nella pagina pubblica.
