@@ -20,7 +20,10 @@
     return;
   }
   function norm(value) {
-    return String(value || "").toLocaleLowerCase("it").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    return String(value || "").toLocaleLowerCase("it").normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[\u2010-\u2015\u2212/_-]+/g, " ")
+      .replace(/\s+/g, " ").trim();
   }
   const categoryCards = Array.from(categoryRoot.querySelectorAll("article[data-category]"));
   const resourceCards = Array.from(resourceRoot.querySelectorAll("article[data-category]"));
@@ -28,12 +31,16 @@
   const allowedSource = /^vorli\/[a-z0-9-]+\/(?:vault\/products|drafts)\/[a-zA-Z0-9._-]+\.(?:md|html)$/;
   const categorySync = categoryCards.length === data.categories.length && data.categories.every(function (c, i) {
     const heading = categoryCards[i].querySelector("h3");
-    return categoryCards[i].dataset.category === c.id && heading && heading.textContent.trim() === c.name;
+    const description = categoryCards[i].querySelector("p");
+    return categoryCards[i].dataset.category === c.id && heading && heading.textContent.trim() === c.name &&
+      description && description.textContent.trim() === c.description;
   });
   const resourceSync = resourceCards.length === data.resources.length && data.resources.every(function (r, i) {
     const heading = resourceCards[i].querySelector("h3");
+    const description = resourceCards[i].querySelector(".resource-body p");
     const link = resourceCards[i].querySelector("a[href]");
     return resourceCards[i].dataset.category === r.category && heading && heading.textContent.trim() === r.title &&
+      description && description.textContent.trim() === r.description &&
       allowedSource.test(r.source) && link && link.getAttribute("href") === repoBlob + r.source;
   });
   // If editorial data and HTML disagree, preserve the visible static cards and disable filtering.
@@ -54,12 +61,13 @@
   });
   const cards = categoryCards.concat(resourceCards);
   function apply() {
-    const query = norm(search.value);
+    // Match every word, regardless of spacing or order (e.g. "casa smart").
+    const terms = norm(search.value).split(/\s+/).filter(Boolean);
     const chosen = select.value;
     let categories = 0, drafts = 0;
     cards.forEach(function (card) {
       const matches = (chosen === "all" || card.dataset.category === chosen) &&
-        card.dataset.search.includes(query);
+        terms.every(function (term) { return card.dataset.search.includes(term); });
       card.hidden = !matches;
       if (matches) {
         if (card.classList.contains("category")) categories++;

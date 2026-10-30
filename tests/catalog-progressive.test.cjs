@@ -33,9 +33,11 @@ test("Catalog data and static editorial cards agree", () => {
   for (const category of data.categories) {
     assert.ok(html.includes('data-category="' + category.id + '"'));
     assert.ok(html.includes("<h3>" + category.name + "</h3>"));
+    assert.ok(html.includes("<p>" + category.description + "</p>"), "category description: " + category.name);
   }
   for (const resource of data.resources) {
     assert.ok(html.includes(resource.title.replaceAll("&", "&amp;")));
+    assert.ok(html.includes("<p>" + resource.description + "</p>"), "resource description: " + resource.title);
     assert.ok(html.includes(repoBlob + resource.source + '"'));
     assert.match(resource.source, /^vorli\/[a-z0-9-]+\/(?:vault\/products|drafts)\/[a-zA-Z0-9._-]+\.(?:md|html)$/);
   }
@@ -46,8 +48,15 @@ test("Hydration filters existing HTML instead of replacing it", () => {
   assert.match(js, /resourceRoot\.querySelectorAll\("article\[data-category\]"\)/);
   assert.match(js, /categorySync/);
   assert.match(js, /resourceSync/);
+  assert.match(js, /description\.textContent\.trim\(\) === c\.description/);
+  assert.match(js, /description\.textContent\.trim\(\) === r\.description/);
   assert.match(js, /if \(!categorySync \|\| !resourceSync\)/);
   assert.match(js, /card\.hidden = !matches/);
+  assert.match(js, /split\(\/\\s\+\/\)\.filter\(Boolean\)/);
+  assert.match(js, /terms\.every\(/);
+  assert.ok(js.includes("replace(/[\\u2010-\\u2015\\u2212/_-]+/g, \" \")"), "normalize dash/slash separators");
+  assert.match(html, /role="search" aria-label="Ricerca e filtri del catalogo demo"/);
+  assert.equal((html.match(/aria-controls="category-cards resource-cards"/g) || []).length, 2);
   assert.doesNotMatch(js, /replaceChildren\s*\(|innerHTML\s*=/);
   assert.match(js, /classList\.add\("js-ready"\)/);
   assert.match(css, /\.filters\{display:none/);

@@ -73,6 +73,9 @@ def verify_viewport(browser, width):
     assert page.locator('nav[aria-label="Navigazione principale"]').count() == 1
     assert page.locator('label[for="catalog-search"]').count() == 1
     assert page.locator('label[for="category-filter"]').count() == 1
+    assert page.get_by_role("search", name="Ricerca e filtri del catalogo demo").count() == 1
+    for control in ("#catalog-search", "#category-filter"):
+        assert page.locator(control).get_attribute("aria-controls") == "category-cards resource-cards"
     # Accessible names must identify the draft, including when links are listed out of context.
     for title in RESOURCE_TITLES:
         link = page.get_by_role("link", name=re.compile(re.escape(title)))
@@ -98,13 +101,44 @@ def verify_viewport(browser, width):
     page.locator("#reset-filters").click()
     assert visible(page, "category") == 8
     assert visible(page, "resource") == 5
+    # Multi-word search must match terms across name, description and keywords.
+    page.locator("#catalog-search").fill("casa smart")
+    assert visible(page, "category") == 1, (width, "multi-word category search")
+    assert visible(page, "resource") == 2, (width, "multi-word resource search")
+    page.locator("#catalog-search").fill("smart    casa")
+    assert visible(page, "category") == 1, (width, "search order / whitespace")
+    assert visible(page, "resource") == 2, (width, "search order / whitespace")
+    # Different separators must behave like spaces in real Chromium searches.
+    page.locator("#catalog-search").fill("power-station")
+    assert visible(page, "category") == 1, (width, "hyphenated power-station category")
+    assert visible(page, "resource") == 1, (width, "hyphenated power-station resource")
+    page.locator("#catalog-search").fill("USB/C")
+    assert visible(page, "category") == 2, (width, "slash-separated USB/C categories")
+    assert visible(page, "resource") == 1, (width, "slash-separated USB/C resource")
+    page.locator("#catalog-search").fill("Wi‑Fi")
+    assert visible(page, "category") == 1, (width, "nonbreaking-hyphen Wi-Fi category")
+    assert visible(page, "resource") == 0, (width, "nonbreaking-hyphen Wi-Fi resources")
+    page.locator("#reset-filters").click()
     page.locator("#category-filter").select_option("sport-tech")
     assert visible(page, "category") == 1
     assert visible(page, "resource") == 0
     page.locator("#reset-filters").click()
     page.locator("#catalog-search").fill("parola-che-non-esiste")
     assert page.locator("#empty-results").is_visible()
+    # Feedback must appear beside filters, before the empty category grid,
+    # rather than below the entire resources section off-screen.
+    empty_box = page.locator("#empty-results").bounding_box()
+    cards_box = page.locator("#category-cards").bounding_box()
+    assert empty_box and cards_box and empty_box["y"] < cards_box["y"], (
+        width, "no-results feedback is too far from search"
+    )
+    assert "0 categorie demo" in page.locator("#results-count").inner_text()
+    if width == 360:
+        page.screenshot(path=str(EVIDENCE / "catalog-360-empty-state.png"), full_page=True)
     page.locator("#empty-reset").click()
+    assert page.locator("#catalog-search").evaluate("el => document.activeElement === el"), (
+        width, "reset must restore keyboard focus to search"
+    )
     assert visible(page, "category") == 8
     assert visible(page, "resource") == 5
     check_no_overflow(page, width, "JS after filters")
