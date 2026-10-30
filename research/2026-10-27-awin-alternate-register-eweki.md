@@ -80,3 +80,21 @@ Questa estensione usa **solo schede pubbliche Awin**. Non indica una candidatura
 - **Schema:** (1) differenza fra commissione publisher e sconto cliente; (2) prezzi e disponibilità verificati sul prodotto preciso; (3) confronto del costo totale; (4) disclosure vicina a eventuali futuri link affiliati; (5) aggiornamento della scheda con data e fonte. Nessun prezzo, test, recensione o ricavo inventato.
 
 **Gate di rilascio:** prima di qualsiasi link remunerato verificare adesione effettiva, condizioni contrattuali aggiornate, idoneità, informazioni legali del sito e disclosure. Nessun deploy o merge autorizzato da questa ricerca.
+
+## Estensione 30/10/2026 — VEVOR IT: attrezzature, sport e limiti di utilizzo dei contenuti
+
+**Fonte primaria consultata il 30/10/2026:** https://ui.awin.com/merchant-profile/118433 (programma pubblico Awin **118433**). Analisi preliminare: **nessuna candidatura, adesione o commissione individuale verificata**.
+
+- **Settori:** attrezzature per fai-da-te, utensili, cucina, articoli sportivi, casa e giardino. Potenziale pertinenza per la sezione attrezzature di VORLI, senza prova della qualità o disponibilità di singoli articoli.
+- **Cookie pubblico:** 30 giorni. **Commissione pubblicizzata:** intervallo base **2–10%** per vendita, differenziato per fonti di traffico; non è una tariffa contrattuale riconosciuta a VORLI. I dati di conversione e carrello medio presenti nella pagina sono affermazioni del merchant, non risultati verificati né previsioni di ricavo.
+- **Vincoli importanti:** vietati annunci a pagamento su termini del marchio e loro varianti; vietate tecniche come cookie stuffing, clic artificiali, traffico ingannevole e appropriazione del marchio. La scheda richiede revisione/approvazione scritta per l'uso del marchio e del logo. La raccolta sistematica dei contenuti del sito (scraping per costruire cataloghi) è espressamente vietata senza permesso scritto. **Non importare automaticamente immagini, descrizioni, loghi o cataloghi VEVOR** in VORLI.
+- **Ambiguità da chiarire:** la formula pubblica «You are not allowed to direct links» compare nella sezione PPC e non va interpretata senza leggere le condizioni contrattuali individuali; verificare quali collegamenti e canali siano effettivamente ammessi.
+- **Garanzie:** la pagina del programma menziona «1-Year Warranty», che non deve essere presentata come limite alla **garanzia legale minima di due anni** per i beni venduti da un professionista a consumatori UE, ove applicabile. Distinguere garanzia commerciale del produttore da diritti verso il venditore e verificare termini e legge applicabili al singolo acquisto.
+- **Recesso e promozioni:** non trasformare la frase commerciale «30-day returns» in una garanzia generalizzata senza leggere le eccezioni. Non pubblicare coupon, sconti, prezzi o stock senza controllo puntuale e autorizzazione; nessun test prodotto svolto.
+
+**Decisione editoriale:** VEVOR è solo un candidato da approfondire. Prima di ogni futura candidatura verificare requisiti per publisher individuale italiano, commissioni e categorie eleggibili, costi eventuali, convalida e payout, restrizioni SEO/PPC e permessi d'uso degli asset. Preferire una guida indipendente e originale alla copia delle schede merchant. Nessun tracking link o dato account in repository.
+
+**Fonti (30/10/2026):**
+- Awin, programma pubblico VEVOR IT: https://ui.awin.com/merchant-profile/118433
+- Your Europe, diritti e garanzie degli acquisti: https://europa.eu/youreurope/citizens/consumers/shopping/shopping-consumer-rights/
+- Your Europe, recesso a distanza: https://europa.eu/youreurope/citizens/consumers/shopping/returns/indexamp_it.htm
