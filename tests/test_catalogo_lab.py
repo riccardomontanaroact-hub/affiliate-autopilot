@@ -102,6 +102,7 @@ class CatalogLabTests(unittest.TestCase):
         self.assertIn('aria-describedby="catalog-search-help"', self.html)
         self.assertEqual(1, self.html.count('id="catalog-search-help"'))
         self.assertIn("più parole in qualsiasi ordine", self.html)
+        self.assertIn("anche con trattini o barre", self.html)
         self.assertIn(".field-help{", self.css)
 
     def test_accessibility_basics(self):
