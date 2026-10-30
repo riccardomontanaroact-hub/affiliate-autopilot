@@ -20,10 +20,14 @@
 5. Per eventuali **prodotti digitali propri**: prima di vendere verificare obblighi informativi, compatibilità, modalità di consegna, recesso e consenso espresso per la perdita del diritto di recesso ove applicabile; verificare IVA, posizione fiscale e attività abituale con professionista italiano. Nessun checkout attivato.
 6. Per i prodotti elettrici, consultare indicazioni di sicurezza e documentazione del produttore; non presentare il marchio CE come certificazione di un ente indipendente o prova di prestazioni.
 
+## Verifica tecnica aggiuntiva (30/10/2026): autonomia reale e autoconsumo
+Fonte primaria: [BLUETTI AC50B, FAQ ufficiale](https://www.bluettipower.eu/products/ac50b-camping-power-station). Per il modello AC50B la formula pubblica è `capacità Wh × DoD × efficienza inverter ÷ (potenza carico W + autoconsumo W)`, con **448 Wh**, **DoD 90%**, **efficienza 85%**, **autoconsumo 10 W**. Controllo aritmetico per un carico AC costante di 60 W: `448*0.9*0.85/(60+10)=4.896` ore; formula ideale senza perdite `448/60=7.4667` ore. Le cifre sono **una simulazione basata sui parametri del produttore, non una prova di laboratorio VORLI**. Non estendere questi parametri ad altri modelli, a uscite DC o a carichi con compressore. La guida SEO collegata è stata corretta per rendere esplicito questo limite e aggiungere DoD/efficienza/autoconsumo alla checklist di confronto.
+
 ## Fonti pubbliche, consultate il 30/10/2026
 - Awin, BLUETTI IT: https://ui.awin.com/merchant-profile/32261/commission-groups
 - BLUETTI IT, programma ufficiale: https://it.bluettipower.eu/pages/programma-di-affiliazione
 - EcoFlow IT, programma ufficiale: https://it.ecoflow.com/pages/affiliate-program
+- BLUETTI AC50B, FAQ tecnica: https://www.bluettipower.eu/products/ac50b-camping-power-station
 - UE, sicurezza dei prodotti: https://europa.eu/youreurope/citizens/consumers/shopping/product-safety/index_en.htm
 - UE, obblighi di vendita a distanza e contenuti digitali: https://europa.eu/youreurope/business/selling-in-eu/selling-goods-services/ecommerce-distance-selling/index_en.htm
 
