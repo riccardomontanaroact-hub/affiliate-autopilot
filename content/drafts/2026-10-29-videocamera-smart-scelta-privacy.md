@@ -22,3 +22,13 @@ Prepara una tabella per massimo tre modelli con colonne: luogo d'uso, alimentazi
 **Fonti di approfondimento (consultate 29/10/2026):** Imou, supporto italiano https://www.imou.com/it/support ; Awin, profilo pubblico Imou IT https://ui.awin.com/merchant-profile/122428 .
 
 **Stato:** bozza in revisione; nessuna pubblicazione, acquisto, iscrizione o pagamento.
+
+## Archiviazione locale o cloud? Una differenza che incide sul costo reale
+
+Una videocamera può funzionare senza abbonamento e, allo stesso tempo, offrire **funzioni aggiuntive a pagamento**. Non basta leggere «senza canone» per concludere che avvisi avanzati, archiviazione cloud e storico delle registrazioni siano sempre inclusi.
+
+Nelle FAQ ufficiali, Imou indica che **Imou Protect è opzionale** e non impedisce l'utilizzo base dei dispositivi in assenza di sottoscrizione. Il negozio ufficiale descrive, per la categoria di telecamere interne, possibilità di registrazione locale e un servizio cloud facoltativo. Queste informazioni non garantiscono che ogni modello supporti la stessa memoria, lo stesso NVR o tutte le funzioni senza canone: verificare sempre la scheda tecnica e il manuale della variante esatta.
+
+Per un confronto imparziale, annota separatamente **costo iniziale**, **memoria locale/accessori necessari**, **costo annuale di servizi opzionali** e **funzioni che restano disponibili senza Internet**. Lascia la voce «da verificare» se il produttore non fornisce un dato chiaro. Non sono stati effettuati test di laboratorio.
+
+**Fonti ufficiali consultate il 30/10/2026:** https://www.imou.com/it/support/faq ; https://store.imou.com/it-it/collections/indoor-camera .
