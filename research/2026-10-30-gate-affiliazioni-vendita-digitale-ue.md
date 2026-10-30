@@ -24,6 +24,19 @@
 4. Conservare evidenza della scelta del consumatore e inviare conferma contrattuale secondo le regole applicabili, con attenzione alla minimizzazione dei dati e alla sicurezza. Non predisporre checkbox fittizie.
 5. Non avviare vendite finché una verifica professionale sul caso concreto non abbia chiarito registrazione dell'attività, partita IVA, fatturazione, imposte, obblighi informativi e gestione dei reclami.
 
+## Gate B-bis — funzione di recesso online in Italia (novità applicabile nel 2026)
+**Fonte normativa verificata il 30/10/2026:** d.lgs. 31 dicembre 2025 n. 209, art. 1, che inserisce l'art. 54-bis nel Codice del consumo e aggiorna l'art. 49, comma 1, lett. h). La disciplina si applica ai contratti conclusi tramite interfaccia online a partire dal **19 giugno 2026**, nei casi in cui il consumatore abbia diritto di recesso. È un requisito aggiuntivo del percorso di vendita, **non** un nuovo diritto indiscriminato né una revoca delle eccezioni previste per specifici contenuti digitali.
+- Se VORLI diventerà **venditore diretto** di PDF, kit o servizi digitali B2C, il preflight del checkout deve valutare una **funzione di recesso online visibile, facilmente accessibile e disponibile durante il periodo di recesso applicabile**. Una pagina con il solo indirizzo di contatto o un modulo PDF non sostituisce automaticamente la funzione prevista dalla norma.
+- La procedura deve consentire di indicare/riconoscere **nome, contratto e recapito elettronico per la conferma**, presentare una **seconda azione esplicita di conferma** e inviare **senza indebito ritardo** una ricevuta su supporto durevole con contenuto e data/ora della richiesta. Conservare i dati necessari in un sistema privato adeguato, non nel repository pubblico.
+- Aggiornare le **informazioni precontrattuali** sull'esistenza e collocazione della funzione, ove applicabile. Verificare l'effettiva applicabilità del recesso per ogni modello di fornitura digitale e per ogni SKU, incluse le condizioni dell'art. 59: il download immediato **non** elimina automaticamente il diritto.
+- **Affiliazione pura:** quando il cliente compra sul sito di un merchant terzo e VORLI non è il venditore, la funzione di recesso relativa a quella vendita compete al soggetto contrattualmente responsabile; verificare ruoli e condizioni senza confondere il publisher con il merchant.
+- **Blocco operativo:** nessun pulsante fittizio, acquisizione di dati cliente, checkout o promessa di conformità in questa bozza. Prima dell'eventuale vendita: progettazione, test end-to-end, verifica legale italiana e privacy.
+
+Fonti primarie (consultate il **30/10/2026**):
+- Normattiva, [d.lgs. 209/2025, art. 1 e nuovo art. 54-bis](https://www.normattiva.it/atto/caricaDettaglioAtto?atto.codiceRedazionale=26G00002&atto.dataPubblicazioneGazzetta=2026-01-08&qId=&tipoDettaglio=originario).
+- [Direttiva (UE) 2023/2673, art. 11-bis inserito nella direttiva 2011/83/UE](https://eur-lex.europa.eu/eli/dir/2023/2673/oj/ita/pdf).
+- Dipartimento per gli Affari europei, [tabella di concordanza del recepimento](https://www.affarieuropei.gov.it/media/ilxfpike/tabella-concordanza_direttiva-2023-2673.pdf).
+
 ## Gate C — IVA e vendite oltre confine
 - Separare commissioni ricevute per affiliazione e ricavi da **vendita diretta** di contenuti digitali: la qualificazione fiscale dipende dai contratti e dalle operazioni effettive.
 - Per determinate forniture elettroniche B2C transfrontaliere UE si applicano regole sul luogo di tassazione; la disciplina OSS può semplificare gli adempimenti, ma **non equivale a un'esenzione dall'IVA**.
