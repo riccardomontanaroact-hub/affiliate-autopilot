@@ -54,6 +54,7 @@ test("Hydration filters existing HTML instead of replacing it", () => {
   assert.match(js, /card\.hidden = !matches/);
   assert.match(js, /split\(\/\\s\+\/\)\.filter\(Boolean\)/);
   assert.match(js, /terms\.every\(/);
+  assert.ok(js.includes("replace(/[\\u2010-\\u2015\\u2212/_-]+/g, \" \")"), "normalize dash/slash separators");
   assert.match(html, /role="search" aria-label="Ricerca e filtri del catalogo demo"/);
   assert.equal((html.match(/aria-controls="category-cards resource-cards"/g) || []).length, 2);
   assert.doesNotMatch(js, /replaceChildren\s*\(|innerHTML\s*=/);
