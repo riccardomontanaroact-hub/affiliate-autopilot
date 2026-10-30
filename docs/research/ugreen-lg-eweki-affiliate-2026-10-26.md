@@ -38,3 +38,28 @@ Fonte primaria: https://ui.awin.com/merchant-profile/19988 (consultata il 26/10/
 2. LG IT: **vincolo esplicito contro l'affiliazione di persone fisiche**; non prioritario.
 3. eWeki: tasso individuale **non verificato**.
 4. Nessuna spesa, domanda, account, pagamento o deploy. Contenuto solo per revisione in PR.
+
+## 5. Verifica incrociata e consolidamento UGREEN (30 ottobre 2026)
+**Correzione importante:** la durata di 30 giorni riportata nella sezione 1 è quella della **pagina ufficiale UGREEN per il programma rivolto all'Italia/Europa**; non va estesa automaticamente al programma **UGREEN (Global) Awin 90851**. Quest'ultimo presenta una discrepanza pubblica ancora aperta:
+- La **scheda Awin Global**, nella sezione strutturata «Attribution Period», indica **60 giorni**; la **FAQ della stessa scheda** indica **30 giorni**.
+- Il **PDF dei termini Awin Global**, aggiornato dal merchant il **10/07/2025** e ricontrollato il 30/10/2026, riporta **30 giorni**. Non risolvere arbitrariamente la discordanza scegliendo il valore più vantaggioso.
+- La **pagina ufficiale italiana UGREEN** indica cookie **30 giorni**, intestazione «fino al 15%» e FAQ «minimo 8%» sugli acquisti idonei; le percentuali non certificano il gruppo commissionale assegnato a un publisher.
+- Le condizioni Global citano contenuti editoriali tra i canali ammessi, ma includono restrizioni su ricerca a pagamento, marchi e collegamenti diretti. Verificare sempre la versione contrattuale effettiva, il negozio/paese di destinazione e la rete scelta prima di promuovere. L'Italia non compare nell'elenco dei mercati prioritari del PDF Global: questo **non equivale a un divieto**, ma impone una verifica dell'ammissibilità del traffico italiano.
+- **Esito:** nessuna approvazione o tariffa individuale verificata; cookie applicabile **da confermare in dashboard/contratto**, non presentare «60 giorni» o «8–15%» come condizioni VORLI.
+
+### Mappa per evitare tre ricerche duplicate
+| PR esistente | Elementi distintivi | Azione proposta prima di un futuro merge |
+| --- | --- | --- |
+| #32 | UGREEN Italia, UGREEN NAS Europa (programma distinto), Baseus Europa e scheda hub USB-C | Conservare la parte **NAS/Baseus** e l'eventuale contenuto editoriale non duplicato; non copiare un'altra panoramica UGREEN generica. |
+| #86 | Audit UGREEN Global Awin e **conflitto 60/30 giorni**; guida USB-C PD | Conservare il dettaglio della discrepanza e le fonti contrattuali; confrontare la guida con quella della PR #105 prima di integrarla. |
+| #105 (questa PR) | Requisiti UGREEN Italia/Europa, **vincolo persone fisiche LG IT**, verifica eWeki; kit compatibilità e guida 65/100 W | Usare questo audit come indice comparativo, senza cancellare le fonti e i contributi originali delle altre PR. |
+
+**Sequenza suggerita:** prima revisione privacy del repository e test, poi confronto editoriale dei file senza sovrascritture, quindi eventuale integrazione *separata e approvata*. Non chiudere o unire automaticamente le PR; non candidarsi o pubblicare offerte.
+
+**Fonti primarie ricontrollate il 30/10/2026:**
+- UGREEN Italia, programma ufficiale: https://www.ugreen.com/it-it/pages/affiliate
+- Awin UGREEN (Global), scheda pubblica: https://ui.awin.com/merchant-profile/90851/commission-groups
+- Awin UGREEN (Global), termini PDF aggiornati dal merchant il 10/07/2025: https://ui.awin.com/advertiser-terms/90851
+- Awin eWeki IT, scheda pubblica: https://ui.awin.com/merchant-profile/19988
+
+**Stato:** bozza di ricerca e piano di consolidamento. Nessun link affiliato, dato personale, candidatura, spesa, email inviata, checkout, merge o deploy.
