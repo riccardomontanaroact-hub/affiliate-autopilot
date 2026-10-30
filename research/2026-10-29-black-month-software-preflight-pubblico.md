@@ -33,3 +33,15 @@ Questo file **non** riporta messaggi privati, identificativi, link di tracciamen
 - **Revisione programmabile:** ricontrollare la pagina italiana e le condizioni effettive a inizio novembre e prima di ciascuna finestra promozionale; in caso di divergenze mantenere le bozze in stato **HOLD**.
 
 **Esito editoriale al 29/10/2026:** HOLD. Questa è una correzione preventiva, non un annuncio promozionale. Nessun dato di email private, identificativo publisher, codice riservato, link affiliato o dato personale riportato.
+
+## Nuovo controllo pubblico del 30/10/2026 — pagina cambiata, HOLD confermato
+
+**Fonte consultata il 30/10/2026:** https://2gosoftware.eu/it-it/black-friday-offerte . La pagina italiana ora presenta l'intestazione «Offerte Black Month stellari: tutto il software in sconto e con regalo», una selezione di prodotti e almeno due schede con etichetta «Risparmia -85%» (Norton 360 Deluxe e McAfee Total Protection, nelle varianti mostrate al momento del controllo). Non si tratta di una prova di un massimale valido per ogni articolo.
+
+**Differenza rispetto al controllo del 29/10:** il testo introduttivo della pagina attualmente consultabile **non riporta** più la precedente finestra «21 novembre–1 dicembre» né il claim generale «fino al 70%» annotati sopra. Non è stato possibile stabilire dalla sola pagina se le date siano state modificate, se si tratti di contenuti dinamici o se le campagne siano già attive per tutte le categorie. Conservare la verifica del 29/10 come fotografia storica, non come calendario corrente.
+
+**Prezzo e percentuali:** alcune schede mostrano «PSVDP» (prezzo consigliato) e prezzo di vendita, ma la loro differenza **non dimostra** il prezzo precedente effettivo secondo la disciplina degli annunci di riduzione dei prezzi. Evitare di riutilizzare percentuali, urgenze, disponibilità o prezzi puntuali senza un controllo del singolo SKU, del prezzo di riferimento e delle condizioni applicabili; fonte di orientamento: https://www.mimit.gov.it/it/assistenza/domande-frequenti/annunci-di-riduzione-di-prezzo-domande-frequenti-faq .
+
+**Awin pubblico, 30/10:** https://ui.awin.com/merchant-profile/120774 mostra un cookie di 30 giorni e descrive contenuti editoriali e display advertising come canali ricercati. Non indica la commissione individuale applicabile né prova che le promozioni siano monetizzabili da VORLI senza verificare l'area privata e le condizioni del programma.
+
+**Esito:** HOLD invariato per banner promozionali e offerte datate. La pagina del merchant può essere usata come fonte per una guida neutrale sulle verifiche d'acquisto, senza attribuire a VORLI vendite, sconti garantiti, diritti d'uso di materiali riservati o link tracciati. Nessun dato di posta privata o identificativo publisher incluso.
