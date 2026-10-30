@@ -33,3 +33,26 @@
 - Commissione europea OSS e soglia condizionata: https://vat-one-stop-shop.ec.europa.eu/one-stop-shop_en
 
 **Confini operativi:** nessuna candidatura, pubblicazione, attivazione di pagamenti o invio email. Questo audit non contiene dati di casella Gmail, account publisher o URL di tracking.
+
+
+## Estensione 30/10/2026 — due programmi italiani da valutare, non approvati
+
+Questa estensione usa **solo schede pubbliche Awin**. Non indica una candidatura effettuata, l'adesione del publisher, una commissione individuale, un payout garantito o l'idoneità di una persona fisica italiana.
+
+| Programma pubblico | Ambito pertinente per VORLI | Cookie indicato pubblicamente | Stato/limiti da verificare |
+|---|---|---|---|
+| **Freeshop IT** (Awin 9554) | Informatica, telefonia, elettrodomestici, TV, accessori | **30 giorni** | La scheda consultata non riporta percentuale individuale, criteri di ammissione, esclusioni, condizioni di pagamento o autorizzazione di VORLI. |
+| **Prezzoforte IT** (Awin 22120) | Elettrodomestici, elettronica, informatica e sport/fitness | **30 giorni** | La scheda consultata non riporta percentuale individuale, condizioni publisher, convalida, payout o adesione di VORLI. |
+
+**Valutazione comparativa (non una raccomandazione di acquisto):** Prezzoforte offre sulla carta una copertura più ampia per elettrodomestici e sport/fitness; Freeshop può essere utile per categorie informatica e telefonia. L'ampiezza del catalogo e le affermazioni commerciali dei merchant non provano disponibilità effettiva, prezzi migliori, affidabilità di ogni prodotto o ricavi attesi. Prima di qualsiasi candidatura, verificare nella dashboard le condizioni aggiornate, l'ammissibilità del publisher individuale italiano, eventuali costi e le limitazioni dei canali promozionali.
+
+**Nuova opportunità editoriale verificabile:** la Commissione europea ha annunciato il **20 luglio 2026** una funzione pubblica di confronto fra prodotti nella banca dati **EPREL**. È un modo neutrale e utile per scrivere guide originali su consumi, rumore, dimensioni e caratteristiche tecniche degli elettrodomestici, senza inventare test o prezzi. La bozza correlata è `content/drafts/2026-10-30-elettrodomestici-eprel-confronto.md`.
+
+**Gate commerciali e legali:** nessun link affiliato né claim su commissioni senza approvazione individuale; disclosure riconoscibile presso eventuali futuri link remunerati; prezzi e servizi accessori (consegna, installazione, ritiro usato) da verificare per singolo SKU; per vendita diretta di un prodotto digitale chiarire prima obblighi informativi, recesso e IVA con un professionista italiano. Nessuna pubblicazione o pagamento autorizzati da questa ricerca.
+
+### Fonti pubbliche aggiuntive (consultate il 30/10/2026)
+- Awin Freeshop IT: https://ui.awin.com/merchant-profile/9554
+- Awin Prezzoforte IT: https://ui.awin.com/merchant-profile/22120
+- Commissione europea, EPREL confronto prodotti, comunicato del 20/07/2026: https://energy-efficient-products.ec.europa.eu/news/new-eprel-comparison-tool-support-sustainable-purchasing-2026-07-20_en
+- Your Europe, etichette energetiche: https://europa.eu/youreurope/citizens/consumers/shopping/energy-labels/indexamp_it.htm
+- Direttiva RAEE 2012/19/UE, art. 5(2)(b): https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32012L0019
