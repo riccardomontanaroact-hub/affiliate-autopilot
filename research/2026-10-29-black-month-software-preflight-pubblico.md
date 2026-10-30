@@ -45,3 +45,18 @@ Questo file **non** riporta messaggi privati, identificativi, link di tracciamen
 **Awin pubblico, 30/10:** https://ui.awin.com/merchant-profile/120774 mostra un cookie di 30 giorni e descrive contenuti editoriali e display advertising come canali ricercati. Non indica la commissione individuale applicabile né prova che le promozioni siano monetizzabili da VORLI senza verificare l'area privata e le condizioni del programma.
 
 **Esito:** HOLD invariato per banner promozionali e offerte datate. La pagina del merchant può essere usata come fonte per una guida neutrale sulle verifiche d'acquisto, senza attribuire a VORLI vendite, sconti garantiti, diritti d'uso di materiali riservati o link tracciati. Nessun dato di posta privata o identificativo publisher incluso.
+
+## Confronto internazionale del 30/10/2026 — non trasferire condizioni DE all'Italia
+
+**Fonti pubbliche consultate il 30/10/2026:**
+- Pagina italiana: https://2gosoftware.eu/it-it/black-friday-offerte . La versione attuale parla di «Black Month» e di regali **legati ai prodotti partecipanti**; non espone nel testo introduttivo consultato una data unica di avvio o un massimale generale di sconto. I prezzi visualizzati usano il riferimento «PSVDP», cioè un prezzo consigliato, non la prova di un prezzo storico praticato.
+- Pagina internazionale servita con impostazione **English - Germany**: https://2gosoftware.eu/black-friday . Presenta il claim **«up to 80%»** e una specifica meccanica di estrazione: acquisto di prodotti partecipanti **dal 20 al 30 novembre 2026**, recupero del codice entro **15 dicembre 2026**, estrazione annunciata per **16 dicembre 2026**. La pagina specifica anche marchi partecipanti e regali condizionati.
+- Awin, scheda pubblica 2GO Software IT: https://ui.awin.com/merchant-profile/120774 . Le informazioni pubbliche non provano l'applicabilità a VORLI delle condizioni promozionali di un altro mercato né la commissione individuale.
+
+**Discrepanza da gestire:** le informazioni della landing internazionale impostata sulla Germania **non vanno tradotte come promozione italiana**. Il claim «fino all'80%», le date 20–30/11, le modalità di partecipazione al concorso e i premi della pagina internazionale **non sono verificati per clienti italiani**. Anche l'assenza di date nell'introduzione italiana non dimostra che la campagna sia già attiva o che tutti gli SKU siano scontati.
+
+**Regola di produzione:** mantenere HOLD per articoli promozionali, countdown, claim di sconto, omaggi e concorsi. Sbloccare solo dopo confronto documentato tra pagina italiana corrente, condizioni complete dello specifico SKU, regolamento italiano ove esistente e termini Awin applicabili; registrare data/ora e fonte della verifica senza copiare comunicazioni riservate. Nel frattempo è possibile preparare soltanto contenuti informativi neutrali su durata licenze, compatibilità e rinnovi, senza prezzi, codici, link tracciati o promesse commerciali.
+
+**Nota normativa:** per la distinzione tra prezzo consigliato e prezzo precedente, consultare le FAQ MIMIT sull'art. 17-bis (https://www.mimit.gov.it/it/assistenza/domande-frequenti/annunci-di-riduzione-di-prezzo-domande-frequenti-faq). L'applicazione della disciplina specifica ai diversi tipi di software richiede qualificazione del caso concreto; resta fermo il divieto di comunicazioni ingannevoli.
+
+**Sicurezza:** questa sezione utilizza esclusivamente fonti pubbliche, senza dati di account, email, ID publisher, link affiliati, prezzi individuali o dettagli di messaggi privati. Nessuna candidatura, invio, pagamento o pubblicazione.
