@@ -56,3 +56,27 @@ Questa estensione usa **solo schede pubbliche Awin**. Non indica una candidatura
 - Commissione europea, EPREL confronto prodotti, comunicato del 20/07/2026: https://energy-efficient-products.ec.europa.eu/news/new-eprel-comparison-tool-support-sustainable-purchasing-2026-07-20_en
 - Your Europe, etichette energetiche: https://europa.eu/youreurope/citizens/consumers/shopping/energy-labels/indexamp_it.htm
 - Direttiva RAEE 2012/19/UE, art. 5(2)(b): https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32012L0019
+
+
+## Estensione 30/10/2026 — Pc Componentes IT: commissioni pubbliche per categoria, non individuali
+
+**Fonte primaria consultata il 30/10/2026:** [Awin, Pc Componentes IT, programma 74650](https://ui.awin.com/merchant-profile/74650) e [gruppi commissioni pubblici](https://ui.awin.com/merchant-profile/74650/commission-groups). Ricerca preliminare, **nessuna candidatura, approvazione o accesso alla dashboard privata**.
+
+- **Ambito:** informatica, componenti, accessori, elettrodomestici, smart home; la scheda Awin elenca esplicitamente publisher di contenuti specializzati in tecnologia fra i profili ricercati.
+- **Finestra di attribuzione pubblica:** 15 giorni dopo il clic, non 30.
+- **Commissioni per categoria pubblicate:** computer **1%**, componenti **1,5%**, periferiche **1,5%**, smartphone/GPS **0,75%**, smart home **1,5%**, elettrodomestici **5%**, cavi **7%**, consumabili **7%**, reti **2%**. La fascia complessiva pubblicizzata è **0,75–7%**. Non sono tariffe confermate per VORLI né promessa di remunerazione.
+- **Base di calcolo:** la pagina dichiara il valore di vendita al netto di IVA, spedizione e servizi accessori. Una transazione può essere annullata o ridotta per resi, cancellazioni, frodi e attribuzione duplicata.
+- **Convalida:** la pagina dichiara **30–60 giorni** per elaborare le transazioni; indica inoltre 30 giorni per il pagamento *alla rete Awin* dopo la ricezione della fattura. **Non equivale a una data garantita di accredito al publisher.**
+- **Requisiti di ammissione:** sito attivo e curato, contenuti aggiornati e nuovi contenuti quotidiani, audience coerente, profilo Awin completo, fonti di traffico lecite. VORLI non deve dichiarare di soddisfare tali requisiti senza verifica del sito e del processo editoriale.
+- **Restrizioni:** vietati brand bidding, impersonificazione del marchio, cookie dropping, clic forzati, recensioni ingannevoli, coupon non autorizzati, auto-acquisti; per contenuti e link remunerati è richiesta trasparenza. Non generare codici sconto o usare materiale promozionale senza autorizzazione.
+- **Costo di accesso e idoneità italiana:** la scheda pubblica non dimostra assenza di qualsiasi costo né l'ammissibilità contrattuale di un publisher individuale italiano. Verificare in dashboard e con i termini applicabili prima di valutare una candidatura.
+
+**Confronto utile:** a differenza di eWeki IT (cookie pubblico 30 giorni, commissione individuale ignota), Pc Componentes IT pubblica un dettaglio percentuale per categorie, ma usa una finestra di 15 giorni e applica requisiti editoriali stringenti. Non inferire che un cookie più lungo o una percentuale più alta implichino automaticamente maggiori guadagni.
+
+### Bozza SEO organica non commerciale (da sviluppare solo dopo revisione)
+- **Titolo:** Computer, cavi e accessori: come leggere le percentuali di affiliazione senza confonderle con gli sconti
+- **Slug proposto:** `/guide/commissioni-affiliazione-vs-sconti-tech`
+- **Meta description:** Commissioni per chi pubblica e sconti per chi acquista non sono la stessa cosa: guida trasparente a categorie, prezzi, cookie e confronti corretti.
+- **Schema:** (1) differenza fra commissione publisher e sconto cliente; (2) prezzi e disponibilità verificati sul prodotto preciso; (3) confronto del costo totale; (4) disclosure vicina a eventuali futuri link affiliati; (5) aggiornamento della scheda con data e fonte. Nessun prezzo, test, recensione o ricavo inventato.
+
+**Gate di rilascio:** prima di qualsiasi link remunerato verificare adesione effettiva, condizioni contrattuali aggiornate, idoneità, informazioni legali del sito e disclosure. Nessun deploy o merge autorizzato da questa ricerca.
