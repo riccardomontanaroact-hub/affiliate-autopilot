@@ -22,6 +22,13 @@ Se un dispositivo assorbe in media **60 W** e la power station ha **512 Wh nomin
 
 Per una stima più seria, usa i dati di capacità *utilizzabile* e rendimento pubblicati dal produttore e, se possibile, una misurazione del dispositivo. Non utilizzare il calcolatore dei consumi domestici VORLI come prova di autonomia di una batteria: il suo scopo è differente.
 
+## 3 bis. Perché l'autoconsumo dell'inverter conta (esempio documentato)
+Il semplice rapporto Wh ÷ W può sovrastimare l'autonomia, soprattutto quando il dispositivo collegato assorbe poca potenza. In una [FAQ tecnica ufficiale BLUETTI AC50B](https://www.bluettipower.eu/products/ac50b-camping-power-station), il produttore indica **448 Wh** nominali, profondità di scarica (**DoD**) del **90%**, efficienza dell'inverter (**η**) dell'**85%** e autoconsumo di **10 W**. Per un carico AC **costante di 60 W**, applicando *solo a quel modello* la formula dichiarata:
+
+**Autonomia stimata = 448 × 0,90 × 0,85 ÷ (60 + 10) ≈ 4,90 ore**.
+
+Senza considerare alcuna perdita, 448 ÷ 60 darebbe **7,47 ore**: una differenza significativa. Non significa che ogni power station abbia lo stesso rendimento o autoconsumo. Chiedi al produttore **DoD, efficienza e consumo a vuoto del modello preciso** e controlla se il dato riguarda le uscite AC o DC. Carichi variabili, avvii di motori/compressori e condizioni ambientali richiedono verifiche ulteriori: **questa formula non va usata per promettere l'autonomia di un frigorifero**.
+
 ## 4. Controlla le uscite davvero necessarie
 Verifica prese AC adatte al mercato di destinazione, porte USB-C con potenza compatibile, uscite DC e numero di apparecchi alimentabili simultaneamente. La presenza di una presa non garantisce che supporti ogni dispositivo.
 
@@ -39,6 +46,7 @@ Prima di acquistare, annota capacità nominale e utilizzabile, potenza continua,
 |---|---|---|
 | Capacità nominale (Wh) | da verificare | da verificare |
 | Capacità utilizzabile documentata | da verificare | da verificare |
+| DoD, rendimento inverter e autoconsumo (con fonte) | da verificare | da verificare |
 | Potenza continua AC (W) | da verificare | da verificare |
 | Picco AC (W e durata) | da verificare | da verificare |
 | Porte e limiti per porta | da verificare | da verificare |
@@ -48,4 +56,4 @@ Prima di acquistare, annota capacità nominale e utilizzabile, potenza continua,
 
 **Trasparenza:** questa è una bozza editoriale originale senza link affiliati, prezzi, recensioni di prodotti testati o sponsorizzazioni. Prima della pubblicazione aggiornare specifiche e fonti per ogni modello, verificare eventuali autorizzazioni commerciali e aggiungere disclosure evidente se presenti link remunerati.
 
-**Fonti di contesto (consultate il 30/10/2026):** [UE — sicurezza dei prodotti](https://europa.eu/youreurope/citizens/consumers/shopping/product-safety/index_en.htm); [UE — informazioni per acquisti a distanza](https://europa.eu/youreurope/business/selling-in-eu/selling-goods-services/ecommerce-distance-selling/index_en.htm). Le formule sono aritmetiche indicative, non dati di laboratorio.
+**Fonti di contesto (consultate il 30/10/2026):** [BLUETTI — AC50B, FAQ su formula di autonomia e autoconsumo](https://www.bluettipower.eu/products/ac50b-camping-power-station); [UE — sicurezza dei prodotti](https://europa.eu/youreurope/citizens/consumers/shopping/product-safety/index_en.htm); [UE — informazioni per acquisti a distanza](https://europa.eu/youreurope/business/selling-in-eu/selling-goods-services/ecommerce-distance-selling/index_en.htm). Le formule sono aritmetiche indicative, non dati di laboratorio.
