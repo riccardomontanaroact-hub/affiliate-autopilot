@@ -112,7 +112,8 @@ class CatalogLabTests(unittest.TestCase):
         self.assertIn('href="catalogo-lab.css"', guide)
         self.assertEqual(8, guide.count('class="tile guide-card"'))
         self.assertEqual(8, self.html.count('class="category-link"'))
-        for forbidden in ("<script", "<form", "<iframe", "https://", "http://"):\n            self.assertNotIn(forbidden, guide.lower())
+        for forbidden in ("<script", "<form", "<iframe", "https://", "http://"):
+            self.assertNotIn(forbidden, guide.lower())
         self.assertIn(".guide-grid{", self.css)
         for item in self.data["categories"]:
             self.assertIn('id="' + item["id"] + '"', guide)
