@@ -5,8 +5,8 @@
   "network": "Awin",
   "advertiser": "ALLPOWERS IT",
   "advertiser_id": "107466",
-  "publisher_id": "3118306",
-  "affiliate_homepage_link_already_tested": "https://www.awin1.com/cread.php?awinmid=107466&awinaffid=3118306&ued=https%3A%2F%2Fiallpowers.it%2F",
+  "publisher_id": null,
+  "affiliate_homepage_link_already_tested": null,
   "candidates": [
     {
       "id": "allpowers-p1800",
