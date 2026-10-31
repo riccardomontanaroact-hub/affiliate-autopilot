@@ -90,8 +90,8 @@ test("Eight category cards link to an original, noindex buying-criteria guide", 
   assert.match(guide, /href="catalogo-lab.css"/);
   assert.equal((guide.match(/class="tile guide-card"/g) || []).length, 8);
   assert.equal((html.match(/class="category-link"/g) || []).length, 8);
-  assert.doesNotMatch(guide, /<script\\b|<form\\b|<iframe\\b|https?:\\/\\//i);
-  assert.match(css, /\\.guide-grid\\{/);
+  for (const forbidden of ["<script", "<form", "<iframe", "https://", "http://"]) assert.ok(!guide.toLowerCase().includes(forbidden), forbidden);
+  assert.ok(css.includes(".guide-grid{"));
   for (const category of data.categories) {
     assert.ok(html.includes('href="guida-scelta-tech-lab.html#' + category.id + '"'));
     assert.ok(guide.includes('id="' + category.id + '"'));
