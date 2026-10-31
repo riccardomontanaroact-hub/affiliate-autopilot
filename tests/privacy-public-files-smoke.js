@@ -2,8 +2,8 @@
 /* VORLI — privacy smoke test for the draft site/preview, updated 31/10/2026.
  * Run from repository root: node tests/privacy-public-files-smoke.js
  * Standard Node.js only. Checks every HTML file recursively under site/ and preview/vorli-next/,
- * plus data/config.json and the research queue. Does not scan other paths,
- * Git history, deployed pages, or arbitrary encodings.
+ * plus public CSS/JS/JSON/XML/SVG/TXT assets and two targeted data files.
+ * Does not scan other paths, Git history, deployed pages, or arbitrary encodings.
  * Do not insert real personal identifiers or affiliate tracking links in tests.
  */
 const fs = require("node:fs");
@@ -101,15 +101,35 @@ if (typeof config.owner !== "string" || !/^VORLI\b/.test(config.owner)) {
   throw new Error("data/config.json: draft owner should be a project placeholder, not a person's name");
 }
 assertNoPrivateMarkers(configSource, "data/config.json");
+// JSON.stringify of the parsed object also catches JSON Unicode escapes in values.
+assertNoPrivateMarkers(JSON.stringify(config), "data/config.json (parsed)");
 const researchQueueSource = read("data/product_research_queue.json");
 const researchQueue = JSON.parse(researchQueueSource);
 if (researchQueue.publisher_id !== null || researchQueue.affiliate_homepage_link_already_tested !== null) {
   throw new Error("Research queue must not contain publisher identifiers or tracking links");
 }
 assertNoPrivateMarkers(researchQueueSource, "data/product_research_queue.json");
+assertNoPrivateMarkers(JSON.stringify(researchQueue), "data/product_research_queue.json (parsed)");
 for (const file of htmlFiles) {
   assertNoPrivateMarkers(read(file), file);
 }
-console.log(`VORLI privacy smoke: ${htmlFiles.length + 2} draft files checked (${htmlFiles.length} HTML + config + research queue).`);
-console.log("Includes nested HTML-entity and percent-encoded separators, dots and slashes, plus synthetic regression fixtures.");
-console.log("Scope limited: no scan of non-HTML site assets, other paths, obfuscated data, live site, or Git history.");
+// Also inspect text assets that a future deploy may expose, not just HTML pages.
+const publicTextExtensions = new Set([".css", ".js", ".mjs", ".json", ".xml", ".svg", ".txt", ".webmanifest"]);
+function findPublicTextAssets(relativeDir) {
+  const directory = path.join(root, relativeDir);
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
+    const relativePath = path.posix.join(relativeDir, entry.name);
+    if (entry.isDirectory()) return findPublicTextAssets(relativePath);
+    return entry.isFile() && publicTextExtensions.has(path.extname(entry.name).toLowerCase()) ? [relativePath] : [];
+  });
+}
+const publicTextAssets = [...new Set([
+  ...findPublicTextAssets("site"),
+  ...findPublicTextAssets("preview/vorli-next")
+])].sort();
+for (const file of publicTextAssets) {
+  assertNoPrivateMarkers(read(file), file);
+}
+console.log(`VORLI privacy smoke: ${htmlFiles.length + publicTextAssets.length + 2} draft files checked (${htmlFiles.length} HTML + ${publicTextAssets.length} public text assets + config + research queue).`);
+console.log("Includes nested HTML-entity and percent-encoded separators, dots and slashes, parsed JSON values, and synthetic regression fixtures.");
+console.log("Scope limited: no scan of other paths, binary assets, obfuscated data, live site, or Git history.");
