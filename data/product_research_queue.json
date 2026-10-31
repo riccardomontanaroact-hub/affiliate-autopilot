@@ -21,7 +21,7 @@
       },
       "observed_price_eur": 499,
       "availability_observed": "Esaurito",
-      "approval_status": "pending",
+      "approval_status": "unverified_dashboard",
       "affiliate_product_deep_link": null,
       "commission_rate": null,
       "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
@@ -38,7 +38,7 @@
       },
       "observed_price_eur": 429,
       "availability_observed": "Esaurito",
-      "approval_status": "pending",
+      "approval_status": "unverified_dashboard",
       "affiliate_product_deep_link": null,
       "commission_rate": null,
       "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
@@ -54,7 +54,7 @@
       },
       "observed_price_eur": 559,
       "availability_observed": "Esaurito",
-      "approval_status": "pending",
+      "approval_status": "unverified_dashboard",
       "affiliate_product_deep_link": null,
       "commission_rate": null,
       "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
@@ -156,5 +156,6 @@
       "account_specific_approval": "Non verificabile dalla pagina pubblica; richiede accesso publisher.",
       "caveat": "La tariffa del 2,29% si riferisce ai siti standard di affiliazione; gruppi content creator/club hanno tariffe diverse. Confermare il gruppo applicabile al publisher."
     }
-  }
+  },
+  "membership_status_note": "Le comunicazioni commerciali e le pagine pubbliche non sostituiscono la verifica dello stato attuale di adesione nella dashboard Awin. 'unverified_dashboard' non significa richiesta respinta o assenza di adesione."
 }
