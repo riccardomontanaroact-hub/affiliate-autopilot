@@ -66,7 +66,7 @@ test("Hydration filters existing HTML instead of replacing it", () => {
 });
 
 test("Internal links in all Lab pages resolve to repository files", () => {
-  for (const filename of ["catalogo-lab.html", "catalogo-statico-lab.html", "risorse-originali-lab.html"]) {
+  for (const filename of ["catalogo-lab.html", "catalogo-statico-lab.html", "risorse-originali-lab.html", "guida-scelta-tech-lab.html"]) {
     const page = fs.readFileSync(path.join(dir, filename), "utf8");
     for (const match of page.matchAll(/href="([^"]+)"/g)) {
       const href = match[1];
@@ -83,3 +83,20 @@ test("External links in catalog are only registered original GitHub sources", ()
   assert.deepEqual(external, registered);
   assert.doesNotMatch(html + js + css, /<iframe\b|<script[^>]+src="https?:\/\//i);
 });
+
+test("Eight category cards link to an original, noindex buying-criteria guide", () => {
+  const guide = fs.readFileSync(path.join(dir, "guida-scelta-tech-lab.html"), "utf8");
+  assert.match(guide, /name="robots" content="noindex,nofollow"/);
+  assert.match(guide, /href="catalogo-lab.css"/);
+  assert.equal((guide.match(/class="tile guide-card"/g) || []).length, 8);
+  assert.equal((html.match(/class="category-link"/g) || []).length, 8);
+  assert.doesNotMatch(guide, /<script\\b|<form\\b|<iframe\\b|https?:\\/\\//i);
+  assert.match(css, /\\.guide-grid\\{/);
+  for (const category of data.categories) {
+    assert.ok(html.includes('href="guida-scelta-tech-lab.html#' + category.id + '"'));
+    assert.ok(guide.includes('id="' + category.id + '"'));
+    assert.ok(guide.includes('href="#' + category.id + '"'));
+    assert.ok(guide.includes('<h3 id="' + category.id + '-title">' + category.name + '</h3>'));
+  }
+});
+
