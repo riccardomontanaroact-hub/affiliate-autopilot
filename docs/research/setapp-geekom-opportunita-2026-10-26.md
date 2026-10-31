@@ -48,3 +48,14 @@ Settore: elettronica di consumo. Cookie pubblico precedentemente rilevato: 30 gi
 2. Verificare le condizioni GEEKOM in Awin, inclusa ammissibilità individuale.
 3. Produrre contenuti SEO utili senza link affiliati finché non esiste un'approvazione verificata.
 4. Conservare ogni nuova evidenza con data e fonte, evitando duplicati nei report.
+
+## Rettifica documentale del 31/10/2026 — GEEKOM: cookie Awin e sito ufficiale NON coincidenti
+
+**Nuova verifica delle due fonti pubbliche, 31 ottobre 2026 (Europa/Roma):**
+- Scheda **Awin GEEKOM IT** (programma pubblico **50517**): **cookie 15 giorni**. Fonte: https://ui.awin.com/merchant-profile/50517
+- Pagina **GEEKOM Italia — Programma di affiliazione**: **cookie 21 giorni** e **commissioni fino al 6%**. Fonte: https://www.geekom.it/affiliate-program/
+- La pagina del marchio dichiara che i programmi affiliati dei diversi negozi operano in modo indipendente e che il link di uno specifico programma traccia soltanto gli acquisti nel negozio corrispondente. **Non è dimostrato che il cookie di 21 giorni della pagina ufficiale si applichi al contratto Awin GEEKOM IT**. Potrebbero essere programmi/canali o condizioni differenti, oppure dati pubblici non allineati: non risolvere la discrepanza per supposizione.
+
+**Correzione alla sezione 2 precedente:** il dato «cookie 21 giorni» è una dichiarazione della pagina GEEKOM, **non un valore confermato per Awin IT**. Per una eventuale scheda VORLI riferita ad Awin, riportare soltanto «15 giorni secondo la scheda pubblica Awin consultata il 31/10/2026», sempre con riserva di verifica dei termini privati. La percentuale «fino al 6%» non è una commissione individuale verificata e non va applicata automaticamente al programma Awin.
+
+**Gate prima di qualunque utilizzo commerciale:** verificare nella dashboard autorizzata quale programma e negozio nazionale sarebbero effettivamente utilizzati, durata cookie contrattuale, commissioni per categoria, limitazioni territoriali, attribuzione, tempi di convalida, ammissibilità del publisher individuale italiano ed eventuali costi. Nessuna candidatura, link, pagamento, modifica di produzione o invio email eseguiti. Non includere dati personali o link di tracciamento in questa nota.
