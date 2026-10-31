@@ -1,7 +1,7 @@
 "use strict";
 /* VORLI — privacy smoke test for the draft site/preview, updated 30/10/2026.
  * Run from repository root: node tests/privacy-public-files-smoke.js
- * Standard Node.js only. Checks six selected HTML files and data/config.json.
+ * Standard Node.js only. Checks six selected HTML files, data/config.json and the research queue.
  * Does not scan other files, Git history, deployed pages, or arbitrary encodings.
  * Do not insert real personal identifiers or affiliate tracking links in tests.
  */
@@ -18,7 +18,7 @@ const htmlFiles = [
 ];
 const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i;
 const mailtoPattern = /mailto\s*:/i;
-const trackingPattern = /[?&](?:awc|clickref|affid|affiliate_id|publisher_id)=/i;
+const trackingPattern = /[?&](?:awc|clickref|affid|awinaffid|affiliate_id|publisher_id)=/i;
 const encodedSeparators = /&(?:amp|#0*38|#x0*26|#0*63|#x0*3f|#0*64|#x0*40|#0*58|#x0*3a);|%(?:26|3f|3d|40|3a)/gi;
 const decodeSeparator = {
   "&amp;": "&", "&#38;": "&", "&#x26;": "&",
@@ -60,9 +60,15 @@ if (typeof config.owner !== "string" || !/^VORLI\b/.test(config.owner)) {
   throw new Error("data/config.json: draft owner should be a project placeholder, not a person's name");
 }
 assertNoPrivateMarkers(configSource, "data/config.json");
+const researchQueueSource = read("data/product_research_queue.json");
+const researchQueue = JSON.parse(researchQueueSource);
+if (researchQueue.publisher_id !== null || researchQueue.affiliate_homepage_link_already_tested !== null) {
+  throw new Error("Research queue must not contain publisher identifiers or tracking links");
+}
+assertNoPrivateMarkers(researchQueueSource, "data/product_research_queue.json");
 for (const file of htmlFiles) {
   assertNoPrivateMarkers(read(file), file);
 }
-console.log("VORLI privacy smoke: seven draft files checked (6 HTML + config).");
+console.log("VORLI privacy smoke: eight draft files checked (6 HTML + config + research queue).");
 console.log("Includes common HTML-entity and percent-encoded separator variants.");
 console.log("Scope limited: no scan of other files, obfuscated data, live site, or Git history.");
