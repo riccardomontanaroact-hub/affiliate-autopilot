@@ -20,6 +20,25 @@ La pagina ufficiale di un rivenditore di software usa esplicitamente il confront
 - Non scrivere «recesso impossibile appena acquisti» come regola generale. Verificare tipologia del contenuto digitale, consenso espresso all'avvio della prestazione, presa d'atto delle conseguenze e conferme dovute, con consulenza competente se si attiva la vendita diretta.
 - IVA, requisiti per attività abituale e fatturazione di publisher individuale italiano richiedono valutazione professionale e condizioni Awin individuali; non dedurre idoneità fiscale dalla sola iscrizione al network.
 
+## Aggiornamento del 1 novembre 2026 — disclosure e autenticità delle licenze
+
+**Ambito:** verifica di fonti pubbliche effettuata il 2026-11-01. Integra il gate, non certifica un merchant o una singola licenza e non autorizza la pubblicazione.
+
+**Disclosure di affiliazione.** Le FAQ ufficiali AGCOM per i contenuti degli influencer indicano che un vantaggio da affiliazione/codice sconto rende necessaria una comunicazione commerciale immediatamente riconoscibile; un link o un tag del brand da solo non basta. Le diciture «Pubblicità» o «ADV» sono esempi chiari per quel contesto. Le FAQ riguardano soprattutto contenuti sulle piattaforme e hanno un perimetro proprio: **non presumere che tutte le disposizioni specifiche per gli influencer si applichino automaticamente a un sito di comparazione**. Per VORLI adottare comunque come standard editoriale prudente una disclosure testuale evidente *prima* del primo collegamento monetizzato, oltre alla nota generale del sito. Se un post promozionale viene adattato a una piattaforma, verificare anche le regole specifiche di formato e posizionamento.
+
+**Licenze software: prova del diritto d'uso.** Microsoft distingue la corretta licenza e l'attivazione tecnica; l'attivazione di un codice, da sola, non documenta necessariamente provenienza, trasferibilità e condizioni di licenza. Non descrivere un codice economico come «licenza originale garantita», «a vita» o «ufficiale» senza evidenza specifica e verificabile del prodotto. Controllare venditore, documentazione della licenza, edizione, durata, regione, dispositivi, diritto agli aggiornamenti e assistenza; chiedere chiarimenti al merchant prima di promuovere offerte ambigue. Questa verifica **non implica** che i prodotti di uno specifico advertiser siano irregolari.
+
+**Gate aggiuntivo per VORLI (prima di qualsiasi futuro rilascio):**
+- Una disclosure locale leggibile, immediata e coerente con il canale di pubblicazione; non basta una dichiarazione nascosta nel footer.
+- Nessun giudizio di autenticità, affidabilità o convenienza di una licenza basato soltanto sul prezzo, su una chiave di attivazione o sull'approvazione di un programma di affiliazione.
+- Se manca documentazione sulla provenienza/validità d'uso della variante, lasciare la scheda in bozza e non includere CTA transazionali.
+- Conservare solo fonti pubbliche e date nel repository: nessun messaggio privato, email, identificativo publisher, codice di tracciamento o materiale promozionale riservato.
+
+**Fonti ufficiali (consultate 2026-11-01):**
+- AGCOM, *Influencer — Linee guida, Codice di condotta e FAQ*, https://www.agcom.it/influencer-linee-guida-codice-di-condotta-e-faq (sezione FAQ «Trasparenza»; applicabilità da verificare in relazione al canale).
+- Microsoft Support, *About Genuine Windows*, https://support.microsoft.com/en-us/windows/activation/about-genuine-windows (licenze, attivazione e verifica di genuinità).
+- Microsoft, *Online shopping — yes, sure*, https://news.microsoft.com/en-cee/2020/12/18/online-shopping-yes-sure/ (distinzione tra product key e diritto di licenza; fonte storica 2020, verificata come riferimento nel 2026).
+
 ## Checklist obbligatoria prima di pubblicare una scheda
 | Controllo | Evidenza necessaria | Se assente |
 | --- | --- | --- |
