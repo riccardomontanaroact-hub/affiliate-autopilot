@@ -1,21 +1,37 @@
 "use strict";
 /* VORLI — privacy smoke test for the draft site/preview, updated 31/10/2026.
  * Run from repository root: node tests/privacy-public-files-smoke.js
- * Standard Node.js only. Checks six selected HTML files, data/config.json and the research queue.
- * Does not scan other files, Git history, deployed pages, or arbitrary encodings.
+ * Standard Node.js only. Checks every HTML file recursively under site/ and preview/vorli-next/,
+ * plus data/config.json and the research queue. Does not scan other paths,
+ * Git history, deployed pages, or arbitrary encodings.
  * Do not insert real personal identifiers or affiliate tracking links in tests.
  */
 const fs = require("node:fs");
 const path = require("node:path");
 const root = path.resolve(__dirname, "..");
-const htmlFiles = [
+const requiredHtmlFiles = [
   "site/index.html",
+  "site/catalogo.html",
   "site/guida.html",
   "site/risorse.html",
   "preview/vorli-next/index.html",
+  "preview/vorli-next/catalogo.html",
   "preview/vorli-next/guida.html",
   "preview/vorli-next/risorse.html"
 ];
+function findHtmlFiles(relativeDir) {
+  const directory = path.join(root, relativeDir);
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
+    const relativePath = path.posix.join(relativeDir, entry.name);
+    if (entry.isDirectory()) return findHtmlFiles(relativePath);
+    return entry.isFile() && entry.name.toLowerCase().endsWith(".html") ? [relativePath] : [];
+  });
+}
+const htmlFiles = [...new Set([
+  ...requiredHtmlFiles,
+  ...findHtmlFiles("site"),
+  ...findHtmlFiles("preview/vorli-next")
+])].sort();
 const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i;
 const mailtoPattern = /mailto\s*:/i;
 const trackingPattern = /[?&](?:awc|clickref|affid|awinaffid|affiliate_id|publisher_id)=/i;
@@ -94,6 +110,6 @@ assertNoPrivateMarkers(researchQueueSource, "data/product_research_queue.json");
 for (const file of htmlFiles) {
   assertNoPrivateMarkers(read(file), file);
 }
-console.log("VORLI privacy smoke: eight draft files checked (6 HTML + config + research queue).");
+console.log(`VORLI privacy smoke: ${htmlFiles.length + 2} draft files checked (${htmlFiles.length} HTML + config + research queue).`);
 console.log("Includes nested HTML-entity and percent-encoded separators, dots and slashes, plus synthetic regression fixtures.");
-console.log("Scope limited: no scan of other files, obfuscated data, live site, or Git history.");
+console.log("Scope limited: no scan of non-HTML site assets, other paths, obfuscated data, live site, or Git history.");
