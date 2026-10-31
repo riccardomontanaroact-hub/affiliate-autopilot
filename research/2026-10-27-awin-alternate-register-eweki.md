@@ -98,3 +98,16 @@ Questa estensione usa **solo schede pubbliche Awin**. Non indica una candidatura
 - Awin, programma pubblico VEVOR IT: https://ui.awin.com/merchant-profile/118433
 - Your Europe, diritti e garanzie degli acquisti: https://europa.eu/youreurope/citizens/consumers/shopping/shopping-consumer-rights/
 - Your Europe, recesso a distanza: https://europa.eu/youreurope/citizens/consumers/shopping/returns/indexamp_it.htm
+
+## Verifica 31/10/2026 — LG IT: programma non idoneo al profilo individuale dichiarato
+
+**Fonte pubblica primaria:** https://ui.awin.com/merchant-profile/116027 (scheda programma LG IT, consultata il 31/10/2026); condizioni commissioni: https://ui.awin.com/merchant-profile/116027/commission-groups .
+
+- **Pertinenza commerciale:** elettronica, monitor, TV, PC ed elettrodomestici, ma la pertinenza del catalogo non equivale all'ammissibilità del publisher.
+- **Condizioni pubblicizzate:** commissione standard del 3% e finestra cookie di 30 giorni. Non sono commissioni individuali verificate o ricavi VORLI.
+- **Blocco esplicito:** la scheda pubblica dichiara che non è consentita l'**affiliazione di persone fisiche**. Considerando il profilo di venditore individuale dichiarato per VORLI, **non proporre una candidatura e non utilizzare questo programma**, salvo chiarimento contrattuale formale su un'eventuale diversa idoneità.
+- **Altri vincoli:** SEM non consentito; feed e materiali promozionali non vanno utilizzati senza adesione e autorizzazioni.
+- **Azione editoriale sicura:** mantenere soltanto guide comparative indipendenti, senza CTA affiliate LG, prezzi/promozioni non verificati o impressione di partnership.
+- **Stato:** solo verifica pubblica; nessuna candidatura, approvazione, spesa, invio, link di tracciamento, merge o deploy.
+
+**Confronto eWeki IT:** https://ui.awin.com/merchant-profile/19988 (consultata il 31/10/2026) descrive elettronica di consumo e cookie pubblico 30 giorni; commissione individuale, idoneità e stato del publisher restano non verificati nella dashboard privata.
