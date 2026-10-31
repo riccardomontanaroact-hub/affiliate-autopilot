@@ -193,6 +193,39 @@ def verify_accessibility_modes(browser, width):
     context.close()
 
 
+
+def verify_category_guide(browser, width):
+    """Real browser smoke test of the original, unpublished eight-category guide."""
+    context = browser.new_context(viewport={"width": width, "height": 800})
+    page = context.new_page()
+    errors, requests = [], []
+    page.on("pageerror", lambda err: errors.append(str(err)))
+    page.on("request", lambda req: requests.append(req.url))
+    page.goto((LAB / "guida-scelta-tech-lab.html").as_uri(), wait_until="load")
+    assert page.title().startswith("Guida alla scelta tecnologica")
+    assert page.locator('meta[name="robots"]').get_attribute("content") == "noindex,nofollow"
+    assert page.locator(".guide-grid .guide-card").count() == 8
+    assert page.get_by_role("navigation", name="Indice delle otto checklist").count() == 1
+    for category in (
+        "computer", "software", "elettronica", "elettrodomestici-smart",
+        "accessori-casa", "sport-tech", "benessere-tech", "energia-portatile",
+    ):
+        assert page.locator(f'#{category}').count() == 1
+        assert page.locator(f'a[href="#{category}"]').count() == 1
+        assert page.locator(f'#{category} li').count() == 3
+    check_local_navigation(page)
+    page.keyboard.press("Tab")
+    assert page.locator("a.skip").evaluate("el => document.activeElement === el")
+    page.locator('a[href="#energia-portatile"]').click()
+    assert page.evaluate("location.hash") == "#energia-portatile"
+    check_no_overflow(page, width, "guide")
+    assert not errors, (width, errors)
+    assert all(url.startswith("file:") for url in requests), (width, requests)
+    if width in (360, 1440):
+        page.screenshot(path=str(EVIDENCE / f"guide-{width}-editorial.png"), full_page=True)
+    context.close()
+
+
 def main():
     try:
         from playwright.sync_api import sync_playwright
@@ -208,7 +241,8 @@ def main():
         try:
             for width in WIDTHS:
                 verify_viewport(browser, width)
-                print(f"PASS: {width}px, JS on/off, filters, keyboard, links, no overflow")
+                verify_category_guide(browser, width)
+                print(f"PASS: {width}px, catalog + eight-topic guide, links, responsive, keyboard")
             for width in (360, 1440):
                 verify_accessibility_modes(browser, width)
                 print(f"PASS: {width}px, forced-colors, reduced motion, keyboard focus")
