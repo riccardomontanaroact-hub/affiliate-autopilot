@@ -24,7 +24,7 @@ class Links(HTMLParser):
             if value.startswith(("https://", "http://")):
                 self.remote.append(value)
             elif not value.startswith(("#", "data:")):
-                self.local.append(value.split("?", 1)[0])
+                self.local.append(value.split("#", 1)[0].split("?", 1)[0])
 
 class CatalogLabTests(unittest.TestCase):
     @classmethod
@@ -104,6 +104,21 @@ class CatalogLabTests(unittest.TestCase):
         self.assertIn("più parole in qualsiasi ordine", self.html)
         self.assertIn("anche con trattini o barre", self.html)
         self.assertIn(".field-help{", self.css)
+
+
+    def test_original_category_guide_and_deep_links(self):
+        guide = (ROOT / "guida-scelta-tech-lab.html").read_text(encoding="utf-8")
+        self.assertIn('name="robots" content="noindex,nofollow"', guide)
+        self.assertIn('href="catalogo-lab.css"', guide)
+        self.assertEqual(8, guide.count('class="tile guide-card"'))
+        self.assertEqual(8, self.html.count('class="category-link"'))
+        self.assertNotRegex(guide.lower(), r"<script\\b|<form\\b|<iframe\\b|https?://")
+        self.assertIn(".guide-grid{", self.css)
+        for item in self.data["categories"]:
+            self.assertIn('id="' + item["id"] + '"', guide)
+            self.assertIn('href="#' + item["id"] + '"', guide)
+            self.assertIn('href="guida-scelta-tech-lab.html#' + item["id"] + '"', self.html)
+            self.assertIn("<h3 id=\"" + item["id"] + "-title\">" + item["name"] + "</h3>", guide)
 
     def test_accessibility_basics(self):
         self.assertIn("prefers-reduced-motion", self.css)
