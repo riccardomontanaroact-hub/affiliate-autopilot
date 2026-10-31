@@ -19,11 +19,14 @@ const htmlFiles = [
 const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i;
 const mailtoPattern = /mailto\s*:/i;
 const trackingPattern = /[?&](?:awc|clickref|affid|awinaffid|affiliate_id|publisher_id)=/i;
-const encodedSeparators = /&(?:amp|#0*38|#x0*26|#0*63|#x0*3f|#0*64|#x0*40|#0*58|#x0*3a);|%(?:26|3f|3d|40|3a)/gi;
+// Reject Awin click endpoints even when a publisher parameter is omitted or obscured.
+const trackingEndpointPattern = /\b(?:www\.)?awin1\.com\/(?:cread|pclick|awclick|click)\.php\b/i;
+const encodedSeparators = /&(?:amp|#0*38|#x0*26|#0*63|#x0*3f|#0*64|#x0*40|#0*58|#x0*3a|#0*61|#x0*3d);|%(?:26|3f|3d|40|3a)/gi;
 const decodeSeparator = {
   "&amp;": "&", "&#38;": "&", "&#x26;": "&",
   "&#63;": "?", "&#x3f;": "?", "&#64;": "@",
   "&#x40;": "@", "&#58;": ":", "&#x3a;": ":",
+  "&#61;": "=", "&#x3d;": "=",
   "%26": "&", "%3f": "?", "%3d": "=", "%40": "@", "%3a": ":"
 };
 function normalizeForScan(source) {
@@ -44,10 +47,25 @@ function assertNoPrivateMarkers(source, file) {
   if (emailPattern.test(normalized) || mailtoPattern.test(normalized)) {
     throw new Error(file + ": email address or mailto link in draft public file");
   }
-  if (trackingPattern.test(normalized)) {
+  if (trackingPattern.test(normalized) || trackingEndpointPattern.test(normalized)) {
     throw new Error(file + ": affiliate tracking query parameter in draft public file");
   }
 }
+// Regression fixtures use only synthetic markers, never a real affiliate identifier.
+for (const fixture of [
+  "?awc=synthetic",
+  "?awc&#61;synthetic",
+  "?awc&#x3d;synthetic",
+  "?awc%3dsynthetic",
+  "&amp;#63;awc&amp;#61;synthetic",
+  "https://www.awin1.com/cread.php"
+]) {
+  let rejected = false;
+  try { assertNoPrivateMarkers(fixture, "synthetic fixture"); }
+  catch { rejected = true; }
+  if (!rejected) throw new Error("Privacy scanner regression: synthetic fixture was accepted");
+}
+assertNoPrivateMarkers("https://example.invalid/info?topic=usb-c", "synthetic clean fixture");
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
 }
@@ -70,5 +88,5 @@ for (const file of htmlFiles) {
   assertNoPrivateMarkers(read(file), file);
 }
 console.log("VORLI privacy smoke: eight draft files checked (6 HTML + config + research queue).");
-console.log("Includes common HTML-entity and percent-encoded separator variants.");
+console.log("Includes common HTML-entity and percent-encoded separator variants, including encoded equals signs, plus synthetic regression fixtures.");
 console.log("Scope limited: no scan of other files, obfuscated data, live site, or Git history.");
