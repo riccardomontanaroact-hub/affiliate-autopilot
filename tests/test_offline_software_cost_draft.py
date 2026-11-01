@@ -1,7 +1,6 @@
 """Guardrails for the offline, non-published software cost calculator draft."""
 from html.parser import HTMLParser
 from pathlib import Path
-import re
 import unittest
 
 
@@ -43,7 +42,7 @@ class OfflineCalculatorTests(unittest.TestCase):
         self.assertEqual(self.parsed.external_scripts, [])
         self.assertNotRegex(
             self.source,
-            r"https?://|fetch\\s*\\(|XMLHttpRequest|localStorage|sessionStorage|utm_|affid=|<iframe",
+            r"https?://|fetch|XMLHttpRequest|localStorage|sessionStorage|utm_|affid=|<iframe",
         )
 
     def test_draft_has_noindex_and_accessible_results(self):
