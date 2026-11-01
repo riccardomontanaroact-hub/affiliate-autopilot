@@ -109,7 +109,7 @@ test("Original resources page has identifiable draft links and no frozen Awin st
   assert.doesNotMatch(resources, /non sono considerate approvate|ultima verifica/);
   assert.equal((resources.match(/class="sr-only"/g) || []).length, 5);
   assert.equal((resources.match(/target="_blank" rel="noopener noreferrer"/g) || []).length, 5);
-  const external = Array.from(resources.matchAll(/href="(https?:\\/\\/[^"]+)"/g), m => m[1]).sort();
+  const external = Array.from(resources.matchAll(/href="(https?:\/\/[^"]+)"/g), m => m[1]).sort();
   assert.deepEqual(external, data.resources.map(r => repoBlob + r.source).sort());
   for (const resource of data.resources) {
     assert.ok(resources.includes(": " + resource.title + " (nuova scheda)</span>"), resource.title);
