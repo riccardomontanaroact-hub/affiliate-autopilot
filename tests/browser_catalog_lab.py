@@ -226,6 +226,34 @@ def verify_category_guide(browser, width):
     context.close()
 
 
+def verify_resources_page(browser, width):
+    """Check the unpublished original-drafts page on real responsive viewports."""
+    context = browser.new_context(viewport={"width": width, "height": 800})
+    page = context.new_page()
+    errors, requests = [], []
+    page.on("pageerror", lambda err: errors.append(str(err)))
+    page.on("request", lambda req: requests.append(req.url))
+    page.goto((LAB / "risorse-originali-lab.html").as_uri(), wait_until="load")
+    assert page.locator('meta[name="robots"]').get_attribute("content") == "noindex,nofollow"
+    assert page.locator(".resource").count() == 5
+    assert page.get_by_role("link", name="Checklist tech").count() == 1
+    for title in RESOURCE_TITLES:
+        link = page.get_by_role("link", name=re.compile(re.escape(title)))
+        assert link.count() == 1, (width, title, "unique accessible link")
+        assert "nuova scheda" in link.aria_snapshot(), (width, title)
+        assert link.get_attribute("target") == "_blank"
+        assert "noopener" in (link.get_attribute("rel") or "")
+    check_local_navigation(page)
+    page.keyboard.press("Tab")
+    assert page.locator("a.skip").evaluate("el => document.activeElement === el")
+    check_no_overflow(page, width, "original resources")
+    assert not errors, (width, errors)
+    assert all(url.startswith("file:") for url in requests), (width, requests)
+    if width in (360, 1440):
+        page.screenshot(path=str(EVIDENCE / f"resources-{width}-drafts.png"), full_page=True)
+    context.close()
+
+
 def main():
     try:
         from playwright.sync_api import sync_playwright
@@ -242,7 +270,8 @@ def main():
             for width in WIDTHS:
                 verify_viewport(browser, width)
                 verify_category_guide(browser, width)
-                print(f"PASS: {width}px, catalog + eight-topic guide, links, responsive, keyboard")
+                verify_resources_page(browser, width)
+                print(f"PASS: {width}px, catalog + guide + original drafts, links, responsive, keyboard")
             for width in (360, 1440):
                 verify_accessibility_modes(browser, width)
                 print(f"PASS: {width}px, forced-colors, reduced motion, keyboard focus")
