@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>VORLI Lab — Stima autonomia power station (offline)</title>
+<style>
+:root{color-scheme:dark;--bg:#091320;--panel:#142338;--text:#edf5ff;--muted:#b7c8da;--line:#34506c;--accent:#5de0c2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:840px;margin:auto;padding:28px 16px 60px}
+h1{font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.2;margin:12px 0}
+h2{font-size:1.15rem}p,li{max-width:75ch}
+small,.muted{color:var(--muted)}.tag{color:var(--accent);font-weight:700;letter-spacing:.08em}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:22px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+label{display:block;font-weight:650;margin-bottom:5px}input{width:100%;background:#081523;color:var(--text);border:1px solid #7090ad;border-radius:8px;padding:12px;font:inherit}
+input:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hint{font-size:.88rem;color:var(--muted);margin:4px 0 0}
+button{background:var(--accent);color:#092034;border:0;border-radius:9px;padding:12px 20px;font:inherit;font-weight:800;cursor:pointer;margin-top:22px}
+.output{font-size:1.2rem;font-weight:700}.output strong{color:var(--accent)}
+.error{color:#ffb9b9}a{color:var(--accent)}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.panel{padding:16px}}
+</style>
+</head>
+<body>
+<main>
+<p class="tag">VORLI LAB · STRUMENTO ORIGINALE · BOZZA OFFLINE</p>
+<h1>Quanto dura la tua power station?</h1>
+<p>Inserisci capacità, carico e ipotesi di perdita per ottenere una <strong>stima</strong> in ore. Non è un test fisico e non garantisce prestazioni reali.</p>
+<section class="panel" aria-labelledby="form-title">
+<h2 id="form-title">Dati per il calcolo</h2>
+<form id="runtime-form">
+<div class="grid">
+<div><label for="capacity">Capacità nominale (Wh)</label><input id="capacity" type="number" min="1" max="1000000" step="any" value="512" required><p class="hint">Leggi i Wh sulla scheda tecnica.</p></div>
+<div><label for="load">Consumo medio del dispositivo (W)</label><input id="load" type="number" min="0.1" max="1000000" step="any" value="60" required><p class="hint">Per carichi ciclici usa il valore medio.</p></div>
+<div><label for="usable">Energia utilizzabile (%)</label><input id="usable" type="number" min="1" max="100" step="any" value="90" required><p class="hint">90% è solo un'ipotesi modificabile.</p></div>
+<div><label for="efficiency">Efficienza conversione AC (%)</label><input id="efficiency" type="number" min="1" max="100" step="any" value="85" required><p class="hint">85% è solo un'ipotesi modificabile.</p></div>
+<div><label for="standby">Consumo fisso lato batteria (W)</label><input id="standby" type="number" min="0" max="100000" step="any" value="0" required><p class="hint">Standby e ausiliari, se noti.</p></div>
+<div><label for="continuous">Potenza AC continua dichiarata (W)</label><input id="continuous" type="number" min="0.1" max="1000000" step="any" value="500" required><p class="hint">Non confondere potenza W con capacità Wh.</p></div>
+</div>
+<button type="submit">Calcola autonomia stimata</button>
+</form>
+</section>
+<section class="panel" aria-labelledby="result-title">
+<h2 id="result-title">Risultato</h2>
+<p id="output" class="output" role="status" aria-live="polite">In attesa di calcolo.</p>
+<p id="details" class="muted"></p>
+</section>
+<section aria-labelledby="method-title">
+<h2 id="method-title">Come funziona</h2>
+<p><strong>Ore = (Wh × quota utilizzabile) / (W medi / efficienza + W fissi lato batteria).</strong> Le percentuali si dividono per 100. Il risultato non include degrado, temperatura, variazioni del carico o picchi di avviamento.</p>
+<p>Se il carico supera la potenza AC continua dichiarata, il calcolo viene bloccato. Anche un carico sotto il limite continuo può avere un picco di avvio non supportato: controlla i manuali.</p>
+<h2>Sicurezza e trasparenza</h2>
+<p>Non usare questa stima per apparecchiature mediche, sistemi salvavita o per progettare collegamenti alla rete elettrica domestica. Non collegare mai l'uscita AC a una presa di casa con cavi improvvisati. Per impianti fissi serve un professionista qualificato.</p>
+<p class="muted">Privacy: il calcolo avviene interamente nel browser, senza invii di dati, cookie, analytics, librerie esterne o salvataggi. Nessun prezzo o link affiliato. Bozza non pubblicata; revisione del 01/11/2026.</p>
+</section>
+</main>
+<script>
+"use strict";
+function calculateRuntime(capacityWh,loadW,usablePercent,efficiencyPercent,standbyW,continuousW){
+  const values=[capacityWh,loadW,usablePercent,efficiencyPercent,standbyW,continuousW];
+  if(values.some(v=>!Number.isFinite(v)))throw new Error("Inserisci solo numeri validi.");
+  if(capacityWh<=0||loadW<=0||usablePercent<=0||usablePercent>100||
+     efficiencyPercent<=0||efficiencyPercent>100||standbyW<0||continuousW<=0){
+    throw new Error("Controlla i valori: capacità e potenze positive, percentuali tra 0 e 100.");
+  }
+  if(loadW>continuousW)throw new Error("Il carico supera la potenza AC continua dichiarata: non stimare l'autonomia senza verificare la compatibilità.");
+  const usableWh=capacityWh*usablePercent/100;
+  const batteryDrawW=loadW/(efficiencyPercent/100)+standbyW;
+  return {hours:usableWh/batteryDrawW,usableWh,batteryDrawW};
+}
+function readNumber(id){return Number(document.getElementById(id).value);}
+function render(){
+  const output=document.getElementById("output");
+  const details=document.getElementById("details");
+  const fmt=n=>new Intl.NumberFormat("it-IT",{maximumFractionDigits:2}).format(n);
+  try{
+    const r=calculateRuntime(readNumber("capacity"),readNumber("load"),readNumber("usable"),readNumber("efficiency"),readNumber("standby"),readNumber("continuous"));
+    output.className="output";
+    output.textContent="Autonomia teorica: "+fmt(r.hours)+" ore (circa "+fmt(r.hours*60)+" minuti).";
+    details.textContent="Energia utilizzabile: "+fmt(r.usableWh)+" Wh. Assorbimento stimato lato batteria: "+fmt(r.batteryDrawW)+" W. Valori indicativi, non misurati.";
+  }catch(e){
+    output.className="output error";
+    output.textContent=e.message;
+    details.textContent="Correggi i dati e riprova.";
+  }
+}
+document.getElementById("runtime-form").addEventListener("submit",event=>{event.preventDefault();render();});
+render();
+</script>
+</body>
+</html>
