@@ -60,3 +60,20 @@ Questo file **non** riporta messaggi privati, identificativi, link di tracciamen
 **Nota normativa:** per la distinzione tra prezzo consigliato e prezzo precedente, consultare le FAQ MIMIT sull'art. 17-bis (https://www.mimit.gov.it/it/assistenza/domande-frequenti/annunci-di-riduzione-di-prezzo-domande-frequenti-faq). L'applicazione della disciplina specifica ai diversi tipi di software richiede qualificazione del caso concreto; resta fermo il divieto di comunicazioni ingannevoli.
 
 **Sicurezza:** questa sezione utilizza esclusivamente fonti pubbliche, senza dati di account, email, ID publisher, link affiliati, prezzi individuali o dettagli di messaggi privati. Nessuna candidatura, invio, pagamento o pubblicazione.
+
+## Verifica del 01/11/2026 — incongruenze puntuali su due schede italiane
+
+**Fonti pubbliche consultate il 01/11/2026 (pagine prodotto in italiano):**
+- NordVPN Standard, 10 dispositivi, 1 anno: https://2gosoftware.eu/it-it/black-friday-offerte/nordvpn-10-dispositivi-1-anno
+- Adobe Lightroom CC, 1 utente, 1 anno: https://2gosoftware.eu/it-it/black-friday-offerte/adobe-lightroom-creative-cloud-1tb
+- Pagina categoria italiana Black Month: https://2gosoftware.eu/it-it/black-friday-offerte
+
+**Riscontri verificabili:**
+1. La pagina italiana **NordVPN Standard** contiene il testo «L'offerta è valida dal 5 ottobre al 1° novembre»; è quindi improprio usare quella descrizione per promettere la stessa promozione dal 2 novembre senza una verifica aggiornata. La presenza dello SKU nella categoria Black Month non chiarisce da sola quale periodo prevalga.
+2. La stessa scheda NordVPN presenta una sezione «Acronis gratis!» nel testo descrittivo, mentre nel riquadro dei regali visibile compare un servizio di installazione: **non presumere** che l'omaggio Acronis sia effettivamente selezionabile o cumulabile al checkout. Verificare il riepilogo ordine e le condizioni dello SKU prima di qualunque claim.
+3. La scheda NordVPN elenca le lingue «EN, FR, DE, ES», senza elencare IT. La scheda **Adobe Lightroom CC** elenca «EN, FR, DE, NL», senza elencare IT. L'assenza di IT in queste liste **non dimostra** che i software non possano funzionare in italiano, ma non consente a VORLI di dichiarare la disponibilità della lingua italiana senza conferma ufficiale per la specifica variante.
+4. La pagina italiana Black Month mostra offerte e prezzi, ma nel testo introduttivo consultato non specifica una finestra generale unica. La landing internazionale localizzata per la Germania non prova le condizioni italiane. Mantenere separati **annuncio della categoria**, **periodo del singolo SKU** e **condizioni di ciascun regalo**.
+
+**Decisione editoriale:** HOLD su schede promozionali di questi due SKU, date di scadenza, regali e promesse di lingua italiana finché il merchant non renda coerenti i dati pubblici e siano verificati termini applicabili. È invece possibile continuare le bozze informative neutrali già preparate su compatibilità, rinnovi e costi, senza link di tracking o urgenza commerciale.
+
+**Riservatezza:** questa integrazione deriva soltanto da pagine web pubbliche. Non riporta messaggi privati, codici, indirizzi di posta, dati personali, identificativi publisher o link di attribuzione. Nessun merge, pubblicazione o attivazione di pagamenti.
