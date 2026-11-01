@@ -17,6 +17,7 @@ class Cards(HTMLParser):
         self.container = None
         self.current = None
         self.heading = False
+        self.description = False
         self.cards = {"category-cards": [], "resource-cards": []}
 
     def handle_starttag(self, tag, attrs):
@@ -24,22 +25,28 @@ class Cards(HTMLParser):
         if attrs.get("id") in self.cards:
             self.container = attrs["id"]
         if self.container and tag == "article":
-            self.current = {"category": attrs.get("data-category"), "title": "", "link": None}
+            self.current = {"category": attrs.get("data-category"), "title": "", "description": "", "link": None}
             self.cards[self.container].append(self.current)
         if self.current and tag == "h3":
             self.heading = True
+        if self.current and tag == "p":
+            self.description = True
         if self.current and tag == "a":
             self.current["link"] = attrs.get("href")
 
     def handle_endtag(self, tag):
         if tag == "h3":
             self.heading = False
+        if tag == "p":
+            self.description = False
         if tag == "article":
             self.current = None
 
     def handle_data(self, data):
         if self.current and self.heading:
             self.current["title"] += data
+        if self.current and self.description:
+            self.current["description"] += data
 
 
 class CatalogHydrationTest(unittest.TestCase):
@@ -63,6 +70,10 @@ class CatalogHydrationTest(unittest.TestCase):
                          [(c["id"], c["name"]) for c in self.data["categories"]])
         self.assertEqual([(r["category"], r["title"].strip()) for r in resources],
                          [(r["category"], r["title"]) for r in self.data["resources"]])
+        self.assertEqual([c["description"].strip() for c in categories],
+                         [c["description"] for c in self.data["categories"]])
+        self.assertEqual([r["description"].strip() for r in resources],
+                         [r["description"] for r in self.data["resources"]])
 
     def test_resource_links_are_exactly_editorial_sources(self):
         for card, item in zip(self.cards.cards["resource-cards"], self.data["resources"]):
@@ -75,6 +86,8 @@ class CatalogHydrationTest(unittest.TestCase):
         self.assertNotIn("innerHTML", self.js)
         self.assertIn("categorySync", self.js)
         self.assertIn("resourceSync", self.js)
+        self.assertIn("description.textContent.trim() === c.description", self.js)
+        self.assertIn("description.textContent.trim() === r.description", self.js)
         self.assertIn('document.documentElement.classList.add("js-ready")', self.js)
 
     def test_no_commerce_in_preview(self):
