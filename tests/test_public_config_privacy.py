@@ -36,6 +36,14 @@ class PublicConfigPrivacyTests(unittest.TestCase):
         self.assertNotIn("github.com/", raw.lower())
         self.assertIn("In revisione", raw)
 
+    def test_all_public_html_pages_have_no_email(self):
+        """Check every published HTML page, not just the homepage."""
+        for path in sorted(SITE.parent.glob("*.html")):
+            with self.subTest(file=path.name):
+                raw = path.read_text(encoding="utf-8")
+                self.assertIsNone(EMAIL.search(raw))
+                self.assertNotIn("mailto:", raw.lower())
+
     def test_public_disclosure_is_preserved(self):
         config = json.loads(CONFIG.read_text(encoding="utf-8"))
         self.assertIn("affiliazione", config["affiliate_disclosure"].lower())
