@@ -41,5 +41,18 @@ class PublicConfigPrivacyTests(unittest.TestCase):
         self.assertIn("affiliazione", config["affiliate_disclosure"].lower())
 
 
+    def test_public_research_data_has_no_tracking_identifiers(self):
+        """Public data files must not include publisher identifiers or tracked URLs."""
+        data_dir = CONFIG.parent
+        for path in sorted(data_dir.glob("*.json")):
+            with self.subTest(file=path.name):
+                raw = path.read_text(encoding="utf-8")
+                self.assertIsNone(EMAIL.search(raw))
+                self.assertIsNone(TRACKING_FIELD.search(raw))
+                self.assertNotIn("awin1.com/cread.php", raw.lower())
+                self.assertNotIn("membership-invitation/accept", raw.lower())
+                self.assertNotIn("affiliate_homepage_link_already_tested", raw)
+
+
 if __name__ == "__main__":
     unittest.main()
