@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 CONFIG = Path(__file__).resolve().parents[1] / "data" / "config.json"
+SITE = Path(__file__).resolve().parents[1] / "site" / "index.html"
 EMAIL = re.compile(r"(?i)\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b")
 TRACKING_FIELD = re.compile(
     r"(?i)\b(?:awinaffid|publisher[_-]?id|affiliate[_-]?id|clickref|subid)\b"
@@ -27,6 +28,13 @@ class PublicConfigPrivacyTests(unittest.TestCase):
         raw = CONFIG.read_text(encoding="utf-8")
         self.assertIsNone(EMAIL.search(raw))
         self.assertIsNone(TRACKING_FIELD.search(raw))
+
+    def test_public_site_has_no_email_or_links_to_unreleased_drafts(self):
+        raw = SITE.read_text(encoding="utf-8")
+        self.assertIsNone(EMAIL.search(raw))
+        self.assertNotIn("mailto:", raw.lower())
+        self.assertNotIn("github.com/", raw.lower())
+        self.assertIn("In revisione", raw)
 
     def test_public_disclosure_is_preserved(self):
         config = json.loads(CONFIG.read_text(encoding="utf-8"))
