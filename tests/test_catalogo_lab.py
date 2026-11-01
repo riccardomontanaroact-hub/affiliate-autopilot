@@ -82,6 +82,28 @@ class CatalogLabTests(unittest.TestCase):
                 self.html,
             )
 
+    def test_resources_page_has_accessible_links_and_no_stale_approval_claims(self):
+        resources = (ROOT / "risorse-originali-lab.html").read_text(encoding="utf-8")
+        self.assertIn('name="robots" content="noindex,nofollow"', resources)
+        self.assertIn('href="guida-scelta-tech-lab.html"', resources)
+        self.assertIn("Lo stato delle candidature Awin può cambiare", resources)
+        self.assertNotIn("non sono considerate approvate", resources)
+        self.assertNotIn("ultima verifica", resources)
+        self.assertEqual(5, resources.count('class="sr-only"'))
+        self.assertEqual(5, resources.count('target="_blank" rel="noopener noreferrer"'))
+        self.assertEqual(5, resources.count('aria-hidden="true"> ↗</span>'))
+        parser = Links()
+        parser.feed(resources)
+        expected = sorted(
+            "https://github.com/riccardomontanaroact-hub/affiliate-autopilot/blob/" + item["source"]
+            for item in self.data["resources"]
+        )
+        self.assertEqual(expected, sorted(parser.remote))
+        for path in parser.local:
+            self.assertTrue((ROOT / path).is_file(), path)
+        for item in self.data["resources"]:
+            self.assertIn(": " + item["title"] + " (nuova scheda)</span>", resources)
+
     def test_no_results_feedback_is_near_search(self):
         # No-results controls must be near filters, not after the resource grid.
         self.assertEqual(self.html.count('id="empty-results"'), 1)
