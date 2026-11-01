@@ -30,3 +30,16 @@ Fonti di conformità consultate il 17 ottobre 2026:
 - OSS IVA UE: https://europa.eu/youreurope/business/finance-and-tax/vat/one-stop-shop/index_it.htm
 
 La vendita diretta di contenuti digitali e gli obblighi fiscali italiani richiedono verifica specifica prima di attivare incassi.
+
+
+## Aggiornamento mercato italiano — 1 novembre 2026 (verifica pubblica)
+
+**Non confondere il programma IT con il programma EU:** la pagina ufficiale italiana Jackery, https://it.jackery.com/pages/affiliate-program, dichiara **8% sulle vendite qualificate riferite a it.jackery.com**, accesso gratuito al programma e iscrizione attraverso **Affiliatly**. La stessa pagina afferma che le commissioni sono ricevute «alla fine del mese successivo», senza precisare se esistano soglie minime, finestre di validazione o condizioni individuali aggiuntive. Non interpretare tale indicazione come promessa di pagamento immediato di piccoli importi.
+
+La pagina ufficiale europea, https://eu.jackery.com/pages/affiliate-program, dichiara invece **almeno 6%** e presenta due canali (Webgains e Affiliatly). Le condizioni dei due mercati non vanno combinate o estese automaticamente l'una all'altra. La presenza di Jackery su Awin in altri Paesi non prova l'esistenza di un programma Awin IT, né l'approvazione di VORLI.
+
+**Stato VORLI:** opportunità da valutare, non approvata e non attiva; nessuna candidatura, acquisto, email, link affiliato o pubblicazione. Restano da verificare: ammissibilità del publisher individuale italiano, durata cookie, base di calcolo al netto di resi/IVA/spese, soglia e metodo di pagamento, termini Affiliatly, requisiti fiscali e obblighi di disclosure. L'assenza di costo di iscrizione non equivale all'assenza di obblighi fiscali o amministrativi.
+
+**Proposta editoriale SEO non promozionale:** integrare la guida camper con una sezione «Quanto incide la potenza del caricatore sulla ricarica?», distinguendo W (potenza) e Wh (energia), senza stimare tempi reali da sola potenza nominale: le curve di ricarica, le perdite e i limiti del dispositivo incidono sul risultato. Titolo suggerito: «Power station in camper: 7 errori nel calcolo dell'autonomia». Meta description: «Watt, wattora, ricarica e consumi: una checklist pratica per confrontare power station senza promesse di autonomia non verificate».
+
+**Fonti primarie ricontrollate il 1 novembre 2026:** https://it.jackery.com/pages/affiliate-program ; https://eu.jackery.com/pages/affiliate-program .
