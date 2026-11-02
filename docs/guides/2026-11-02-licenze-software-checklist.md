@@ -35,5 +35,6 @@ No. È un motivo per fare verifiche aggiuntive, non una prova sufficiente per ac
 - Microsoft — errore Product Key non valido: https://support.microsoft.com/it-it/microsoft-365-activation-licensing/product-key-is-not-valid-error-when-activating-office
 - Microsoft — licenza originale Office: https://support.microsoft.com/it-it/accounts-billing/stay-safe-with-a-genuine-office-license
 - Microsoft — problemi di attivazione Windows: https://support.microsoft.com/it-it/windows/activation/why-can-t-i-activate-windows
+- Your Europe — restituzioni e recesso per contenuti digitali: https://europa.eu/youreurope/citizens/consumers/shopping/returns/indexamp_it.htm
 
 **Nota editoriale:** prima di un'eventuale pubblicazione verificare aggiornamento delle fonti, chiarezza legale sul recesso, accessibilità, originalità e disclosure se verranno aggiunti link remunerati. Nessun prezzo, coupon, tracciamento o affiliazione attiva in questa bozza.
