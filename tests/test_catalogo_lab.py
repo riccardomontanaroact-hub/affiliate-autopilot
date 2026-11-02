@@ -143,6 +143,39 @@ class CatalogLabTests(unittest.TestCase):
             self.assertIn('href="guida-scelta-tech-lab.html#' + item["id"] + '"', self.html)
             self.assertIn("<h3 id=\"" + item["id"] + "-title\">" + item["name"] + "</h3>", guide)
 
+    def test_printable_guide_and_offline_comparison_csv_match(self):
+        # This is a new lab-only original worksheet, separate from the five older drafts.
+        import csv
+        import io
+        guide = (ROOT / "guida-scelta-tech-lab.html").read_text(encoding="utf-8")
+        sheet = (ROOT / "scheda-confronto-tech-lab.csv").read_text(encoding="utf-8")
+        rows = list(csv.reader(io.StringIO(sheet)))
+        self.assertEqual(
+            ["categoria", "criterio_da_verificare", "opzione_A", "opzione_B",
+             "fonte_ufficiale", "note"], rows[0]
+        )
+        self.assertEqual(25, len(rows), "8 categories x 3 criteria + header")
+        self.assertIn('href="scheda-confronto-tech-lab.csv" download="scheda-confronto-tech-lab.csv"', guide)
+        self.assertIn("@media print", self.css)
+        self.assertIn("body{background:#fff !important", self.css)
+        cards = re.findall(
+            r'<article class="tile guide-card" id="[^"]+"[^>]*>.*?<h3[^>]*>([^<]+)</h3>.*?<ul>(.*?)</ul>',
+            guide, re.S
+        )
+        expected = [
+            (name, criterion.strip())
+            for name, list_html in cards
+            for criterion in re.findall(r"<li>(.*?)</li>", list_html, re.S)
+        ]
+        self.assertEqual(8, len(cards))
+        self.assertEqual(expected, [(row[0], row[1]) for row in rows[1:]])
+        for row in rows[1:]:
+            self.assertEqual(6, len(row))
+            self.assertEqual(["", "", "", ""], row[2:])
+            self.assertFalse(any(value.lstrip().startswith(("=", "+", "-", "@")) for value in row))
+        self.assertNotIn("https://", sheet)
+        self.assertNotIn("mailto:", sheet)
+
     def test_accessibility_basics(self):
         self.assertIn("prefers-reduced-motion", self.css)
         self.assertIn(":focus-visible", self.css)
