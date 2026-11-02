@@ -24,7 +24,7 @@ class Links(HTMLParser):
             if value.startswith(("https://", "http://")):
                 self.remote.append(value)
             elif not value.startswith(("#", "data:")):
-                self.local.append(value.split("?", 1)[0])
+                self.local.append(value.split("#", 1)[0].split("?", 1)[0])
 
 class CatalogLabTests(unittest.TestCase):
     @classmethod
@@ -81,6 +81,100 @@ class CatalogLabTests(unittest.TestCase):
                 ': ' + item["title"] + ' (nuova scheda)</span>',
                 self.html,
             )
+
+    def test_resources_page_has_accessible_links_and_no_stale_approval_claims(self):
+        resources = (ROOT / "risorse-originali-lab.html").read_text(encoding="utf-8")
+        self.assertIn('name="robots" content="noindex,nofollow"', resources)
+        self.assertIn('href="guida-scelta-tech-lab.html"', resources)
+        self.assertIn("Lo stato delle candidature Awin può cambiare", resources)
+        self.assertNotIn("non sono considerate approvate", resources)
+        self.assertNotIn("ultima verifica", resources)
+        self.assertEqual(5, resources.count('class="sr-only"'))
+        self.assertEqual(5, resources.count('target="_blank" rel="noopener noreferrer"'))
+        self.assertEqual(5, resources.count('aria-hidden="true"> ↗</span>'))
+        parser = Links()
+        parser.feed(resources)
+        expected = sorted(
+            "https://github.com/riccardomontanaroact-hub/affiliate-autopilot/blob/" + item["source"]
+            for item in self.data["resources"]
+        )
+        self.assertEqual(expected, sorted(parser.remote))
+        for path in parser.local:
+            self.assertTrue((ROOT / path).is_file(), path)
+        for item in self.data["resources"]:
+            self.assertIn(": " + item["title"] + " (nuova scheda)</span>", resources)
+
+    def test_no_results_feedback_is_near_search(self):
+        # No-results controls must be near filters, not after the resource grid.
+        self.assertEqual(self.html.count('id="empty-results"'), 1)
+        self.assertEqual(self.html.count('id="empty-reset"'), 1)
+        self.assertLess(self.html.index('id="results-count"'),
+                        self.html.index('id="empty-results"'))
+        self.assertLess(self.html.index('id="empty-results"'),
+                        self.html.index('id="category-cards"'))
+
+    def test_affiliate_status_copy_does_not_claim_live_approval(self):
+        # Commercial status changes independently from this static, unpublished lab.
+        self.assertIn("Lo stato delle candidature Awin può cambiare", self.html)
+        self.assertIn("offerte e link restano disattivati", self.html)
+        self.assertNotIn("non sono considerati advertiser approvati", self.html)
+        self.assertIn("nessun prodotto acquistabile", self.html.lower())
+
+    def test_search_help_is_associated_with_input(self):
+        self.assertIn('aria-describedby="catalog-search-help"', self.html)
+        self.assertEqual(1, self.html.count('id="catalog-search-help"'))
+        self.assertIn("più parole in qualsiasi ordine", self.html)
+        self.assertIn("anche con trattini o barre", self.html)
+        self.assertIn(".field-help{", self.css)
+
+
+    def test_original_category_guide_and_deep_links(self):
+        guide = (ROOT / "guida-scelta-tech-lab.html").read_text(encoding="utf-8")
+        self.assertIn('name="robots" content="noindex,nofollow"', guide)
+        self.assertIn('href="catalogo-lab.css"', guide)
+        self.assertEqual(8, guide.count('class="tile guide-card"'))
+        self.assertEqual(8, self.html.count('class="category-link"'))
+        for forbidden in ("<script", "<form", "<iframe", "https://", "http://"):
+            self.assertNotIn(forbidden, guide.lower())
+        self.assertIn(".guide-grid{", self.css)
+        for item in self.data["categories"]:
+            self.assertIn('id="' + item["id"] + '"', guide)
+            self.assertIn('href="#' + item["id"] + '"', guide)
+            self.assertIn('href="guida-scelta-tech-lab.html#' + item["id"] + '"', self.html)
+            self.assertIn("<h3 id=\"" + item["id"] + "-title\">" + item["name"] + "</h3>", guide)
+
+    def test_printable_guide_and_offline_comparison_csv_match(self):
+        # This is a new lab-only original worksheet, separate from the five older drafts.
+        import csv
+        import io
+        guide = (ROOT / "guida-scelta-tech-lab.html").read_text(encoding="utf-8")
+        sheet = (ROOT / "scheda-confronto-tech-lab.csv").read_text(encoding="utf-8")
+        rows = list(csv.reader(io.StringIO(sheet)))
+        self.assertEqual(
+            ["categoria", "criterio_da_verificare", "opzione_A", "opzione_B",
+             "fonte_ufficiale", "note"], rows[0]
+        )
+        self.assertEqual(25, len(rows), "8 categories x 3 criteria + header")
+        self.assertIn('href="scheda-confronto-tech-lab.csv" download="scheda-confronto-tech-lab.csv"', guide)
+        self.assertIn("@media print", self.css)
+        self.assertIn("body{background:#fff !important", self.css)
+        cards = re.findall(
+            r'<article class="tile guide-card" id="[^"]+"[^>]*>.*?<h3[^>]*>([^<]+)</h3>.*?<ul>(.*?)</ul>',
+            guide, re.S
+        )
+        expected = [
+            (name, criterion.strip())
+            for name, list_html in cards
+            for criterion in re.findall(r"<li>(.*?)</li>", list_html, re.S)
+        ]
+        self.assertEqual(8, len(cards))
+        self.assertEqual(expected, [(row[0], row[1]) for row in rows[1:]])
+        for row in rows[1:]:
+            self.assertEqual(6, len(row))
+            self.assertEqual(["", "", "", ""], row[2:])
+            self.assertFalse(any(value.lstrip().startswith(("=", "+", "-", "@")) for value in row))
+        self.assertNotIn("https://", sheet)
+        self.assertNotIn("mailto:", sheet)
 
     def test_accessibility_basics(self):
         self.assertIn("prefers-reduced-motion", self.css)
