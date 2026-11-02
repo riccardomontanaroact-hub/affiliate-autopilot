@@ -19,7 +19,7 @@
       },
       "observed_price_eur": 499,
       "availability_observed": "Esaurito",
-      "approval_status": "pending",
+      "approval_status": "dashboard_unverified",
       "affiliate_product_deep_link": null,
       "commission_rate": null,
       "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
@@ -36,7 +36,7 @@
       },
       "observed_price_eur": 429,
       "availability_observed": "Esaurito",
-      "approval_status": "pending",
+      "approval_status": "dashboard_unverified",
       "affiliate_product_deep_link": null,
       "commission_rate": null,
       "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
@@ -52,13 +52,13 @@
       },
       "observed_price_eur": 559,
       "availability_observed": "Esaurito",
-      "approval_status": "pending",
+      "approval_status": "dashboard_unverified",
       "affiliate_product_deep_link": null,
       "commission_rate": null,
       "next_action": "Verificare disponibilità effettiva e generare il deep link dalla dashboard Awin. Verificare la commissione applicata al publisher."
     }
   ],
-  "safety_note": "I prezzi sono una fotografia della pagina ufficiale al momento del controllo, ma i prodotti risultavano esauriti. Non copiarli nel catalogo live. La pagina ufficiale del programma e il redirect homepage non bastano a verificare l'attribuzione della commissione o a sostituire un deep link generato da Awin.",
+  "safety_note": "I prezzi sono una fotografia della pagina ufficiale al momento del controllo, ma i prodotti risultavano esauriti. Non copiarli nel catalogo live. La pagina ufficiale del programma e il redirect homepage non bastano a verificare l'attribuzione della commissione o a sostituire un deep link generato da Awin. Stato del programma del publisher: non verificato in dashboard; 'dashboard_unverified' non significa domanda in attesa né approvazione negata. Le evidenze private di adesione non sono archiviate nel repository pubblico.",
   "last_recheck": {
     "checked_at": "2026-10-22",
     "result": "Trovate tre pagine prodotto Decathlon Marketplace che mostrano prezzo e pulsante Aggiungi al carrello; i prodotti sono venduti/spediti da Findenergy. R600 €239, S2000 Pro €689, R2500 V2 €849. Il programma Decathlon IT Awin esiste (ID 9643) e pubblica cookie di 30 giorni; commissione standard publisher indicata 2,29%. Non è stato generato alcun link affiliato e non è stata confermata l'approvazione account. Nessun candidato è ancora pubblicabile."
