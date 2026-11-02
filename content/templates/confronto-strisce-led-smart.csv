@@ -1,0 +1,2 @@
+modello,data_verifica,uso,lunghezza_m,tecnologia_rgb_rgbic,tagliabile_da_manualistica,connettivita,matter_certificato,ip_striscia,ip_controller,ip_alimentatore,potenza_w,ore_giorno,kwh_30_giorni,prezzo_kit_eur,costi_accessori_eur,prezzo_totale_eur,note_fonti
+ESEMPIO_NON_PRODOTTO_REALE,2026-11-02,scrivania,5,da_verificare,da_verificare,da_verificare,da_verificare,da_verificare,da_verificare,da_verificare,20,4,2.4,,,,"Esempio solo didattico: kWh=(W*ore*30)/1000; non è una misura o offerta commerciale"
