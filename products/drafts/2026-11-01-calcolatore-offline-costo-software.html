@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>VORLI Lab — Calcolatore offline costo licenze software</title>
+<style>
+:root{color-scheme:light;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body{max-width:960px;margin:0 auto;padding:1.5rem;background:#f4f7fb;color:#182637;line-height:1.55}
+h1,h2{line-height:1.2}h1{font-size:clamp(1.6rem,4vw,2.3rem)}
+.card{background:white;border:1px solid #ccd7e4;border-radius:14px;padding:1.25rem;margin:1rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1rem}
+label{display:block;margin:.85rem 0 .25rem;font-weight:650}
+input{font:inherit;width:100%;box-sizing:border-box;padding:.6rem;border:1px solid #64758a;border-radius:8px}
+button{background:#123c73;color:white;border:0;border-radius:8px;padding:.8rem 1.3rem;font:inherit;font-weight:700;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid #e98d16;outline-offset:2px}
+.note{background:#e9f1ff;padding:.85rem;border-left:4px solid #2559a0}
+.result{font-size:1.1rem;font-weight:700}
+small{display:block;color:#34485d}
+footer{margin-top:2rem;color:#34485d}
+</style>
+</head>
+<body>
+<main>
+<h1>Quanto costa davvero una licenza software?</h1>
+<p><strong>Bozza originale VORLI Lab — 1 novembre 2026.</strong> Strumento gratuito, autonomo e offline: nessun account, acquisto, tracciamento o invio di dati.</p>
+<p class="note">Confronta due offerte su un periodo da 1 a 10 anni. Inserisci i prezzi <strong>finali</strong> verificati, comprensivi delle imposte e dei costi pertinenti. Non usare un prezzo promozionale come stima del rinnovo: controlla le condizioni ufficiali.</p>
+<form id="comparison" novalidate>
+<div class="card">
+<label for="years">Periodo di confronto (anni)</label>
+<input id="years" name="years" type="number" min="1" max="10" step="1" value="3" required>
+<small>Stesso periodo per entrambe le offerte. Il calcolo non applica inflazione o sconti finanziari.</small>
+</div>
+<div class="grid">
+<section class="card" aria-labelledby="heading-a">
+<h2 id="heading-a">Offerta A</h2>
+<label for="a-first">Costo del primo anno / acquisto iniziale (€)</label>
+<input id="a-first" type="number" min="0" max="100000000" step="0.01" placeholder="Es. 24.90" required>
+<label for="a-renew">Costo di ogni anno successivo (€)</label>
+<input id="a-renew" type="number" min="0" max="100000000" step="0.01" placeholder="Es. 59.90" required>
+<label for="a-setup">Altri costi una tantum (€)</label>
+<input id="a-setup" type="number" min="0" max="100000000" step="0.01" value="0" required>
+<label for="a-annual">Altri costi annuali (€)</label>
+<input id="a-annual" type="number" min="0" max="100000000" step="0.01" value="0" required>
+<label for="a-devices">Dispositivi coperti</label>
+<input id="a-devices" type="number" min="1" max="1000" step="1" value="1" required>
+</section>
+<section class="card" aria-labelledby="heading-b">
+<h2 id="heading-b">Offerta B</h2>
+<label for="b-first">Costo del primo anno / acquisto iniziale (€)</label>
+<input id="b-first" type="number" min="0" max="100000000" step="0.01" placeholder="Es. 39.90" required>
+<label for="b-renew">Costo di ogni anno successivo (€)</label>
+<input id="b-renew" type="number" min="0" max="100000000" step="0.01" placeholder="Es. 39.90" required>
+<label for="b-setup">Altri costi una tantum (€)</label>
+<input id="b-setup" type="number" min="0" max="100000000" step="0.01" value="0" required>
+<label for="b-annual">Altri costi annuali (€)</label>
+<input id="b-annual" type="number" min="0" max="100000000" step="0.01" value="0" required>
+<label for="b-devices">Dispositivi coperti</label>
+<input id="b-devices" type="number" min="1" max="1000" step="1" value="1" required>
+</section>
+</div>
+<button type="submit">Calcola il costo totale</button>
+</form>
+<section class="card" aria-live="polite" aria-atomic="true" id="results">
+<h2>Risultati</h2>
+<p id="message">Inserisci i prezzi di entrambe le offerte e premi «Calcola».</p>
+<div id="values" hidden>
+<p class="result" id="total-a"></p><p id="unit-a"></p>
+<p class="result" id="total-b"></p><p id="unit-b"></p>
+<p class="result" id="difference"></p>
+</div>
+</section>
+<section class="card">
+<h2>Come interpretare il risultato</h2>
+<p>Per un abbonamento annuale inserisci il prezzo del primo anno e quello di rinnovo. Per una licenza perpetua senza rinnovi inserisci 0 nel costo degli anni successivi, ma considera eventuali costi di aggiornamento, supporto o manutenzione. Il costo per dispositivo è una semplice ripartizione aritmetica: non dimostra che la licenza autorizzi tutti gli usi.</p>
+<p><strong>Verifica prima di acquistare:</strong> sistema operativo, numero di utenti, territorio, durata, rinnovo automatico, assistenza, modalità di disdetta e prezzo effettivo al checkout. Le due offerte devono coprire esigenze comparabili.</p>
+<p>Questo è uno strumento informativo, non una proposta di vendita né una consulenza fiscale o legale. Nessuna valutazione automatica dell'IVA, dei diritti di recesso o delle condizioni contrattuali.</p>
+</section>
+</main>
+<footer>VORLI Lab · Prototipo non pubblicato · Funziona anche senza connessione. Nessuna libreria esterna.</footer>
+<script>
+"use strict";
+(function () {
+  const form = document.getElementById("comparison");
+  const fmt = new Intl.NumberFormat("it-IT", {style:"currency",currency:"EUR"});
+  function number(id, integer) {
+    const element = document.getElementById(id);
+    const raw = element.value.trim();
+    const value = Number(raw);
+    const max = integer ? 1000 : 100000000;
+    if (raw === "" || !Number.isFinite(value) || value < (integer ? 1 : 0) || value > max || (integer && !Number.isInteger(value))) {
+      throw new Error("Controlla il campo «" + element.previousElementSibling.textContent + "»: inserisci un valore valido.");
+    }
+    return value;
+  }
+  function total(first, renew, setup, annual, years) {
+    return first + setup + renew * (years - 1) + annual * years;
+  }
+  function plan(prefix, years) {
+    const first = number(prefix + "-first", false);
+    const renew = number(prefix + "-renew", false);
+    const setup = number(prefix + "-setup", false);
+    const annual = number(prefix + "-annual", false);
+    const devices = number(prefix + "-devices", true);
+    const cost = total(first, renew, setup, annual, years);
+    if (!Number.isFinite(cost)) throw new Error("Importi troppo elevati.");
+    return {cost:cost, perYear:cost / years, perDeviceYear:cost / (years * devices)};
+  }
+  function show(id, value) { document.getElementById(id).textContent = value; }
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    document.getElementById("values").hidden = true;
+    try {
+      const years = number("years", true);
+      if (years > 10) throw new Error("Il periodo massimo è 10 anni.");
+      const a = plan("a", years);
+      const b = plan("b", years);
+      show("total-a", "Offerta A · totale: " + fmt.format(a.cost));
+      show("unit-a", "Media annua: " + fmt.format(a.perYear) + " · per dispositivo/anno: " + fmt.format(a.perDeviceYear));
+      show("total-b", "Offerta B · totale: " + fmt.format(b.cost));
+      show("unit-b", "Media annua: " + fmt.format(b.perYear) + " · per dispositivo/anno: " + fmt.format(b.perDeviceYear));
+      const delta = Math.abs(a.cost - b.cost);
+      const label = delta < 0.005 ? "Stesso costo totale nel periodo." : "Differenza totale: " + fmt.format(delta) + " (più economica: " + (a.cost < b.cost ? "A" : "B") + ").";
+      show("difference", label);
+      show("message", "Stima aritmetica su " + years + (years === 1 ? " anno." : " anni.") + " Non è un preventivo.");
+      document.getElementById("values").hidden = false;
+    } catch (error) {
+      show("message", error.message);
+    }
+  });
+}());
+</script>
+</body>
+</html>
