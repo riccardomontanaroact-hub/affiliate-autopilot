@@ -47,8 +47,22 @@ class PublicConfigPrivacyTests(unittest.TestCase):
                 with self.subTest(file=str(path.relative_to(SITE.parents[1]))):
                     raw = path.read_text(encoding="utf-8")
                     self.assertIsNone(EMAIL.search(raw))
+                    self.assertIsNone(TRACKING_FIELD.search(raw))
                     self.assertNotIn("mailto:", raw.lower())
                     self.assertNotIn("awin1.com/cread.php", raw.lower())
+
+    def test_public_scripts_and_styles_have_no_personal_tracking(self):
+        """Prevent identifiers or tracked links in assets shipped with public pages."""
+        preview = SITE.parents[1] / "preview" / "vorli-next"
+        for root in (SITE.parent, preview):
+            for pattern in ("*.js", "*.css", "*.svg"):
+                for path in sorted(root.rglob(pattern)):
+                    with self.subTest(file=str(path.relative_to(SITE.parents[1]))):
+                        raw = path.read_text(encoding="utf-8")
+                        self.assertIsNone(EMAIL.search(raw))
+                        self.assertIsNone(TRACKING_FIELD.search(raw))
+                        self.assertNotIn("awin1.com/cread.php", raw.lower())
+
 
     def test_public_disclosure_is_preserved(self):
         config = json.loads(CONFIG.read_text(encoding="utf-8"))
