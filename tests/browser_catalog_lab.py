@@ -213,7 +213,21 @@ def verify_category_guide(browser, width):
         assert page.locator(f'#{category}').count() == 1
         assert page.locator(f'a[href="#{category}"]').count() == 1
         assert page.locator(f'#{category} li').count() == 3
+    download = page.get_by_role("link", name=re.compile("Scarica la scheda di confronto CSV"))
+    assert download.count() == 1, (width, "offline worksheet link")
+    assert download.get_attribute("download") == "scheda-confronto-tech-lab.csv"
+    assert (LAB / "scheda-confronto-tech-lab.csv").is_file()
     check_local_navigation(page)
+    # Verify print output has light ink-saving styles and keeps the checklists readable.
+    page.emulate_media(media="print")
+    assert page.locator("body").evaluate(
+        "el => getComputedStyle(el).backgroundColor"
+    ) == "rgb(255, 255, 255)", (width, "print background")
+    assert page.locator(".guide-grid").evaluate(
+        "el => getComputedStyle(el).display"
+    ) == "block", (width, "print checklist layout")
+    assert not page.locator("header").is_visible(), (width, "print navigation hidden")
+    page.emulate_media(media="screen")
     page.keyboard.press("Tab")
     assert page.locator("a.skip").evaluate("el => document.activeElement === el")
     page.locator('a[href="#energia-portatile"]').click()
