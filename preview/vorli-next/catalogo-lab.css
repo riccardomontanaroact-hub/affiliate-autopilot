@@ -47,3 +47,23 @@ nav{display:flex;flex-wrap:wrap;gap:4px 16px}nav a{color:#dcecff;text-decoration
 .guide-back{font-size:14px;font-weight:750}
 @media(max-width:900px){.guide-steps{grid-template-columns:1fr}}
 @media(max-width:620px){.guide-grid{grid-template-columns:1fr}.guide-card{padding:20px}.guide-index a{font-size:14px}}
+
+/* The original eight-category checklist can be printed without dark backgrounds or UI chrome. */
+.guide-download{margin-top:18px;max-width:65ch;color:var(--muted);font-size:14px}
+.guide-download a{font-weight:800}
+@page{size:A4;margin:15mm}
+@media print{
+  :root{color-scheme:light}
+  html{scroll-behavior:auto}
+  body{background:#fff !important;color:#111827 !important;font:11pt/1.45 system-ui,sans-serif}
+  header,.footer,.skip,.guide-index,.guide-back,.button,.lab-pill,.trust,.guide-download{display:none !important}
+  .hero,.section{padding-block:8px !important;background:none !important}
+  .hero h1{font-size:25pt !important;line-height:1.2}
+  h1 em{background:none !important;color:#111827 !important;-webkit-text-fill-color:#111827 !important}
+  .shell{max-width:none;padding-inline:0}
+  .guide-steps,.guide-grid{display:block !important}
+  .guide-card,.guide-step{break-inside:avoid;page-break-inside:avoid;margin:0 0 10mm;padding:3mm 4mm;border:1px solid #9ca3af;border-radius:0;background:#fff !important;box-shadow:none !important;transform:none !important}
+  .guide-card h3,.guide-card h4,.guide-card p,.guide-card li,.guide-step strong,.guide-step p,.counter,.eyebrow,.lead,.guide-disclaimer,.section h2{color:#111827 !important}
+  .guide-card h3{font-size:16pt;margin:0 0 2mm}
+  .guide-card li{margin:2mm 0}
+}
