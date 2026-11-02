@@ -44,4 +44,3 @@ jobs:
             reports/agent-status.json
           if-no-files-found: error
           retention-days: 30
-      - name: No
