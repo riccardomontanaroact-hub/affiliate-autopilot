@@ -14,6 +14,8 @@ Rilasciare una prima versione pubblica di VORLI con:
 
 ## Stato tecnico verificato il 2026-11-06
 
+- Preparata fuori dal repository una nuova bozza commerciale 0.1 di 14 pagine A4, in PDF e DOCX. È un avanzamento editoriale, non un file finale: non è tagged/accessibile certificato e richiede revisione tecnica indipendente, controllo fonti, diritti e correzione editoriale. Il file commerciale non è stato caricato nel repository pubblico.
+
 - Repository: `riccardomontanaroact-hub/affiliate-autopilot`, branch predefinito `main`, pubblico.
 - `data/products.json` è vuoto: non esistono offerte affiliate pubblicabili.
 - `site/index.html` contiene ancora `noindex,nofollow`, presenta il catalogo come demo e non è una homepage di vendita.
