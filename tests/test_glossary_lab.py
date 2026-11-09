@@ -20,6 +20,9 @@ class Markup(HTMLParser):
         self.headings = []
         self.robots = []
         self.images = []
+        self.language = None
+        self.main_count = 0
+        self.h1_count = 0
 
     def handle_starttag(self, tag, attrs):
         data = dict(attrs)
@@ -29,18 +32,29 @@ class Markup(HTMLParser):
             self.links.append(data)
         if tag == "h3":
             self.headings.append(tag)
+        if tag == "h1":
+            self.h1_count += 1
+        if tag == "main":
+            self.main_count += 1
+        if tag == "html":
+            self.language = data.get("lang")
         if tag == "img":
             self.images.append(data)
         if tag == "meta" and data.get("name", "").lower() == "robots":
             self.robots.append(data.get("content", "").lower())
 
 
+def parse_document(path):
+    document = Markup()
+    document.feed(path.read_text(encoding="utf-8"))
+    return document
+
+
 class GlossaryIntegrity(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        cls.doc = parse_document(GLOSSARY)
         cls.html = GLOSSARY.read_text(encoding="utf-8")
-        cls.doc = Markup()
-        cls.doc.feed(cls.html)
 
     def test_twelve_definitions_and_unique_ids(self):
         self.assertEqual(len(self.doc.headings), 12)
@@ -48,8 +62,14 @@ class GlossaryIntegrity(unittest.TestCase):
         self.assertIn("main", self.doc.ids)
         self.assertIn("termini", self.doc.ids)
 
+    def test_accessible_document_basics(self):
+        self.assertEqual(self.doc.language, "it")
+        self.assertEqual(self.doc.main_count, 1)
+        self.assertEqual(self.doc.h1_count, 1)
+        self.assertTrue(any(link.get("href") == "#main" for link in self.doc.links))
+
     def test_noindex_and_demo_disclosure(self):
-        self.assertTrue(any("noindex" in x for x in self.doc.robots))
+        self.assertTrue(any("noindex" in value for value in self.doc.robots))
         self.assertIn("nessun prodotto acquistabile", self.html.lower())
         self.assertNotIn("<form", self.html.lower())
         self.assertNotIn("awin1.com", self.html.lower())
@@ -61,15 +81,16 @@ class GlossaryIntegrity(unittest.TestCase):
             parsed = urlsplit(href)
             self.assertFalse(parsed.scheme or parsed.netloc, href)
             path = unquote(parsed.path)
-            self.assertFalse(path.startswith("/") or ".." in Path(path).parts, href)
+            self.assertFalse(path.startswith("/") or "\\" in path or ".." in Path(path).parts, href)
             target = ROOT / path if path else GLOSSARY
             self.assertTrue(target.is_file(), href)
-            if parsed.fragment and not path:
-                self.assertIn(unquote(parsed.fragment), self.doc.ids, href)
+            if parsed.fragment:
+                target_document = self.doc if not path else parse_document(target)
+                self.assertIn(unquote(parsed.fragment), target_document.ids, href)
 
     def test_images_and_external_tab_safety(self):
-        for img in self.doc.images:
-            self.assertIn("alt", img)
+        for image in self.doc.images:
+            self.assertIn("alt", image)
         for link in self.doc.links:
             if link.get("target") == "_blank":
                 rel = set(link.get("rel", "").split())
