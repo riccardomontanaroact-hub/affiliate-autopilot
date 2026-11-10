@@ -1,0 +1,16 @@
+/* VORLI Lab glossary: scoped print stylesheet, no network assets or scripts. */
+@media print {
+  @page { size: A4; margin: 15mm; }
+  body { background: #fff !important; color: #111827 !important; }
+  header, .footer, .skip, .button, .trust, .lab-pill { display: none !important; }
+  .hero, .section { padding-block: 8px !important; border: 0 !important; }
+  .guide-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 8mm !important; }
+  .guide-card { break-inside: avoid; page-break-inside: avoid; padding: 4mm !important; margin: 0 !important; border: 1px solid #9ca3af !important; background: #fff !important; box-shadow: none !important; transform: none !important; }
+  .guide-card h3, .guide-card p, .hero p, .hero h1, .section h2, .section > p { color: #111827 !important; }
+  .guide-card h3 { font-size: 14pt !important; }
+  .guide-card p { font-size: 10pt !important; }
+  .hero h1 { font-size: 25pt !important; }
+  .hero h1 em { background: none !important; color: #111827 !important; -webkit-text-fill-color: #111827 !important; }
+  .tile:hover { transform: none !important; }
+  a { color: #111827 !important; text-decoration: underline !important; }
+}
