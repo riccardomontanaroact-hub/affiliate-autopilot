@@ -46,20 +46,20 @@ class GlossaryPrintRegression(unittest.TestCase):
 
     def test_twelve_printable_definition_cards(self):
         self.assertEqual(self.document.cards, 12)
-        self.assertRegex(self.css, r"\\.guide-grid\\s*\\{[^}]*grid-template-columns\\s*:\\s*1fr\\s+1fr")
-        self.assertRegex(self.css, r"\\.guide-card\\s*\\{[^}]*break-inside\\s*:\\s*avoid")
+        self.assertRegex(self.css, r"\.guide-grid\s*\{[^}]*grid-template-columns\s*:\s*1fr\s+1fr")
+        self.assertRegex(self.css, r"\.guide-card\s*\{[^}]*break-inside\s*:\s*avoid")
         self.assertIn("page-break-inside: avoid", self.css)
 
     def test_print_readability_and_navigation_exclusion(self):
-        self.assertRegex(self.css, r"@media\\s+print\\s*\\{")
-        self.assertRegex(self.css, r"@page\\s*\\{[^}]*size\\s*:\\s*A4")
-        self.assertRegex(self.css, r"body\\s*\\{[^}]*background\\s*:\\s*#fff")
-        self.assertRegex(self.css, r"body\\s*\\{[^}]*color\\s*:\\s*#111827")
-        self.assertRegex(self.css, r"header\\s*,\\s*\\.footer[^}]*display\\s*:\\s*none")
+        self.assertRegex(self.css, r"@media\s+print\s*\{")
+        self.assertRegex(self.css, r"@page\s*\{[^}]*size\s*:\s*A4")
+        self.assertRegex(self.css, r"body\s*\{[^}]*background\s*:\s*#fff")
+        self.assertRegex(self.css, r"body\s*\{[^}]*color\s*:\s*#111827")
+        self.assertRegex(self.css, r"header\s*,\s*\.footer[^}]*display\s*:\s*none")
         self.assertIn(".guide-card p { font-size: 10pt", self.css)
 
     def test_no_commercial_or_remote_dependencies_in_print_css(self):
-        self.assertNotRegex(self.css.lower(), r"https?://|awin1\\.com|checkout|<script")
+        self.assertNotRegex(self.css.lower(), r"https?://|awin1\.com|checkout|<script")
         self.assertNotIn("position: fixed", self.css.lower())
 
 
