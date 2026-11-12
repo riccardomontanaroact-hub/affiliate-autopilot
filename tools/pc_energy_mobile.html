@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>VORLI Lab · Calcolatore costi energetici PC — bozza offline</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#13283d;background:#f2f6fb}
+*{box-sizing:border-box}body{margin:0}main{max-width:850px;margin:auto;padding:clamp(1rem,4vw,2rem)}
+h1{font-size:clamp(1.65rem,4vw,2.5rem);margin:.3rem 0}p{line-height:1.55}
+.badge{display:inline-block;padding:.35rem .7rem;background:#fff3cf;border-radius:999px;color:#5e4100;font-size:.85rem;font-weight:700}
+.panel{background:#fff;border:1px solid #d5e0ed;border-radius:18px;padding:1.2rem;margin:1rem 0;box-shadow:0 5px 18px #142d4610}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1rem}
+label{display:block;font-weight:650;font-size:.95rem}input{width:100%;padding:.8rem;margin-top:.3rem;border:1px solid #8195aa;border-radius:9px;font:inherit;color:inherit;background:#fff}
+input:focus-visible,button:focus-visible{outline:3px solid #e4b631;outline-offset:2px}
+button{background:#ffe15c;border:2px solid #1c3348;border-radius:11px;padding:.85rem 1.25rem;font:inherit;font-weight:750;cursor:pointer}
+small{color:#425870}.error{color:#9c1526;font-weight:700}.result{background:#eef7ff;border-radius:12px;padding:1rem}.result strong{font-size:1.4rem}
+footer{font-size:.9rem;color:#425870}
+</style>
+</head>
+<body><main>
+<span class="badge">BOZZA · non pubblicare / non vendere</span>
+<h1>Quanto costa usare il tuo computer?</h1>
+<p>Stima illustrativa offline. Inserisci i <strong>watt medi misurati alla presa</strong>, non la potenza massima dichiarata dall'alimentatore. Nessun dato viene trasmesso.</p>
+<form id="form" class="panel" novalidate>
+<div class="grid">
+<label>Potenza in uso (W)<input name="active_watts" type="number" min="0" step="any" value="120" required></label>
+<label>Potenza in standby (W)<input name="standby_watts" type="number" min="0" step="any" value="2" required></label>
+<label>Ore di utilizzo al giorno<input name="active_hours_per_day" type="number" min="0" max="24" step="any" value="4" required></label>
+<label>Ore di standby al giorno<input name="standby_hours_per_day" type="number" min="0" max="24" step="any" value="8" required></label>
+<label>Giorni di utilizzo all'anno<input name="days_per_year" type="number" min="0" max="366" step="1" value="220" required></label>
+<label>Tariffa elettrica (€/kWh)<input name="electricity_eur_per_kwh" type="number" min="0" step="any" value="0.30" required></label>
+<label>Prezzo di acquisto (€)<input name="purchase_eur" type="number" min="0" step="any" value="500" required></label>
+<label>Manutenzione totale 3 anni (€)<input name="maintenance_3y_eur" type="number" min="0" step="any" value="40" required></label>
+</div><p><button type="submit">Calcola la stima</button></p><p class="error" id="error" role="alert" hidden></p></form>
+<section id="results" class="panel" aria-live="polite" hidden><h2>Risultati stimati</h2>
+<div class="grid"><div class="result">Consumo annuo<br><strong id="kwh"></strong></div><div class="result">Spesa energetica annua<br><strong id="annual"></strong></div><div class="result">Costo totale stimato 3 anni<br><strong id="total"></strong></div></div>
+<p id="detail"></p></section>
+<footer><p>Ipotesi: stesso prezzo e utilizzo per tre anni; standby e uso non si sovrappongono; i giorni non conteggiati sono esclusi. Non sono inclusi accessori esterni, variazioni tariffarie o costi ulteriori. Valori di esempio ipotetici, non risparmi garantiti.</p><p>VORLI Lab · ricerca interna del 14 ottobre 2026 · nessuna affiliazione o pagamento attivo.</p></footer>
+</main>
+<script>
+'use strict';
+function estimatePcCost(p){
+ const names=['active_watts','standby_watts','active_hours_per_day','standby_hours_per_day','days_per_year','electricity_eur_per_kwh','purchase_eur','maintenance_3y_eur'];
+ for(const name of names){if(typeof p[name]!=='number'||!Number.isFinite(p[name])||p[name]<0)throw Error('Valore non valido: '+name);}
+ if(!Number.isInteger(p.days_per_year)||p.days_per_year>366)throw Error('I giorni devono essere interi tra 0 e 366.');
+ if(p.active_hours_per_day+p.standby_hours_per_day>24)throw Error('Uso e standby non possono superare 24 ore complessive.');
+ const active=p.active_watts*p.active_hours_per_day*p.days_per_year/1000;
+ const standby=p.standby_watts*p.standby_hours_per_day*p.days_per_year/1000;
+ const kwh=active+standby;
+ const cents=n=>Math.round((n+Number.EPSILON*Math.max(1,Math.abs(n)))*100)/100;
+ return {active_kwh_per_year:active,standby_kwh_per_year:standby,total_kwh_per_year:kwh,energy_eur_per_year:cents(kwh*p.electricity_eur_per_kwh),total_eur_3_years:cents(p.purchase_eur+3*kwh*p.electricity_eur_per_kwh+p.maintenance_3y_eur)};
+}
+const form=document.getElementById('form');
+form.addEventListener('submit',event=>{
+ event.preventDefault();
+ const error=document.getElementById('error');const results=document.getElementById('results');
+ error.hidden=true;results.hidden=true;
+ try{
+  const p={};for(const input of form.querySelectorAll('input')){if(input.value.trim()==='')throw Error('Compila tutti i campi.');p[input.name]=Number(input.value);}
+  const r=estimatePcCost(p);
+  const num=new Intl.NumberFormat('it-IT',{maximumFractionDigits:2});
+  const eur=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'});
+  document.getElementById('kwh').textContent=num.format(r.total_kwh_per_year)+' kWh';
+  document.getElementById('annual').textContent=eur.format(r.energy_eur_per_year);
+  document.getElementById('total').textContent=eur.format(r.total_eur_3_years);
+  document.getElementById('detail').textContent='Di cui uso: '+num.format(r.active_kwh_per_year)+' kWh/anno; standby: '+num.format(r.standby_kwh_per_year)+' kWh/anno.';
+  results.hidden=false;
+ }catch(e){error.textContent=e.message;error.hidden=false;}
+});
+</script>
+</body></html>
