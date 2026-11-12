@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Strumento didattico VORLI per stimare Wh, potenza e capacità indicativa di una power station.">
+  <title>VORLI Lab | Calcolatore autonomia energetica</title>
+  <style>
+    :root { color-scheme:light; --ink:#102034; --muted:#475569; --line:#dce5ed; --accent:#eab308; --bg:#f4f8fb; --navy:#0e2238; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif; color:var(--ink); background:var(--bg); }
+    header { background:linear-gradient(125deg,#0c1c31,#174b68); color:white; padding:2rem max(1rem,calc((100vw - 940px)/2)); }
+    header strong { color:#facc15; letter-spacing:.14em; }
+    h1 { font-size:clamp(1.6rem,4vw,2.5rem); margin:.35rem 0; line-height:1.2; }
+    main { max-width:940px; margin:1.5rem auto; padding:0 1rem 3rem; }
+    .card { background:white; border:1px solid var(--line); border-radius:16px; padding:1.3rem; margin:1rem 0; box-shadow:0 8px 28px #0e223808; }
+    h2 { margin-top:0; font-size:1.2rem; }
+    p, small { color:var(--muted); }
+    label { display:block; font-weight:650; margin-bottom:.25rem; }
+    input { width:100%; padding:.68rem; border:1px solid #9eb1c2; border-radius:8px; background:white; font:inherit; }
+    input:focus,button:focus-visible { outline:3px solid #eab308; outline-offset:2px; }
+    .devices { display:grid; gap:1rem; }
+    .device { display:grid; grid-template-columns:minmax(0,2fr) repeat(2,minmax(0,1fr)); gap:.8rem; border-bottom:1px solid var(--line); padding-bottom:1rem; }
+    .controls { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem; }
+    button { border:0; border-radius:9px; background:var(--navy); color:white; padding:.75rem 1rem; cursor:pointer; font:inherit; font-weight:650; }
+    button.secondary { background:#edf2f7; color:var(--ink); border:1px solid #b6c7d6; }
+    .settings { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .results { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; }
+    .metric { background:#eff6fa; padding:1rem; border-radius:10px; }
+    .metric strong { display:block; font-size:clamp(1.35rem,3vw,1.85rem); }
+    .metric span { color:#34465a; font-size:.9rem; }
+    .warning { border-left:5px solid var(--accent); padding:.65rem 1rem; background:#fffbeb; color:#584508; }
+    .error { color:#a11e21; font-weight:700; }
+    footer { font-size:.85rem; color:#475569; margin-top:1.5rem; }
+    @media(max-width:640px) { .device,.settings,.results { grid-template-columns:1fr; } header { padding:1.5rem 1rem; } }
+    @media print { body { background:white; } header { color:black; background:white; } header strong { color:black; } button { display:none; } .card { box-shadow:none; break-inside:avoid; } }
+  </style>
+</head>
+<body>
+<header><strong>VORLI LAB</strong><h1>Quanta energia ti serve davvero?</h1><div>Calcolatore educativo per notebook, router e piccoli dispositivi.</div></header>
+<main>
+  <section class="card">
+    <h2>1. Inserisci i dispositivi</h2>
+    <p>Indica la potenza media <strong>in watt (W)</strong> e le ore di utilizzo previste. I valori iniziali sono soltanto esempi modificabili.</p>
+    <div id="devices" class="devices">
+      <div class="device"><div><label for="name0">Dispositivo 1</label><input id="name0" value="Notebook" maxlength="60"></div><div><label for="watts0">Potenza media (W)</label><input id="watts0" class="watts" type="number" min="0" max="100000" step="any" value="45"></div><div><label for="hours0">Ore</label><input id="hours0" class="hours" type="number" min="0" max="168" step="any" value="3"></div></div>
+      <div class="device"><div><label for="name1">Dispositivo 2</label><input id="name1" value="Router" maxlength="60"></div><div><label for="watts1">Potenza media (W)</label><input id="watts1" class="watts" type="number" min="0" max="100000" step="any" value="10"></div><div><label for="hours1">Ore</label><input id="hours1" class="hours" type="number" min="0" max="168" step="any" value="3"></div></div>
+      <div class="device"><div><label for="name2">Dispositivo 3</label><input id="name2" value="Luce LED" maxlength="60"></div><div><label for="watts2">Potenza media (W)</label><input id="watts2" class="watts" type="number" min="0" max="100000" step="any" value="8"></div><div><label for="hours2">Ore</label><input id="hours2" class="hours" type="number" min="0" max="168" step="any" value="3"></div></div>
+    </div>
+    <div class="controls"><button id="add" type="button">+ Aggiungi dispositivo</button><button class="secondary" id="reset" type="button">Ripristina esempio</button></div>
+  </section>
+  <section class="card">
+    <h2>2. Imposta le ipotesi</h2>
+    <div class="settings">
+      <div><label for="eff">Rendimento complessivo ipotizzato (%)</label><input id="eff" type="number" min="1" max="100" step="1" value="80"><small>Perdita di conversione inclusa; non è un dato certificato.</small></div>
+      <div><label for="reserve">Margine prudenziale (%)</label><input id="reserve" type="number" min="0" max="80" step="1" value="15"><small>Quota di capacità che si preferisce non utilizzare.</small></div>
+    </div>
+    <div class="controls"><button id="calculate" type="button">Calcola fabbisogno</button><button class="secondary" id="print" type="button">Stampa / salva in PDF</button></div>
+  </section>
+  <section class="card" aria-live="polite" aria-atomic="true">
+    <h2>3. Risultati indicativi</h2><div id="error" class="error" role="alert"></div>
+    <div class="results">
+      <div class="metric"><strong id="wh">—</strong><span>Energia richiesta (Wh)</span></div>
+      <div class="metric"><strong id="capacity">—</strong><span>Capacità nominale teorica (Wh)</span></div>
+      <div class="metric"><strong id="power">—</strong><span>Somma potenze (W) se tutti accesi insieme</span></div>
+    </div>
+    <p id="formula"></p>
+    <div class="warning"><strong>Attenzione:</strong> questo calcolo non certifica l'autonomia, la compatibilità o la sicurezza di un prodotto. La potenza reale varia, le perdite non sono costanti e la capacità utilizzabile dipende dal modello e dalle condizioni. Controlla sempre le specifiche ufficiali, le uscite e la potenza continua; non confondere una power station con un UPS. Non usare questo strumento per alimentazioni mediche critiche o collegamenti all'impianto domestico.</div>
+  </section>
+  <footer>VORLI • Strumento originale, versione 0.1 del 9 ottobre 2026 • Nessun account, cookie, analytics o link affiliato. I dati restano nel browser durante l'uso e non vengono trasmessi. Bozza interna non pubblicata.</footer>
+</main>
+<script>
+(() => {
+  "use strict";
+  const byId = id => document.getElementById(id);
+  const fmt = n => new Intl.NumberFormat("it-IT",{maximumFractionDigits:1}).format(n);
+  let next = 3;
+  const make = () => {
+    if (byId("devices").children.length >= 20) return;
+    const i = next++;
+    const row = document.createElement("div"); row.className="device";
+    const fields = [["Dispositivo","text","name",""],["Potenza media (W)","number","watts","0"],["Ore","number","hours","0"]];
+    fields.forEach(([label,type,key,value]) => {
+      const cell=document.createElement("div"), l=document.createElement("label"), inp=document.createElement("input");
+      inp.id=key+i; l.htmlFor=inp.id; l.textContent=label; inp.type=type; inp.value=value;
+      if(type==="number"){inp.className=key; inp.min="0"; inp.max=key==="hours"?"168":"100000"; inp.step="any";}
+      else inp.maxLength=60;
+      cell.append(l,inp); row.appendChild(cell);
+    });
+    byId("devices").appendChild(row); calculate();
+  };
+  function readNumber(input,max) {
+    const raw=input.value.trim();
+    if(raw==="" || !Number.isFinite(Number(raw)) || Number(raw)<0 || Number(raw)>max) throw Error("Controlla i numeri inseriti: nessun valore può essere negativo, vuoto o oltre i limiti indicati.");
+    return Number(raw);
+  }
+  function calculate() {
+    try {
+      let wh=0, watts=0;
+      const rows=[...byId("devices").children];
+      for(const row of rows){
+        const w=readNumber(row.querySelector(".watts"),100000);
+        const h=readNumber(row.querySelector(".hours"),168);
+        wh+=w*h; watts+=w;
+      }
+      const eff=readNumber(byId("eff"),100), reserve=readNumber(byId("reserve"),80);
+      if(eff<=0) throw Error("Il rendimento deve essere maggiore di zero.");
+      const factor=(eff/100)*(1-reserve/100);
+      const capacity=wh/factor;
+      if(!Number.isFinite(capacity)) throw Error("Il risultato supera i limiti di calcolo.");
+      byId("error").textContent="";
+      byId("wh").textContent=fmt(wh)+" Wh";
+      byId("capacity").textContent=fmt(capacity)+" Wh";
+      byId("power").textContent=fmt(watts)+" W";
+      byId("formula").textContent="Formula: "+fmt(wh)+" Wh ÷ ("+fmt(eff)+"% × [1 − "+fmt(reserve)+"%]) = "+fmt(capacity)+" Wh. La somma in W è prudenziale solo se tutti i dispositivi funzionano contemporaneamente.";
+    } catch(e) {
+      byId("error").textContent=e.message;
+      ["wh","capacity","power"].forEach(id=>byId(id).textContent="—");
+      byId("formula").textContent="";
+    }
+  }
+  byId("add").addEventListener("click",make);
+  byId("calculate").addEventListener("click",calculate);
+  byId("print").addEventListener("click",()=>{calculate(); if(!byId("error").textContent) window.print();});
+  byId("reset").addEventListener("click",()=>window.location.reload());
+  byId("devices").addEventListener("input",calculate);
+  byId("eff").addEventListener("input",calculate);
+  byId("reserve").addEventListener("input",calculate);
+  calculate();
+})();
+</script>
+</body></html>
