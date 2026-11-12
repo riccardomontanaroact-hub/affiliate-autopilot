@@ -1,0 +1,15 @@
+{
+  "seller_type": "individual",
+  "vat_registered": false,
+  "product_types": [
+    "physical",
+    "digital"
+  ],
+  "payment_provider": "undecided",
+  "commercial_email": null,
+  "checkout_enabled": false,
+  "checkout_mode": "disabled",
+  "affiliate_links_require_approval": true,
+  "verified_supplier_required": true,
+  "legal_review_required": true
+}
