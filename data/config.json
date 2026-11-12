@@ -4,7 +4,11 @@
   "niche": "prodotti utili per casa, lavoro e tecnologia",
   "currency": "EUR",
   "affiliate_disclosure": "Questo sito contiene link di affiliazione: se acquisti tramite un link potremmo ricevere una commissione, senza costi aggiuntivi per te.",
-  "owner": "Riccardo Montanaro",
-  "contact": "vorli.notifications@gmail.com",
-  "networks": ["amazon", "awin", "direct"]
+  "owner": "",
+  "contact": "",
+  "networks": [
+    "amazon",
+    "awin",
+    "direct"
+  ]
 }

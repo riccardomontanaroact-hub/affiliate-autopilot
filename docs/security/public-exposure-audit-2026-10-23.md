@@ -1,0 +1,54 @@
+# Audit pubblicazione e riservatezza — 23 ottobre 2026
+
+> Revisione tecnica in bozza. Nessuna autorizzazione alla pubblicazione o al merge.
+
+## Evidenze controllate (23/10/2026)
+
+- Repository GitHub **pubblico**, branch di produzione `main`.
+- `data/config.json` in `main` contiene ancora valori identificativi nei campi `owner` e `contact`. **Non riprodurre tali valori in documenti, log o report.**
+- Nel branch di questa PR gli stessi campi sono vuoti. La modifica **non** elimina le versioni precedenti dalla cronologia Git e **non** corregge automaticamente il branch `main`.
+- `site/dashboard.html` esiste in `main`. Il contenuto letto è una pagina HTML statica con intestazione e tabella vuota; non sono state osservate credenziali in questo singolo file. **L'accessibilità della pagina sul dominio GitHub Pages non è stata confermata**: il tentativo di apertura dal controllo esterno non ha fornito un esito utilizzabile.
+- Il file `site/index.html` contiene attualmente `robots=noindex,nofollow`. Questa direttiva **non** è un controllo di accesso né una garanzia di riservatezza.
+
+## Controlli obbligatori prima di un eventuale merge
+
+1. Verificare il workflow di build/deploy e l'elenco completo dei file pubblicati; escludere configurazioni, report interni, dashboard amministrative e file con dati personali dall'artefatto pubblico.
+2. Verificare direttamente gli URL effettivamente distribuiti dal sito, con e senza autenticazione, senza presumere che `noindex` protegga i contenuti.
+3. Cercare eventuali dati personali o segreti nella cronologia Git e negli artefatti già distribuiti; l'azzeramento nel branch non risolve esposizioni pregresse.
+4. In caso di esposizione di token/credenziali, revocarli e ruotarli fuori dal repository; valutare con attenzione gli obblighi di gestione dell'incidente.
+5. Tenere questa PR **in bozza** fino a revisione esplicita. Nessun deploy, merge o attivazione di pagamenti autorizzati.
+
+## Limiti della verifica
+
+Controllati tramite connettore GitHub i file indicati e i metadati del repository. Non sono stati eseguiti test autenticati sul sito pubblicato, audit dell'intera cronologia o verifica di tutti gli artefatti di deploy. Nessuna conclusione definitiva sull'assenza di esposizioni.
+
+Fonti interne: `data/config.json` (`main` e branch PR #41), `site/dashboard.html` (`main`), `site/index.html` (`main`), metadati del repository. Data verifica: 2026-10-23.
+
+## Rischio aggiuntivo verificato nei workflow (23/10/2026, ore 23:14 Europe/Rome)
+
+**Criticità concreta nella configurazione, non prova di esposizione attuale sul dominio.** Nel branch `main` coesistono due workflow GitHub Pages attivati da push su `main`:
+
+- `.github/workflows/build.yml`: esegue `python agent/build.py`, poi carica `./site` con `actions/upload-pages-artifact@v3` **senza escludere `site/dashboard.html`**.
+- `.github/workflows/deploy-pages.yml`: dopo la build esegue `rm -f site/dashboard.html` prima del caricamento dell'artefatto. Questo non protegge gli artefatti prodotti dall'altro workflow.
+- `agent/build.py` scrive esplicitamente `site/dashboard.html` con colonne di prodotto, network, commissione e punteggio. Il file attualmente tracciato in `main` contiene una tabella vuota, ma il file generato può cambiare in base ai prodotti.
+
+**Conseguenza:** non si può affermare che la dashboard interna sia esclusa da tutti i deployment; occorre controllare l'artefatto e il deployment effettivo. Il tentativo di interrogare direttamente il dominio Pages non è riuscito, quindi **non** si dichiara che la dashboard sia pubblicamente raggiungibile.
+
+La **PR #52**, attualmente **in bozza**, propone di eliminare il secondo workflow e inserire la rimozione di `site/dashboard.html` nel workflow rimanente. Non è integrata e non costituisce una correzione già applicata a `main`. Prima di qualunque merge: verificare l'unicità del workflow Pages, i permessi, i test e l'assenza di dashboard/configurazioni interne nell'artefatto finale; controllare che il workflow schedulato non ripubblichi una versione diversa. Nessun merge o deploy autorizzato.
+
+Fonti verificate: `.github/workflows/build.yml`, `.github/workflows/deploy-pages.yml`, `agent/build.py` sul branch `main`; diff e stato della PR #52. Nessun dato personale o URL affiliato copiato.
+
+## Verifica artefatti effettivi — 24 ottobre 2026, ore 00:11 Europe/Rome
+
+Sono stati scaricati tramite il connettore GitHub e ispezionati **entrambi** gli artefatti `github-pages` degli ultimi due workflow di pubblicazione riusciti su `main`, entrambi avviati il 23/10/2026 alle 11:13:41 UTC sullo stesso commit `7fe9744`.
+
+| Workflow | Run GitHub | Artefatto | `dashboard.html` |
+| --- | --- | --- | --- |
+| `VORLI build and deploy — main` | [39944605424](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/actions/runs/39944605424) | `12498255056` | **PRESENTE** (530 byte) |
+| `Build and deploy VORLI to GitHub Pages` | [39944605393](https://github.com/riccardomontanaroact-hub/affiliate-autopilot/actions/runs/39944605393) | `12497517209` | **ASSENTE** |
+
+Procedura: lettura dell'archivio ZIP scaricato per ciascun artefatto, apertura del file `artifact.tar` contenuto e verifica dell'elenco dei membri. Nel primo artefatto è stato letto il file `./dashboard.html` (530 byte); nel secondo non compare. Entrambi gli artefatti risultavano non scaduti al momento della verifica.
+
+**Risultato:** non è soltanto un rischio teorico nei workflow: un artefatto di pubblicazione **reale** include la dashboard interna. Questo **non** dimostra quale artefatto sia stato effettivamente distribuito per ultimo né che la dashboard sia attualmente raggiungibile sul dominio pubblico. I tentativi di accesso diretto al sito non hanno restituito una verifica affidabile; lo stato online resta non accertato.
+
+**Blocco prima di ogni integrazione:** verificare la versione effettivamente distribuita e rimuovere la dashboard da *tutti* gli artefatti Pages. Rivedere la PR #52 e controllare i workflow rimasti dopo il merge ipotetico, ma non eseguire merge o deploy senza approvazione. Conservare la PR #41 in bozza. Nessun dato personale, link affiliato o credenziale è riportato in questo audit.
