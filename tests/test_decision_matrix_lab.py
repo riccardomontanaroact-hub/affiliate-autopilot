@@ -97,7 +97,7 @@ class DecisionMatrixLabTests(unittest.TestCase):
         visible = " ".join(self.doc.text).lower()
         self.assertIn("nessun prodotto acquistabile", visible)
         self.assertIn("non negozio attivo", visible)
-        self.assertNotRegex(self.html.lower(), r"<(?:form|script|iframe)\\b")
+        self.assertNotRegex(self.html.lower(), r"<(?:form|script|iframe)\b")
         self.assertNotRegex(self.html.lower(), r"https?://|awin1|add.to.cart|checkout")
 
     def test_accessibility_and_mobile_layout_basics(self):
