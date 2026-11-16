@@ -1,0 +1,13 @@
+Controllo,Domanda guida,Esito (si/no/da verificare),Note non personali,Decisione
+Necessita,La funzione serve davvero?,,,
+Origine,La provenienza e verificabile?,,,
+Sviluppatore,Lo sviluppatore e identificabile?,,,
+Permessi,Le autorizzazioni sono proporzionate?,,,
+Accesso siti,Posso limitarlo ai soli siti necessari?,,,
+Dati,Capisco quali dati puo trattare?,,,
+Aggiornamenti,La manutenzione appare attiva?,,,
+Privacy,La policy spiega finalita e condivisioni?,,,
+Cambiamenti,Non ci sono modifiche inattese?,,,
+Alternative,Esiste una funzione integrata meno invasiva?,,,
+Pulizia,L'estensione e ancora utilizzata?,,,
+Account,Sono attive le protezioni complementari?,,,
