@@ -113,6 +113,21 @@ class BuildPublicationGuardTests(unittest.TestCase):
         self.assertIn("Offerta non disponibile", catalog)
         self.assertNotIn('href="https://track.example.org/pending"', catalog)
         self.assertIn('href="https://track.example.org/approved"', catalog)
+        self.assertIn("Disclosure affiliata di test.", catalog)
+
+    def test_empty_catalog_has_accurate_disclosure_and_skip_navigation(self):
+        (self.root / "data" / "products.json").write_text("[]", encoding="utf-8")
+        result = self.build()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        catalog = (self.root / "site" / "catalogo.html").read_text(encoding="utf-8")
+        self.assertIn('<a class="skip" href="#contenuto">Salta al contenuto</a>', catalog)
+        self.assertIn('<main class="wrap" id="contenuto">', catalog)
+        self.assertIn(
+            "Al momento non sono presenti link affiliati né offerte acquistabili.",
+            catalog,
+        )
+        self.assertNotIn("Disclosure affiliata di test.", catalog)
+        self.assertIn("Nessuna offerta verificata al momento", catalog)
 
     def test_demo_remains_flagged_and_never_links_to_example_com(self):
         result = self.build()
